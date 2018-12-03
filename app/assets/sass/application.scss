@@ -14,3 +14,20 @@ $govuk-global-styles: true;
 @import "components/cookie-banner";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.app-check-your-answers--index {
+  @include govuk-media-query($from: desktop) {
+    // to make group of q&a line up horizontally (unless there is just one group)
+    width: 100%;
+    // recommended for mostly long questions
+    .app-check-your-answers__question {
+      width: 10%;
+    }
+    .app-check-your-answers__answer {
+      width: 30%;
+    }
+    .app-check-your-answers__change {
+      width: 10%;
+    }
+  }
+}
