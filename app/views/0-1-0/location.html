@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+<a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -15,7 +15,7 @@
 
       <h1 class="govuk-heading-xl">Where is the placement?</h1>
 
-      <form class="form" action="/url/of/next/page" method="post">
+      <form class="form" method="post">
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-postcode">
