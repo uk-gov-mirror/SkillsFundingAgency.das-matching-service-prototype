@@ -13,18 +13,76 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">What expertise must the student have?</h1>
+      <h1 class="govuk-heading-xl">What skills are you looking for?</h1>
 
       <form class="form" method="post">
+
+        <h2 class="govuk-heading-m">Search</h2>
+
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="name">
             Enter course or subject
           </label>
-          <input class="govuk-input" id="name" name="name" type="text">
+          <input class="govuk-input govuk-input--width-20" id="name" name="name" type="text"><span><button class="govuk-button" style="background-color: #005ea5">Search</button></span>
+
         </div>
 
-        <button class="govuk-button">Continue</button>
+        <h3 class="govuk-heading-m">Browse</h3>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+            <span id="waste-hint" class="govuk-hint">
+              Select all appropriate routes and paths.
+            </span>
+
+
+              <div class="govuk-checkboxes govuk-checkboxes--conditional" data-module="checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="student-number-conditional-1" name="student-number" type="checkbox" value="yes" data-aria-controls="conditional-student-number-conditional-1">
+                  <label class="govuk-label govuk-checkboxes__label" for="student-number-conditional-1">
+                    Yes
+                  </label>
+                </div>
+                      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-student-number-conditional-1">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="student-number-conditional-reveal" name="student-number-reveal" type="checkbox" value="reveal" data-aria-controls="conditional-student-number-conditional-reveal">
+                          <label class="govuk-label govuk-checkboxes__label" for="student-number-conditional-reveal">
+                            reveal
+                          </label>
+                        </div>
+                      </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-student-number-conditional-reveal" style="margin-left: 73px">
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="student-number-conditional-reveal2" name="student-number-reveal2" type="checkbox" value="reveal2" data-aria-controls="conditional-student-number-conditional-reveal2">
+                                <label class="govuk-label govuk-checkboxes__label" for="student-number-conditional-reveal2">
+                                  reveal2
+                                </label>
+                              </div>
+                            </div>
+
+              </div>
+
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                  Waste from mines or quarries
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                  Farm or agricultural waste
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+
+        <button class="govuk-button" style="background-color: #005ea5">Browse</button>
 
       </form>
 
