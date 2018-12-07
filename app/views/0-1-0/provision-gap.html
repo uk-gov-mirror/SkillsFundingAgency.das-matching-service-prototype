@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Provision gap
+{% endblock %}
+
+{% block beforeContent %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">There are no relevant providers within 25 miles of [postcode]</h1>
+
+      <form class="form" method="post">
+        <p>You can:</p>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="no-results-1" name="no_results" type="radio" value="postcode">
+                <label class="govuk-label govuk-radios__label" for="no-results-1">
+                  change the postcode
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="no-results-2" name="no_results" type="radio" value="skill">
+                <label class="govuk-label govuk-radios__label" for="no-results-2">
+                  change the type of student you are looking for
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="no-results-3" name="no_results" type="radio" value="provision">
+                <label class="govuk-label govuk-radios__label" for="no-results-3">
+                  report this so we can find new providers
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

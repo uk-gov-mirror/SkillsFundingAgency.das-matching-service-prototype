@@ -9,6 +9,8 @@ $govuk-global-styles: true;
 @import "patterns/step-by-step-navigation";
 @import "patterns/task-list";
 @import "patterns/related-items";
+@import "patterns/sfa";
+@import "patterns/ncs";
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
@@ -31,6 +33,27 @@ $govuk-global-styles: true;
       width: 5%;
     }
 
+    #course-search, .course-search {
+        float: left;
+        width:76%;
+        width: calc(100% - 62px);
+        height: 38px;
+    }
+
+    .form-control {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  width: 100%;
+  padding: 4px;
+  background-color: #fff;
+  border: 2px solid #6f777b;
+}
 
   }
 }

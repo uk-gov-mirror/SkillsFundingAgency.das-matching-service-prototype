@@ -9,6 +9,16 @@ module.exports = function(router, myData) {
     });
 
     router.post('/' + version + '/start', function (req, res){
+      res.redirect(301, './placements');
+    });
+
+    // placements
+    router.get('/' + version + '/placements', function (req, res) {
+        res.render(version + '/placements', {
+          })
+    });
+
+    router.post('/' + version + '/placements', function (req, res){
       res.redirect(301, './location');
     });
 
@@ -31,5 +41,44 @@ module.exports = function(router, myData) {
     router.post('/' + version + '/course', function (req, res){
       res.redirect(301, './results');
     });
+
+    // provision-gap
+    router.get('/' + version + '/provision-gap', function (req, res) {
+        res.render(version + '/provision-gap', {
+          })
+    });
+
+    router.post('/' + version + '/provision-gap', function (req, res){
+      req.session.no_results = req.body.no_results;
+        if(req.body.no_results == "postcode"){
+          res.redirect(301, './location');
+        }else if (req.body.no_results == "skill"){
+          res.redirect(301, './course');
+        }else {
+          res.redirect(301, './employer-name');
+        }
+    });
+
+
+    // employer-name
+    router.get('/' + version + '/employer-name', function (req, res) {
+        res.render(version + '/employer-name', {
+          })
+    });
+
+    router.post('/' + version + '/employer-name', function (req, res){
+      res.redirect(301, './confirm-gap');
+    });
+
+    // confirm-gap
+    router.get('/' + version + '/confirm-gap', function (req, res) {
+        res.render(version + '/confirm-gap', {
+          })
+    });
+
+    router.post('/' + version + '/confirm-gap', function (req, res){
+      res.redirect(301, './check-CRM');
+    });
+
 
 }

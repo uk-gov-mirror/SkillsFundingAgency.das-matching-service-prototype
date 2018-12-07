@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Question page
+  Where is the placement?
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,15 +13,15 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Where is the placement?</h1>
+      <h1 class="govuk-heading-l">Where is the placement?</h1>
 
       <form class="form" method="post">
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-postcode">
-            Postcode
+            Enter postcode of workplace
           </label>
-          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+          <input class="govuk-input govuk-input--width-5" id="address-postcode" name="address-postcode" type="text">
         </div>
 
         <!-- <div class="govuk-form-group">
@@ -32,15 +32,15 @@
         </div> -->
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="sort">
-            Search radius
+          <label class="govuk-label" for="radius">
+            Show providers within:
           </label>
-          <select class="govuk-select" id="sort" name="sort">
-            <option value="published">5 miles</option>
-            <option value="updated">10 miles</option>
-            <option value="views">15 miles</option>
-            <option value="comments">20 miles</option>
-            <option value="updated" selected>25 miles</option>
+          <select class="govuk-select" id="radius" name="radius">
+            <option value="1mile">1 mile</option>
+            <option value="3miles">3 miles</option>
+            <option value="5miles">5 miles</option>
+            <option value="10miles" selected>10 miles</option>
+            <option value="25miles" >25 miles</option>
           </select>
         </div>
 

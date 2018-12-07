@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Employer name
+{% endblock %}
+
+{% block beforeContent %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Who is the employer?</h1>
+
+      <form class="form" method="post">
+
+
+        <div class="govuk-form-group">
+          <!-- <label class="govuk-label govuk-!-width-two-thirds" for="two-thirds">
+            Two-thirds width
+          </label> -->
+          <input class="govuk-input govuk-!-width-two-thirds" id="employer" name="employer" type="text">
+        </div>
+
+        <p><a href="add-edit-employer"> I cannot find the employer</a></p>
+
+        <button class="govuk-button">Continue</button>
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
