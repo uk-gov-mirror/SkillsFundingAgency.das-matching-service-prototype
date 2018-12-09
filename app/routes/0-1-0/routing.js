@@ -42,6 +42,16 @@ module.exports = function(router, myData) {
       res.redirect(301, './results');
     });
 
+    // one-provider
+    router.get('/' + version + '/one-provider', function (req, res) {
+        res.render(version + '/one-provider', {
+          })
+    });
+
+    router.post('/' + version + '/one-provider', function (req, res){
+      res.redirect(301, './employer-name');
+    });
+
     // provision-gap
     router.get('/' + version + '/provision-gap', function (req, res) {
         res.render(version + '/provision-gap', {
