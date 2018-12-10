@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Only one provider
+{% endblock %}
+
+{% block beforeContent %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">You must update the employer’s CRM record</h1>
+
+      <form class="form" method="post">
+        <p>Make sure you have:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>recorded the details of the conversation you have just had</li>
+          <li>added any new placement opportunities that the employer has created</li>
+          <li>updated the employer’s AUPA status, if it has changed</li>
+        </ul>
+
+<!-- Dynamic - only if changed details in add-edit-employer -->
+      <h2 class="govuk-heading-m">You changed the employer’s contact details</h2>
+        <p>Make sure this is updated in the CRM.</p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-heading-s">Business name</div>
+          <div class="govuk-grid-column-three-quarters govuk-body">Acme Ltd</div>
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-heading-s">Contact name for placements</div>
+          <div class="govuk-grid-column-three-quarters govuk-body">Joe Bloggs</div>
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-heading-s">Contact phone number</div>
+          <div class="govuk-grid-column-three-quarters govuk-body">01234 567890</div>
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-heading-s">Contact email</div>
+          <div class="govuk-grid-column-three-quarters govuk-body">j.bloggs@acmeltd.co.uk</div>
+        </div>
+
+        <p><a href="#">Open Acme Ltd’s CRM record</a></p>
+<!-- Dynamic - END -->
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <!-- <h3 class="govuk-heading-m">Confirmation</h3> -->
+        <div class="govuk-form-group">
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="CRM-confirm" name="CRM-confirm" type="checkbox" value="CRM-confirm">
+                <label class="govuk-label govuk-checkboxes__label" for="CRM-confirm">
+                  I confirm the employer’s CRM record is up to date
+                </label>
+              </div>
+            </div>
+        </div>
+
+        <button class="govuk-button">Finish</button>
+        <p><a href="#">Give us feedback</a></p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

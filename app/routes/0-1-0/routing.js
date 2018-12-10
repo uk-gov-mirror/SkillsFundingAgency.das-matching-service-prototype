@@ -32,7 +32,7 @@ module.exports = function(router, myData) {
       res.redirect(301, './course');
     });
 
-    // results
+    // course
     router.get('/' + version + '/course', function (req, res) {
         res.render(version + '/course', {
           })
@@ -41,6 +41,17 @@ module.exports = function(router, myData) {
     router.post('/' + version + '/course', function (req, res){
       res.redirect(301, './results');
     });
+
+    // results
+    router.get('/' + version + '/results', function (req, res) {
+        res.render(version + '/results', {
+          })
+    });
+
+    router.post('/' + version + '/results', function (req, res){
+      res.redirect(301, './employer-name');
+    });
+
 
     // one-provider
     router.get('/' + version + '/one-provider', function (req, res) {
@@ -51,6 +62,37 @@ module.exports = function(router, myData) {
     router.post('/' + version + '/one-provider', function (req, res){
       res.redirect(301, './employer-name');
     });
+
+    // check-providers
+    router.get('/' + version + '/check-providers', function (req, res) {
+        res.render(version + '/check-providers', {
+          })
+    });
+
+    router.post('/' + version + '/check-providers', function (req, res){
+      res.redirect(301, './emails-sent');
+    });
+
+    // emails-sent
+    router.get('/' + version + '/emails-sent', function (req, res) {
+        res.render(version + '/emails-sent', {
+          })
+    });
+
+    router.post('/' + version + '/emails-sent', function (req, res){
+      res.redirect(301, './check-CRM');
+    });
+
+    // check-CRM
+    router.get('/' + version + '/check-CRM', function (req, res) {
+        res.render(version + '/check-CRM', {
+          })
+    });
+
+    router.post('/' + version + '/check-CRM', function (req, res){
+      res.redirect(301, './start');
+    });
+
 
     // provision-gap
     router.get('/' + version + '/provision-gap', function (req, res) {

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Emails sent
+{% endblock %}
+
+{% block beforeContent %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Emails sent
+        </h1>
+        <!-- <div class="govuk-panel__body">
+          Your reference number
+          <br><strong>HDJ2123F</strong>
+        </div> -->
+      </div>
+
+      <form class="form" method="post">
+        <p>We have sent:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>an email with the employer’s details to the selected providers</li>
+            <li>an email with the selected providers’ details to the employer</li>
+          </ul>
+
+        <h2 class="govuk-heading-m">What happens next</h2>
+          <p>If the provider has suitable students, they will contact the employer within the next 2 to 3 working days.</p>
+          <div class="govuk-inset-text">
+            It is up to the provider and the employer to arrange the terms and details of each placement.
+          </div>
+
+        <h3 class="govuk-heading-m">Employer feedback</h3>
+          <p>We can send an email in 3 weeks’ time so that the employer can give feedback on their conversation with the provider. This helps us improve the service.</p>
+          <div class="govuk-form-group">
+              <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                    The employer has agreed to give feedback (optional)
+                  </label>
+                </div>
+              </div>
+          </div>
+
+        <button class="govuk-button">Continue</button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
