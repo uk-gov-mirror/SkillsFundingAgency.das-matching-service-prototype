@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check employer’s answers
+{% endblock %}
+
+{% block beforeContent %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Check the employer’s answers</h1>
+
+      <form class="form" method="post">
+
+
+        <h3 class="govuk-heading-m">Employer information</h3>
+          <dl class="app-check-your-answers app-check-your-answers--long">
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Business name
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  Acme Ltd
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="add-edit-employer">
+                    Change<span class="govuk-visually-hidden"> business name</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Contact name
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  Joe Bloggs
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="add-edit-employer">
+                    Change<span class="govuk-visually-hidden"> contact name</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Phone number
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  07700 900457
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="add-edit-employer">
+                    Change<span class="govuk-visually-hidden"> contact number</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Email
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  employer@gmail.com
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="add-edit-employer">
+                    Change<span class="govuk-visually-hidden"> contact email</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+        <h3 class="govuk-heading-m">Placement information</h3>
+          <dl class="app-check-your-answers app-check-your-answers--long">
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Number of placements
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {10}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="add-edit-employer">
+                    Change<span class="govuk-visually-hidden"> business name</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Postcode of workplace
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {postcode}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="#">
+                    Change<span class="govuk-visually-hidden"> postcode</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Type of student required
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {course}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="#">
+                    Change<span class="govuk-visually-hidden"> skills</span>
+                  </a>
+                </dd>
+              </div>
+
+          </dl>
+
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
