@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Question page
+  Skills and experience
 {% endblock %}
 {% set _routeList = myData["industry-categories"].categories %}
 {% block beforeContent %}
@@ -9,21 +9,23 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">What skills are you looking for?</h1>
+      <h1 class="govuk-heading-l">What skills or experience is the employer looking for?</h1>
       <form class="form" method="post">
-        <h2 class="govuk-heading-m">Search</h2>
+
+        <p>Use search or browse to match them with providers.</p>
+        <h2 class="govuk-heading-m">Search for a qualification</h2>
         <div class="govuk-form-group">
-          <label class="govuk-label" for="skill">
+          <!-- <label class="govuk-label" for="skill">
             Enter course or subject
-          </label>
+          </label> -->
           <input class="govuk-input govuk-input--width-20" id="{{ data['skill'] }}" name="skill" type="text">
-          <span><button class="govuk-button" style="background-color: #005ea5">Search</button></span>
+          <span><button class="govuk-button" style="background-color: #005ea5">Show results</button></span>
         </div>
-        <h3 class="govuk-heading-m">Browse</h3>
+        <h3 class="govuk-heading-m">Browse for the right skills</h3>
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="browse-hint">
             <span id="browse-hint" class="govuk-hint">
-              Select all appropriate routes and paths
+              Select all that apply
             </span>
             {% set _firstLevelIndex = 0 %}
             {% set _secondLevelIndex = 0 %}
@@ -72,7 +74,7 @@
             </div>
           </fieldset>
         </div>
-        <button class="govuk-button" style="background-color: #005ea5">Browse</button>
+        <button class="govuk-button" style="background-color: #005ea5">Show results</button>
         </form>
       </div>
     </div>
