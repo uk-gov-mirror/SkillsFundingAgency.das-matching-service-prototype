@@ -165,6 +165,26 @@ module.exports = function(router, _myData) {
       res.redirect(301, './check-answers');
     });
 
+    // add-edit-employer
+    router.get('/' + version + '/add-edit-employer', function (req, res) {
+        res.render(version + '/add-edit-employer', {
+          })
+    });
+
+    router.post('/' + version + '/add-edit-employer', function (req, res){
+      res.redirect(301, './confirm-gap');
+    });
+
+    // edit-employer
+    router.get('/' + version + '/edit-employer', function (req, res) {
+        res.render(version + '/edit-employer', {
+          })
+    });
+
+    router.post('/' + version + '/edit-employer', function (req, res){
+      res.redirect(301, './check-answers');
+    });
+
     // confirm-gap
     router.get('/' + version + '/confirm-gap', function (req, res) {
         res.render(version + '/confirm-gap', {
@@ -174,6 +194,18 @@ module.exports = function(router, _myData) {
     router.post('/' + version + '/confirm-gap', function (req, res){
       res.redirect(301, './check-CRM');
     });
+
+    // give-feedback
+    router.get('/' + version + '/give-feedback', function (req, res) {
+        res.render(version + '/give-feedback', {
+          })
+    });
+
+    router.post('/' + version + '/give-feedback', function (req, res){
+      res.redirect(301, './start');
+    });
+
+
 
 
 }
