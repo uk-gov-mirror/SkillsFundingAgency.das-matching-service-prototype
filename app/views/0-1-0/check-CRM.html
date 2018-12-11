@@ -24,11 +24,11 @@
         </ul>
 
 <!-- Dynamic - only if changed details in add-edit-employer -->
-      <h2 class="govuk-heading-m">You changed the employer’s contact details</h2>
+        <h2 class="govuk-heading-m">You changed the employer’s contact details</h2>
         <p>Make sure this is updated in the CRM.</p>
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-one-quarter govuk-heading-s">Business name</div>
-          <div class="govuk-grid-column-three-quarters govuk-body">Acme Ltd</div>
+          <div class="govuk-grid-column-three-quarters govuk-body">{{ data['businessName'] }}</div>
         </div>
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-one-quarter govuk-heading-s">Contact name for placements</div>
@@ -43,8 +43,10 @@
           <div class="govuk-grid-column-three-quarters govuk-body">j.bloggs@acmeltd.co.uk</div>
         </div>
 
-        <p><a href="#">Open Acme Ltd’s CRM record</a></p>
+
 <!-- Dynamic - END -->
+
+        <p><a href="#">Open {{ data['businessName'] }}'s CRM record</a></p>
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
         <!-- <h3 class="govuk-heading-m">Confirmation</h3> -->
@@ -60,7 +62,7 @@
         </div>
 
         <button class="govuk-button">Finish</button>
-        <p><a href="#">Give us feedback</a></p>
+        <p><a href="give-feedback">Give us feedback</a></p>
 
       </form>
 

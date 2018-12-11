@@ -65,7 +65,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/results', function (req, res){
-      res.redirect(301, './employer-name');
+      res.redirect(301, './enter-employer-name');
     });
 
 
@@ -115,6 +115,7 @@ module.exports = function(router, _myData) {
     // check-CRM
     router.get('/' + version + '/check-CRM', function (req, res) {
         res.render(version + '/check-CRM', {
+          'businessName':req.session.businessName,
           })
     });
 
@@ -149,6 +150,17 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/employer-name', function (req, res){
+      req.session.businessName = req.body.businessName
+      res.redirect(301, './confirm-gap');
+    });
+
+    // enter-employer-name
+    router.get('/' + version + '/enter-employer-name', function (req, res) {
+        res.render(version + '/enter-employer-name', {
+          })
+    });
+
+    router.post('/' + version + '/enter-employer-name', function (req, res){
       req.session.businessName = req.body.businessName
       res.redirect(301, './check-answers');
     });
