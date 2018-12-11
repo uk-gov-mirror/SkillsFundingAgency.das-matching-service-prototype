@@ -1,6 +1,14 @@
-module.exports = function(router, myData) {
+module.exports = function(router, _myData) {
 
     var version = "0-1-0";
+
+    router.all('/' + version + '/*', function(req, res, next){
+      if(!req.session.myData || req.query.resetSession){
+        // resetting
+        req.session.myData = JSON.parse(JSON.stringify(_myData))
+      }
+      next()
+    });
 
     // Start page
     router.get('/' + version + '/start', function (req, res) {
@@ -19,6 +27,8 @@ module.exports = function(router, myData) {
     });
 
     router.post('/' + version + '/placements', function (req, res){
+      req.session.placementNumber = req.body.placementNumber,
+      req.session.postcode = req.body.postcode
       res.redirect(301, './location');
     });
 
@@ -35,6 +45,7 @@ module.exports = function(router, myData) {
     // course
     router.get('/' + version + '/course', function (req, res) {
         res.render(version + '/course', {
+          myData : req.session.myData
           })
     });
 
@@ -61,6 +72,19 @@ module.exports = function(router, myData) {
 
     router.post('/' + version + '/one-provider', function (req, res){
       res.redirect(301, './employer-name');
+    });
+
+    // check-answers
+    router.get('/' + version + '/check-answers', function (req, res) {
+        res.render(version + '/check-answers', {
+          'placementNumber':req.session.placementNumber,
+          'postcode':req.session.postcode,
+          'businessName':req.session.businessName
+          })
+    });
+
+    router.post('/' + version + '/check-answers', function (req, res){
+      res.redirect(301, './check-providers');
     });
 
     // check-providers
@@ -119,7 +143,8 @@ module.exports = function(router, myData) {
     });
 
     router.post('/' + version + '/employer-name', function (req, res){
-      res.redirect(301, './confirm-gap');
+      req.session.businessName = req.body.businessName
+      res.redirect(301, './check-answers');
     });
 
     // confirm-gap

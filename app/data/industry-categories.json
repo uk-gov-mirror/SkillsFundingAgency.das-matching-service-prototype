@@ -1,0 +1,72 @@
+
+{
+  "id": "industries-1",
+  "categories": [
+    {
+      "title": "Agriculture, environmental and animal care",
+      "paths": [
+        {
+          "title": "Animal care and management",
+          "clusters": [
+            {
+              "title": "Equine groom or farrier"
+            },
+            {
+              "title": "Animal care and welfare assistant"
+            }
+          ]
+        },
+        {
+          "title": "Agriculture, land management and production",
+          "clusters": [
+            {
+              "title": "Agricultural operative or technician"
+            },
+            {
+              "title": "Arboriculture and Forestry Operative"
+            },
+            {
+              "title": "Production horticulture operative or technician"
+            },
+            {
+              "title": "Landscape horticulture operative or technician"
+            },
+            {
+              "title": "Conservation and countryside worker"
+            },
+            {
+              "title": "Game and pest control technician"
+            },
+            {
+              "title": "Agricultural engineering operative or technician "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Business and administration",
+      "paths": [
+        {
+          "title": "Management and administration",
+          "clusters": [
+            {
+              "title": "Administrator"
+            }
+          ]
+        },
+        {
+          "title": "Human resources (HR)",
+          "clusters": [
+            {
+              "title": "Human resources (HR) administrator"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "another"
+    }
+  ]
+}

@@ -26,7 +26,7 @@
                   Business name
                 </dt>
                 <dd class="app-check-your-answers__answer">
-                  Acme Ltd
+                  {{ data['businessName'] }}
                 </dd>
                 <dd class="app-check-your-answers__change">
                   <a href="add-edit-employer">
@@ -86,11 +86,15 @@
                   Number of placements
                 </dt>
                 <dd class="app-check-your-answers__answer">
-                  {10}
+                  <div class="govuk-form-group">
+                    <!-- <label class="govuk-label" for="width-4">
+                      4 character width
+                    </label> -->
+                    <input class="govuk-input govuk-input--width-4" id="changePlacements" name="changePlacements" type="text" value="{{ data['placementNumber'] }}">
+                  </div>
                 </dd>
                 <dd class="app-check-your-answers__change">
-                  <a href="add-edit-employer">
-                    Change<span class="govuk-visually-hidden"> business name</span>
+                  <a href="#">
                   </a>
                 </dd>
               </div>
@@ -100,11 +104,11 @@
                   Postcode of workplace
                 </dt>
                 <dd class="app-check-your-answers__answer">
-                  {postcode}
+                  {{ data['postcode'] }}
                 </dd>
                 <dd class="app-check-your-answers__change">
-                  <a href="#">
-                    Change<span class="govuk-visually-hidden"> postcode</span>
+                  <a href="location">
+                    Change<span class="govuk-visually-hidden"> postcode of workplace</span>
                   </a>
                 </dd>
               </div>
@@ -114,11 +118,11 @@
                   Type of student required
                 </dt>
                 <dd class="app-check-your-answers__answer">
-                  {course}
+                  Plumbing
                 </dd>
                 <dd class="app-check-your-answers__change">
-                  <a href="#">
-                    Change<span class="govuk-visually-hidden"> skills</span>
+                  <a href="course">
+                    Change<span class="govuk-visually-hidden"> type of student</span>
                   </a>
                 </dd>
               </div>
@@ -126,7 +130,7 @@
           </dl>
 
 
-        <button class="govuk-button">Continue</button>
+        <button class="govuk-button">Confirm and continue</button>
 
       </form>
 
