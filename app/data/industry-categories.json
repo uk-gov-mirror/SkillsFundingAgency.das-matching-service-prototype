@@ -66,7 +66,307 @@
       ]
     },
     {
-      "title": "another"
+      "title": "Care services",
+      "paths": [
+        {
+          "title": "Care services",
+          "clusters": [
+            {
+              "title": "Children, young people and families worker"
+            },
+            {
+              "title": "Adult care worker"
+            }
+          ]
+        },
+        {
+          "title": "Human resources (HR)",
+          "clusters": [
+            {
+              "title": "Human resources (HR) administrator"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Catering and hospitality",
+      "paths": [
+        {
+          "title": "Hospitality",
+          "clusters": [
+            {
+              "title": "Hospitality team member or supervisor"
+            }
+          ]
+        },
+        {
+          "title": "Catering",
+          "clusters": [
+            {
+              "title": "Caterer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Construction",
+      "paths": [
+        {
+          "title": "Design, surveying and planning",
+          "clusters": [
+            {
+              "title": "Design and surveying technician"
+            }
+          ]
+        },
+        {
+          "title": "Onsite construction",
+          "clusters": [
+            {
+              "title": "Core building tradesperson"
+            },
+            {
+              "title": "Construction operative or supervisor"
+            },
+            {
+              "title": "Metal and steel operative"
+            },
+            {
+              "title": "Construction specialist operative or technician"
+            }
+          ]
+        },
+        {
+          "title": "Building services engineering",
+          "clusters": [
+            {
+              "title": "Building services engineering operative or technician"
+            },
+            {
+              "title": "Utilities installation and maintenance operative or technician"
+            },
+            {
+              "title": "Facilities management operative or supervisor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Creative and design",
+      "paths": [
+        {
+          "title": "Craft and design",
+          "clusters": [
+            {
+              "title": "Design technician"
+            },
+            {
+              "title": "Textile craftperson"
+            },
+            {
+              "title": "Heritage craftsperson"
+            },
+            {
+              "title": "Precision manufacturing craftsperson"
+            }
+          ]
+        },
+        {
+          "title": "Media, broadcast and production",
+          "clusters": [
+            {
+              "title": "Media and broadcast assistant"
+            },
+            {
+              "title": "Production arts assistant"
+            }
+          ]
+        },
+        {
+          "title": "Cultural heritage and visitor attractions",
+          "clusters": [
+            {
+              "title": "Collections and conservation technician"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Digital",
+      "paths": [
+        {
+          "title": "Digital support and services",
+          "clusters": [
+            {
+              "title": "IT support and services technician"
+            }
+          ]
+        },
+        {
+          "title": "Digital production design and development",
+          "clusters": [
+            {
+              "title": "Software development technician"
+            }
+          ]
+        },
+        {
+          "title": "Development and digital business services",
+          "clusters": [
+            {
+              "title": "Digital business technician"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Education and childcare",
+      "paths": [
+        {
+          "title": "Education and childcare",
+          "clusters": [
+            {
+              "title": "Early education and childcare assistant"
+            },
+            {
+              "title": "Primary or secondary or tertiary teaching and support assistant"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Engineering and manufacturing",
+      "paths": [
+        {
+          "title": "Engineering design, development and control",
+          "clusters": [
+            {
+              "title": "Design and development technician"
+            },
+            {
+              "title": "Quality improvement and project control technician"
+            }
+          ]
+        },
+        {
+          "title": "Engineering, manufacturing and process",
+          "clusters": [
+            {
+              "title": "Fabrication and welding operative or technician"
+            },
+            {
+              "title": "Manufacturing and process operative or technician"
+            },
+            {
+              "title": "Plant operative or technician"
+            },
+            {
+              "title": "Food and science manufacturing operative"
+            },
+            {
+              "title": "Manufacturing operative"
+            },
+            {
+              "title": "Print and packaging operative or technician"
+            }
+          ]
+        },
+        {
+          "title": "Maintenance, installation and repair",
+          "clusters": [
+            {
+              "title": "Service, repair or overhaul operative or technician"
+            },
+            {
+              "title": "Manufacturing or process maintenance operative or technician"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Hair and beauty",
+      "paths": [
+        {
+          "title": "Hair, beauty and aesthetics",
+          "clusters": [
+            {
+              "title": "Hair specialist"
+            },
+            {
+              "title": "Beauty specialist"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Health and Science",
+      "paths": [
+        {
+          "title": "Health",
+          "clusters": [
+            {
+              "title": "Health assistant"
+            }
+          ]
+        },
+        {
+          "title": "Healthcare science",
+          "clusters": [
+            {
+              "title": "Healthcare science assistant"
+            },
+            {
+              "title": "Pharmacy science assistant"
+            },
+            {
+              "title": "Science technician"
+            },
+            {
+              "title": "Exercise, fitness and health assistant"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Legal, financial and accounting",
+      "paths": [
+        {
+          "title": "Legal",
+          "clusters": [
+            {
+              "title": "Legal assistant"
+            }
+          ]
+        },
+        {
+          "title": "Financial",
+          "clusters": [
+            {
+              "title": "Financial services administrator"
+            },
+            {
+              "title": "Financial services customer advisor"
+            }
+          ]
+        },
+        {
+          "title": "Accountancy",
+          "clusters": [
+            {
+              "title": "Assistant accountant"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

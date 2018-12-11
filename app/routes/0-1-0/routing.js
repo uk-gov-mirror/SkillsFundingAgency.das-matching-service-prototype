@@ -50,7 +50,12 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/course', function (req, res){
-      res.redirect(301, './results');
+      req.session.skill = req.body.skill;
+      if(req.body.skill != "plumbing"){
+        res.redirect(301, './provision-gap');
+      }else {
+        res.redirect(301, './results');
+      }
     });
 
     // results
@@ -121,6 +126,7 @@ module.exports = function(router, _myData) {
     // provision-gap
     router.get('/' + version + '/provision-gap', function (req, res) {
         res.render(version + '/provision-gap', {
+          'postcode':req.session.postcode,
           })
     });
 
