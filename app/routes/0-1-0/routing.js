@@ -54,7 +54,7 @@ module.exports = function(router, _myData) {
       if(req.body.skill != "plumbing"){
         res.redirect(301, './provision-gap');
       }else {
-        res.redirect(301, './results');
+        res.redirect(301, './enter-employer-name');
       }
     });
 
