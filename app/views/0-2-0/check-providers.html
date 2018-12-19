@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check providers
+{% endblock %}
+
+{% block beforeContent %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+  <div class="govuk-grid-row">
+      <h1 class="govuk-grid-column-two-thirds govuk-heading-l">Check the providers</h1>
+  </div>
+          <div class="form-group ">
+            <h2 class="govuk-heading-m">Provider 1</h2>
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter govuk-heading-s">Provider name</div>
+              <div class="govuk-grid-column-three-quarters govuk-body">M.I.T. Skills Limited</div>
+            </div>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter govuk-heading-s">Qualification name</div>
+              <div class="govuk-grid-column-three-quarters govuk-body">NVQ Diploma in Performing Engineering Operations</div>
+            </div>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter govuk-heading-s">Venue location</div>
+              <div class="govuk-grid-column-three-quarters govuk-body">MIT Birmingham<br>Unit 6250<br>Bishops Court<br>Birmingham<br>B37 7YB</div>
+            </div>
+            <!-- <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"> -->
+          </div>
+
+          <div class="form-group ">
+            <h2 class="govuk-heading-m">Provider 2</h2>
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter govuk-heading-s">Provider name</div>
+              <div class="govuk-grid-column-three-quarters govuk-body">Heart of Worcestershire College</div>
+            </div>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter govuk-heading-s">Qualification name</div>
+              <div class="govuk-grid-column-three-quarters govuk-body">Diploma in Plumbing Studies</div>
+            </div>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter govuk-heading-s">Venue location</div>
+              <div class="govuk-grid-column-three-quarters govuk-body">Alliance House Redditch<br>Fishing Line Road Redditch<br>Redditch<br>B97 6EE</div>
+            </div>
+            <!-- <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"> -->
+          </div>
+          <p><a href="results">Change providers</a></p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+
+          <!-- <div class="govuk-grid-column-two-thirds">
+              <dl class="app-check-your-answers app-check-your-answers--short">
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question">
+                    Provider name
+                  </dt>
+                  <dd class="app-check-your-answers__answer">
+                    M.I.T. Skills Limited
+                  </dd>
+                </div>
+
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question">
+                    Qualification name
+                  </dt>
+                  <dd class="app-check-your-answers__answer">
+                    NVQ Diploma in Performing Engineering Operations
+                  </dd>
+                </div>
+
+                <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question">
+                    Venue location
+                  </dt>
+                  <dd class="app-check-your-answers__answer">
+                    MIT Birmingham<br>
+                    Unit 6250<br>
+                    Bishops Court<br>
+                    Birmingham B37 7YB
+                  </dd>
+                </div>
+              </dl>
+
+              <p><a href="employer-name">Report a provision gap</a></p>
+            </div> -->
+
+
+
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <h1 class="govuk-heading-m">Now send the referral</h1>
+                <p>By submitting this information, the employer agrees that their contact details will be sent to the selected providers.</p>
+                <button class="govuk-button">Accept and continue</button>
+            </div>
+          </div>
+
+  </form>
+
+
+
+
+</div>
+
+
+    </div>
+  </div>
+
+{% endblock %}
