@@ -9,6 +9,10 @@ $govuk-global-styles: true;
 @import "patterns/step-by-step-navigation";
 @import "patterns/task-list";
 @import "patterns/related-items";
+@import "patterns/govuk";
+@import "patterns/govukFilter";
+
+
 
 
 // Components that aren't in Frontend
