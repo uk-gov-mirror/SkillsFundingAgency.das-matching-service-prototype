@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check employer’s answers
+  Check answers
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,121 +13,110 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Check the employer’s answers</h1>
+      <h1 class="govuk-heading-l">Check {{ data['businessName'] }}'s answers</h1>
 
       <form class="form" method="post">
 
 
-        <h3 class="govuk-heading-m">Employer information</h3>
-          <dl class="app-check-your-answers app-check-your-answers--long">
-
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
-                  Business name
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  {{ data['businessName'] }}
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="edit-employer">
-                    Change<span class="govuk-visually-hidden"> business name</span>
-                  </a>
-                </dd>
-              </div>
-
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
-                  Contact name
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  Joe Bloggs
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="edit-employer">
-                    Change<span class="govuk-visually-hidden"> contact name</span>
-                  </a>
-                </dd>
-              </div>
-
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
-                  Phone number
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  01234 567890
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="edit-employer">
-                    Change<span class="govuk-visually-hidden"> contact number</span>
-                  </a>
-                </dd>
-              </div>
-
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
-                  Email
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  employer@gmail.com
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="edit-employer">
-                    Change<span class="govuk-visually-hidden"> contact email</span>
-                  </a>
-                </dd>
-              </div>
-            </dl>
-
         <h3 class="govuk-heading-m">Placement information</h3>
           <dl class="app-check-your-answers app-check-your-answers--long">
 
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
-                  Number of placements
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  <div class="govuk-form-group">
-                    <!-- <label class="govuk-label" for="width-4">
-                      4 character width
-                    </label> -->
-                    <input class="govuk-input govuk-input--width-4" id="changePlacements" name="changePlacements" type="text" value="{{ data['placementNumber'] }}">
-                  </div>
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="#">
-                  </a>
-                </dd>
-              </div>
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Postcode of workplace
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {{ data['postcode'] }}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="location">
+                  Change<span class="govuk-visually-hidden"> postcode of workplace</span>
+                </a>
+              </dd>
+            </div>
 
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
-                  Postcode of workplace
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  {{ data['postcode'] }}
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="location">
-                    Change<span class="govuk-visually-hidden"> postcode of workplace</span>
-                  </a>
-                </dd>
-              </div>
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Type of placement
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {route}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="#">
+                  Change<span class="govuk-visually-hidden"> type of placement</span>
+                </a>
+              </dd>
+            </div>
 
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
-                  Type of student required
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  Plumbing
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="course">
-                    Change<span class="govuk-visually-hidden"> type of student</span>
-                  </a>
-                </dd>
-              </div>
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Number of placements
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {% if (placements == "no") %}
+                  Not sure yet
+                {% else %}
+                  {{ data['placementNumber'] }}
+                {% endif %}
+              </dd>
+              <dd class="app-check-your-answers__change">
 
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Job role
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                  {{ data['roleInfo'] }}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="placements">
+                  Change<span class="govuk-visually-hidden"> job role</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Extra requirements
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {% if (extra == "no") %}
+                  No
+                {% else %}
+                  {{ data['extraReq'] }}
+                {% endif %}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="placements">
+                  Change<span class="govuk-visually-hidden"> extra requirements</span>
+                </a>
+              </dd>
+            </div>
           </dl>
+
+
+          <h3 class="govuk-heading-m">Provider information</h3>
+            <div class="form-group">
+                  <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Provider 1</p>
+                  <p>M.I.T. Skills Limited</p>
+                  <p>5.8 miles from {{ data['postcode'] }}</p>
+              <br>
+                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Provider 2</p>
+                  <p>Heart of Worcestershire College</p>
+                  <p>8.6 miles from {{ data['postcode'] }}</p>
+                <br>
+                <p><a href="#">Change providers</a></p>
+            </div>
+
+          <h3 class="govuk-heading-m">Before our system sends the referrals</h3>
+            <div class="form-group">
+                  <p>Make sure the employer agrees that we can send their details to the selected providers.</p>
+            </div>
+
 
 
         <button class="govuk-button">Confirm and continue</button>

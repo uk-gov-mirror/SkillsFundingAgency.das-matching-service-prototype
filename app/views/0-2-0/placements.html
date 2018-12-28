@@ -14,17 +14,19 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" method="post">
+        <h1 class="govuk-heading-l">
+          Placement information
+        </h1>
 
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading">
-                Does the employer know how many placements they want?
-              </h1>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Does the employer know how many placement students they want at this location?
+              </h2>
             </legend>
             <div class="govuk-radios govuk-radios--conditional" data-module="radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="student-number-conditional-1" name="student-number" type="radio" value="yes" data-aria-controls="conditional-student-number-conditional-1">
+                <input class="govuk-radios__input" id="placements-conditional-1" name="placements" type="radio" value="yes" data-aria-controls="conditional-student-number-conditional-1">
                   <label class="govuk-label govuk-radios__label" for="student-number-conditional-1">
                     Yes
                   </label>
@@ -39,14 +41,59 @@
 
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="student-number-conditional-2" name="student-number" type="radio" value="no" data-aria-controls="conditional-student-number-conditional-2">
+                <input class="govuk-radios__input" id="placements-conditional-2" name="placements" type="radio" value="no" data-aria-controls="conditional-student-number-conditional-2">
                   <label class="govuk-label govuk-radios__label" for="student-number-conditional-2">
                     No
                   </label>
               </div>
-
             </div>
-          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                What specific job will they be doing?
+              </h2>
+            </legend>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="extra">
+                Define the role in a few words
+              </label>
+              <span class="govuk-hint">For example, plumber’s assistant, data inputter, junior hairdresser</span>
+              <textarea class="govuk-textarea" id="roleInfo" name="roleInfo" rows="1" aria-describedby="roleInfo"></textarea>
+            </div>
+        </div>
+
+        <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Does the employer have any extra requirements?
+              </h2>
+            </legend>
+            <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="extra-conditional-1" name="extra" type="radio" value="yes" data-aria-controls="conditional-extra-conditional-1">
+                  <label class="govuk-label govuk-radios__label" for="extra-conditional-1">
+                    Yes
+                  </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-extra-conditional-1">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="extra">
+                    Enter requirements
+                  </label>
+                  <span class="govuk-hint">For example, ‘student can drive’, ‘student is available for block release’</span>
+                  <textarea class="govuk-textarea" id="extraReq" name="extraReq" rows="2" aria-describedby="extraReq-hint"></textarea>
+                </div>
+
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="extra-conditional-2" name="extra" type="radio" value="no" data-aria-controls="conditional-extra-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="extra-conditional-2">
+                    No
+                  </label>
+              </div>
+            </div>
         </div>
 
         <button class="govuk-button">Continue</button>

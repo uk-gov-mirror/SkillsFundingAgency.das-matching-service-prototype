@@ -19,25 +19,6 @@
 
         <h3 class="govuk-heading-m">Placement information</h3>
           <dl class="app-check-your-answers app-check-your-answers--short">
-
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
-                  Number of placements
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  <div class="govuk-form-group">
-                    <!-- <label class="govuk-label" for="width-4">
-                      4 character width
-                    </label> -->
-                    <input class="govuk-input govuk-input--width-4" id="changePlacements" name="changePlacements" type="text" value="{{ data['placementNumber'] }}">
-                  </div>
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="#">
-                  </a>
-                </dd>
-              </div>
-
               <div class="app-check-your-answers__contents">
                 <dt class="app-check-your-answers__question">
                   Postcode of workplace
@@ -54,84 +35,48 @@
 
               <div class="app-check-your-answers__contents">
                 <dt class="app-check-your-answers__question">
-                  Type of student required
+                  Type of placement
                 </dt>
                 <dd class="app-check-your-answers__answer">
                   {{ data['skill'] }}
                 </dd>
                 <dd class="app-check-your-answers__change">
                   <a href="#">
-                    Change<span class="govuk-visually-hidden"> skills</span>
+                    Change<span class="govuk-visually-hidden"> type of plaement</span>
                   </a>
                 </dd>
               </div>
 
           </dl>
 
-        <h3 class="govuk-heading-m">Employer information</h3>
-          <dl class="app-check-your-answers app-check-your-answers--short">
-
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
-                  Business name
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  {{ data['businessName'] }}
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="add-edit-employer">
-                    Change<span class="govuk-visually-hidden"> business name</span>
-                  </a>
-                </dd>
+      <div class="form-group">
+        <h3 class="govuk-heading-m">Does the employer know how many placement students they want at this location?</h3>
+          <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="student-number-conditional-1" name="student-number" type="radio" value="yes" data-aria-controls="conditional-student-number-conditional-1">
+                <label class="govuk-label govuk-radios__label" for="student-number-conditional-1">
+                  Yes
+                </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-student-number-conditional-1">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="placementNumber">
+                  Number of placements
+                </label>
+                <input class="govuk-input govuk-input--width-3" id="{{ data['placementNumber'] }}" name="placementNumber">
               </div>
 
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
-                  Contact name
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  Joe Bloggs
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="add-edit-employer">
-                    Change<span class="govuk-visually-hidden"> contact name</span>
-                  </a>
-                </dd>
-              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="student-number-conditional-2" name="student-number" type="radio" value="no" data-aria-controls="conditional-student-number-conditional-2">
+                <label class="govuk-label govuk-radios__label" for="student-number-conditional-2">
+                  No
+                </label>
+            </div>
+          </div>
+        </div>
 
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
-                  Phone number
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  01234 567890
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="add-edit-employer">
-                    Change<span class="govuk-visually-hidden"> contact number</span>
-                  </a>
-                </dd>
-              </div>
-
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
-                  Email
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  employer@gmail.com
-                </dd>
-                <dd class="app-check-your-answers__change">
-                  <a href="add-edit-employer">
-                    Change<span class="govuk-visually-hidden"> contact email</span>
-                  </a>
-                </dd>
-              </div>
-
-
-        </dl>
-
-
-        <button class="govuk-button">Confirm and send</button>
+        <button class="govuk-button">Confirm and send report</button>
 
       </form>
 

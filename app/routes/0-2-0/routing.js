@@ -27,9 +27,13 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/placements', function (req, res){
+      req.session.placements = req.body.placements,
       req.session.placementNumber = req.body.placementNumber,
-      req.session.postcode = req.body.postcode
-      res.redirect(301, './location');
+      req.session.postcode = req.body.postcode,
+      req.session.roleInfo = req.body.roleInfo,
+      req.session.extra = req.body.extra,
+      req.session.extraReq = req.body.extraReq
+      res.redirect(301, './enter-employer-name');
     });
 
     // location
@@ -82,9 +86,13 @@ module.exports = function(router, _myData) {
     // check-answers
     router.get('/' + version + '/check-answers', function (req, res) {
         res.render(version + '/check-answers', {
+          'placements':req.session.placements,
           'placementNumber':req.session.placementNumber,
           'postcode':req.session.postcode,
-          'businessName':req.session.businessName
+          'businessName':req.session.businessName,
+          'roleInfo':req.session.rollInfo,
+          'extra':req.session.extra,
+          'extraReq':req.session.extraReq
           })
     });
 
@@ -124,23 +132,23 @@ module.exports = function(router, _myData) {
     });
 
 
-    // provision-gap
-    router.get('/' + version + '/provision-gap', function (req, res) {
-        res.render(version + '/provision-gap', {
-          'postcode':req.session.postcode,
-          })
-    });
-
-    router.post('/' + version + '/provision-gap', function (req, res){
-      req.session.no_results = req.body.no_results;
-        if(req.body.no_results == "postcode"){
-          res.redirect(301, './location');
-        }else if (req.body.no_results == "skill"){
-          res.redirect(301, './course');
-        }else {
-          res.redirect(301, './employer-name');
-        }
-    });
+    // // provision-gap
+    // router.get('/' + version + '/provision-gap', function (req, res) {
+    //     res.render(version + '/provision-gap', {
+    //       'postcode':req.session.postcode,
+    //       })
+    // });
+    //
+    // router.post('/' + version + '/provision-gap', function (req, res){
+    //   req.session.no_results = req.body.no_results;
+    //     if(req.body.no_results == "postcode"){
+    //       res.redirect(301, './location');
+    //     }else if (req.body.no_results == "skill"){
+    //       res.redirect(301, './course');
+    //     }else {
+    //       res.redirect(301, './employer-name');
+    //     }
+    // });
 
 
     // employer-name
@@ -150,6 +158,28 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/employer-name', function (req, res){
+      req.session.businessName = req.body.businessName
+      res.redirect(301, './confirm-employer-gap');
+    });
+
+    // confirm-employer
+    router.get('/' + version + '/confirm-employer', function (req, res) {
+        res.render(version + '/confirm-employer', {
+          })
+    });
+
+    router.post('/' + version + '/confirm-employer', function (req, res){
+      req.session.businessName = req.body.businessName
+      res.redirect(301, './check-answers');
+    });
+
+    // confirm-employer-gap
+    router.get('/' + version + '/confirm-employer-gap', function (req, res) {
+        res.render(version + '/confirm-employer-gap', {
+          })
+    });
+
+    router.post('/' + version + '/confirm-employer-gap', function (req, res){
       req.session.businessName = req.body.businessName
       res.redirect(301, './confirm-gap');
     });
@@ -162,7 +192,7 @@ module.exports = function(router, _myData) {
 
     router.post('/' + version + '/enter-employer-name', function (req, res){
       req.session.businessName = req.body.businessName
-      res.redirect(301, './check-answers');
+      res.redirect(301, './confirm-employer');
     });
 
     // add-edit-employer
@@ -172,7 +202,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/add-edit-employer', function (req, res){
-      res.redirect(301, './confirm-gap');
+      res.redirect(301, './confirm-employer-gap');
     });
 
     // edit-employer
@@ -182,7 +212,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/edit-employer', function (req, res){
-      res.redirect(301, './check-answers');
+      res.redirect(301, './confirm-employer');
     });
 
     // confirm-gap
