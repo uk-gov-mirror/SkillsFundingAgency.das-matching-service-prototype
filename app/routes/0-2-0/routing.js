@@ -97,7 +97,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/check-answers', function (req, res){
-      res.redirect(301, './check-providers');
+      res.redirect(301, './emails-sent');
     });
 
     // check-providers

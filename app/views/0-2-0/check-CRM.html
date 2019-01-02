@@ -13,37 +13,37 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">You must update the employer’s CRM record</h1>
+      <h1 class="govuk-heading-l">Update employer information</h1>
 
       <form class="form" method="post">
-        <p>Make sure you have:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>recorded the details of the conversation you have just had</li>
-          <li>added any new placement opportunities that the employer has created</li>
-          <li>updated the employer’s AUPA status, if it has changed</li>
-        </ul>
 
-<!-- Dynamic - only if changed details in add-edit-employer -->
-        <h2 class="govuk-heading-m">You changed the employer’s contact details</h2>
-        <p>Make sure this is updated in the CRM.</p>
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one-quarter govuk-heading-s">Business name</div>
-          <div class="govuk-grid-column-three-quarters govuk-body">{{ data['businessName'] }}</div>
-        </div>
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one-quarter govuk-heading-s">Contact name for placements</div>
-          <div class="govuk-grid-column-three-quarters govuk-body">Joe Bloggs</div>
-        </div>
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one-quarter govuk-heading-s">Contact phone number</div>
-          <div class="govuk-grid-column-three-quarters govuk-body">01234 567890</div>
-        </div>
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one-quarter govuk-heading-s">Contact email</div>
-          <div class="govuk-grid-column-three-quarters govuk-body">newemail@gmail.com</div>
-        </div>
+      {% if route == "care" or route == "education" or route == "hair" %}
 
+      {% else %}
+        <h2 class="govuk-heading-m">What type of [route] placement did the employer want?</h2>
+          <p>Choose the closest fit:</p>
+            {% include "./_includes/pathways.html" %}
+      {% endif %}
 
+<!-- Dynamic - only if changed details in add-edit-employer or edit-employer-->
+        <h2 class="govuk-heading-m">Is the employer’s CRM record up to date?</h2>
+          <p>You changed the employer's contact details:</p>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter govuk-heading-s">Business name</div>
+              <div class="govuk-grid-column-three-quarters govuk-body">{{ data['businessName'] }}</div>
+            </div>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter govuk-heading-s">Contact name for placements</div>
+              <div class="govuk-grid-column-three-quarters govuk-body">Joe Bloggs</div>
+            </div>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter govuk-heading-s">Contact phone number</div>
+              <div class="govuk-grid-column-three-quarters govuk-body">01234 567890</div>
+            </div>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter govuk-heading-s">Contact email</div>
+              <div class="govuk-grid-column-three-quarters govuk-body">newemail@gmail.com</div>
+            </div>
 <!-- Dynamic - END -->
 
         <p><a href="#">Open {{ data['businessName'] }}'s CRM record</a></p>

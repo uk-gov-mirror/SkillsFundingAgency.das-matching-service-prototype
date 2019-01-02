@@ -19,7 +19,7 @@
 
 
         <h3 class="govuk-heading-m">Placement information</h3>
-          <dl class="app-check-your-answers app-check-your-answers--long">
+          <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 30px">
 
             <div class="app-check-your-answers__contents">
               <dt class="app-check-your-answers__question">
@@ -98,9 +98,9 @@
             </div>
           </dl>
 
+          <div class="form-group">
+              <h3 class="govuk-heading-m">Provider information</h3>
 
-          <h3 class="govuk-heading-m">Provider information</h3>
-            <div class="form-group">
                   <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Provider 1</p>
                   <p>M.I.T. Skills Limited</p>
                   <p>5.8 miles from {{ data['postcode'] }}</p>
@@ -110,12 +110,11 @@
                   <p>8.6 miles from {{ data['postcode'] }}</p>
                 <br>
                 <p><a href="#">Change providers</a></p>
-            </div>
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-          <h3 class="govuk-heading-m">Before our system sends the referrals</h3>
-            <div class="form-group">
+              <h3 class="govuk-heading-m">Before our system sends the referrals</h3>
                   <p>Make sure the employer agrees that we can send their details to the selected providers.</p>
-            </div>
+          </div>
 
 
 
