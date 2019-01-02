@@ -88,7 +88,8 @@ module.exports = function(router, _myData) {
     // results
     router.get('/' + version + '/results', function (req, res) {
         res.render(version + '/results', {
-          'radius':req.session.radius
+          'radius':req.session.radius,
+          'postcode':req.session.postcode
           })
     });
 

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check your answers
+  Provider results
 {% endblock %}
 
 {% block beforeContent %}
@@ -10,100 +10,56 @@
 
 {% block content %}
 <form class="form" method="post">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        Provider results
-      </h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+          Select providers
+        </h1>
+      </div>
     </div>
 
-<div class="results_header">
-      <div class="govuk-grid-column-one-half">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="skill">
-            Course or subject
-          </label>
-          <input class="govuk-input" id="skill" name="skill" type="text">
-        </div>
-      </div>
-
-      <div class="govuk-grid-column-one-half">
-        <div class="govuk-grid-column-one-third">
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="address-postcode">
-              Postcode
-            </label>
-            <input class="govuk-input govuk-input--width-5" id="address-postcode" name="address-postcode" type="text">
-          </div>
-        </div>
+      {% include "./_includes/searchbox-results.html" %}
+    <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
 
 
-        <div class="govuk-grid-column-one-third">
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="sort">
-                Within
-              </label>
-              <select class="govuk-select" id="sort" name="sort">
-                <option value="1mile">1 mile</option>
-                <option value="3miles">3 miles</option>
-                <option value="5miles">5 miles</option>
-                <option value="10miles" selected>10 miles</option>
-                <option value="25miles" >25 miles</option>
-              </select>
-            </div>
-        </div>
-        <div class="govuk-grid-column-one-third" style="padding-top: 30px">
-            <button class="govuk-button" style="background-color: #005ea5">Update</button>
-        </div>
-      </div>
-</div>
+                <p class="govuk-body"><span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">3 </span>results in <span class="govuk-body govuk-!-font-weight-bold">{ route } </span>within <span class="govuk-body govuk-!-font-weight-bold">{ radius } </span>of <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+                  <p><a href="employer-name">No suitable providers? Let us know</a></p>
 
-
-
-      <div class="govuk-grid-column-full">
-          <p class="govuk-body">3 results for arts within 25 miles of B91 3PU</p>
-
-          <div class="govuk-form-group">
-            <span id="provider-hint" class="govuk-hint">
-              Select all that apply.
-            </span>
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-            <div class="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="provider-1" name="provider" type="checkbox" value="1">
-                <label class="govuk-heading-m govuk-checkboxes__label" for="provider-1">
-                  Provider 1
-                </label>
-
-              </div>
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="provider-2" name="provider" type="checkbox" value="2">
-                <label class="govuk-heading-m govuk-checkboxes__label" for="provider-2">
-                  Provider 2
-                </label>
-              </div>
               <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="provider-3" name="provider" type="checkbox" value="3">
-                <label class="govuk-heading-m govuk-checkboxes__label" for="provider-3">
-                  Provider 3
-                </label>
-              </div>
-            </div>
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+              <div class="govuk-form-group">
+                <p class="govuk-hint">
+                  Choose who the employer wants to hear from
+                </p>
+                <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
 
+                <div class="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="provider-1" name="provider" type="checkbox" value="1">
+                    <label class="govuk-heading-m govuk-checkboxes__label" for="provider-1">
+                      M.I.T. Skills Ltd
+                      <span class="govuk-body">
+                        <p style="margin-bottom: 10px; margin-top: 5px">Solihull B91 3PU &nbsp;&nbsp;|&nbsp;&nbsp; 5.8 miles</p>
+
+                        <p class="govuk-body" style="margin-bottom: 5px">Has students learning:</p>
+                        <ul class="govuk-list govuk-list--bullet" style="margin-bottom: 0">
+                          <li>plumbing</li>
+                          <li>surveying</li>
+                          <li>bricklaying</li>
+                        </ul>
+                      </span>
+                    </label>
+                  </div>
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                </div>
+
+              <p><a href="#">Download results (PDF, under 25kb)</a></p>
+
+              <button class="govuk-button">Continue</button>
           </div>
-
-          <p><a href="employer-name">Report a provision gap</a></p>
-          <button class="govuk-button">Continue</button>
-
-
-      </div>
+    </div>
 
 </form>
 

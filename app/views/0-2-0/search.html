@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check your answers
+  Search
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,20 +14,54 @@
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-form-group">
-          <h1 class="govuk-heading-xl">Find providers</h1>
-          <p class="govuk-body">Use this service to:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>find providers with suitable, local students for your employers</li>
-            <li>send emails to providers and employers so they can start talking about placements</li>
-            <li>help us identify where there are not enough providers</li>
-          </ul>
+          <h1 class="govuk-heading-l">Find providers</h1>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="postcode">
+              Postcode of workplace
+            </label>
+            <input class="govuk-input govuk-input--width-5" id="postcode" name="postcode" value="{{ data['postcode'] }}" type="text">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="radius">
+              Show providers within:
+            </label>
+            <select class="govuk-select" id="radius" name="radius">
+              <option value="1mile">1 mile</option>
+              <option value="3miles">3 miles</option>
+              <option value="5miles">5 miles</option>
+              <option value="10miles" selected>10 miles</option>
+              <option value="25miles" >25 miles</option>
+            </select>
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="route">
+              Skill area
+            </label>
+            <select class="govuk-select" id="route" name="route">
+              <option value="agriculture" selected>Agriculture, environmental and animal care</option>
+              <option value="business">Business and administration</option>
+              <option value="care">Care services</option>
+              <option value="catering">Catering and hospitality</option>
+              <option value="construction">Construction</option>
+              <option value="creative">Creative and design</option>
+              <option value="digital">Digital</option>
+              <option value="education">Education and childcare</option>
+              <option value="engineering">Engineering and manufacturing</option>
+              <option value="hair">Hair and beauty</option>
+              <option value="health">Health and science</option>
+              <option value="legal">Legal, financial and accounting</option>
+            </select>
+          </div>
+
         </div>
+
+        <button class="govuk-button">Search</button>
       </div>
   </div>
 
-{% include "./_includes/searchbox.html" %}
-
 </form>
-
 
 {% endblock %}
