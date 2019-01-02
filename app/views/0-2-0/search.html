@@ -11,42 +11,23 @@
 {% block content %}
 <form class="form" method="post">
 
-
-
-
-        <div class="govuk-option-select filter-field-text js-collapsible">
-          <div class="container-head">
-            <label class="option-select-label" for="keywords">
-              Keyword search
-            </label>
-          </div>
-          <div class="container-search">
-            <input type="search" name="q" id="keywords" maxlength="200">
-            <input class="submit" type="submit" value="Search">
-          </div>
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+          <h1 class="govuk-heading-xl">Find providers</h1>
+          <p class="govuk-body">Use this service to:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>find providers with suitable, local students for your employers</li>
+            <li>send emails to providers and employers so they can start talking about placements</li>
+            <li>help us identify where there are not enough providers</li>
+          </ul>
         </div>
+      </div>
+  </div>
 
-        <div class="govuk-option-select filter-field-text js-collapsible">
-          <div class="container-head">
-            <label class="option-select-label" for="routeway">
-              Select a routeway
-            </label>
-          </div>
-          <div class="govuk-form-group" style="margin-bottom: 5px">
-            <select class="govuk-select" id="sort" name="sort">
-              <option value="published">Recently published</option>
-              <option value="updated" selected>Recently updated</option>
-              <option value="views">Most views</option>
-              <option value="comments">Most comments</option>
-            </select>
-          </div>
-        </div>
+{% include "./_includes/searchbox.html" %}
+
 </form>
 
-
-
-
-
-    </div>
 
 {% endblock %}

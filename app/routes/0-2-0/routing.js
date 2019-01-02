@@ -62,9 +62,33 @@ module.exports = function(router, _myData) {
       }
     });
 
+    // sign-in
+    router.get('/' + version + '/signin', function (req, res) {
+        res.render(version + '/signin', {
+          })
+    });
+
+    router.post('/' + version + '/signin', function (req, res){
+      res.redirect(301, './search');
+    });
+
+
+    // search
+    router.get('/' + version + '/search', function (req, res) {
+        res.render(version + '/search', {
+          })
+    });
+
+    router.post('/' + version + '/search', function (req, res){
+      req.session.postcode = req.body.postcode,
+      req.session.radius = req.body.radius
+      res.redirect(301, './results');
+    });
+
     // results
     router.get('/' + version + '/results', function (req, res) {
         res.render(version + '/results', {
+          'radius':req.session.radius
           })
     });
 
