@@ -58,7 +58,7 @@ module.exports = function(router, _myData) {
       if(req.body.skill != "plumbing"){
         res.redirect(301, './provision-gap');
       }else {
-        res.redirect(301, './results');
+        res.redirect(301, './provider-results');
       }
     });
 
@@ -81,19 +81,21 @@ module.exports = function(router, _myData) {
 
     router.post('/' + version + '/search', function (req, res){
       req.session.postcode = req.body.postcode,
-      req.session.radius = req.body.radius
-      res.redirect(301, './results');
+      req.session.radius = req.body.radius,
+      req.session.route = req.body.route
+      res.redirect(301, './provider-results');
     });
 
-    // results
-    router.get('/' + version + '/results', function (req, res) {
-        res.render(version + '/results', {
+    // provider-results
+    router.get('/' + version + '/provider-results', function (req, res) {
+        res.render(version + '/provider-results', {
           'radius':req.session.radius,
-          'postcode':req.session.postcode
+          'postcode':req.session.postcode,
+          'route':req.session.radius
           })
     });
 
-    router.post('/' + version + '/results', function (req, res){
+    router.post('/' + version + '/provider-results', function (req, res){
       res.redirect(301, './enter-employer-name');
     });
 

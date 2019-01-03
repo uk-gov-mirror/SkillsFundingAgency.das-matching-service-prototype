@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Provider results
+{% endblock %}
+
+{% block beforeContent %}
+<a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+          Select providers
+        </h1>
+      </div>
+    </div>
+
+    {% include "./_includes/searchbox-results.html" %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        <p class="govuk-body"><span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">3 </span>results in <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within <span class="govuk-body govuk-!-font-weight-bold">{{ data['radius']}} </span>of <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+        <p><a href="employer-name">No suitable providers? Let us know</a></p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<!-- results -->
+
+    {% include "./_includes/results_HealthAndScience.html" %}
+
+
+<!-- save and continue -->
+
+          <div class="govuk-form-group">
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Save results as a PDF
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>You can:</p>
+                <ul class="govuk-list govuk-list--bullet" style="margin-bottom: 0">
+                  <li><a href="#">Save all results (PDF, under XKb)</a></li>
+                  <li><a href="#">Save selected results (PDF, under XKb)</a></li>
+                </ul>
+
+              </div>
+            </details>
+          </div>
+
+          <button class="govuk-button">Notify selected providers</button>
+      </div>
+    </div>
+
+</form>
+
+
+{% endblock %}

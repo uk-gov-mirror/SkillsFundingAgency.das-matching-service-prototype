@@ -4,9 +4,9 @@
         <div class="govuk-grid-column-one-quarter">
           <div class="govuk-form-group" style="margin-bottom: 15px">
             <label class="govuk-label govuk-!-font-weight-bold" for="postcode">
-              Employer postcode
+              Postcode of workplace
             </label>
-            <input class="govuk-input govuk-!-width-full" id="postcode" name="postcode" value="{{ data['postcode'] }}" type="text">
+            <input class="govuk-input govuk-input--width-5" id="postcode" name="postcode" value="{{ data['postcode'] }}" type="text">
           </div>
         </div>
 
@@ -15,7 +15,7 @@
             <label class="govuk-label govuk-!-font-weight-bold" for="radius">
               Providers within
             </label>
-            <select class="govuk-select govuk-!-width-full" id="radius" name="radius">
+            <select class="govuk-select" id="radius" name="radius">
               <option value="1mile">1 mile</option>
               <option value="3miles">3 miles</option>
               <option value="5miles">5 miles</option>
