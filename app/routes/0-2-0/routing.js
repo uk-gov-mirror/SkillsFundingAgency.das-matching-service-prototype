@@ -309,6 +309,8 @@ module.exports = function(router, _myData) {
     // confirm-gap
     router.get('/' + version + '/confirm-gap', function (req, res) {
         res.render(version + '/confirm-gap', {
+          'postcode':req.session.postcode,
+          'route':req.session.route
           })
     });
 
