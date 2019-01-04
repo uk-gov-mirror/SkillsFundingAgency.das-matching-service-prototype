@@ -17,7 +17,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/start', function (req, res){
-      res.redirect(301, './placements');
+      res.redirect(301, './search');
     });
 
     // placements
@@ -69,7 +69,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/signin', function (req, res){
-      res.redirect(301, './search');
+      res.redirect(301, './start');
     });
 
 
@@ -86,6 +86,18 @@ module.exports = function(router, _myData) {
       res.redirect(301, './provider-results');
     });
 
+    // filter
+    router.get('/' + version + '/filter', function (req, res) {
+        res.render(version + '/filter', {
+          'keyword':req.session.keyword
+          })
+    });
+
+    router.post('/' + version + '/filter', function (req, res){
+      req.session.keyword = req.body.keyword
+      res.redirect(301, './search');
+    });
+
     // provider-results
     router.get('/' + version + '/provider-results', function (req, res) {
         res.render(version + '/provider-results', {
@@ -96,7 +108,13 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/provider-results', function (req, res){
-      res.redirect(301, './enter-employer-name');
+      if (req.body.resultsAction == "filter") {
+        res.redirect(301, './provider-results');
+      } else if (req.body.resultsAction== 'searchAgain') {
+        res.redirect(301, './provider-results');
+      } else {
+        res.redirect(301, './placements');
+      }
     });
 
 

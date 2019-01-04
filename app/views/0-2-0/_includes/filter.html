@@ -1,0 +1,17 @@
+<div class="govuk-option-select filter-field-text js-collapsible">
+    <div class="container-head">
+      <label class="option-select-label" for="keyword">
+        Filter results by keyword
+      </label>
+    </div>
+  <label class="govuk-hint" for="keyword">For example, social care</label>
+    <div class="container-search">
+      <input type="search" name="keyword" id="keyword" maxlength="200" value="{{ data['keyword'] }}">
+      <input class="submit" type="submit" name="resultsAction" value="filter">
+    </div>
+  {% if (data['keyword'] != "") %}
+<a href="#">Remove filter</a>
+  {% else %}
+
+  {% endif %}
+</div>
