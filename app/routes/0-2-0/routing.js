@@ -36,31 +36,31 @@ module.exports = function(router, _myData) {
       res.redirect(301, './enter-employer-name');
     });
 
-    // location
-    router.get('/' + version + '/location', function (req, res) {
-        res.render(version + '/location', {
-          })
-    });
+    // // location
+    // router.get('/' + version + '/location', function (req, res) {
+    //     res.render(version + '/location', {
+    //       })
+    // });
+    //
+    // router.post('/' + version + '/location', function (req, res){
+    //   res.redirect(301, './course');
+    // });
 
-    router.post('/' + version + '/location', function (req, res){
-      res.redirect(301, './course');
-    });
-
-    // course
-    router.get('/' + version + '/course', function (req, res) {
-        res.render(version + '/course', {
-          myData : req.session.myData
-          })
-    });
-
-    router.post('/' + version + '/course', function (req, res){
-      req.session.skill = req.body.skill;
-      if(req.body.skill != "plumbing"){
-        res.redirect(301, './provision-gap');
-      }else {
-        res.redirect(301, './provider-results');
-      }
-    });
+    // // course
+    // router.get('/' + version + '/course', function (req, res) {
+    //     res.render(version + '/course', {
+    //       myData : req.session.myData
+    //       })
+    // });
+    //
+    // router.post('/' + version + '/course', function (req, res){
+    //   req.session.skill = req.body.skill;
+    //   if(req.body.skill != "plumbing"){
+    //     res.redirect(301, './provision-gap');
+    //   }else {
+    //     res.redirect(301, './provider-results');
+    //   }
+    // });
 
     // sign-in
     router.get('/' + version + '/signin', function (req, res) {
@@ -86,31 +86,74 @@ module.exports = function(router, _myData) {
       res.redirect(301, './provider-results');
     });
 
-    // filter
-    router.get('/' + version + '/filter', function (req, res) {
-        res.render(version + '/filter', {
-          'keyword':req.session.keyword
-          })
-    });
-
-    router.post('/' + version + '/filter', function (req, res){
-      req.session.keyword = req.body.keyword
-      res.redirect(301, './search');
-    });
+    // // filter
+    // router.get('/' + version + '/_includes/filter', function (req, res) {
+    //     res.render(version + '/_includes/filter', {
+    //       })
+    // });
+    //
+    // router.post('/' + version + '/_includes/filter', function (req, res){
+    //   req.session.keyword = req.body.keyword
+    //   if (req.body.keyword != "") {
+    //     res.redirect(301, './provider-results-filter');
+    //   } else if (req.body.keyword == "") {
+    //       res.redirect(301, './provider-results');
+    //   }
+    // });
+    //
+    // // filter-applied
+    // router.get('/' + version + '/_includes/filter-applied', function (req, res) {
+    //     res.render(version + '/_includes/filter-applied', {
+    //       })
+    // });
+    //
+    // router.post('/' + version + '/_includes/filter', function (req, res){
+    //   req.session.keyword = req.body.keyword
+    //   if (req.body.keyword != "") {
+    //     res.redirect(301, './provider-results-filter');
+    //   } else if (req.body.keyword == "") {
+    //       res.redirect(301, './provider-results');
+    //   }
+    // });
 
     // provider-results
     router.get('/' + version + '/provider-results', function (req, res) {
         res.render(version + '/provider-results', {
           'radius':req.session.radius,
           'postcode':req.session.postcode,
-          'route':req.session.radius
+          'route':req.session.radius,
+          'keyword':req.session.keyword
           })
     });
 
     router.post('/' + version + '/provider-results', function (req, res){
-      if (req.body.resultsAction == "filter") {
+      if (req.body.resultsAction == "filter" && req.body.keyword != "") {
+        res.redirect(301, './provider-results-filter');
+      } else if (req.body.resultsAction == "filter" && req.body.keyword == "") {
+          res.redirect(301, 'provider-results');
+      } else if (req.body.resultsAction== "searchAgain") {
         res.redirect(301, './provider-results');
-      } else if (req.body.resultsAction== 'searchAgain') {
+      } else {
+        res.redirect(301, './placements');
+      }
+    });
+
+    // provider-results-filter
+    router.get('/' + version + '/provider-results-filter', function (req, res) {
+        res.render(version + '/provider-results-filter', {
+          'radius':req.session.radius,
+          'postcode':req.session.postcode,
+          'route':req.session.radius,
+          'keyword':req.session.keyword
+          })
+    });
+
+    router.post('/' + version + '/provider-results-filter', function (req, res){
+      if (req.body.resultsAction == "filter" && req.body.keyword != "") {
+        res.redirect(301, './provider-results-filter');
+      } else if (req.body.resultsAction == "filter" && req.body.keyword == "") {
+          res.redirect(301, './provider-results');
+      } else if (req.body.resultsAction== "searchAgain") {
         res.redirect(301, './provider-results');
       } else {
         res.redirect(301, './placements');
