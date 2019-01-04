@@ -121,7 +121,7 @@ module.exports = function(router, _myData) {
         res.render(version + '/provider-results', {
           'radius':req.session.radius,
           'postcode':req.session.postcode,
-          'route':req.session.radius,
+          'route':req.session.route,
           'keyword':req.session.keyword
           })
     });
@@ -143,7 +143,7 @@ module.exports = function(router, _myData) {
         res.render(version + '/provider-results-filter', {
           'radius':req.session.radius,
           'postcode':req.session.postcode,
-          'route':req.session.radius,
+          'route':req.session.route,
           'keyword':req.session.keyword
           })
     });
@@ -180,7 +180,9 @@ module.exports = function(router, _myData) {
           'businessName':req.session.businessName,
           'roleInfo':req.session.rollInfo,
           'extra':req.session.extra,
-          'extraReq':req.session.extraReq
+          'extraReq':req.session.extraReq,
+          'route':req.session.route
+
           })
     });
 
@@ -212,6 +214,7 @@ module.exports = function(router, _myData) {
     router.get('/' + version + '/check-CRM', function (req, res) {
         res.render(version + '/check-CRM', {
           'businessName':req.session.businessName,
+          'route':req.session.route
           })
     });
 
@@ -253,22 +256,22 @@ module.exports = function(router, _myData) {
     // confirm-employer
     router.get('/' + version + '/confirm-employer', function (req, res) {
         res.render(version + '/confirm-employer', {
+          'businessName':req.session.businessName
           })
     });
 
     router.post('/' + version + '/confirm-employer', function (req, res){
-      req.session.businessName = req.body.businessName
       res.redirect(301, './check-answers');
     });
 
     // confirm-employer-gap
     router.get('/' + version + '/confirm-employer-gap', function (req, res) {
         res.render(version + '/confirm-employer-gap', {
+          'businessName':req.session.businessName
           })
     });
 
     router.post('/' + version + '/confirm-employer-gap', function (req, res){
-      req.session.businessName = req.body.businessName
       res.redirect(301, './confirm-gap');
     });
 

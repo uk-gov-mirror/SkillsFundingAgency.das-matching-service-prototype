@@ -25,11 +25,11 @@
               <dt class="app-check-your-answers__question">
                 Postcode of workplace
               </dt>
-              <dd class="app-check-your-answers__answer">
+              <dd class="app-check-your-answers__answer" style="text-transform: uppercase">
                 {{ data['postcode'] }}
               </dd>
               <dd class="app-check-your-answers__change">
-                <a href="location">
+                <a href="search">
                   Change<span class="govuk-visually-hidden"> postcode of workplace</span>
                 </a>
               </dd>
@@ -40,10 +40,10 @@
                 Type of placement
               </dt>
               <dd class="app-check-your-answers__answer">
-                {route}
+                {{ data['route'] }}
               </dd>
               <dd class="app-check-your-answers__change">
-                <a href="#">
+                <a href="search">
                   Change<span class="govuk-visually-hidden"> type of placement</span>
                 </a>
               </dd>
@@ -61,7 +61,9 @@
                 {% endif %}
               </dd>
               <dd class="app-check-your-answers__change">
-
+                <a href="placements">
+                  Change<span class="govuk-visually-hidden"> number of placements</span>
+                </a>
               </dd>
             </div>
 
@@ -109,7 +111,7 @@
                   <p>Heart of Worcestershire College</p>
                   <p>8.6 miles from {{ data['postcode'] }}</p>
                 <br>
-                <p><a href="#">Change providers</a></p>
+                <p><a href="provider-results">Change providers</a></p>
                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
               <h3 class="govuk-heading-m">Before our system sends the referrals</h3>
