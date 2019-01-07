@@ -6,6 +6,7 @@
 
 {% block beforeContent %}
   {% include "includes/phase_banner.html" %}
+  <a href="start" style="float:right; margin-top:10px">Finish and start again</a>
   <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
@@ -53,6 +54,7 @@
 <!-- Dynamic - END -->
 
               <div class="govuk-form-group">
+                <p class="govuk-body"><a href="#">Open {{ data['businessName'] }}'s CRM record (opens in a new window or tab)</a></p>
                 <div class="govuk-radios govuk-radios--inline">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes">
@@ -69,7 +71,7 @@
                 </div>
               </div>
 
-              <p class="govuk-body"><a href="#">Open {{ data['businessName'] }}'s CRM record</a></p>
+
 
 
 

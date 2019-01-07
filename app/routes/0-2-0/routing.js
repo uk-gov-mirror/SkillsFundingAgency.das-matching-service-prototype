@@ -168,7 +168,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/one-provider', function (req, res){
-      res.redirect(301, './employer-name');
+      res.redirect(301, './placements');
     });
 
     // check-answers

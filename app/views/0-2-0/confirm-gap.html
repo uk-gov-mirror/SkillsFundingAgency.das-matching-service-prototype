@@ -6,6 +6,7 @@
 
 {% block beforeContent %}
   {% include "includes/phase_banner.html" %}
+  <a href="start" style="float:right; margin-top:10px">Finish and start again</a>
   <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
@@ -28,7 +29,7 @@
                   {{ data['postcode'] }}
                 </dd>
                 <dd class="app-check-your-answers__change">
-                  <a href="#">
+                  <a href="provider-results">
                     Change<span class="govuk-visually-hidden"> postcode</span>
                   </a>
                 </dd>
@@ -42,8 +43,8 @@
                   {{ data['route'] }}
                 </dd>
                 <dd class="app-check-your-answers__change">
-                  <a href="#">
-                    Change<span class="govuk-visually-hidden"> type of plaement</span>
+                  <a href="provider-results">
+                    Change<span class="govuk-visually-hidden"> type of placement</span>
                   </a>
                 </dd>
               </div>
