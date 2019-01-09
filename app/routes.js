@@ -13,6 +13,8 @@ router.get('/', function (req, res) {
 // Add your routes here - above the module.exports line
 require('./routes/0-1-0/routing.js')(router, JSON.parse(JSON.stringify(_myData)));
 require('./routes/0-2-0/routing.js')(router, JSON.parse(JSON.stringify(_myData)));
+require('./routes/0-3-0/routing.js')(router, JSON.parse(JSON.stringify(_myData)));
+
 
 
 module.exports = router

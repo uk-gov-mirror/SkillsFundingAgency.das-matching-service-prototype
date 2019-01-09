@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check CRM
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Update {{ data['businessName'] }}'s information</h1>
+
+      <form class="form" method="post">
+
+      {% if route == "care" or route == "education" or route == "hair" %}
+
+      {% else %}
+        <h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+          <p class="govuk-body">Choose the closest fit:</p>
+
+        <!-- hardcoded for health and science for now -->
+        <div class="govuk-form-group">
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="health-1" name="health" type="radio" value="Vsatisfied">
+                <label class="govuk-label govuk-radios__label" for="health-1">
+                  Health
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="health-2" name="health" type="radio" value="satisfied">
+                <label class="govuk-label govuk-radios__label" for="health-2">
+                  Healthcare science
+                </label>
+              </div>
+            </div>
+        </div>
+        <!-- hardcoded for health and science for now -->
+
+
+      {% endif %}
+
+
+          <h3 class="govuk-heading-m">Make sure {{ data['businessName'] }}’s CRM record is up to date</h3>
+
+
+      <!-- Dynamic - only if changed details in add-edit-employer or edit-employer-->
+
+            <!-- <p>You changed the employer's contact details:</p>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-quarter govuk-heading-s">Business name</div>
+                <div class="govuk-grid-column-three-quarters govuk-body">{{ data['businessName'] }}</div>
+              </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-quarter govuk-heading-s">Contact name for placements</div>
+                <div class="govuk-grid-column-three-quarters govuk-body">Joe Bloggs</div>
+              </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-quarter govuk-heading-s">Contact phone number</div>
+                <div class="govuk-grid-column-three-quarters govuk-body">01234 567890</div>
+              </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-quarter govuk-heading-s">Contact email</div>
+                <div class="govuk-grid-column-three-quarters govuk-body">newemail@gmail.com</div>
+              </div>  -->
+
+<!-- Dynamic - END -->
+
+              <div class="govuk-form-group">
+                <p class="govuk-body">Make sure you have:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>added a brief summary of your most recent conversation</li>
+                    <li>updated the employer’s AUPA status, if it has changed </li>
+                  </ul>
+
+                <p class="govuk-body"><a href="#">Open {{ data['businessName'] }}'s CRM record (opens in a new window or tab)</a></p>
+
+              </div>
+
+
+
+
+
+        <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <div class="govuk-form-group">
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="CRM-confirm" name="CRM-confirm" type="checkbox" value="CRM-confirm">
+                <label class="govuk-label govuk-checkboxes__label" for="CRM-confirm">
+                  I confirm the employer’s CRM record is up to date
+                </label>
+              </div>
+            </div>
+        </div> -->
+
+        <button class="govuk-button">Finish</button>
+        <p><a href="give-feedback">Give us feedback</a></p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
