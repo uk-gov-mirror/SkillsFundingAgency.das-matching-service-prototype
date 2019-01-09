@@ -1,6 +1,6 @@
 module.exports = function(router, _myData) {
 
-    var version = "0-2-0";
+    var version = "0-3-0";
 
     router.all('/' + version + '/*', function(req, res, next){
       if(!req.session.myData || req.query.resetSession){

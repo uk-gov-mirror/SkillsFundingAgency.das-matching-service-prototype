@@ -31,12 +31,12 @@
       </div>
 
       <div class="govuk-grid-column-two-thirds">
-        {% if (data['keyword'] == "children") %}
-          <p class="govuk-body"><span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">5 </span>results for <span class="govuk-body govuk-!-font-weight-bold">{{ data['keyword']}} </span>in <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within <span class="govuk-body govuk-!-font-weight-bold">{{ data['radius']}} </span>of <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+        {% if (data['keyword'] == "physiotherapy") or (data['keyword'] == "physio") %}
+          <p class="govuk-body"><span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">4 </span>results for <span class="govuk-body govuk-!-font-weight-bold">{{ data['keyword']}} </span>in <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within <span class="govuk-body govuk-!-font-weight-bold">{{ data['radius']}} </span>of <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
           <p><a href="employer-name">No suitable providers? Let us know</a></p>
 
           <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-            {% include "./_includes/results_HealthAndScience_children.html" %}
+            {% include "./_includes/results_HealthAndScience_10miles_physio.html" %}
 
             <div class="govuk-form-group">
               <details class="govuk-details">
@@ -58,7 +58,7 @@
 
             <button class="govuk-button">Notify selected providers</button>
 
-        {% elseif (data['keyword'] == "disability") %}
+        <!-- {% elseif (data['keyword'] == "disability") %}
           <p class="govuk-body"><span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">8 </span>results for <span class="govuk-body govuk-!-font-weight-bold">{{ data['keyword']}} </span>in <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within <span class="govuk-body govuk-!-font-weight-bold">{{ data['radius']}} </span>of <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
           <p><a href="employer-name">No suitable providers? Let us know</a></p>
 
@@ -110,7 +110,7 @@
               </details>
             </div>
 
-            <button class="govuk-button">Notify selected providers</button>
+            <button class="govuk-button">Notify selected providers</button> -->
 
         <!-- results -->
 
