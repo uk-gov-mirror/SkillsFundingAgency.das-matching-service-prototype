@@ -25,6 +25,8 @@
 
     <!-- results -->
 
+    {% if route == "health and science" %}
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
         {% include "./_includes/filter.html" %}
@@ -37,7 +39,6 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
         {% include "./_includes/results_HealthAndScience_10miles.html" %}
 
-    <!-- save and continue -->
 
         <div class="govuk-form-group">
           <details class="govuk-details">
@@ -57,7 +58,25 @@
           </details>
         </div>
 
-          <button class="govuk-button" name="resultsAction" value="continue">Notify selected providers</button>
+        <button class="govuk-button" name="resultsAction" value="continue">Notify selected providers</button>
+
+      {% else %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class= "form-group">
+            <p class="govuk-body"><span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">0 </span>results for <span class="govuk-body govuk-!-font-weight-bold">{{ data['keyword']}} </span>in <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within <span class="govuk-body govuk-!-font-weight-bold">{{ data['radius']}} </span>of <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+            <p class="govuk-body">You can:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>try a different keyword or check the spelling</li>
+              <li>remove the keyword filter</li>
+              <li>increase the distance from the employer’s postcode</li>
+            </ul>
+            <p>If neither of these work, <a href="employer-name">tell us that there are no suitable providers</a>.</p>
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
 
       </div>
     </div>
