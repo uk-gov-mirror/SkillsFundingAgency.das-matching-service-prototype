@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm employer
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a href="start" style="float:right; margin-top:10px">Finish and start again</a>
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Confirm employer details</h1>
+
+      <form class="form" method="post">
+
+        <div class="form-group">
+          <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Business name</p>
+          <p>{{ data['businessName'] }}</p>
+      <br>
+        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Contact name</p>
+          <p>Joe Bloggs</p>
+      <br>
+        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Phone number</p>
+          <p>01234 567890</p>
+      <br>
+        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Email</p>
+          <p>employer@gmail.com</p>
+      <br>
+        <p><a href="edit-employer">Change contact details</a></p>
+        </div>
+
+        <button class="govuk-button">Confirm and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
