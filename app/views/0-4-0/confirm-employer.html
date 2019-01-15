@@ -21,17 +21,23 @@
 
         <div class="form-group">
           <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Business name</p>
-          <p>{{ data['businessName'] }}</p>
-      <br>
-        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Contact name</p>
-          <p>Joe Bloggs</p>
-      <br>
+          <p class="govuk-body">{% if data['businessName'] == null %}
+              Acme Ltd
+             {% else %}
+              {{ data['businessName'] }}
+             {% endif %}</p>
+
+        <p class="govuk-body"><a href="#">Find a different employer</a></p>
+
+        <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Contact name for placements</p>
+          <p class="govuk-body">Joe Bloggs</p>
+
         <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Phone number</p>
-          <p>01234 567890</p>
-      <br>
+          <p class="govuk-body">01234 567890</p>
+
         <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Email</p>
-          <p>employer@gmail.com</p>
-      <br>
+          <p class="govuk-body">j.bloggs@acmeltd.co.uk</p>
+
         <p><a href="edit-employer">Change contact details</a></p>
         </div>
 
