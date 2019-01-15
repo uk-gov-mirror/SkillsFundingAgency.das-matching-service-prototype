@@ -33,7 +33,11 @@
       </div>
 
       <div class="govuk-grid-column-two-thirds">
-        <p class="govuk-body"><span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">17 </span>results in <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within <span class="govuk-body govuk-!-font-weight-bold">{{ data['radius']}} </span>of <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+        <p class="govuk-body">
+          <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">17 </span>results in
+          <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within
+          <span class="govuk-body govuk-!-font-weight-bold">{% if data['radius'] == null %}10 miles {% else %}{{ data['radius']}} {% endif %}</span>of <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span>
+        </p>
         <p><a href="employer-name">No suitable providers? Let us know</a></p>
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
@@ -64,7 +68,11 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <div class= "form-group">
-            <p class="govuk-body"><span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">0 </span>results for <span class="govuk-body govuk-!-font-weight-bold">{{ data['keyword']}} </span>in <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within <span class="govuk-body govuk-!-font-weight-bold">{{ data['radius']}} </span>of <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+            <p class="govuk-body">
+              <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">0 </span>results for <span class="govuk-body govuk-!-font-weight-bold">{{ data['keyword']}} </span>in
+              <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within
+              <span class="govuk-body govuk-!-font-weight-bold">{% if data['radius'] == null %}10 miles {% else %}{{ data['radius']}} {% endif %} </span>of
+              <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
             <p class="govuk-body">You can:</p>
             <ul class="govuk-list govuk-list--bullet">
               <li>increase the distance from the employer’s postcode</li>

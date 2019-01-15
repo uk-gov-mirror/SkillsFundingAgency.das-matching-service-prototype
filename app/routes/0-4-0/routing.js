@@ -127,7 +127,8 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/provider-results', function (req, res){
-      req.session.route = req.body.route
+      req.session.route = req.body.route,
+      req.session.radius = req.body.radius
       if (req.body.resultsAction == "filter" && req.body.keyword != "") {
         res.redirect(301, './provider-results-filter');
       } else if (req.body.resultsAction == "filter" && req.body.keyword == "") {

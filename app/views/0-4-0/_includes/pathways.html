@@ -1,4 +1,8 @@
-{% if route == "agriculture" %}
+{% if route == "care" or route == "education" or route == "hair" %}
+
+{% elseif route == "agriculture" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
   <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
@@ -15,7 +19,9 @@
         </div>
       </div>
   </div>
-{% else if route == "business" %}
+{% elseif route == "business" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
   <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
@@ -32,7 +38,9 @@
         </div>
       </div>
   </div>
-{% else if route == "catering" %}
+{% elseif route == "catering" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
   <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
@@ -49,7 +57,9 @@
         </div>
       </div>
   </div>
-{% else if route == "construction" %}
+{% elseif route == "construction" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
   <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
@@ -72,7 +82,9 @@
         </div>
       </div>
   </div>
-{% else if route == "creative" %}
+{% elseif route == "creative" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
   <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
@@ -95,7 +107,9 @@
         </div>
       </div>
   </div>
-{% else if route == "digital" %}
+{% elseif route == "digital" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
   <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
@@ -118,7 +132,9 @@
         </div>
       </div>
   </div>
-{% else if route == "engineering" %}
+{% elseif route == "engineering" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
   <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
@@ -141,7 +157,9 @@
         </div>
       </div>
   </div>
-{% else if route == "health" %}
+{% elseif route == "health" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
   <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
@@ -159,6 +177,8 @@
       </div>
   </div>
 {% else %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
   <div class="govuk-form-group">
       <div class="govuk-radios">
         <div class="govuk-radios__item">
