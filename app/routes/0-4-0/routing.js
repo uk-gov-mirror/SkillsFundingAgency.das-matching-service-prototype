@@ -135,6 +135,40 @@ module.exports = function(router, _myData) {
           res.redirect(301, 'provider-results');
       } else if (req.body.resultsAction== "searchAgain") {
         res.redirect(301, './provider-results');
+          } else if (req.body.provider == "1") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "2") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "3") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "4") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "5") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "6") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "7") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "8") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "9") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "10") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "11") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "12") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "13") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "14") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "15") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "16") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "17") {
+            res.redirect(301, './one-provider');
       } else {
         res.redirect(301, './placements');
       }
@@ -151,21 +185,32 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/provider-results-filter', function (req, res){
+      req.session.provider = req.body.provider
       if (req.body.resultsAction == "filter" && req.body.keyword != "") {
         res.redirect(301, './provider-results-filter');
       } else if (req.body.resultsAction == "filter" && req.body.keyword == "") {
           res.redirect(301, './provider-results');
-      } else if (req.body.resultsAction== "searchAgain") {
+      } else if (req.body.resultsAction == "searchAgain") {
         res.redirect(301, './provider-results');
+          } else if (req.body.provider == "1") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "2") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "5") {
+            res.redirect(301, './one-provider');
+          } else if (req.body.provider == "9") {
+            res.redirect(301, './one-provider');
       } else {
         res.redirect(301, './placements');
       }
+
     });
 
 
     // one-provider
     router.get('/' + version + '/one-provider', function (req, res) {
         res.render(version + '/one-provider', {
+          'provider':req.session.provider
           })
     });
 
@@ -183,7 +228,8 @@ module.exports = function(router, _myData) {
           'roleInfo':req.session.rollInfo,
           'extra':req.session.extra,
           'extraReq':req.session.extraReq,
-          'route':req.session.route
+          'route':req.session.route,
+          'provider':req.session.provider
 
           })
     });
