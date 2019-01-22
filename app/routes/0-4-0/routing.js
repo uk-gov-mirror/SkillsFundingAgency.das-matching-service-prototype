@@ -303,6 +303,26 @@ module.exports = function(router, _myData) {
       res.redirect(301, './confirm-employer-gap');
     });
 
+    // add-employer-gap
+    router.get('/' + version + '/add-employer-gap', function (req, res) {
+        res.render(version + '/add-employer-gap', {
+          })
+    });
+
+    router.post('/' + version + '/add-employer-gap', function (req, res){
+      res.redirect(301, './confirm-employer-gap');
+    });
+
+    // add-employer
+    router.get('/' + version + '/add-employer', function (req, res) {
+        res.render(version + '/add-employer', {
+          })
+    });
+
+    router.post('/' + version + '/add-employer', function (req, res){
+      res.redirect(301, './confirm-employer');
+    });
+
     // confirm-employer
     router.get('/' + version + '/confirm-employer', function (req, res) {
         res.render(version + '/confirm-employer', {
@@ -365,6 +385,16 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/confirm-gap', function (req, res){
+      res.redirect(301, './provision-report');
+    });
+
+    // provision-report
+    router.get('/' + version + '/provision-report', function (req, res) {
+        res.render(version + '/provision-report', {
+          })
+    });
+
+    router.post('/' + version + '/provision-report', function (req, res){
       res.redirect(301, './check-CRM');
     });
 
