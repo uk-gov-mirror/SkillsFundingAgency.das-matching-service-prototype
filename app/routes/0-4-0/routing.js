@@ -391,6 +391,7 @@ module.exports = function(router, _myData) {
     // provision-report
     router.get('/' + version + '/provision-report', function (req, res) {
         res.render(version + '/provision-report', {
+          'businessName':req.session.businessName
           })
     });
 

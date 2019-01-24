@@ -29,11 +29,22 @@
 
         <div class="form-group">
           <h2 class="govuk-heading-m">What happens next</h2>
-            <p class="govuk-body">We will try and find providers who might be able to meet the employer’s placement requirements.</p>
-            <p class="govuk-body">If we find suitable providers, we will …</p>
-        
-            <button class="govuk-button">Continue</button>
+            <p class="govuk-body">We will try to find providers who might have suitable students for the employer.</p>
+            <p class="govuk-body">If we find any, we can arrange for them to contact the employer.</p>
+
+          <h2 class="govuk-heading-m">Before we share any contact details</h2>
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="provision-1" name="provision" type="checkbox">
+                <label class="govuk-label govuk-checkboxes__label" for="provision-1">
+                  {{ data['businessName'] }} is happy for us to share their details. This might be to a local enterprise partnership, who can help find suitable providers, or to the providers themselves.
+                </label>
+              </div>
+            </div>
         </div>
+
+        <button class="govuk-button">Continue</button>
+
       </form>
 
     </div>
