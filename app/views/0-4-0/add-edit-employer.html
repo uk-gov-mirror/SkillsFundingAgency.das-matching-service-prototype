@@ -15,33 +15,34 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Employer details</h1>
+      <h1 class="govuk-heading-l">
+        {% if data['businessName'] == "" %}
+          Acme Ltd's
+         {% else %}
+          {{ data['businessName'] }}'s
+         {% endif %} contact details</h1>
 
       <form class="form" method="post">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="contact-name">
-            Business name
-          </label>
 
-        </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="contact-name">
             Contact name for placements
           </label>
-          <input class="govuk-input govuk-input--width-20" id="contact-name" name="contact-name" type="text">
-        </div>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="contact-number">
-            Contact phone number
-          </label>
-          <input class="govuk-input govuk-input--width-20" id="contact-number" name="contact-number" type="tel">
+          <input class="govuk-input govuk-input--width-20" id="contact_name" name="contact_name" type="text" value="{% if data['contact_name'] == null %}Joe Bloggs{% else %}{{ data['contact_name'] }}{% endif %}">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="contact-name">
-            Contact email
+            Email
           </label>
-          <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email">
+          <input class="govuk-input govuk-input--width-20" id="contact_email" name="contact_email" type="email" value="{% if data['contact_email'] == null %}j.bloggs@acmeltd.co.uk{% else %}{{ data['contact_email'] }}{% endif %}">
         </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-number">
+            Phone number
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="contact_phone" name="contact_phone" type="tel" value="{% if data['contact_phone'] == null %}01234 567890{% else %}{{ data['contact_phone'] }}{% endif %}">
+        </div>
+
 
 
         <button class="govuk-button">Continue</button>

@@ -326,7 +326,10 @@ module.exports = function(router, _myData) {
     // confirm-employer
     router.get('/' + version + '/confirm-employer', function (req, res) {
         res.render(version + '/confirm-employer', {
-          'businessName':req.session.businessName
+          'businessName':req.session.businessName,
+          'contact_name':req.session.contact_name,
+          'contact_phone':req.session.contact_phone,
+          'contact_email':req.session.contact_email
           })
     });
 
@@ -337,7 +340,10 @@ module.exports = function(router, _myData) {
     // confirm-employer-gap
     router.get('/' + version + '/confirm-employer-gap', function (req, res) {
         res.render(version + '/confirm-employer-gap', {
-          'businessName':req.session.businessName
+          'businessName':req.session.businessName,
+          'contact_name':req.session.contact_name,
+          'contact_phone':req.session.contact_phone,
+          'contact_email':req.session.contact_email
           })
     });
 
@@ -359,20 +365,34 @@ module.exports = function(router, _myData) {
     // add-edit-employer
     router.get('/' + version + '/add-edit-employer', function (req, res) {
         res.render(version + '/add-edit-employer', {
+          'businessName':req.session.businessName,
+          'contact_name':req.session.contact_name,
+          'contact_phone':req.session.contact_phone,
+          'contact_email':req.session.contact_email
           })
     });
 
     router.post('/' + version + '/add-edit-employer', function (req, res){
+      req.session.contact_name = req.body.contact_name,
+      req.session.contact_phone = req.body.contact_phone,
+      req.session.contact_email = req.body.contact_email
       res.redirect(301, './confirm-employer-gap');
     });
 
     // edit-employer
     router.get('/' + version + '/edit-employer', function (req, res) {
         res.render(version + '/edit-employer', {
+          'businessName':req.session.businessName,
+          'contact_name':req.session.contact_name,
+          'contact_phone':req.session.contact_phone,
+          'contact_email':req.session.contact_email
           })
     });
 
     router.post('/' + version + '/edit-employer', function (req, res){
+      req.session.contact_name = req.body.contact_name,
+      req.session.contact_phone = req.body.contact_phone,
+      req.session.contact_email = req.body.contact_email
       res.redirect(301, './confirm-employer');
     });
 

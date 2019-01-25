@@ -14,13 +14,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Update {{ data['businessName'] }}'s information</h1>
+      <h1 class="govuk-heading-l">Update {% if data['businessName'] == "" %}
+        Acme Ltd's
+       {% else %}
+        {{ data['businessName'] }}'s
+       {% endif %} information</h1>
 
       <form class="form" method="post">
 
         {% include "./_includes/pathways.html" %}
 
-        <h3 class="govuk-heading-m">Make sure {{ data['businessName'] }}’s CRM record is up to date</h3>
+        <h3 class="govuk-heading-m">Make sure {% if data['businessName'] == "" %}
+          Acme Ltd's
+         {% else %}
+          {{ data['businessName'] }}'s
+         {% endif %} CRM record is up to date</h3>
 
 
       <!-- Dynamic - only if changed details in add-edit-employer or edit-employer-->
@@ -52,7 +60,11 @@
                     <li>updated the employer’s AUPA status, if it has changed </li>
                   </ul>
 
-                <p class="govuk-body"><a href="#">Open {{ data['businessName'] }}'s CRM record (opens in a new window or tab)</a></p>
+                <p class="govuk-body"><a href="#">Open {% if data['businessName'] == "" %}
+                  Acme Ltd's
+                 {% else %}
+                  {{ data['businessName'] }}'s
+                 {% endif %} CRM record (opens in a new window or tab)</a></p>
 
               </div>
 
