@@ -15,7 +15,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Check details and report lack of providers</h1>
+      <h1 class="govuk-heading-l">Confirm placement details</h1>
 
       <form class="form" method="post">
 
@@ -30,7 +30,7 @@
               </dd>
               <dd class="app-check-your-answers__change">
                 <a href="provider-results">
-                  Change<span class="govuk-visually-hidden"c> postcode</span>
+                  Change<span class="govuk-visually-hidden"> postcode</span>
                 </a>
               </dd>
             </div>
@@ -49,17 +49,31 @@
               </dd>
             </div>
 
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Searched for providers within
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {{ data['radius'] }}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="provider-results">
+                  Change<span class="govuk-visually-hidden"> distance</span>
+                </a>
+              </dd>
+            </div>
+
         </dl>
 
         <div class="govuk-form-group">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
-                What specific job did you want the student to do?
+                What specific job would the placement student do?
               </h2>
             </legend>
             <div class="govuk-form-group">
               <label class="govuk-hint" for="one-half">
-                For example, dental assistant, lab technician, sports coach
+                For example, admin assistant, care worker, bricklayer
               </label>
               <input class="govuk-input govuk-!-width-one-half" id="roleInfo" name="roleInfo" type="text">
             </div>
@@ -67,6 +81,8 @@
 
         <div class="form-group">
           <h3 class="govuk-heading-m">Does {{ data['businessName'] }} know how many placement students they want at this location?</h3>
+          <p class="govuk-hint">This can be an estimate</p>
+
             <div class="govuk-radios govuk-radios--conditional" data-module="radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="student-number-conditional-1" name="student-number" type="radio" value="yes" data-aria-controls="conditional-student-number-conditional-1">
@@ -92,7 +108,7 @@
             </div>
         </div>
 
-        <button class="govuk-button">Confirm and send report</button>
+        <button class="govuk-button">Confirm and report lack of providers</button>
 
       </form>
 

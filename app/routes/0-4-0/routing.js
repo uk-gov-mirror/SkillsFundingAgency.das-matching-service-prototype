@@ -206,6 +206,15 @@ module.exports = function(router, _myData) {
 
     });
 
+    // download-halt
+    router.get('/' + version + '/download-halt', function (req, res) {
+        res.render(version + '/download-halt', {
+          })
+    });
+
+    router.post('/' + version + '/download-halt', function (req, res){
+      res.redirect(301, './placements');
+    });
 
     // one-provider
     router.get('/' + version + '/one-provider', function (req, res) {
