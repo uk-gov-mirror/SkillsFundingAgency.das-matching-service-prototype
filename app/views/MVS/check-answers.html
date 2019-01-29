@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check answers
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a href="start" style="float:right; margin-top:10px">Finish and start again</a>
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Check {{ data['businessName'] }}'s answers</h1>
+
+      <form class="form" method="post">
+
+
+        <h3 class="govuk-heading-m">Placement information</h3>
+          <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 40px">
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Postcode of workplace
+              </dt>
+              <dd class="app-check-your-answers__answer" style="text-transform: uppercase">
+                {{ data['postcode'] }}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="search">
+                  Change<span class="govuk-visually-hidden"> postcode of workplace</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Type of placement
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {{ data['route'] }}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="search">
+                  Change<span class="govuk-visually-hidden"> type of placement</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Number of placements
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {% if (placements == "no") %}
+                  Not sure yet
+                {% else %}
+                  {{ data['placementNumber'] }}
+                {% endif %}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="placements">
+                  Change<span class="govuk-visually-hidden"> number of placements</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Job role
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                  {{ data['roleInfo'] }}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="placements">
+                  Change<span class="govuk-visually-hidden"> job role</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Extra requirements
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {% if (extra == "no") %}
+                  No
+                {% else %}
+                  {{ data['extraReq'] }}
+                {% endif %}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="placements">
+                  Change<span class="govuk-visually-hidden"> extra requirements</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <div class="form-group">
+              <h3 class="govuk-heading-m">Provider information</h3>
+
+                  <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Provider 1</p>
+                  <p>Newham Sixth Form College</p>
+                  <p>7.4 miles from {{ data['postcode'] }}</p>
+              <br>
+                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Provider 2</p>
+                  <p>Shooters Hill Sixth Form College</p>
+                  <p>9.3 miles from {{ data['postcode'] }}</p>
+              <br>
+                <p><a href="provider-results">Change providers</a></p>
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+              <h3 class="govuk-heading-m">Before our system sends the referral emails</h3>
+                <div class="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="declare" name="declare" type="checkbox">
+                    <label class="govuk-label govuk-checkboxes__label" for="declare">
+                      The employer has confirmed that we can send their details to the selected providers, and that these providers can contact them about industry placements.
+                    </label>
+                  </div>
+                </div>
+          </div>
+
+
+
+        <button class="govuk-button">Confirm and send emails</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

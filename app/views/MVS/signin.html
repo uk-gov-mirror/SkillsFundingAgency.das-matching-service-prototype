@@ -1,0 +1,44 @@
+{% extends "layout_signedOut.html" %}
+
+{% block pageTitle %}
+  Start page
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Sign in</h1>
+
+      <form class="form" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="national-insurance-number">
+            User ID or email address
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint">
+        </div>
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="national-insurance-number">
+            Password
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint">
+        </div>
+
+        <button class="govuk-button">
+          Sign in
+        </button>
+
+      <h2 class="govuk-heading-s">Problems signing in?</h2>
+
+        <p><a href="#">I forgot my password</a></p>
+        <p><a href="#">I don't have an account</a></p>
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
