@@ -21,7 +21,21 @@
 
       <h3 class="govuk-heading-m">Placement information</h3>
         <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 40px">
-            <div class="app-check-your-answers__contents">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Type of placement
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['route'] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="provider-results">
+                Change<span class="govuk-visually-hidden"> type of placement</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
               <dt class="app-check-your-answers__question">
                 Postcode of workplace
               </dt>
@@ -31,20 +45,6 @@
               <dd class="app-check-your-answers__change">
                 <a href="provider-results">
                   Change<span class="govuk-visually-hidden"> postcode</span>
-                </a>
-              </dd>
-            </div>
-
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
-                Type of placement
-              </dt>
-              <dd class="app-check-your-answers__answer">
-                {{ data['route'] }}
-              </dd>
-              <dd class="app-check-your-answers__change">
-                <a href="provider-results">
-                  Change<span class="govuk-visually-hidden"> type of placement</span>
                 </a>
               </dd>
             </div>
