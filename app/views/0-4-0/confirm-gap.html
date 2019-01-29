@@ -54,7 +54,11 @@
                 Searched for providers within
               </dt>
               <dd class="app-check-your-answers__answer">
-                {{ data['radius'] }}
+                {% if data['radius'] == null %}
+                    10 miles
+                   {% else %}
+                    {{ data['radius'] }}
+                   {% endif %}
               </dd>
               <dd class="app-check-your-answers__change">
                 <a href="provider-results">
