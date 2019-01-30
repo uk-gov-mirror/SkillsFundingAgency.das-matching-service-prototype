@@ -15,14 +15,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        {% if data['businessName'] == "" %}
-          Acme Ltd's
-         {% else %}
-          {{ data['businessName'] }}'s
-         {% endif %} contact details</h1>
+      <h1 class="govuk-heading-l">Check employer’s details</h1>
 
       <form class="form" method="post">
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-heading-m">
+          {% if data['businessName'] == "" %}
+            Acme Ltd
+           {% else %}
+            {{ data['businessName'] }}
+           {% endif %}</h2>
+
+           <p class="govuk-body"><a href="enter-employer-name">Find a different employer</a></p>
+        </div>
+
         <div class="govuk-form-group">
           <label class="govuk-label" for="contact-name">
             Contact name for placements
@@ -43,10 +50,10 @@
         </div>
 
 
+
         <button class="govuk-button">Continue</button>
 
       </form>
-
     </div>
   </div>
 

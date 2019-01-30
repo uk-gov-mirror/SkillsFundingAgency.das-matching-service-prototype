@@ -25,6 +25,20 @@
 
             <div class="app-check-your-answers__contents">
               <dt class="app-check-your-answers__question">
+                Type of placement
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {{ data['route'] }}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="search">
+                  Change<span class="govuk-visually-hidden"> type of placement</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
                 Postcode of workplace
               </dt>
               <dd class="app-check-your-answers__answer" style="text-transform: uppercase">
@@ -37,19 +51,7 @@
               </dd>
             </div>
 
-            <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
-                Type of placement
-              </dt>
-              <dd class="app-check-your-answers__answer">
-                {{ data['route'] }}
-              </dd>
-              <dd class="app-check-your-answers__change">
-                <a href="search">
-                  Change<span class="govuk-visually-hidden"> type of placement</span>
-                </a>
-              </dd>
-            </div>
+
 
             <div class="app-check-your-answers__contents">
               <dt class="app-check-your-answers__question">
@@ -83,7 +85,7 @@
               </dd>
             </div>
 
-            <div class="app-check-your-answers__contents">
+            <!-- <div class="app-check-your-answers__contents">
               <dt class="app-check-your-answers__question">
                 Extra requirements
               </dt>
@@ -99,7 +101,7 @@
                   Change<span class="govuk-visually-hidden"> extra requirements</span>
                 </a>
               </dd>
-            </div>
+            </div> -->
           </dl>
 
           <div class="form-group">
@@ -121,7 +123,7 @@
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="declare" name="declare" type="checkbox">
                     <label class="govuk-label govuk-checkboxes__label" for="declare">
-                      The employer has confirmed that we can send their details to the selected providers, and that these providers can contact them about industry placements.
+                      {{ data['businessName'] }} has confirmed that we can send their details to the selected providers, and that these providers can contact them about industry placements.
                     </label>
                   </div>
                 </div>

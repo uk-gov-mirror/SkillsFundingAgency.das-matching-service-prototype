@@ -135,41 +135,41 @@ module.exports = function(router, _myData) {
           res.redirect(301, 'provider-results');
       } else if (req.body.resultsAction== "searchAgain") {
         res.redirect(301, './provider-results');
-          } else if (req.body.provider == "1") {
-            res.redirect(301, './one-provider');
-          } else if (req.body.provider == "2") {
-            res.redirect(301, './one-provider');
-          } else if (req.body.provider == "3") {
-            res.redirect(301, './one-provider');
-          } else if (req.body.provider == "4") {
-            res.redirect(301, './one-provider');
-          } else if (req.body.provider == "5") {
-            res.redirect(301, './one-provider');
-          } else if (req.body.provider == "6") {
-            res.redirect(301, './one-provider');
-          } else if (req.body.provider == "7") {
-            res.redirect(301, './one-provider');
-          } else if (req.body.provider == "8") {
-            res.redirect(301, './one-provider');
-          } else if (req.body.provider == "9") {
-            res.redirect(301, './one-provider');
-          } else if (req.body.provider == "10") {
-            res.redirect(301, './one-provider');
-          } else if (req.body.provider == "11") {
-            res.redirect(301, './one-provider');
-          } else if (req.body.provider == "12") {
-            res.redirect(301, './one-provider');
-          } else if (req.body.provider == "13") {
-            res.redirect(301, './one-provider');
-          } else if (req.body.provider == "14") {
-            res.redirect(301, './one-provider');
-          } else if (req.body.provider == "15") {
-            res.redirect(301, './one-provider');
-          } else if (req.body.provider == "16") {
-            res.redirect(301, './one-provider');
-          } else if (req.body.provider == "17") {
-            res.redirect(301, './one-provider');
-      } else {
+      //     } else if (req.body.provider == "1") {
+      //       res.redirect(301, './one-provider');
+      //     } else if (req.body.provider == "2") {
+      //       res.redirect(301, './one-provider');
+      //     } else if (req.body.provider == "3") {
+      //       res.redirect(301, './one-provider');
+      //     } else if (req.body.provider == "4") {
+      //       res.redirect(301, './one-provider');
+      //     } else if (req.body.provider == "5") {
+      //       res.redirect(301, './one-provider');
+      //     } else if (req.body.provider == "6") {
+      //       res.redirect(301, './one-provider');
+      //     } else if (req.body.provider == "7") {
+      //       res.redirect(301, './one-provider');
+      //     } else if (req.body.provider == "8") {
+      //       res.redirect(301, './one-provider');
+      //     } else if (req.body.provider == "9") {
+      //       res.redirect(301, './one-provider');
+      //     } else if (req.body.provider == "10") {
+      //       res.redirect(301, './one-provider');
+      //     } else if (req.body.provider == "11") {
+      //       res.redirect(301, './one-provider');
+      //     } else if (req.body.provider == "12") {
+      //       res.redirect(301, './one-provider');
+      //     } else if (req.body.provider == "13") {
+      //       res.redirect(301, './one-provider');
+      //     } else if (req.body.provider == "14") {
+      //       res.redirect(301, './one-provider');
+      //     } else if (req.body.provider == "15") {
+      //       res.redirect(301, './one-provider');
+      //     } else if (req.body.provider == "16") {
+      //       res.redirect(301, './one-provider');
+      //     } else if (req.body.provider == "17") {
+      //       res.redirect(301, './one-provider');
+       } else {
         res.redirect(301, './placements');
       }
     });
@@ -264,7 +264,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/emails-sent', function (req, res){
-      res.redirect(301, './check-CRM');
+      res.redirect(301, './start');
     });
 
     // check-CRM
@@ -368,7 +368,7 @@ module.exports = function(router, _myData) {
 
     router.post('/' + version + '/enter-employer-name', function (req, res){
       req.session.businessName = req.body.businessName
-      res.redirect(301, './confirm-employer');
+      res.redirect(301, './edit-employer');
     });
 
     // add-edit-employer
@@ -402,7 +402,7 @@ module.exports = function(router, _myData) {
       req.session.contact_name = req.body.contact_name,
       req.session.contact_phone = req.body.contact_phone,
       req.session.contact_email = req.body.contact_email
-      res.redirect(301, './confirm-employer');
+      res.redirect(301, './check-answers');
     });
 
     // confirm-gap
