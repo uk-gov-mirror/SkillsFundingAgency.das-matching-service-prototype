@@ -62,6 +62,16 @@ module.exports = function(router, _myData) {
     //   }
     // });
 
+    // login-help
+    router.get('/' + version + '/login-help', function (req, res) {
+        res.render(version + '/login-help', {
+          })
+    });
+
+    router.post('/' + version + '/login-help', function (req, res){
+      res.redirect(301, './signin');
+    });
+
     // sign-in
     router.get('/' + version + '/signin', function (req, res) {
         res.render(version + '/signin', {
