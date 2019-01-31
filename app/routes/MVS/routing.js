@@ -82,6 +82,16 @@ module.exports = function(router, _myData) {
       res.redirect(301, './start');
     });
 
+    // failed-login
+    router.get('/' + version + '/failed-login', function (req, res) {
+        res.render(version + '/failed-login', {
+          })
+    });
+
+    router.post('/' + version + '/failed-login', function (req, res){
+      res.redirect(301, './login-help');
+    });
+
 
     // search
     router.get('/' + version + '/search', function (req, res) {
