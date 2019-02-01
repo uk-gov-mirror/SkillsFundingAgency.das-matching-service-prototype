@@ -405,7 +405,7 @@ module.exports = function(router, _myData) {
       req.session.contact_name = req.body.contact_name,
       req.session.contact_phone = req.body.contact_phone,
       req.session.contact_email = req.body.contact_email
-      res.redirect(301, './confirm-gap');
+      res.redirect(301, './placement-gap');
     });
 
     // edit-employer
