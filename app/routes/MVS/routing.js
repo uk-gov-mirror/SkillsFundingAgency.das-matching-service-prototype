@@ -425,11 +425,28 @@ module.exports = function(router, _myData) {
       res.redirect(301, './check-answers');
     });
 
+    // placement-gap
+    router.get('/' + version + '/placement-gap', function (req, res) {
+        res.render(version + '/placement-gap', {
+          })
+    });
+
+    router.post('/' + version + '/placement-gap', function (req, res){
+      res.redirect(301, './confirm-gap');
+    });
+
     // confirm-gap
     router.get('/' + version + '/confirm-gap', function (req, res) {
         res.render(version + '/confirm-gap', {
+          'placements':req.session.placements,
+          'placementNumber':req.session.placementNumber,
           'postcode':req.session.postcode,
-          'route':req.session.route
+          'businessName':req.session.businessName,
+          'roleInfo':req.session.rollInfo,
+          'extra':req.session.extra,
+          'extraReq':req.session.extraReq,
+          'route':req.session.route,
+          'provider':req.session.provider
           })
     });
 
