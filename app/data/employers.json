@@ -7,10 +7,118 @@
     },
     {
       "id": "WestCoastTrainsLimited",
-      "name": "West Coast Trains Limited"
+      "name": "West Coast Trains Limited (Virgin Trains)"
     },
     {
       "id": "WestHamptonGroupEuropeanOperationsLimited",
-      "name": "West Hampton Group European Operations Limited"
+      "name": "West Hampton Group European Operations Limited (West Hampton Group / Comstor European Operations Ltd)"
+    },
+    {
+      "id": "WestHamUnitedFootballClubLimited",
+      "name": "West Ham United Football Club Limited"
+    },
+    {
+      "id": "WestHameVillageKindergarden",
+      "name": "West Hame Village Kindergarden (West Hame Village Kindergarten)"
+    },
+    {
+      "id": "WestHanoverHospitalsNHSTrust",
+      "name": "West Hanover Hospitals NHS Trust"
+    },
+    {
+      "id": "WestLancashireBoroughCouncil",
+      "name": "West Lancashire Borough Council"
+    },
+    {
+      "id": "WestLondonMentalHealthNhsTrust",
+      "name": "West London Mental Health Nhs Trust"
+    },
+    {
+      "id": "WestMerciaPolice",
+      "name": "West Mercia Police (The Chief Constable of West Mercia)"
+    },
+    {
+      "id": "WestMidlandsAmbulanceServiceNHSFoundationTrust",
+      "name": "West Midlands Ambulance Service NHS Foundation Trust"
+    },
+    {
+      "id": "WestMidlandsPolice",
+      "name": "West Midlands Police (The Chief Constable of West Midlands)"
+    },
+    {
+      "id": "WestSuffolkNHSFoundationTrust",
+      "name": "West Suffolk NHS Foundation Trust"
+    },
+    {
+      "id": "WestSussexCountyCouncil",
+      "name": "West Sussex County Council"
+    },
+    {
+      "id": "WestSussexGolfClub",
+      "name": "West Sussex Golf Club"
+    },
+    {
+      "id": "WestVillaNursingHome",
+      "name": "West Villa Nursing Home"
+    },
+    {
+      "id": "WestWightAlpacas",
+      "name": "West Wight Alpacas"
+    },
+    {
+      "id": "WestYorkshireFireandRescueService",
+      "name": "West Yorkshire Fire and Rescue Service"
+    },
+    {
+      "id": "WestYorkshirePolice",
+      "name": "West Yorkshire Police"
+    },
+    {
+      "id": "WestbourneHouse",
+      "name": "Westbourne House"
+    },
+    {
+      "id": "WestcutToolCoLtd",
+      "name": "Westcut Tool Co Ltd"
+    },
+    {
+      "id": "WesternPowerDistribution",
+      "name": "Western Power Distribution"
+    },
+    {
+      "id": "WesternSussexHospitalsNHSFoundationTrust",
+      "name": "Western Sussex Hospitals NHS Foundation Trust"
+    },
+    {
+      "id": "WestfieldSportsguardsLtd",
+      "name": "Westfield Sportsguards Ltd"
+    },
+    {
+      "id": "WestfieldsVehicleServices",
+      "name": "Westfields Vehicle Services"
+    },
+    {
+      "id": "WestgateDentalPractice",
+      "name": "Westgate Dental Practice"
+    },
+    {
+      "id": "WestinghouseSpringfieldsFuelsLtd",
+      "name": "Westinghouse Springfields Fuels Ltd"
+    },
+    {
+      "id": "WestminsterCityCouncil",
+      "name": "Westminster City Council"
+    },
+    {
+      "id": "WestonAreaHealthNHSTrust",
+      "name": "Weston Area Health NHS Trust"
+    },
+    {
+      "id": "WestoverGroupLimited",
+      "name": "Westover Group Limited"
+    },
+    {
+      "id": "WestwoodEquestrian",
+      "name": "Westwood Equestrian"
     }
 ]}
