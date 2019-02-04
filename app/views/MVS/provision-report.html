@@ -16,7 +16,7 @@
 
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
-          Report sent
+          Report sent to the industry placement team
         </h1>
         <!-- <div class="govuk-panel__body">
           Your reference number
@@ -29,8 +29,8 @@
 
         <div class="form-group">
           <h2 class="govuk-heading-m">What happens next</h2>
-            <p class="govuk-body">We will try to find providers who might have suitable students for {{ data['businessName'] }}.</p>
-            <p class="govuk-body">If we find any, we can arrange for them to contact {{ data['businessName'] }}.</p>
+            <p class="govuk-body">We will try to find providers with students studying {{ data['route'] }} near <span style="text-transform: uppercase">{{ data['postcode'] }}</span>.</p>
+            <p>If {{ data['contact_name'] }} has agreed that we can share their contact details, we will contact them when we find suitable providers.</p>
         </div>
 
         <button class="govuk-button">Finish</button>
