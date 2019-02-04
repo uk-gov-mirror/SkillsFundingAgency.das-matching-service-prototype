@@ -385,8 +385,12 @@ module.exports = function(router, _myData) {
     });
 
     // enter-employer-name
-    router.get('/' + version + '/enter-employer-name', function (req, res) {
-        res.render(version + '/enter-employer-name', {
+    router.get('/' + version + '/employer-name', function (req, res) {
+      req.session.myData.employers.employers.sort(function(a, b){
+               return a.name.toUpperCase() > b.name.toUpperCase() ? 1 : b.name.toUpperCase() > a.name.toUpperCase() ? -1 : 0;
+           });
+        res.render(version + '/employer-name', {
+          myData : req.session.myData
           })
     });
 
