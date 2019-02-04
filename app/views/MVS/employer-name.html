@@ -21,11 +21,22 @@
 
 
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-!-width-two-thirds" for="two-thirds">
+          <!-- <label class="govuk-label govuk-!-width-two-thirds" for="two-thirds">
             Start typing their business name
           </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="{{ data['businessName'] }}" name="businessName" type="text">
-        </div>
+          <input class="govuk-input govuk-!-width-two-thirds" id="{{ data['businessName'] }}" name="businessName" type="text"> -->
+
+            <label class="govuk-label" for="businessName" id="businessNameLabel" >
+              Employer name
+            </label>
+            <select class="govuk-select" id="businessName" name="businessName">
+              <option value="">Select an employer</option>
+              {% for employer in myData.employers.employers %}
+              <option value="{{ employer.name }}">{{ employer.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
 
         <!-- <p style="margin-bottom: 20px"><a href="add-employer-gap"> I cannot find the employer</a></p> -->
 
@@ -38,4 +49,17 @@
     </div>
   </div>
 
+{% endblock %}
+{% block pageScripts %}
+  <script>
+  $(document).ready(function(){
+    // change labels
+    $("#businessNameLabel").text("Start typing their business name")
+    accessibleAutocomplete.enhanceSelectElement({
+      defaultValue: '',
+      selectElement: document.querySelector('#businessName'),
+      minLength: 2
+    })
+  });
+  </script>
 {% endblock %}

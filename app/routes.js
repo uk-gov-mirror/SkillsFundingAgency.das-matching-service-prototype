@@ -2,7 +2,9 @@ const express = require('express')
 const router = express.Router()
 
 var _myData = {
-  "industry-categories": require(__dirname + '/data/industry-categories.json')
+  "industry-categories": require(__dirname + '/data/industry-categories.json'),
+  "employers": require(__dirname + '/data/employers.json')
+
 }
 
 // Route index page

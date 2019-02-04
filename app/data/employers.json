@@ -1,0 +1,16 @@
+{
+  "id": "employers-1",
+  "employers": [
+    {
+      "id": "WestBromwichBuildingSociety",
+      "name": "West Bromwich Building Society"
+    },
+    {
+      "id": "WestCoastTrainsLimited",
+      "name": "West Coast Trains Limited"
+    },
+    {
+      "id": "WestHamptonGroupEuropeanOperationsLimited",
+      "name": "West Hampton Group European Operations Limited"
+    }
+]}
