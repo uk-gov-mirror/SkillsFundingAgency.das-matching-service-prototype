@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Match employers with providers for industry placements</h1>
+
+      <form class="form" method="post">
+
+        <div class="govuk-form-group">
+          <p class="govuk-body">Use this service to help employers:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>find local providers with suitable students</li>
+            <li>talk to providers about placements</li>
+            <li>tell us if there are not enough providers</li>
+          </ul>
+        </div>
+
+        <div class="govuk-inset-text">
+          You will only be able to find one type of placement for one location at a time.
+        </div>
+
+        <button class="govuk-button govuk-button--start">
+          Start now
+        </button>
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

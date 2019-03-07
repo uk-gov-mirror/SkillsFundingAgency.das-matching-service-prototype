@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm and send provision gap
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a href="start" style="float:right; margin-top:10px">Finish and start again</a>
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Check {{ data['businessName'] }}'s answers</h1>
+
+      <form class="form" method="post">
+
+      <h3 class="govuk-heading-m">Placement information</h3>
+
+      <div class="form-group">
+        <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 40px">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Type of placement
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['route'] }}
+            </dd>
+            <!-- <dd class="app-check-your-answers__change">
+              <a href="provider-results">
+                Change<span class="govuk-visually-hidden"> type of placement</span>
+              </a>
+            </dd> -->
+          </div>
+
+          <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Postcode of workplace
+              </dt>
+              <dd class="app-check-your-answers__answer" style="text-transform: uppercase">
+                {{ data['postcode'] }}
+              </dd>
+              <!-- <dd class="app-check-your-answers__change">
+                <a href="provider-results">
+                  Change<span class="govuk-visually-hidden"> postcode</span>
+                </a>
+              </dd> -->
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Searched for providers within
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {% if data['radius'] == null %}
+                    10 miles
+                   {% else %}
+                    {{ data['radius'] }}
+                   {% endif %}
+              </dd>
+              <!-- <dd class="app-check-your-answers__change">
+                <a href="provider-results">
+                  Change<span class="govuk-visually-hidden"> distance</span>
+                </a>
+              </dd> -->
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Job role
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                  {{ data['roleInfo'] }}
+              </dd>
+              <!-- <dd class="app-check-your-answers__change">
+                <a href="placement-gap">
+                  Change<span class="govuk-visually-hidden"> job role</span>
+                </a>
+              </dd> -->
+            </div>
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Number of placements
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {% if (placements == "no") %}
+                  At least 1
+                {% else %}
+                  {{ data['placementNumber'] }}
+                {% endif %}
+              </dd>
+              <!-- <dd class="app-check-your-answers__change">
+                <a href="placement-gap">
+                  Change<span class="govuk-visually-hidden"> number of placements</span>
+                </a>
+              </dd> -->
+            </div>
+
+        </dl>
+
+        <h2 class="govuk-heading-m">Before you tell us there are no providers</h2>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="provision-1" name="provision" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="provision-1">
+                {{ data['contact_name'] }} has confirmed that we can share their contact details. This might be to a local enterprise partnership, who can help find suitable providers, or to the providers themselves.
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="govuk-button">Confirm and send report</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

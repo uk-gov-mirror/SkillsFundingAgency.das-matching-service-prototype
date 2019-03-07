@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Provision gap report sent
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Report sent to the industry placement team
+        </h1>
+      </div>
+
+      <form class="form" method="post">
+
+        <div class="govuk-inset-text">
+          Remember to <a href="crm" target="_blank">update the employer’s CRM record (opens in a new window or tab)</a> with any new information.
+        </div>
+
+        <div class="form-group">
+          <h2 class="govuk-heading-m">What happens next</h2>
+            <p class="govuk-body">We will try to find providers with students studying {{ data['route'] }} near <span style="text-transform: uppercase">{{ data['postcode'] }}</span>.</p>
+            <p>If {{ data['contact_name'] }} has agreed that we can share their contact details, we will contact them when we find suitable providers.</p>
+        </div>
+
+        <button class="govuk-button">Finish</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Placement requirements (gaps)
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a href="start" style="float:right; margin-top:10px">Finish and start again</a>
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Placement information</h1>
+
+      <form class="form" method="post">
+
+        <p class="govuk-body">This information helps us understand where there are not enough providers for industry placements.</p>
+
+        <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                What specific job would the placement student do?
+              </h2>
+            </legend>
+            <div class="govuk-form-group">
+              <label class="govuk-hint" for="one-half">
+                For example, admin assistant, care worker, bricklayer
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="roleInfo" name="roleInfo" type="text">
+            </div>
+        </div>
+
+        <div class="form-group">
+          <h3 class="govuk-heading-m">Does the employer know how many placements they want at this location?</h3>
+          <p class="govuk-hint">This can be an estimate</p>
+
+            <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="student-number-conditional-1" name="placements" type="radio" value="yes" data-aria-controls="conditional-student-number-conditional-1">
+                  <label class="govuk-label govuk-radios__label" for="student-number-conditional-1">
+                    Yes
+                  </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-student-number-conditional-1">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="placementNumber">
+                    Number of placements
+                  </label>
+                  <input class="govuk-input govuk-input--width-3" id="{{ data['placementNumber'] }}" name="placementNumber">
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="student-number-conditional-2" name="placements" type="radio" value="no" data-aria-controls="conditional-student-number-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="student-number-conditional-2">
+                    No
+                  </label>
+              </div>
+            </div>
+        </div>
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
