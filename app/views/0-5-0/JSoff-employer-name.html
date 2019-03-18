@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Employer name (JS off)
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a href="start" style="float:right; margin-top:10px">Finish and start again</a>
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Who is the employer?</h1>
+
+      <form class="form" method="post">
+
+        <p class="govuk-body">If the postcode entered for this opportunity is not the right one, try another postcode like the employer's head office.</p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label visuallyhidden" for="postcode">Employer postcode</label>
+          <p class="govuk-body">Showing results for &nbsp;&nbsp;<input class="govuk-input govuk-input--width-5" style="float-right" id="postcode" name="postcode" type="text" value="{{ data['postcode'] }}">
+            <button class="govuk-button" style="background-color: #dee0e2; color: black; margin-bottom: 0px" name="employerAction" value="searchAgain">Search again</button></p>
+        </div>
+
+{% if data['postcode'] == "Wc2E 7ps" %}
+        <h2 class="govuk-heading-m">West Ham United Football Club Limited</h2>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              The right employer is not showing
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">Make sure you have tried different postcodes like:
+              <ul class="govuk-list govuk-list--bullet">
+                  <li>the employers head office</li>
+                  <li>the one on XXX the employer sends to the ESFA</li>
+              </ul>
+            </p>
+            <p class="govuk-body">If you still cannot find the employer, you can <a href="#">enter the employer manually</a>.</p>
+          </div>
+        </details>
+
+        <button class="govuk-button">Confirm and continue</button>
+
+{% elseif data['postcode'] == "Wc2E7ps" %}
+        <div class="govuk-form-group">
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="employer_1" name="employer_name" type="radio" value="Acme Ltd">
+              <label class="govuk-label govuk-radios__label" for="employer_1">
+                Acme Ltd
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="employer_2" name="employer_name" type="radio" value="West Ham United FC">
+              <label class="govuk-label govuk-radios__label" for="employer_2">
+                West Ham United Football Club Limited
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              The right employer is not showing
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">Make sure you have tried different postcodes like:
+              <ul class="govuk-list govuk-list--bullet">
+                  <li>the employers head office</li>
+                  <li>the one on XXX the employer sends to the ESFA</li>
+              </ul>
+            </p>
+            <p class="govuk-body">If you still cannot find the employer, you can <a href="#">enter the employer manually</a>.</p>
+          </div>
+        </details>
+
+        <button class="govuk-button">Confirm and continue</button>
+
+{% else %}
+        <h2 class="govuk-heading-m">We cannot find any employers for that postcode.</h2>
+
+        <p class="govuk-body">Make sure you have tried different postcodes like:
+          <ul class="govuk-list govuk-list--bullet">
+              <li>the employers head office</li>
+              <li>the one on XXX the employer sends to the ESFA</li>
+          </ul>
+        </p>
+        <p class="govuk-body">If you still cannot find the employer, you can <a href="#">enter the employer manually</a>.</p>
+{% endif %}
+
+
+
+
+
+
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

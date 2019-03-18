@@ -336,6 +336,22 @@ module.exports = function(router, _myData) {
       res.redirect(301, './add-edit-employer');
     });
 
+    // JSoff-employer-name
+    router.get('/' + version + '/JSoff-employer-name', function (req, res) {
+        res.render(version + '/JSoff-employer-name', {
+          'postcode':req.session.postcode
+          })
+    });
+
+    router.post('/' + version + '/JSoff-employer-name', function (req, res){
+      req.session.postcode = req.body.postcode
+      if (req.body.employerAction == "searchAgain") {
+        res.redirect(301, './JSoff-employer-name');
+      } else {
+        res.redirect(301, './edit-employer');
+      }
+    });
+
     // add-employer-gap
     router.get('/' + version + '/add-employer-gap', function (req, res) {
         res.render(version + '/add-employer-gap', {
