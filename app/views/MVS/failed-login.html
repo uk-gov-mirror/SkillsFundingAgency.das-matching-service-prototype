@@ -1,12 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Log in to Find an industry placement
+  Your account does not have permission to access this service
 {% endblock %}
 
 {% block beforeContent %}
   {% include "includes/phase_banner.html" %}
-  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -16,11 +15,13 @@
 
       <form class="form" method="post">
 
-        <h1 class="govuk-heading-l">You need to log in with a valid Staff IdAMS account</h1>
+        <h1 class="govuk-heading-l">Your account does not have permission to access this service</h1>
 
-          <p class="govuk-body">Your Staff IdAMS account must have permission to use the Find an industry placement service. </p>
+          <p class="govuk-body">You can request access through <a href="#">Service Now (opens in a new window or tab)</a>.</p>
 
-          <button class="govuk-button">Try again</button>
+          <p class="govuk-body">If you do not have access to Service Now, speak to your manager.</p>
+
+          <button class="govuk-button">Finish</button>
 
       </form>
 

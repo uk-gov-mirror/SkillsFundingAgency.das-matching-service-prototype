@@ -92,6 +92,26 @@ module.exports = function(router, _myData) {
       res.redirect(301, './login-help');
     });
 
+    // system-error
+    router.get('/' + version + '/system-error', function (req, res) {
+        res.render(version + '/system-error', {
+          })
+    });
+
+    router.post('/' + version + '/system-error', function (req, res){
+      res.redirect(301, './login-help');
+    });
+
+    // page-not-found
+    router.get('/' + version + '/page-not-found', function (req, res) {
+        res.render(version + '/page-not-found', {
+          })
+    });
+
+    router.post('/' + version + '/page-not-found', function (req, res){
+      res.redirect(301, './login-help');
+    });
+
 
     // search
     router.get('/' + version + '/search', function (req, res) {
