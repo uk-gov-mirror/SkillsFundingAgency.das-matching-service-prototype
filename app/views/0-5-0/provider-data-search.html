@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Search for a provider
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">Search for a provider</h1>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="UKPRN">
+            Enter the UK Provider Reference Number (UKPRN)
+            </label>
+            <span id="UKPRN-hint" class="govuk-hint">
+              For example, 10001234
+            </span>
+            <input class="govuk-input govuk-input--width-10" id="UKPRN" name="UKPRN" type="number">
+          </div>
+
+        <button class="govuk-button">Search</button>
+      </div>
+  </div>
+
+</form>
+
+{% endblock %}

@@ -520,7 +520,41 @@ module.exports = function(router, _myData) {
       res.redirect(301, './start');
     });
 
+    // provider-data-search
+    router.get('/' + version + '/provider-data-search', function (req, res) {
+        res.render(version + '/provider-data-search', {
+          })
+    });
 
+    router.post('/' + version + '/provider-data-search', function (req, res){
+      res.redirect(301, './provider-data-providerview');
+    });
+
+    // provider-data-providerview
+    router.get('/' + version + '/provider-data-providerview', function (req, res) {
+        res.render(version + '/provider-data-providerview', {
+          'data_contact_name':req.session.data_contact_name,
+          'data_contact_email':req.session.data_contact_email,
+          'data_contact_phone':req.session.data_contact_phone
+          })
+    });
+
+    router.post('/' + version + '/provider-data-providerview', function (req, res){
+      req.session.data_contact_name = req.body.data_contact_name,
+      req.session.data_contact_email = req.body.data_contact_email,
+      req.session.data_contact_phone = req.body.data_contact_phone
+      res.redirect(301, './provider-data-search');
+    });
+
+    // provider-data-venue
+    router.get('/' + version + '/provider-data-venue', function (req, res) {
+        res.render(version + '/provider-data-venue', {
+          })
+    });
+
+    router.post('/' + version + '/provider-data-venue', function (req, res){
+      res.redirect(301, './provider-data-providerview');
+    });
 
 
 }

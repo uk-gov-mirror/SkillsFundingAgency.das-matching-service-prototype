@@ -41,13 +41,13 @@
           <input class="govuk-input govuk-input--width-20" id="contact_name" name="contact_name" type="text" value="{% if data['contact_name'] == null %}IP: Micheal Gill{% else %}{{ data['contact_name'] }}{% endif %}">
         </div>
         <div class="govuk-form-group">
-          <label class="govuk-label" for="contact-name">
+          <label class="govuk-label" for="contact_email">
             Email
           </label>
           <input class="govuk-input govuk-input--width-20" id="contact_email" name="contact_email" type="email" value="{% if data['contact_email'] == null %}notknown@notknown.com{% else %}{{ data['contact_email'] }}{% endif %}">
         </div>
         <div class="govuk-form-group">
-          <label class="govuk-label" for="contact-number">
+          <label class="govuk-label" for="contact_phone">
             Phone number
           </label>
           <input class="govuk-input govuk-input--width-20" id="contact_phone" name="contact_phone" type="tel" value="{% if data['contact_phone'] == null %}020 8586 8116 ext 2144{% else %}{{ data['contact_phone'] }}{% endif %}">
