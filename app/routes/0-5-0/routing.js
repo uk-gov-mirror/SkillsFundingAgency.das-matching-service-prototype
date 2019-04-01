@@ -10,9 +10,22 @@ module.exports = function(router, _myData) {
       next()
     });
 
+    // setup
+    router.get('/' + version + '/setup', function (req, res) {
+        res.render(version + '/setup', {
+          })
+    });
+
+    router.post('/' + version + '/setup', function (req, res){
+      req.session.user_type = req.body.user_type
+      res.redirect(301, './start');
+    });
+
+
     // Start page
     router.get('/' + version + '/start', function (req, res) {
         res.render(version + '/start', {
+          'user_type':req.session.user_type
           })
     });
 
@@ -527,6 +540,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/provider-data-search', function (req, res){
+      req.session.UKPRN = req.body.UKPRN
       res.redirect(301, './provider-data-providerview');
     });
 
@@ -535,7 +549,8 @@ module.exports = function(router, _myData) {
         res.render(version + '/provider-data-providerview', {
           'data_contact_name':req.session.data_contact_name,
           'data_contact_email':req.session.data_contact_email,
-          'data_contact_phone':req.session.data_contact_phone
+          'data_contact_phone':req.session.data_contact_phone,
+          'UKPRN':req.session.UKPRN
           })
     });
 
@@ -549,11 +564,33 @@ module.exports = function(router, _myData) {
     // provider-data-venue
     router.get('/' + version + '/provider-data-venue', function (req, res) {
         res.render(version + '/provider-data-venue', {
+          'venuePostcode':req.session.venuePostcode
           })
     });
 
     router.post('/' + version + '/provider-data-venue', function (req, res){
       res.redirect(301, './provider-data-providerview');
+    });
+
+    // provider-data-addqual
+    router.get('/' + version + '/provider-data-addqual', function (req, res) {
+        res.render(version + '/provider-data-addqual', {
+          })
+    });
+
+    router.post('/' + version + '/provider-data-addqual', function (req, res){
+      res.redirect(301, './provider-data-venue');
+    });
+
+    // provider-data-addqual
+    router.get('/' + version + '/provider-data-addvenue', function (req, res) {
+        res.render(version + '/provider-data-addvenue', {
+          })
+    });
+
+    router.post('/' + version + '/provider-data-addvenue', function (req, res){
+      req.session.venuePostcode = req.body.venuePostcode
+      res.redirect(301, './provider-data-addqual');
     });
 
 

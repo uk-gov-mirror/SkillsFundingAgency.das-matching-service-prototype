@@ -32,10 +32,19 @@
           You will only be able to find one type of placement for one location at a time.
         </div>
 
-        <button class="govuk-button govuk-button--start">
-          Start now
-        </button>
+        <button class="govuk-button govuk-button--start">Start now</button>
 
+        {% if data['user_type'] == 'admin' %}
+        <ul class="govuk-list">
+          <li>
+          <a class="govuk-link" href="#">Upload employer data</a>
+          </li>
+          <li>
+          <a class="govuk-link" href="provider-data-search">Edit provider data</a>
+          </li>
+        </ul>
+        {% else %}
+        {% endif %}
 
       </form>
 
