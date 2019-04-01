@@ -18,7 +18,7 @@ module.exports = function(router, _myData) {
 
     router.post('/' + version + '/setup', function (req, res){
       req.session.user_type = req.body.user_type
-      res.redirect(301, './start');
+      res.redirect(301, './login-help');
     });
 
 
