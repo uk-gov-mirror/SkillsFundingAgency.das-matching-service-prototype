@@ -582,7 +582,7 @@ module.exports = function(router, _myData) {
       res.redirect(301, './provider-data-venue');
     });
 
-    // provider-data-addqual
+    // provider-data-addvenue
     router.get('/' + version + '/provider-data-addvenue', function (req, res) {
         res.render(version + '/provider-data-addvenue', {
           })
@@ -590,7 +590,7 @@ module.exports = function(router, _myData) {
 
     router.post('/' + version + '/provider-data-addvenue', function (req, res){
       req.session.venuePostcode = req.body.venuePostcode
-      res.redirect(301, './provider-data-addqual');
+      res.redirect(301, './provider-data-venue');
     });
 
 
