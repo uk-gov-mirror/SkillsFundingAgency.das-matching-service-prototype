@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm and send provision gap
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a href="start" style="float:right; margin-top:10px">Finish and start again</a>
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Before our system sends the referral emails</h1>
+needs to be a question instead
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="declare" name="declare" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label" for="declare">
+                {{ data['contact_name'] }} has confirmed that we can send their details to the selected providers, and that these providers can contact them about industry placements.
+              </label>
+            </div>
+          </div>
+
+      <button class="govuk-button">Continue</button>
+
+    </div>
+  </div>
+
+</form>
+{% endblock %}
