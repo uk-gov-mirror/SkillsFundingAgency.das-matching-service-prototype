@@ -15,16 +15,23 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Before our system sends the referral emails</h1>
-needs to be a question instead
-          <div class="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="declare" name="declare" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label" for="declare">
-                {{ data['contact_name'] }} has confirmed that we can send their details to the selected providers, and that these providers can contact them about industry placements.
-              </label>
-            </div>
+      <h1 class="govuk-heading-l">Does {{ data['contact_name'] }} give their permission for us to send their details to the selected providers?</h1>
+      <div class="govuk-form-group">
+        <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="permission-yes" name="permission" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="permission-yes">
+              Yes
+            </label>
           </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="permission-no" name="permission" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="permission-no">
+              No
+            </label>
+          </div>
+        </div>
+        </div>
 
       <button class="govuk-button">Continue</button>
 

@@ -333,6 +333,8 @@ module.exports = function(router, _myData) {
     // gdpr
     router.get('/' + version + '/gdpr', function (req, res) {
         res.render(version + '/gdpr', {
+          'businessName': req.session.businessName,
+          'contact_name': req.session.contact_name
           })
     });
 
