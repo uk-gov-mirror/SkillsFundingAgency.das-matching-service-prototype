@@ -298,6 +298,16 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/check-answers', function (req, res){
+      res.redirect(301, './send-employer-email');
+    });
+
+    // send-employer-email
+    router.get('/' + version + '/send-employer-email', function (req, res) {
+        res.render(version + '/send-employer-email', {
+          })
+    });
+
+    router.post('/' + version + '/send-employer-email', function (req, res){
       res.redirect(301, './emails-sent');
     });
 
