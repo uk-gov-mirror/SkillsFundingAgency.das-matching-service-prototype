@@ -15,7 +15,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Placement information</h1>
+      <h1 class="govuk-heading-l">Does the employer know how many placements they want at this location?</h1>
 
       <form class="form" method="post">
 
@@ -35,27 +35,9 @@
             </div>
         </div> -->
 
-        <div class="govuk-form-group">
-          <h3 class="govuk-heading-m">Who is the employer?</h3>
 
-          <!-- <label class="govuk-label govuk-!-width-two-thirds" for="two-thirds">
-            Start typing their business name
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="{{ data['businessName'] }}" name="businessName" type="text"> -->
-
-            <label class="govuk-label" for="businessName" id="businessNameLabel" >
-              Employer name
-            </label>
-            <select class="govuk-select" id="businessName" name="businessName">
-              <option value="">Select an employer</option>
-              {% for employer in myData.employers.employers %}
-              <option value="{{ employer.name }}">{{ employer.name }}</option>
-              {% endfor %}
-            </select>
-          </div>
 
         <div class="form-group">
-          <h3 class="govuk-heading-m">Does the employer know how many placements they want at this location?</h3>
           <p class="govuk-hint">This can be an estimate</p>
 
             <div class="govuk-radios govuk-radios--conditional" data-module="radios">

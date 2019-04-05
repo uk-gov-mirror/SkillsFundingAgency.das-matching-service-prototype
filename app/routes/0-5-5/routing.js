@@ -36,7 +36,6 @@ module.exports = function(router, _myData) {
     // placements
     router.get('/' + version + '/placements', function (req, res) {
         res.render(version + '/placements', {
-          'addopportunity':req.session.addopportunity
           })
     });
 
@@ -407,7 +406,7 @@ module.exports = function(router, _myData) {
 
     router.post('/' + version + '/employer-name', function (req, res){
       req.session.businessName = req.body.businessName
-      res.redirect(301, './add-edit-employer');
+      res.redirect(301, './provision-report');
     });
 
     // JSoff-employer-name
@@ -534,7 +533,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/placement-gap', function (req, res){
-      res.redirect(301, './provision-report');
+      res.redirect(301, './employer-name');
     });
 
     // confirm-gap
