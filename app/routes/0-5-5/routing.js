@@ -36,6 +36,7 @@ module.exports = function(router, _myData) {
     // placements
     router.get('/' + version + '/placements', function (req, res) {
         res.render(version + '/placements', {
+          'addopportunity':req.session.addopportunity
           })
     });
 
@@ -46,7 +47,21 @@ module.exports = function(router, _myData) {
       req.session.roleInfo = req.body.roleInfo,
       req.session.extra = req.body.extra,
       req.session.extraReq = req.body.extraReq
-      res.redirect(301, './enter-employer-name');
+      if (req.session.addopportunity == "yes"){
+        res.redirect(301, './opportunity-basket');
+      } else {
+          res.redirect(301, 'enter-employer-name');
+      }
+    });
+
+    // opportunity-basket
+    router.get('/' + version + '/opportunity-basket', function (req, res) {
+        res.render(version + '/opportunity-basket', {
+          })
+    });
+
+    router.post('/' + version + '/opportunity-basket', function (req, res){
+      res.redirect(301, './gdpr');
     });
 
     // // location
@@ -308,8 +323,9 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/addanother', function (req, res){
+      req.session.addopportunity = req.body.addopportunity
       if (req.body.addopportunity == "yes") {
-        res.redirect(301, './provider-results');
+        res.redirect(301, './search');
       } else {
           res.redirect(301, './gdpr');
       }
