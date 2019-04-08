@@ -35,12 +35,13 @@
         <button class="govuk-button govuk-button--start">Start now</button>
 
         {% if data['user_type'] == 'admin' %}
+        <h2 class="govuk-heading-m">Service administration</h2>
         <ul class="govuk-list">
           <li>
           <a class="govuk-link" href="#">Upload employer data</a>
           </li>
           <li>
-          <a class="govuk-link" href="provider-data-search">Edit provider data</a>
+          <a class="govuk-link" href="provider-data-search">Add or edit provider data</a>
           </li>
         </ul>
         {% else %}

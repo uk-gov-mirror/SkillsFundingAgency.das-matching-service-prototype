@@ -22,23 +22,37 @@ Provider overview
           <p class="govuk-body govuk-link"><a href="provider-data-sure">Delete provider</a></p>
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="knownas">
-            Known as (optional)
+            <label class="govuk-heading-s" for="knownas">
+            Enter display name (optional)
             </label>
             <input class="govuk-input" id="knownas" name="knownas" type="text" value="DT Learning Centre">
           </div>
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="status">
-              Referral status
-            </label>
-            <select class="govuk-select" id="status" name="status">
-              <option value="active" selected>Active</option>
-              <option value="inactive">Inactive</option>
-            </select>
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h3 class="govuk-fieldset__heading">
+                  Should they receive referrals?
+                </h3>
+              </legend>
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes" checked="checked">
+                  <label class="govuk-label govuk-radios__label" for="changed-name-1">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
           </div>
 
-          <div class="govuk-form-group">
+          <!-- <div class="govuk-form-group">
             <label class="govuk-label" for="ofsted">
               Ofsted rating
             </label>
@@ -48,7 +62,7 @@ Provider overview
               <option value="Requires improvement">Requires improvement</option>
               <option value="Inadequate">Inadequate</option>
             </select>
-          </div>
+          </div> -->
 
           <a href="#" class="govuk-button" style="margin-bottom: 0; background-color: #dee0e2; color: black">Save section</a>
 
@@ -58,7 +72,7 @@ Provider overview
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="data_contact_name">
-              Contact name for placements
+              Contact name
             </label>
             <input class="govuk-input govuk-input--width-20" id="data_contact_name" name="data_contact_name" type="text" value="David Davies">
           </div>
@@ -95,19 +109,19 @@ Provider overview
                 <th class="govuk-table__cell">DE4 1DE</th>
                 <td class="govuk-table__cell">4 qualifications</td>
                 <td class="govuk-table__cell">No data yet</td>
-                <td class="govuk-table__cell" style="text-align: right"><a href="provider-data-venue">Change</a></td>
+                <td class="govuk-table__cell" style="text-align: right"><a href="provider-data-venue">Change</a><span class="govuk-visually-hidden"> the information for this venue</span></td>
               </tr>
               <tr class="govuk-table__row">
                 <th class="govuk-table__cell">TF1 2XC</th>
                 <td class="govuk-table__cell">2 qualifications</td>
                 <td class="govuk-table__cell">No data yet</td>
-                <td class="govuk-table__cell" style="text-align: right"><a href="#">Change</a></td>
+                <td class="govuk-table__cell" style="text-align: right"><a href="#">Change</a><span class="govuk-visually-hidden"> the information for this venue</span></td>
               </tr>
               <tr class="govuk-table__row">
                 <th class="govuk-table__cell">HG1 7VG</th>
                 <td class="govuk-table__cell">5 qualifications</td>
                 <td class="govuk-table__cell">No data yet</td>
-                <td class="govuk-table__cell" style="text-align: right"><a href="#">Change</a></td>
+                <td class="govuk-table__cell" style="text-align: right"><a href="#">Change</a><span class="govuk-visually-hidden"> the information for this venue</span></td>
               </tr>
             </tbody>
           </table>

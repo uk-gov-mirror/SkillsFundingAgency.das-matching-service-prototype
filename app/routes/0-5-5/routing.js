@@ -4,7 +4,9 @@ module.exports = function(router, _myData) {
 
     router.all('/' + version + '/*', function(req, res, next){
       if(!req.session.myData || req.query.resetSession){
-        // resetting
+        // resets myData object
+        req.session.addopportunity = "no"
+        // resets specific session variables ^
         req.session.myData = JSON.parse(JSON.stringify(_myData))
       }
       next()
@@ -18,6 +20,7 @@ module.exports = function(router, _myData) {
 
     router.post('/' + version + '/setup', function (req, res){
       req.session.user_type = req.body.user_type
+      // req.session.myData.user_type = req.body.user_type
       res.redirect(301, './login-help');
     });
 
@@ -25,6 +28,7 @@ module.exports = function(router, _myData) {
     // Start page
     router.get('/' + version + '/start', function (req, res) {
         res.render(version + '/start', {
+          // myData: req.session.myData
           'user_type':req.session.user_type
           })
     });
