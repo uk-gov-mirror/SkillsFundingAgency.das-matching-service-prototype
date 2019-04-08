@@ -14,6 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+{% if employer_email == "yes" %}
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
           Emails sent
@@ -30,6 +31,25 @@
           <p>We have also sent the employer a confirmation email.</p>
         </div> -->
         <p>We have also sent a confirmation email to the employer.</p>
+
+{% else %}
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Emails sent to providers
+        </h1>
+        <!-- <div class="govuk-panel__body">
+          Your reference number
+          <br><strong>HDJ2123F</strong>
+        </div> -->
+      </div>
+      <br>
+
+      <form class="form" method="post">
+        <!-- <div class="form-group">
+          <p>We have also sent the employer a confirmation email.</p>
+        </div> -->
+        <p>You must send your own confirmation email to the employer.</p>
+{% endif %}
         <div class="govuk-inset-text">
           Remember to <a href="crm" target="_blank">update the employer’s CRM record (opens in a new window or tab)</a> with any new information.
         </div>

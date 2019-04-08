@@ -308,6 +308,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/send-employer-email', function (req, res){
+      req.session.employer_email = req.body.employer_email
       res.redirect(301, './emails-sent');
     });
 
@@ -324,6 +325,7 @@ module.exports = function(router, _myData) {
     // emails-sent
     router.get('/' + version + '/emails-sent', function (req, res) {
         res.render(version + '/emails-sent', {
+          'employer_email': req.session.employer_email
           })
     });
 
