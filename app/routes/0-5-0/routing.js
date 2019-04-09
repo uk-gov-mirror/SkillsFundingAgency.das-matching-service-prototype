@@ -605,5 +605,25 @@ module.exports = function(router, _myData) {
       res.redirect(301, './provider-data-venue');
     });
 
+    // provider-data-sure
+    router.get('/' + version + '/provider-data-sure', function (req, res) {
+        res.render(version + '/provider-data-sure', {
+          })
+    });
+
+    router.post('/' + version + '/provider-data-sure', function (req, res){
+      res.redirect(301, './provider-data-search');
+    });
+
+    // provider-data-venue-sure
+    router.get('/' + version + '/provider-data-venue-sure', function (req, res) {
+        res.render(version + '/provider-data-venue-sure', {
+          })
+    });
+
+    router.post('/' + version + '/provider-data-venue-sure', function (req, res){
+      res.redirect(301, './provider-data-providerview');
+    });
+
 
 }
