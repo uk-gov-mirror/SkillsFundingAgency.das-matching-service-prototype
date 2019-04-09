@@ -130,12 +130,14 @@ DE4 1DE
                   </tr>
                 </tbody>
               </table>
+
+          <p class="govuk-body govuk-link"><a href="provider-data-addqual">Add a qualification</a></p>
 {% else %}
 
         <span class="govuk-caption-m">Acme College</span>
           <h1 class="govuk-heading-l" style="text-transform: uppercase">{{ data['venuePostcode'] }}</h1>
 
-          <p class="govuk-body govuk-link"><a href="provider-data-venue-sure">Remove venue</a></p>
+          <p class="govuk-body govuk-link"><a href="provider-data-venue-sure">Hide venue</a></p>
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="venueName">
@@ -149,12 +151,12 @@ DE4 1DE
           <div class="govuk-form-group">
               <h2 class="govuk-heading-m">Qualifications</h2>
 
-              <p class="govuk-body">You haven't told us about any qualifications at this venue yet.</p>
+              <p class="govuk-body">You need to <a href="provider-data-addqual">add a qualification for this venue</a>.</p>
 
 
 {% endif %}
 
-              <p class="govuk-body govuk-link"><a href="provider-data-addqual">Add a qualification</a></p>
+
           </div>
 
         <button class="govuk-button" style="margin-bottom: 0; background-color: #dee0e2; color: black">Save and return to provider overview</button>
