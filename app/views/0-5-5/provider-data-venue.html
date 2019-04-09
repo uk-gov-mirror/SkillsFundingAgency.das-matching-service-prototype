@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Venue and qualifications
+DE4 1DE
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,14 +20,16 @@ Venue and qualifications
         <span class="govuk-caption-m">DT Learning</span>
           <h1 class="govuk-heading-l">DE4 1DE</h1>
 
-          <p class="govuk-body govuk-link"><a href="provider-data-sure">Remove venue</a></p>
+          <p class="govuk-body govuk-link"><a href="provider-data-venue-sure">Hide venue</a></p>
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="venueName">
-            Venue name (optional)
+            <label class="govuk-heading-s" for="venueName">
+            Enter venue name (optional)
             </label>
             <input class="govuk-input govuk-!-width-one-half" id="venueName" name="venueName" type="text" value="Royal College">
           </div>
+
+          <button class="govuk-button" style="margin-bottom: 0; background-color: #dee0e2; color: black">Save section</button>
 
           <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -39,8 +41,8 @@ Venue and qualifications
                   <tr class="govuk-table__row">
                     <th class="govuk-table__header" scope="col">LAR ID</th>
                     <th class="govuk-table__header" scope="col">Qualification title</th>
-                    <th class="govuk-table__header" scope="col">18/19 referrals</th>
-                    <th class="govuk-table__header" scope="col">19/20 referrals</th>
+                    <th class="govuk-table__header" scope="col">18/19</th>
+                    <th class="govuk-table__header" scope="col">19/20</th>
                     <th class="govuk-table__header" scope="col"></th>
                   </tr>
                 </thead>
@@ -64,7 +66,6 @@ Venue and qualifications
                         </div>
                       </div>
                     </td>
-                    <td class="govuk-table__cell" style="text-align: right"><a href="#">Remove</a></td>
                   </tr>
 
                   <tr class="govuk-table__row">
@@ -86,7 +87,6 @@ Venue and qualifications
                         </div>
                       </div>
                     </td>
-                    <td class="govuk-table__cell" style="text-align: right"><a href="#">Remove</a></td>
                   </tr>
 
                   <tr class="govuk-table__row">
@@ -107,7 +107,6 @@ Venue and qualifications
                         </div>
                       </div>
                     </td>
-                    <td class="govuk-table__cell" style="text-align: right"><a href="#">Remove</a></td>
                   </tr>
 
                   <tr class="govuk-table__row">
@@ -128,16 +127,17 @@ Venue and qualifications
                         </div>
                       </div>
                     </td>
-                    <td class="govuk-table__cell" style="text-align: right"><a href="#">Remove</a></td>
                   </tr>
                 </tbody>
               </table>
+
+          <p class="govuk-body govuk-link"><a href="provider-data-addqual">Add a qualification</a></p>
 {% else %}
 
         <span class="govuk-caption-m">Acme College</span>
           <h1 class="govuk-heading-l" style="text-transform: uppercase">{{ data['venuePostcode'] }}</h1>
 
-          <p class="govuk-body govuk-link"><a href="provider-data-sure">Remove venue</a></p>
+          <p class="govuk-body govuk-link"><a href="provider-data-venue-sure">Hide venue</a></p>
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="venueName">
@@ -151,15 +151,15 @@ Venue and qualifications
           <div class="govuk-form-group">
               <h2 class="govuk-heading-m">Qualifications</h2>
 
-              <p class="govuk-body">You haven't told us about any qualifications at this venue yet.</p>
+              <p class="govuk-body">You need to <a href="provider-data-addqual">add a qualification for this venue</a>.</p>
 
 
 {% endif %}
 
-              <p class="govuk-body govuk-link"><a href="provider-data-addqual">Add a qualification</a></p>
+
           </div>
 
-        <button class="govuk-button" style="margin-bottom: 0; background-color: #dee0e2; color: black">Save and return</button>
+        <button class="govuk-button" style="margin-bottom: 0; background-color: #dee0e2; color: black">Save and return to provider overview</button>
       </div>
   </div>
 

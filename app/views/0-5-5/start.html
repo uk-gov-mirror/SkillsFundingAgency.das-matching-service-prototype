@@ -37,13 +37,13 @@
         <p><a class="govuk-link" href="saved-opportunities">Continue a saved opportunity</a></p>
 
         {% if data['user_type'] == 'admin' %}
-        <!-- myData.user_type -->
+        <h2 class="govuk-heading-m">Service administration</h2>
         <ul class="govuk-list">
           <li>
           <a class="govuk-link" href="#">Upload employer data</a>
           </li>
           <li>
-          <a class="govuk-link" href="provider-data-search">Edit provider data</a>
+          <a class="govuk-link" href="provider-data-search">Add or edit provider data</a>
           </li>
         </ul>
         {% else %}
