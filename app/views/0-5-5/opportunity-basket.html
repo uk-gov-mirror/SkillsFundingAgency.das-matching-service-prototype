@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Confirm and send provision gap
+Opportunity basket
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,37 +19,76 @@
       <h1 class="govuk-heading-l">Opportunity basket</h1>
 
       <div class="accordion govuk-!-margin-bottom-6">
+        <!-- Opportunity 1 -->
         <div class="accordion-section">
+
           <div class="accordion-section-header">
-            <h2 class="govuk-heading-s" style="float: left; margin-right: 20%;">Health and science</h2>
-            <h2 class="govuk-heading-s" style="float: center">TF1 7VC</h2>
+            <h2 class="govuk-heading-m" style="float: left; margin-right: 20%;">Health and science</h2>
+            <h2 class="govuk-heading-m" style="float: center">RM6 6DU</h2>
           </div>
+
           <div class="accordion-section-body">
-            <div class="form-group">
-                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Provider 1</p>
-                <p>The WKCIC Group</p>
-                <p>1.5 miles miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
-              <br>
-                <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Provider 2</p>
-                <p>Lambeth College </p>
-                <p>4.3 miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
-              <br>
-                <p><a href="provider-results">Change providers</a></p>
-            </div>
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-1" style="padding-top: 10px">Job role
+                <span class="govuk-body"><a href="govuk-link" style="float: right">Change</a></span><h3>
+              <p class="govuk-body govuk-!-margin-bottom-2">Physiotherapy assistant</p>
+
+              <p class="govuk-heading-s govuk-!-margin-bottom-1">Number of placements</p>
+              <p class="govuk-body govuk-!-margin-bottom-2">2</p>
+
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="opacity: 0.5">
+
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Selected provider 1
+                <span class="govuk-body"><a href="govuk-link" style="float: right">Change</a></span></h3>
+              <p>The WKCIC Group</p>
+              <p class="govuk-body govuk-!-margin-bottom-2">1.5 miles miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Selected provider 2</h3>
+              <p>The WKCIC Group</p>
+              <p class="govuk-body">1.5 miles miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+
+              <p class="govuk-body"><a class="govuk-link" href="#">Delete opportunity</a></p>
           </div>
         </div>
+        <!-- Opportunity 2 -->
+        <div class="accordion-section">
+
+          <div class="accordion-section-header">
+            <h2 class="govuk-heading-m" style="float: left; margin-right: 20%;">Health and science</h2>
+            <h2 class="govuk-heading-m" style="float: center">RM6 6DU</h2>
+          </div>
+
+          <div class="accordion-section-body">
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-1" style="padding-top: 10px">Job role
+                <span class="govuk-body"><a href="govuk-link" style="float: right">Change</a></span><h3>
+              <p class="govuk-body govuk-!-margin-bottom-2">Performance analyst assistant</p>
+
+              <p class="govuk-heading-s govuk-!-margin-bottom-1">Number of placements</p>
+              <p class="govuk-body govuk-!-margin-bottom-2">1</p>
+
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="opacity: 0.5">
+
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Selected provider 1
+                <span class="govuk-body"><a href="govuk-link" style="float: right">Change</a></span></h3>
+              <p>The WKCIC Group</p>
+              <p class="govuk-body govuk-!-margin-bottom-2">1.5 miles miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Selected provider 2</h3>
+              <p>The WKCIC Group</p>
+              <p class="govuk-body">1.5 miles miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+
+              <p class="govuk-body"><a class="govuk-link" href="#">Delete opportunity</a></p>
+          </div>
+        </div>
+
       </div>
 
-
       <button class="govuk-button">Continue</button>
+      <!-- <a href="search" class="govuk-button" style="margin-bottom: 0; background-color: #dee0e2; color: black">Add another opportunity</a> -->
 
     </div>
   </div>
 </form>
 {% endblock %}
-
-
-
 
 
 {% block pageScripts %}

@@ -32,9 +32,11 @@
           You will only be able to find one type of placement for one location at a time. You can add more at the end.
         </div>
 
-        <button class="govuk-button govuk-button--start">Start a new opportunity</button>
+        <div class="govuk-form-group">
+          <button class="govuk-button govuk-button--start">Start a new opportunity</button>
 
-        <p><a class="govuk-link" href="saved-opportunities">Continue a saved opportunity</a></p>
+          <p><a class="govuk-link" href="saved-opportunities">Continue a saved opportunity</a></p>
+        </div>
 
         {% if data['user_type'] == 'admin' %}
         <h2 class="govuk-heading-m">Service administration</h2>
