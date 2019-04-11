@@ -37,6 +37,27 @@ module.exports = function(router, _myData) {
       res.redirect(301, './search');
     });
 
+    // remove-employer
+    router.get('/' + version + '/remove-employer', function (req, res) {
+        res.render(version + '/remove-employer', {
+        })
+    });
+
+    router.post('/' + version + '/remove-employer', function (req, res){
+      res.redirect(301, './saved-opportunities');
+    });
+
+    // remove-opportunity
+    router.get('/' + version + '/remove-opportunity', function (req, res) {
+        res.render(version + '/remove-opportunity', {
+        })
+    });
+
+    router.post('/' + version + '/remove-opportunity', function (req, res){
+      res.redirect(301, './opportunity-basket');
+    });
+
+
     // placements
     router.get('/' + version + '/placements', function (req, res) {
         res.render(version + '/placements', {
@@ -60,6 +81,7 @@ module.exports = function(router, _myData) {
     // opportunity-basket
     router.get('/' + version + '/opportunity-basket', function (req, res) {
         res.render(version + '/opportunity-basket', {
+          'addopportunity': req.session.addopportunity
           })
     });
 
