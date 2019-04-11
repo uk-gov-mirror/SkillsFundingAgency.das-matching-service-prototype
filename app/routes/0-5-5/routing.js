@@ -5,7 +5,8 @@ module.exports = function(router, _myData) {
     router.all('/' + version + '/*', function(req, res, next){
       if(!req.session.myData || req.query.resetSession){
         // resets myData object
-        req.session.addopportunity = "no"
+        req.session.addopportunity = "no";
+        req.session.addopportunity_gap = "no"
         // resets specific session variables ^
         req.session.myData = JSON.parse(JSON.stringify(_myData))
       }
@@ -34,7 +35,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/start', function (req, res){
-      res.redirect(301, './search');
+      res.redirect(301, './search?resetSession=true');
     });
 
     // remove-employer
@@ -350,7 +351,7 @@ module.exports = function(router, _myData) {
     router.post('/' + version + '/addanother', function (req, res){
       req.session.addopportunity = req.body.addopportunity
       if (req.body.addopportunity == "yes") {
-        res.redirect(301, './search');
+        res.redirect(301, './provider-results');
       } else {
           res.redirect(301, './gdpr');
       }
@@ -591,7 +592,16 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/provision-report', function (req, res){
-      res.redirect(301, './start');
+      if (req.session.addopportunity == "yes" && req.body.addopportunity_gap == "yes"){
+        res.redirect(301, './provider-results');
+      } else if (req.session.addopportunity == "yes" && req.body.addopportunity_gap == "no") {
+        res.redirect(301, './opportunity-basket');
+      } else if (req.session.addopportunity == "no" && req.body.addopportunity_gap == "yes") {
+        req.session.addopportunity = req.body.addopportunity_gap
+        res.redirect(301, './provider-results');
+      } else {
+        res.redirect(301, './start');
+      }
     });
 
     // give-feedback
