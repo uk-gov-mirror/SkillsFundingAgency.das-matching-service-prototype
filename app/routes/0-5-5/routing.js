@@ -62,6 +62,7 @@ module.exports = function(router, _myData) {
     // placements
     router.get('/' + version + '/placements', function (req, res) {
         res.render(version + '/placements', {
+          'addopportunity': req.session.addopportunity
           })
     });
 
@@ -217,7 +218,8 @@ module.exports = function(router, _myData) {
           'radius':req.session.radius,
           'postcode':req.session.postcode,
           'route':req.session.route,
-          'keyword':req.session.keyword
+          'keyword':req.session.keyword,
+          'addopportunity': req.session.addopportunity
           })
     });
 

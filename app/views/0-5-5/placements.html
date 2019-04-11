@@ -16,10 +16,16 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" method="post">
-
+        {% if addopportunity == "yes" %}
+        <span class="govuk-caption-l">Opportunity 2</span>
         <h1 class="govuk-heading-l">
           Placement information
         </h1>
+        {% else %}
+        <h1 class="govuk-heading-l">
+          Placement information
+        </h1>
+        {% endif %}
 
         <p class="govuk-body">This information will go in an email to the selected providers.</p>
 
