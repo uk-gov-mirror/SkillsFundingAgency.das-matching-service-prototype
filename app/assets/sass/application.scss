@@ -41,10 +41,11 @@ $govuk-global-styles: true;
     width: 100%;
     background-color: grey;
     }
-
-
-
-
-
   }
 }
+
+/*.tl-table-row {
+    .govuk-table__cell, .govuk-table__header {
+        border: none !important;
+    }
+}*/
