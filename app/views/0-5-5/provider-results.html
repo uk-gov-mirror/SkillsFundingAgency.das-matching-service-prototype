@@ -15,9 +15,16 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+        {% if addopportunity == "yes" %}
+        <span class="govuk-caption-l">Opportunity 2</span>
         <h1 class="govuk-heading-l">
           Select providers
         </h1>
+        {% else %}
+        <h1 class="govuk-heading-l">
+          Select providers
+        </h1>
+        {% endif %}
       </div>
     </div>
 
