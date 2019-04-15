@@ -662,7 +662,17 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/provider-data-addqual', function (req, res){
-      res.redirect(301, './provider-data-venue');
+      res.redirect(301, './provider-data-missingqual');
+    });
+
+    // provider-data-missingqual
+    router.get('/' + version + '/provider-data-missingqual', function (req, res) {
+        res.render(version + '/provider-data-missingqual', {
+        })
+    });
+
+    router.post('/' + version + '/provider-data-missingqual', function (req, res) {
+        res.redirect(301, './provider-data-venue');
     });
 
     // provider-data-addvenue
