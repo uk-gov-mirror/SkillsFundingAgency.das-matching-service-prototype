@@ -12,6 +12,8 @@ $govuk-global-styles: true;
 @import "patterns/govuk";
 @import "patterns/govukFilter";
 @import "patterns/accessible-autocomplete";
+@import "patterns/option-select";
+@import "patterns/search";
 
 
 // Components that aren't in Frontend
@@ -44,8 +46,10 @@ $govuk-global-styles: true;
   }
 }
 
-/*.tl-table-row {
-    .govuk-table__cell, .govuk-table__header {
-        border: none !important;
+
+.tl-table-row-vtop {
+    .govuk-table__cell {
+        vertical-align: top;
     }
-}*/
+}
+
