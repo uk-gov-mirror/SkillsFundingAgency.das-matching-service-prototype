@@ -658,11 +658,19 @@ module.exports = function(router, _myData) {
     // provider-data-addqual
     router.get('/' + version + '/provider-data-addqual', function (req, res) {
         res.render(version + '/provider-data-addqual', {
-          })
+        })
+    
     });
 
-    router.post('/' + version + '/provider-data-addqual', function (req, res){
-      res.redirect(301, './provider-data-missingqual');
+    router.post('/' + version + '/provider-data-addqual', function (req, res) {
+        console.log(req)
+        if (req.body.QualLAR === "1234567") {
+            res.redirect(301, './provider-data-missingqual');
+        }
+        else {
+            res.redirect(301, './provider-data-venue');
+        }       
+
     });
 
     // provider-data-missingqual
