@@ -17,7 +17,16 @@
 
 
         <div class="govuk-form-group">
-            <h1 class="govuk-heading-l">Do you want to create another opportunity for this employer?</h1>
+            <h1 class="govuk-heading-l">
+                Do you want add another type of opportunity for {% if data['businessName'] == "" %}
+                West Ham United Football Club Limited
+                {% else %}
+                {% if data['businessName'] == null %}
+                West Ham United Football Club Limited
+                {% else %}
+                {{ data['businessName'] }}
+                {% endif %}{% endif %}?
+            </h1>
 
             <div class="govuk-radios govuk-radios--inline">
               <div class="govuk-radios__item">

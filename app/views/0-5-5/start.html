@@ -29,13 +29,14 @@
         </div>
 
         <div class="govuk-inset-text">
-          You will only be able to find one type of placement for one location at a time. You can add more at the end.
+            Search for one type of placement in one location at a time. At the end of the journey you have the option to set up more types of placement for the employer.
         </div>
 
         <div class="govuk-form-group">
-          <button class="govuk-button govuk-button--start">Start a new opportunity</button>
+            <p class="govuk-body"><a class="govuk-link" href="saved-opportunities">View saved opportunities</a></p>
 
-          <p><a class="govuk-link" href="saved-opportunities">Continue a saved opportunity</a></p>
+            <button class="govuk-button govuk-button--start">Start a new opportunity</button>
+
         </div>
 
         {% if data['user_type'] == 'admin' %}

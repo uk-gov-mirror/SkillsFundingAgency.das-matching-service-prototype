@@ -83,7 +83,8 @@ module.exports = function(router, _myData) {
     // opportunity-basket
     router.get('/' + version + '/opportunity-basket', function (req, res) {
         res.render(version + '/opportunity-basket', {
-          'addopportunity': req.session.addopportunity
+            'addopportunity': req.session.addopportunity,
+            'businessName': req.session.businessName
           })
     });
 
@@ -172,6 +173,7 @@ module.exports = function(router, _myData) {
     // search
     router.get('/' + version + '/search', function (req, res) {
         res.render(version + '/search', {
+            'addopportunity': req.session.addopportunity
           })
     });
 
@@ -347,13 +349,14 @@ module.exports = function(router, _myData) {
     // addanother
     router.get('/' + version + '/addanother', function (req, res) {
         res.render(version + '/addanother', {
+            'businessName': req.session.businessName
           })
     });
 
     router.post('/' + version + '/addanother', function (req, res){
       req.session.addopportunity = req.body.addopportunity
       if (req.body.addopportunity == "yes") {
-        res.redirect(301, './provider-results');
+        res.redirect(301, './search');
       } else {
           res.redirect(301, './gdpr');
       }

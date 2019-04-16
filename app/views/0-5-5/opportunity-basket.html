@@ -16,7 +16,9 @@ Opportunity basket
     <div class="govuk-grid-column-two-thirds">
 
 
-      <h1 class="govuk-heading-l">Opportunity basket</h1>
+        <h1 class="govuk-heading-l">
+            {% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}'s opportunities
+        </h1>
 
       <div class="accordion govuk-!-margin-bottom-6">
         <!-- Opportunity idea1 -->
@@ -207,7 +209,7 @@ Opportunity basket
 
       </div>
 
-      <button class="govuk-button" style="margin-right: 5px">Continue</button>  <a class="govuk-button" style="background-color: #dee0e2; color: black;" href="provider-results">Add another opportunity</a>
+      <button class="govuk-button" style="margin-right: 5px">Continue</button>  <a class="govuk-button" style="background-color: #dee0e2; color: black;" href="search">Add another opportunity</a>
 
       <!-- <a href="search" class="govuk-button" style="margin-bottom: 0; background-color: #dee0e2; color: black">Add another opportunity</a> -->
 
