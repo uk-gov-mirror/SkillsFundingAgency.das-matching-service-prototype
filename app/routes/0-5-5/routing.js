@@ -630,6 +630,17 @@ module.exports = function(router, _myData) {
       res.redirect(301, './provider-data-providerview');
     });
 
+    // provider-data-find
+    router.get('/' + version + '/provider-data-find', function (req, res) {
+        res.render(version + '/provider-data-find', {
+        })
+    });
+
+    router.post('/' + version + '/provider-data-find', function (req, res) {
+        req.session.UKPRN = req.body.UKPRN
+        res.redirect(301, './provider-data-providerview');
+    });
+
     // provider-data-providerview
     router.get('/' + version + '/provider-data-providerview', function (req, res) {
         res.render(version + '/provider-data-providerview', {
