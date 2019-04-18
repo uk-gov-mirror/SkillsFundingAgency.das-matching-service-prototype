@@ -95,30 +95,13 @@ Opportunity basket
             <p class="govuk-body">
                 <input type="hidden" value="2" name="addopportunity" />
                 <button class="govuk-button" style="background-color: #dee0e2; color: black;">Add another opportunity</button>
-                {% if data['addopportunity'] == "2" %}
                 <a href="#" class="govuk-link" style="float: right">Download selected opportunities as CSV</a>
-                {% else %}
-                <a href="#" class="govuk-link" style="float: right">Download opportunity as CSV</a>
-                {% endif %}
             </p>
 
 </form>
 <form class="form" method="post">
     <p class="govuk-body">
-        {% if data['addopportunity'] == "2" %}
-        <input type="hidden" value="refer" name="basketcontinue" />
-
         <button class="govuk-button" style="margin-right: 5px">Refer selected opportunities</button>
-        {% else %}
-        {% if data['placementtype'] == "gap" %}
-        <input type="hidden" value="gaponly" name="basketcontinue" />
-        <button class="govuk-button" style="margin-right: 5px">Tell us there are no providers</button>
-        {% else %}
-        <input type="hidden" value="refer" name="basketcontinue" />
-
-        <button class="govuk-button" style="margin-right: 5px">Refer opportunity</button>
-        {% endif %}
-        {% endif %}
     </p>
 
     <!-- <a href="search" class="govuk-button" style="margin-bottom: 0; background-color: #dee0e2; color: black">Add another opportunity</a> -->
