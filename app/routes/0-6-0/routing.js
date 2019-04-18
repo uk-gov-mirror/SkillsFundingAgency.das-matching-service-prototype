@@ -92,13 +92,16 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/opportunity-basket', function (req, res) {
+        req.session.basketcontinue = req.body.basketcontinue,
         req.session.addopportunity = req.body.addopportunity
-        if (req.session.addopportunity != "2") {
+
+        if (req.session.basketcontinue == "refer") {
             res.redirect(301, 'edit-employer');
+        } else if (req.session.basketcontinue == "gaponly") {
+            res.redirect(301, 'provision-report');
         } else {
             res.redirect(301, 'search');
         }
-      res.redirect(301, 'search');
     });
 
     // // location

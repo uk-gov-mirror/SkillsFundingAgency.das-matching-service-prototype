@@ -181,11 +181,16 @@ Opportunity basket
 <form class="form" method="post">
     <p class="govuk-body">
         {% if data['addopportunity'] == "2" %}
+        <input type="hidden" value="refer" name="basketcontinue" />
+
         <button class="govuk-button" style="margin-right: 5px">Refer selected opportunities</button>
         {% else %}
         {% if data['placementtype'] == "gap" %}
+        <input type="hidden" value="gaponly" name="basketcontinue" />
         <button class="govuk-button" style="margin-right: 5px">Tell us there are no providers</button>
         {% else %}
+        <input type="hidden" value="refer" name="basketcontinue" />
+
         <button class="govuk-button" style="margin-right: 5px">Refer opportunity</button>
         {% endif %}
         {% endif %}
