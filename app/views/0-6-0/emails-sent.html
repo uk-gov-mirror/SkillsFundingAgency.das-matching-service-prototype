@@ -26,37 +26,38 @@
       <br>
 
       <form class="form" method="post">
-        <!-- <div class="form-group">
-          <p>We have also sent the employer a confirmation email.</p>
-        </div> -->
-        <p>We have also sent a confirmation email to the employer.</p>
-        <div class="govuk-inset-text">
-          Remember to <a href="crm" target="_blank">update the employer’s CRM record (opens in a new window or tab)</a> with any new information.
-        </div>
+          <!-- <div class="form-group">
+      <p>We have also sent the employer a confirmation email.</p>
+    </div> -->
+          <p>We have also sent a confirmation email to the employer.</p>
+          <div class="govuk-inset-text">
+              Remember to <a href="crm" target="_blank">update the employer’s CRM record (opens in a new window or tab)</a> with any new information.
+          </div>
 
-        <div class="form-group">
-          <h2 class="govuk-heading-m">What happens next</h2>
-            <p>We expect the providers will contact {{ data['contact_name'] }} within 2 to 3 working days. The providers will work with {{ data['businessName'] }} to arrange the terms and details of each placement.</p>
-        </div>
+          <div class="form-group">
+              <h2 class="govuk-heading-m">What happens next</h2>
+              <p>We expect the providers will contact {{ data['contact_name'] }} within 2 to 3 working days. The providers will work with {{ data['businessName'] }} to arrange the terms and details of each placement.</p>
+          </div>
 
-        <!-- <div class="form-group">
-          <h3 class="govuk-heading-m">Employer feedback</h3>
-            <p>We will send the employer another email in 2 weeks’ time so that they can give feedback on their conversation with the provider. This helps us improve the service.</p>
-            <!-- <div class="govuk-form-group">
-                <div class="govuk-checkboxes">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
-                    <label class="govuk-label govuk-checkboxes__label" for="waste-1">
-                      The employer has agreed to give feedback (optional)
-                    </label>
-                  </div>
-                </div>
+          <!-- <div class="form-group">
+      <h3 class="govuk-heading-m">Employer feedback</h3>
+        <p>We will send the employer another email in 2 weeks’ time so that they can give feedback on their conversation with the provider. This helps us improve the service.</p>
+        <!-- <div class="govuk-form-group">
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                  The employer has agreed to give feedback (optional)
+                </label>
+              </div>
             </div>
-        </div> -->
+        </div>
+    </div> -->
+          <input type="hidden" value="complete" name="addopportunity" />
 
-        <button class="govuk-button">Finish</button>
+          <button class="govuk-button">Finish</button>
 
-        <!-- <p><a href="give-feedback">Give us feedback</a></p> -->
+          <!-- <p><a href="give-feedback">Give us feedback</a></p> -->
 
       </form>
 

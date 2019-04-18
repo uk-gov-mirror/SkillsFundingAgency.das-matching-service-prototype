@@ -15,24 +15,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Check employer’s details</h1>
-
-      <form class="form" method="post">
-
-
-        <div class="govuk-form-group">
-          <h2 class="govuk-heading-m">
-          {% if data['businessName'] == "" %}
+        <h1 class="govuk-heading-l">Check {% if data['businessName'] == "" %}
             West Ham United Football Club Limited
             {% else %}
-              {% if data['businessName'] == null %}
-              West Ham United Football Club Limited
-              {% else %}
-              {{ data['businessName'] }}
-          {% endif %}{% endif %}</h2>
+            {% if data['businessName'] == null %}
+            West Ham United Football Club Limited
+            {% else %}
+            {{ data['businessName'] }}
+            {% endif %}{% endif %}'s details</h1>
 
-           <p class="govuk-body"><a href="employer-name">Find a different employer</a></p>
-        </div>
+      <form class="form" method="post">
 
         <div class="govuk-inset-text">
           Make sure the employer confirms the most accurate and up-to-date contact name, email and telephone number for industry placements.

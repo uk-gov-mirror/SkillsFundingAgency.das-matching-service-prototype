@@ -360,6 +360,7 @@ module.exports = function(router, _myData) {
     // confirm-employer-permission
     router.get('/' + version + '/confirm-employer-permission', function (req, res) {
         res.render(version + '/confirm-employer-permission', {
+            'addopportunity': req.session.addopportunity,
             'placements': req.session.placements,
             'placementNumber': req.session.placementNumber,
             'postcode': req.session.postcode,
@@ -368,8 +369,7 @@ module.exports = function(router, _myData) {
             'extra': req.session.extra,
             'extraReq': req.session.extraReq,
             'route': req.session.route,
-            'provider': req.session.provider
-
+            'provider': req.session.provider,
         })
     });
 
@@ -421,7 +421,8 @@ module.exports = function(router, _myData) {
           })
     });
 
-    router.post('/' + version + '/emails-sent', function (req, res){
+    router.post('/' + version + '/emails-sent', function (req, res) {
+        req.session.addopportunity = req.body.addopportunity,
       res.redirect(301, './start');
     });
 

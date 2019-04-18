@@ -183,14 +183,16 @@ Opportunity basket
         {% if data['addopportunity'] == "2" %}
         <button class="govuk-button" style="margin-right: 5px">Refer selected opportunities</button>
         {% else %}
+        {% if data['placementtype'] == "gap" %}
+        <button class="govuk-button" style="margin-right: 5px">Tell us there are no providers</button>
+        {% else %}
         <button class="govuk-button" style="margin-right: 5px">Refer opportunity</button>
         {% endif %}
+        {% endif %}
     </p>
-    <input type="hidden" value="complete" name="addopportunity" />
 
     <!-- <a href="search" class="govuk-button" style="margin-bottom: 0; background-color: #dee0e2; color: black">Add another opportunity</a> -->
     </div>
-
     </div>
 </form>
 {% endblock %}
