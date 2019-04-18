@@ -1,0 +1,226 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Opportunity basket
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  {% include "includes/save_return.html" %}
+<a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span>
+
+            <h1 class="govuk-heading-l">
+                All placement opportunities
+            </h1>
+            <h2 class="govuk-heading-m">You have 1 opportunity ready to send</h2>
+
+            <table class="govuk-table">
+
+                <thead>
+                    <tr class="govuk-table__row" style="">
+                        <th class="govuk-table__header" scope="row"></th>
+                        <th class="govuk-table__header" scope="row">Workplace</th>
+                        <th class="govuk-table__header" scope="row">Job role</th>
+                        <th class="govuk-table__header" scope="row">Opportunities</th>
+                        <th class="govuk-table__header" scope="row">Providers selected</th>
+                        <td class="govuk-table__cell"></td>
+
+                        <td class="govuk-table__cell"></td>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+
+
+                    {% if data['addopportunity'] == "2" %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="opp1" name="waste" type="checkbox" value="opp1">
+                                    <label class="govuk-label govuk-checkboxes__label" for="opp1">
+                                        <span class="govuk-visually-hidden" ">Select this opportunity</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">Coventry CV4 8JB</td>
+
+                        <td class="govuk-table__cell">
+                            Farmer
+                        </td>
+                        <td class="govuk-table__cell">6</td>
+                        <td class="govuk-table__cell">2</td>
+                        <td class="govuk-table__cell">
+                            <a class="govuk-link tl-float-right" href="check-answers">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <a class="govuk-link tl-float-right" href="#">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
+                        </td>
+                    </tr>
+
+                    {% if data['placementtype'] == "gap" %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="opp2" name="waste" type="checkbox" value="opp2">
+                                    <label class="govuk-label govuk-checkboxes__label" for="opp2">
+                                        <span class="govuk-visually-hidden" ">Select this opportunity</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">Birmingham {% if data['postcode'] == "" %}B12 3BB{% else %}{{ data['postcode'] }}{% endif %}</td>
+
+                        <td class="govuk-table__cell">
+                            {% if data['roleInfo'] == "" %}-{% else %}{{ data['roleInfo'] }}{% endif %}
+                        </td>
+                        <td class="govuk-table__cell">{% if data['placementNumber'] == "" %}At least 1{% else %}{{ data['placementNumber'] }}{% endif %}</td>
+                        <td class="govuk-table__cell">None available</td>
+                        <td class="govuk-table__cell">
+                            <a class="govuk-link tl-float-right" href="check-answers">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <a class="govuk-link tl-float-right" href="#">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="opp3" name="waste" type="checkbox" value="opp3">
+                                    <label class="govuk-label govuk-checkboxes__label" for="opp3">
+                                        <span class="govuk-visually-hidden" ">Select this opportunity</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">Birmingham {% if data['postcode'] == "" %}B12 3BB{% else %}{{ data['postcode'] }}{% endif %}</td>
+
+                        <td class="govuk-table__cell">
+                            {% if data['roleInfo'] == "" %}Farmer{% else %}{{ data['roleInfo'] }}{% endif %}
+                        </td>
+                        <td class="govuk-table__cell">{% if data['placementNumber'] == "" %}At least 1{% else %}{{ data['placementNumber'] }}{% endif %}</td>
+                        <td class="govuk-table__cell">1</td>
+                        <td class="govuk-table__cell">
+                            <a class="govuk-link tl-float-right" href="check-answers">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <a class="govuk-link tl-float-right" href="#">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% else %}
+                    {% if data['placementtype'] == "gap" %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="opp4" name="waste" type="checkbox" value="opp4">
+                                    <label class="govuk-label govuk-checkboxes__label" for="opp4">
+                                        <span class="govuk-visually-hidden" ">Select this opportunity</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">Birmingham {% if data['postcode'] == "" %}B12 3BB{% else %}{{ data['postcode'] }}{% endif %}</td>
+
+                        <td class="govuk-table__cell">
+                            {% if data['roleInfo'] == "" %}-{% else %}{{ data['roleInfo'] }}{% endif %}
+                        </td>
+                        <td class="govuk-table__cell">{% if data['placementNumber'] == "" %}At least 1{% else %}{{ data['placementNumber'] }}{% endif %}</td>
+                        <td class="govuk-table__cell">None available</td>
+                        <td class="govuk-table__cell">
+                            <a class="govuk-link tl-float-right" href="check-answers">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <a class="govuk-link tl-float-right" href="#">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="opp5" name="waste" type="checkbox" value="opp5">
+                                    <label class="govuk-label govuk-checkboxes__label" for="opp5">
+                                        <span class="govuk-visually-hidden" ">Select this opportunity</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">Birmingham {% if data['postcode'] == "" %}B12 3BB{% else %}{{ data['postcode'] }}{% endif %}</td>
+
+                        <td class="govuk-table__cell">
+                            {% if data['roleInfo'] == "" %}Farmer{% else %}{{ data['roleInfo'] }}{% endif %}
+                        </td>
+                        <td class="govuk-table__cell">{% if data['placementNumber'] == "" %}At least 1{% else %}{{ data['placementNumber'] }}{% endif %}</td>
+                        <td class="govuk-table__cell">1</td>
+                        <td class="govuk-table__cell">
+                            <a class="govuk-link tl-float-right" href="check-answers">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                            <a class="govuk-link tl-float-right" href="#">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% endif %}
+
+
+
+
+                </tbody>
+            </table>
+
+            <p class="govuk-body">
+                <input type="hidden" value="2" name="addopportunity" />
+                <button class="govuk-button" style="background-color: #dee0e2; color: black;">Add another opportunity</button>
+                <a href="#" class="govuk-link" style="float: right">Export as CSV</a>
+            </p>
+
+</form>
+<form class="form" method="post">
+    <p class="govuk-body">
+        <button class="govuk-button" style="margin-right: 5px">Continue</button>
+    </p>
+    <input type="hidden" value="complete" name="addopportunity" />
+
+    <!-- <a href="search" class="govuk-button" style="margin-bottom: 0; background-color: #dee0e2; color: black">Add another opportunity</a> -->
+    </div>
+
+    </div>
+</form>
+{% endblock %}
+
+
+{% block pageScripts %}
+<script>
+    // $(document).ready(function()){
+
+    if (
+        'addEventListener' in document &&
+        document.querySelectorAll
+    ) {
+        document.addEventListener('DOMContentLoaded', function () {
+            var accordions = document.querySelectorAll('.accordion')
+            for (var i = accordions.length - 1; i >= 0; i--) {
+                new Accordion(accordions[i])
+            };
+        })
+    }
+// });
+</script>
+{% endblock %}
