@@ -19,13 +19,14 @@ Opportunity basket
             <h1 class="govuk-heading-l">
                 All placement opportunities
             </h1>
-            <h2 class="govuk-heading-m">You have 1 opportunity ready to send</h2>
-
             <table class="govuk-table">
 
                 <thead>
                     <tr class="govuk-table__row" style="">
+                        {% if data['addopportunity'] == "2" %}
                         <th class="govuk-table__header" scope="row"></th>
+                        {% else %}
+                        {% endif %}
                         <th class="govuk-table__header" scope="row">Workplace</th>
                         <th class="govuk-table__header" scope="row">Job role</th>
                         <th class="govuk-table__header" scope="row">Opportunities</th>
@@ -124,16 +125,6 @@ Opportunity basket
                     {% else %}
                     {% if data['placementtype'] == "gap" %}
                     <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="opp4" name="waste" type="checkbox" value="opp4">
-                                    <label class="govuk-label govuk-checkboxes__label" for="opp4">
-                                        <span class="govuk-visually-hidden" ">Select this opportunity</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </td>
                         <td class="govuk-table__cell">Birmingham {% if data['postcode'] == "" %}B12 3BB{% else %}{{ data['postcode'] }}{% endif %}</td>
 
                         <td class="govuk-table__cell">
@@ -151,16 +142,7 @@ Opportunity basket
                     </tr>
                     {% else %}
                     <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">
-                            <div class="govuk-checkboxes">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="opp5" name="waste" type="checkbox" value="opp5">
-                                    <label class="govuk-label govuk-checkboxes__label" for="opp5">
-                                        <span class="govuk-visually-hidden" ">Select this opportunity</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </td>
+
                         <td class="govuk-table__cell">Birmingham {% if data['postcode'] == "" %}B12 3BB{% else %}{{ data['postcode'] }}{% endif %}</td>
 
                         <td class="govuk-table__cell">
@@ -188,13 +170,21 @@ Opportunity basket
             <p class="govuk-body">
                 <input type="hidden" value="2" name="addopportunity" />
                 <button class="govuk-button" style="background-color: #dee0e2; color: black;">Add another opportunity</button>
-                <a href="#" class="govuk-link" style="float: right">Export as CSV</a>
+                {% if data['addopportunity'] == "2" %}
+                <a href="#" class="govuk-link" style="float: right">Download selected opportunities as CSV</a>
+                {% else %}
+                <a href="#" class="govuk-link" style="float: right">Download opportunity as CSV</a>
+                {% endif %}
             </p>
 
 </form>
 <form class="form" method="post">
     <p class="govuk-body">
-        <button class="govuk-button" style="margin-right: 5px">Continue</button>
+        {% if data['addopportunity'] == "2" %}
+        <button class="govuk-button" style="margin-right: 5px">Refer selected opportunities</button>
+        {% else %}
+        <button class="govuk-button" style="margin-right: 5px">Refer opportunity</button>
+        {% endif %}
     </p>
     <input type="hidden" value="complete" name="addopportunity" />
 
