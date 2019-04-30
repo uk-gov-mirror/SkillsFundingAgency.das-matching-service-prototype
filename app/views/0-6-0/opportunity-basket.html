@@ -82,7 +82,7 @@ Opportunity basket
                         <td class="govuk-table__cell">Birmingham {% if data['postcode'] == "" %}B12 3BB{% else %}{{ data['postcode'] }}{% endif %}</td>
 
                         <td class="govuk-table__cell">
-                            {% if data['roleInfo'] == "" %}-{% else %}{{ data['roleInfo'] }}{% endif %}
+                            {% if data['roleInfo'] == "" %}Not required{% else %}{{ data['roleInfo'] }}{% endif %}
                         </td>
                         <td class="govuk-table__cell">{% if data['placementNumber'] == "" %}At least 1{% else %}{{ data['placementNumber'] }}{% endif %}</td>
                         <td class="govuk-table__cell">None available</td>
@@ -128,7 +128,7 @@ Opportunity basket
                         <td class="govuk-table__cell">Birmingham {% if data['postcode'] == "" %}B12 3BB{% else %}{{ data['postcode'] }}{% endif %}</td>
 
                         <td class="govuk-table__cell">
-                            {% if data['roleInfo'] == "" %}-{% else %}{{ data['roleInfo'] }}{% endif %}
+                            {% if data['roleInfo'] == "" %}Not required{% else %}{{ data['roleInfo'] }}{% endif %}
                         </td>
                         <td class="govuk-table__cell">{% if data['placementNumber'] == "" %}At least 1{% else %}{{ data['placementNumber'] }}{% endif %}</td>
                         <td class="govuk-table__cell">None available</td>
