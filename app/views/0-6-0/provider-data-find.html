@@ -6,37 +6,56 @@ Find a provider
 
 {% block beforeContent %}
   {% include "includes/phase_banner.html" %}
-<a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+<a id="back" class="govuk-back-link" href="start">Return to start page</a>
 {% endblock %}
 
 {% block content %}
 
+
 <form class="form" method="post" id="provider-search-form">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-
             <h1 class="govuk-heading-l">Find a provider</h1>
 
-            <div class="govuk-form-group">
+            <div class="govuk-grid-row">
+
+            <div class="govuk-form-group govuk-grid-column-one-half">
                 <div class="search-header">
                     <div class="searchfield">
                         <div class="search-input">
-                            <label for="search-main" class="govuk-visually-hidden">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="provider-find">
                                 Enter the provider's UKPRN
                             </label>
-                            <input placeholder="Enter the provider's UKPRN" class="search-input" id="provider-search-main" type="search" />
+                            <span class="govuk-hint" id="provider-find-hint">
+                              For example, 10001234
+                            </span>
+                            <input class="search-input" id="provider_find_UKPRN" name="provider_find_UKPRN" value="{{ data['provider_find_UKPRN'] }}" type="search"/>
                         </div>
-                        <div class="search-submit"><button class="button" id="provider-search-submit">Search</button></div>
+                        <div class="search-submit">
+                          <button class="govuk-button" id="provider-find-submit">Find</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
 
         </div>
+      </div>
     </div>
 
+{% if data['provider_find_UKPRN'] == '10001111' %}
 
+    <div id="provider-search-no-results-add">
+        <p class="govuk-body">This provider is not yet in our service:</p>
+          <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 10px">UKPRN</p>
+          <p class="govuk-body">10001111</p>
+          <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 10px">Provider name</p>
+          <p class="govuk-body">Acme College</p>
 
+        <a href="provider-data-providerview?UKPRN=10001111" class="govuk-button">Add new provider</a>
+    </div>
+
+{% elseif data['provider_find_UKPRN'] == '10001234' %}
 
     <div id="provider-search-results">
 
@@ -45,7 +64,7 @@ Find a provider
                 <tr class="govuk-table__row tl-table-row">
                     <th class="govuk-table__header" scope="col">UKPRN</th>
                     <th class="govuk-table__header" scope="col">Provider name</th>
-                    <th class="govuk-table__header" scope="col">Send email?</th>
+                    <th class="govuk-table__header" scope="col">CDF provider</th>
                     <th class="govuk-table__header" scope="col"></th>
                 </tr>
             </thead>
@@ -54,12 +73,7 @@ Find a provider
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">DT Learning</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
                     <td class="govuk-table__cell"><a href="provider-data-providerview?UKPRN=10001234" class="govuk-link">Edit</a></td>
                 </tr>
@@ -67,530 +81,338 @@ Find a provider
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview?UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
 
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Acme College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        Yes
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
-                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">Acme College 84</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        No
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell">10001234</td>
-                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">Luke College</td>
                     <td class="govuk-table__cell">
-                        <div class="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" id="1a" name="1a" type="checkbox" value="yes" checked>
-                                <label class="govuk-label govuk-checkboxes__label" for="1a"></label>
-                            </div>
-                        </div>
+                        No
                     </td>
-                    <td class="govuk-table__cell"><a href="provider-data-providerview&UKPRN=10001233" class="govuk-link">Edit</a></td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
                 </tr>
 
             </tbody>
         </table>
 
-
-        <button class="govuk-button tl-button--grey ">Send email</button>
-        <button class="govuk-button ">Save changes</button>
-
-
-
+        <button type="submit" class="govuk-button govuk-button--warning">Send email</button>
     </div>
 
-    <div id="provider-search-no-results" class="govuk-visually-hidden">
-        <p class="govuk-body">No results</p>
-        <button class="govuk-button">Add new provider</button>
+{% else %}
+      <div id="provider-search-no-results">
+            <p class="govuk-body">No provider has <span class="govuk-!-font-weight-bold"> {{ data['provider_find_UKPRN'] }}</span> as their UKPRN.</p>
+            <p class="govuk-body">Please try again.</p>
+      </div>
 
-    </div>
+{% endif %}
+
 
 </form>
-        {% endblock %}
-        {% block pageScripts %}
-        {% endblock %}
+{% endblock %}
+{% block pageScripts %}
+{% endblock %}

@@ -680,12 +680,13 @@ module.exports = function(router, _myData) {
     // provider-data-find
     router.get('/' + version + '/provider-data-find', function (req, res) {
         res.render(version + '/provider-data-find', {
+          'UKPRN': req.session.UKPRN
         })
     });
 
     router.post('/' + version + '/provider-data-find', function (req, res) {
-        req.session.UKPRN = req.body.UKPRN
-        res.redirect(301, './provider-data-providerview');
+        req.session.provider_find_UKPRN = req.body.provider_find_UKPRN
+        res.redirect(301, './provider-data-find');
     });
 
     // provider-data-providerview
@@ -702,7 +703,7 @@ module.exports = function(router, _myData) {
       req.session.data_contact_name = req.body.data_contact_name,
       req.session.data_contact_email = req.body.data_contact_email,
       req.session.data_contact_phone = req.body.data_contact_phone
-      res.redirect(301, './provider-data-search');
+      res.redirect(301, './provider-data-find');
     });
 
     // provider-data-venue
@@ -720,17 +721,17 @@ module.exports = function(router, _myData) {
     router.get('/' + version + '/provider-data-addqual', function (req, res) {
         res.render(version + '/provider-data-addqual', {
         })
-    
+
     });
 
     router.post('/' + version + '/provider-data-addqual', function (req, res) {
         console.log(req)
-        if (req.body.QualLAR === "1234567") {
+        if (req.body.QualLAR === "12345678") {
             res.redirect(301, './provider-data-missingqual');
         }
         else {
             res.redirect(301, './provider-data-venue');
-        }       
+        }
 
     });
 

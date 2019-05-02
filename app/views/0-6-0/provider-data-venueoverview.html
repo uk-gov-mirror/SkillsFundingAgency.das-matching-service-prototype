@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Provider overview
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-m">DT Learning</span>
+          <h1 class="govuk-heading-l">Venues and qualifications</h1>
+
+          <div class="form-group>">
+            <p class="govuk-body govuk-link"><a href="provider-data-addvenue">Add a venue</a></p>
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+              <h2 class="govuk-heading-m">DE4 1DE &nbsp;&nbsp;| &nbsp;&nbsp;Sheppey College</h2>
+              <p class="govuk-body">Qualifications with an industry placement option:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>NVQ Level 2 in Lawn Mowering (10001234)</li>
+                <li>NVQ Level 2 in Lawn Mowering (10001234)</li>
+                <li>NVQ Level 2 in Lawn Mowering (10001234)</li>
+              </ul>
+              <p class="govuk-link"><a href="provider-data-venue">Edit DE4 1DE</a></p>
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+              <h2 class="govuk-heading-m">TN2 4JD</h2>
+              <p class="govuk-body">Qualifications with an industry placement option:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>NVQ Level 2 in Lawn Mowering (10001234)</li>
+                <li>NVQ Level 2 in Lawn Mowering (10001234)</li>
+              </ul>
+              <p class="govuk-link"><a href="#">Edit TN2 4JD</a></p>
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+              <h2 class="govuk-heading-m">B91 3PU &nbsp;&nbsp;| &nbsp;&nbsp;Solihull campus<strong class="govuk-tag" style="margin-left: 10px">no referrals</strong></h2>
+              <p class="govuk-body">Qualifications with an industry placement option:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>NVQ Level 2 in Lawn Mowering (10001234)</li>
+                <li>NVQ Level 2 in Lawn Mowering (10001234)</li>
+              </ul>
+              <p class="govuk-link"><a href="#">Edit B91 3PU</a></p>
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+          </div>
+
+          <a href="#" class="govuk-button" style="margin-bottom: 0; background-color: #dee0e2; color: black">Return to provider overview</a>
+
+
+
+      </div>
+  </div>
+
+</form>
+
+{% endblock %}
