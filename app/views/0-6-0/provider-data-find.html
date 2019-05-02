@@ -52,10 +52,10 @@ Find a provider
           <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 10px">Provider name</p>
           <p class="govuk-body">Acme College</p>
 
-        <a href="provider-data-providerview?UKPRN=10001111" class="govuk-button">Add new provider</a>
+        <a href="provider-data-providerview?UKPRN=10001111" class="govuk-button">Add this provider</a>
     </div>
 
-{% elseif data['provider_find_UKPRN'] == '10001234' %}
+{% elseif data['provider_find_UKPRN'] == '10001234' or data['provider_find_UKPRN'] == null %}
 
     <div id="provider-search-results">
 
