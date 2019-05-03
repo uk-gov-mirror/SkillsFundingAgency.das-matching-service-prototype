@@ -19,7 +19,7 @@ Find a provider
 
             <div class="govuk-grid-row">
 
-            <div class="govuk-form-group govuk-grid-column-one-half">
+            <div class="govuk-form-group govuk-grid-column-two-thirds">
                 <div class="search-header">
                     <div class="searchfield">
                         <div class="search-input">
@@ -36,6 +36,11 @@ Find a provider
                         </div>
                     </div>
                 </div>
+
+                {% if data['provider_find_UKPRN'] != null %}
+                <a href="#" class="govuk-link">Show all providers</a>
+                {% else %}
+                {% endif %}
             </div>
 
 
@@ -47,10 +52,10 @@ Find a provider
 
     <div id="provider-search-no-results-add">
         <p class="govuk-body">This provider is not yet in our service:</p>
-          <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 10px">UKPRN</p>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">UKPRN</p>
           <p class="govuk-body">10001111</p>
-          <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 10px">Provider name</p>
-          <p class="govuk-body">Acme College</p>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">Provider name</p>
+          <p class="govuk-body govuk-!-margin-bottom-6">Acme College</p>
 
         <a href="provider-data-providerview?UKPRN=10001111" class="govuk-button">Add this provider</a>
     </div>
