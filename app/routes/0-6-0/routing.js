@@ -703,7 +703,11 @@ module.exports = function(router, _myData) {
       req.session.data_contact_name = req.body.data_contact_name,
       req.session.data_contact_email = req.body.data_contact_email,
       req.session.data_contact_phone = req.body.data_contact_phone
-      res.redirect(301, './provider-data-find');
+      if (req.body.providerAction == "save" && req.body.CDF == "yes") {
+        res.redirect(301, './provider-data-providerview');
+      } else {
+          res.redirect(301, './provider-data-find');
+      }
     });
 
     // provider-data-venue
