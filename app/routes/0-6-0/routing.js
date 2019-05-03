@@ -717,6 +717,17 @@ module.exports = function(router, _myData) {
       res.redirect(301, './provider-data-providerview');
     });
 
+    // provider-data-venue-add
+    router.get('/' + version + '/provider-data-venue-add', function (req, res) {
+        res.render(version + '/provider-data-venue-add', {
+          'venuePostcode':req.session.venuePostcode
+          })
+    });
+
+    router.post('/' + version + '/provider-data-venue-add', function (req, res){
+      res.redirect(301, './provider-data-providerview');
+    });
+
     // provider-data-addqual
     router.get('/' + version + '/provider-data-addqual', function (req, res) {
         res.render(version + '/provider-data-addqual', {
@@ -753,7 +764,7 @@ module.exports = function(router, _myData) {
 
     router.post('/' + version + '/provider-data-addvenue', function (req, res){
       req.session.venuePostcode = req.body.venuePostcode
-      res.redirect(301, './provider-data-venue');
+      res.redirect(301, './provider-data-venue-add');
     });
 
     // provider-data-sure
