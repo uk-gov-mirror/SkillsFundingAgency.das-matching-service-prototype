@@ -28,6 +28,17 @@ $(document).ready(function () {
         return false;
 
     });
+
+    $("#tl-upload").click(function () {
+        $("#tl-upload-stage1").addClass("tl-hidden");
+        $("#tl-upload-stage2").removeClass("tl-hidden").delay(4000).queue(function (next) {
+            $("#tl-upload-stage2").addClass("tl-hidden");
+            $("#tl-upload-stage3").removeClass("tl-hidden");
+            next()
+            });
+    });
 })
+
+
 
 
