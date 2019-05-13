@@ -31,12 +31,31 @@ $(document).ready(function () {
 
     $("#tl-upload").click(function () {
         $("#tl-upload-stage1").addClass("tl-hidden");
-        $("#tl-upload-stage2").removeClass("tl-hidden").delay(4000).queue(function (next) {
+        $('.tl-upload-bar-progress').animate({
+            width: '100%',
+        }, 20000, 'linear');
+
+        $({ Counter: 0 }).animate({
+            Counter: $('#tl-upload-count').text()
+        }, {
+                duration: 20000,
+                easing: 'linear',
+                step: function () {
+                    $('#tl-upload-count').text(Math.ceil(this.Counter));
+                }
+            });
+        $("#tl-upload-stage2").removeClass("tl-hidden").delay(20000).queue(function (next) {
             $("#tl-upload-stage2").addClass("tl-hidden");
             $("#tl-upload-stage3").removeClass("tl-hidden");
             next()
             });
     });
+
+
+
+    var percent = $('.tl-upload-bar-progress').width() / $('.tl-upload-bar').width() * 100;
+
+    console.log(Math.round(percent).toFixed(2)); 
 })
 
 
