@@ -103,6 +103,16 @@ $govuk-global-styles: true;
     width: 0%;
 }
 
+.tl-upload-bar-progress-error {
+    background-color: govuk-colour("blue");
+    display: block;
+    position: relative;
+    min-height: 8px;
+    top: 0;
+    left: 0;
+    width: 0%;
+}
+
 
 
 
