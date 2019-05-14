@@ -1,0 +1,293 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+DT Learning
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+{% if data['UKPRN'] == '10001234' %}
+        <span class="govuk-caption-m">UKPRN: 10001234</span>
+          <h1 class="govuk-heading-l">DT Learning</h1>
+
+          <div class="govuk-form-group" style="margin-bottom: 15px">
+            <fieldset class="govuk-fieldset" aria-describedby="CDF-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h3 class="govuk-fieldset__heading">
+                  Is DT Learning receiving capacity and delivering funding (CDF)?
+                </h3>
+              </legend>
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="CDF-1" name="CDF" type="radio" value="yes" checked>
+                  <label class="govuk-label govuk-radios__label" for="CDF-1">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="CDF-2" name="CDF" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="CDF-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button name="providerAction" value="save" class="govuk-button" style="margin-bottom: 0; background-color: #dee0e2; color: black">Save</button>
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                <h3 class="govuk-fieldset__heading">
+                  Does DT Learning want our help finding placements for students?
+                </h3>
+              </legend>
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="provider-referrals-1" name="provider-referrals" type="radio" value="yes" checked>
+                  <label class="govuk-label govuk-radios__label" for="provider-referrals-1">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="provider-referrals-2" name="provider-referrals" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="provider-referrals-2">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-heading-s" for="knownas">
+            How should DT Learning show in search results?
+            </label>
+            <input class="govuk-input" id="knownas" name="knownas" type="text" value="DT Learning Centre">
+          </div>
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+          <h2 class="govuk-heading-m">Contact information</h2>
+
+          <h3 class="govuk-heading-s">Primary contact for placements</h3>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="data_contact_name">
+              Primary contact name
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="data_contact_name" name="data_contact_name" type="text" value="David Davies">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="data_contact_email">
+              Primary email
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="data_contact_email" name="data_contact_email" type="email" value="notknown@notknown.com">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="data_contact_phone">
+              Primary phone number
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="data_contact_phone" name="data_contact_phone" type="tel" value="010 1234 5678 ext 1010">
+          </div>
+
+          <h3 class="govuk-heading-s">Secondary contact for placements</h3>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="data_contact_name">
+              Secondary contact name (optional)
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="data_contact_name" name="data_contact_name" type="text" value="David Davies">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="data_contact_email">
+              Secondary email (optional)
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="data_contact_email" name="data_contact_email" type="email" value="notknown@notknown.com">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="data_contact_phone">
+              Secondary phone number (optional)
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="data_contact_phone" name="data_contact_phone" type="tel" value="010 1234 5678 ext 1010">
+          </div>
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+          <h2 class="govuk-heading-m">Venues</h2>
+
+          <div class="form-group">
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">Postcode</th>
+                  <th class="govuk-table__header" scope="col">Number of qualifications</th>
+                  <th class="govuk-table__header" scope="col">Help finding placements</th>
+                  <th class="govuk-table__header" scope="col"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__cell">DE4 1DE</th>
+                  <td class="govuk-table__cell ">4</td>
+                  <td class="govuk-table__cell">Yes</td>
+                  <td class="govuk-table__cell" style="text-align: right"><a href="provider-data-venue">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__cell">TF1 2XC</th>
+                  <td class="govuk-table__cell ">2</td>
+                  <td class="govuk-table__cell">Yes</td>
+                  <td class="govuk-table__cell" style="text-align: right"><a href="#">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__cell">HG1 7VG</th>
+                  <td class="govuk-table__cell">6</td>
+                  <td class="govuk-table__cell">No</td>
+                  <td class="govuk-table__cell" style="text-align: right"><a href="#">Edit</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="govuk-body"><a class="govuk-link" href="provider-data-addvenue">Add a venue</a></p>
+          </div>
+
+          <button name="providerAction" value="finish" class="govuk-button">Save and finish</button>
+
+
+{% else %}
+          <span class="govuk-caption-m">UKPRN: {{ data['UKPRN'] }}</span>
+            <h1 class="govuk-heading-l">Acme College</h1>
+
+            <div class="govuk-form-group" style="margin-bottom: 15px">
+              <fieldset class="govuk-fieldset" aria-describedby="CDF-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h3 class="govuk-fieldset__heading">
+                    Is Acme College receiving capacity and delivering funding (CDF)?
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="CDF-1" name="CDF" type="radio" value="yes" checked>
+                    <label class="govuk-label govuk-radios__label" for="CDF-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="CDF-2" name="CDF" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="CDF-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <a href="provider-data-find" class="govuk-button" style="margin-bottom: 0; background-color: #dee0e2; color: black">Save</a>
+
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h3 class="govuk-fieldset__heading">
+                    Does Acme College want our help finding placements for students?
+                  </h3>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="provider-referrals-1" name="provider-referrals" type="radio" value="yes" checked>
+                    <label class="govuk-label govuk-radios__label" for="provider-referrals-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="provider-referrals-2" name="provider-referrals" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="provider-referrals-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-heading-s" for="knownas">
+              How should Acme College show in search results?
+              </label>
+              <input class="govuk-input" id="knownas" name="knownas" type="text" value="DT Learning Centre">
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            <h2 class="govuk-heading-m">Contact information</h2>
+
+            <h3 class="govuk-heading-s">Primary contact for placements</h3>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="data_contact_name">
+                Primary contact name
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="data_contact_name" name="data_contact_name" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="data_contact_email">
+                Primary email
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="data_contact_email" name="data_contact_email" type="email">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="data_contact_phone">
+                Primary phone number
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="data_contact_phone" name="data_contact_phone" type="tel">
+            </div>
+
+            <h3 class="govuk-heading-s">Secondary contact for placements</h3>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="data_contact_name">
+                Secondary contact name (optional)
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="data_contact_name" name="data_contact_name" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="data_contact_email">
+                Secondary email (optional)
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="data_contact_email" name="data_contact_email" type="email">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="data_contact_phone">
+                Secondary phone number (optional)
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="data_contact_phone" name="data_contact_phone" type="tel">
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            <div class="form-group">
+              <h2 class="govuk-heading-m">Venues and qualifications</h2>
+              <p>You need to add a venue for this provider.</p>
+            </div>
+
+            <a class="govuk-button" href="provider-data-addvenue">Save and add a venue</a>
+
+{% endif %}
+
+      </div>
+  </div>
+
+</form>
+
+{% endblock %}

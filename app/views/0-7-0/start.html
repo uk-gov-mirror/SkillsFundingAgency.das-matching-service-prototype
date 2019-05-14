@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Match employers with providers for industry placements</h1>
+
+      <form class="form" method="post">
+
+        <div class="govuk-form-group">
+          <p class="govuk-body">Use this service to help employers:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>find local providers with suitable students</li>
+            <li>talk to providers about placements</li>
+            <li>tell us if there are not enough providers</li>
+          </ul>
+        </div>
+
+
+        <div class="govuk-form-group">
+            <p class="govuk-body"><a class="govuk-link" href="saved-opportunities">View saved opportunities</a></p>
+
+            <button class="govuk-button govuk-button--start">Start a new opportunity</button>
+
+        </div>
+
+        {% if data['user_type'] == 'admin' %}
+        <h2 class="govuk-heading-m">Service administration</h2>
+        <ul class="govuk-list">
+            <li>
+                <a class="govuk-link" href="#">Upload employer data</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="provider-data-find">Add or edit provider data</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="edit-qualifications">Edit qualifications</a>
+            </li>
+        </ul>
+        {% else %}
+        {% endif %}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

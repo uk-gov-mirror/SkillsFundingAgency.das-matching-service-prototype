@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check answers
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  {% include "includes/start_again.html" %}
+<a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span>
+
+        <h1 class="govuk-heading-l">
+            Before we send referral emails to {% if data['addopportunity'] == "2" %}{{ data['addopportunity'] }} providers{% else %}1 provider{% endif %}
+        </h1>
+        <h2 class="govuk-heading-m">
+            Confirm we can share the employer's details
+        </h2>
+
+
+
+
+
+        <form class="form" method="post">
+
+
+
+            <div class="form-group">
+
+                <h3 class="govuk-heading-m"></h3>
+                <div class="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="declare" name="declare" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label" for="declare">
+                            {{ data['contact_name'] }} has confirmed that we can send their details to the selected providers, and that these providers can contact them about industry placements.
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <button class="govuk-button">Confirm and send emails</button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
