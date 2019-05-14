@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Assign routes and short titles
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+          <h1 class="govuk-heading-l">Assign routes and short titles</h1>
+
+          <div class="govuk-form-group">
+
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col">LAR ID</th>
+                    <th class="govuk-table__header" scope="col">Qualification title</th>
+                    <th class="govuk-table__header" scope="col">Assign route</th>
+                    <th class="govuk-table__header" scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" style="vertical-align: top">10001234</td>
+                    <td class="govuk-table__cell">NVQ Level 2 in Lawn Mowering
+                      <div class="govuk-form-group govuk-!-margin-top-2">
+                        <label class="govuk-label govuk-!-font-weight-bold" for="short_title">
+                          Short title
+                        </label>
+                        <input class="govuk-input" id="short_title" name="short_title" type="text" value="lawn mowering">
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell" style="vertical-align: top">
+                      <div class="govuk-form-group">
+                        <select class="govuk-select" id="gatsby_route" name="gatsby_route">
+                          <option value="agriculture, environmental and animal care" selected>Agriculture, environmental and animal care</option>
+                          <option value="business and administration">Business and administration</option>
+                          <option value="care services">Care services</option>
+                          <option value="catering and hospitality">Catering and hospitality</option>
+                          <option value="construction">Construction</option>
+                          <option value="creative and design">Creative and design</option>
+                          <option value="digital">Digital</option>
+                          <option value="education and childcare">Education and childcare</option>
+                          <option value="engineering and manufacturing">Engineering and manufacturing</option>
+                          <option value="hair and beauty">Hair and beauty</option>
+                          <option value="health and science">Health and science</option>
+                          <option value="legal, financial and accounting">Legal, financial and accounting</option>
+                          <option value="protective services">Protective services</option>
+                          <option value="sales, marketing and procurement">Sales, marketing and procurement</option>
+                          <option value="transport and logistics">Transport and logistics</option>
+                        </select>
+                      </div>
+                    </td>
+                    <td class="govuk-table__cell" style="text-align: right; vertical-align: top""><a href="#">Remove</a></td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+
+        <button class="govuk-button">Upload qualifications</button>
+
+        <p class="govuk-link"><a href="#">Finish</a></p>
+
+      </div>
+  </div>
+
+</form>
+
+{% endblock %}
