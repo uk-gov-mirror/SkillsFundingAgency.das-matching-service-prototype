@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Employer name
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  {% include "includes/start_again.html" %}
+<a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div id="tl-upload-stage1">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">Data Import</h1>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <form enctype="multipart/form-data" novalidate="" action="/DataImport" method="post">
+            <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="file">
+                        Select the file
+                    </label>
+                    <span class="govuk-error-message field-validation-valid" data-valmsg-for="File" data-valmsg-replace="true"></span>
+                    <input class="govuk-file-upload" type="file" id="File" name="File">
+                </div>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="SelectedImportType">
+                        Choose file type
+                    </label>
+                    <select class="govuk-select" data-val="true" data-val-required="The SelectedImportType field is required." id="SelectedImportType" name="SelectedImportType">
+                        <option value="Employer">Employer CRM data</option>
+                        <option value="Provider">Provider</option>
+                        <option value="ProviderVenue">Provider venue</option>
+                        <option value="ProviderQualification">Provider qualification</option>
+                        <option value="QualificationRoutePathMapping">Route &amp; pathway mapping</option>
+                    </select>
+                </div>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-form-group">
+                    <a href="#" id="tl-upload" class="govuk-button">Upload</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="tl-upload-stage2" class="tl-hidden">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl">Data Import</h1>
+            </div>
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <form>
+                <div class="govuk-grid-column-two-thirds">
+                    <h3 class="govuk-label govuk-!-font-weight-bold">File uploading</h3>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                            <p class="govuk-body">09052019Upload.xls</p>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                            <span class="govuk-hint tl-float-right">4.2MB</span>
+                        </div>
+                        <div class="govuk-grid-column-full">
+                            <span class="tl-upload-bar"><span class="tl-upload-bar-progress"></span></span>
+
+
+                            <p class="govuk-body-s"><span id="tl-upload-count">100</span>% uploaded</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </form>
+        </div>
+
+</div>
+
+<div id="tl-upload-stage3" class="tl-hidden">
+
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl">Data Import</h1>
+            </div>
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <form>
+                <div class="govuk-grid-column-two-thirds">
+
+                </div>
+
+                <div class="govuk-grid-column-two-thirds">
+                    <h3 class="govuk-label govuk-!-font-weight-bold">File upload successful</h3>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                            <img src="/public/images/check.png" style="max-width: 40px; float: left;">
+
+                            <p class="govuk-body" style="padding: 10px 10px 10px 50px;">09052019Upload.xls</p>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                            <span class="govuk-hint" style="padding: 10px;">4.2MB</span>
+                        </div>
+                    </div>
+
+
+                </div>
+            </form>
+        </div>
+
+        <div class="govuk-form-group">
+            <a href="start" class="govuk-button">Go back</a>
+        </div>
+
+
+</div>
+
+{% endblock %}
+{% block pageScripts %}
+
+{% endblock %}

@@ -65,11 +65,11 @@ $govuk-global-styles: true;
 
 .tl-button--grey {
     background: govuk-colour("grey-3");
-    color: govuk-colour("black");
+    color: govuk-colour("black") !important;
 
     &:hover,
     &:focus {
-        color: govuk-colour("black");
+        color: govuk-colour("black") !important;
         background: darken(govuk-colour("grey-3"), 10%);
     }
 }
@@ -85,3 +85,24 @@ $govuk-global-styles: true;
 .tl-hidden {
     display: none;
 }
+
+.tl-upload-bar {
+    width: 100%;
+    display: block;
+    background-color: govuk-colour("grey-3");
+    min-height: 8px;
+    margin-bottom: 10px;
+}
+.tl-upload-bar-progress {
+    background-color: govuk-colour("blue");
+    display: block;
+    position: relative;
+    min-height: 8px;
+    top: 0;
+    left: 0;
+    width: 0%;
+}
+
+
+
+
