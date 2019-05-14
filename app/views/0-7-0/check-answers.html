@@ -109,6 +109,24 @@
                       </dd>
                   </div>
 
+                  <div class="app-check-your-answers__contents">
+                      <dt class="app-check-your-answers__question">
+                          Placement start date
+                      </dt>
+                      <dd class="app-check-your-answers__answer">
+                          {% if data['startdate'] == "thisyear" %}
+                          This academic year (before September 2019)
+                          {% else %}
+                          Next academic year (after September 2019)
+                          {% endif %}
+                      </dd>
+                      <dd class="app-check-your-answers__change">
+                          <a href="placements">
+                              Change<span class="govuk-visually-hidden"> the placement start date</span>
+                          </a>
+                      </dd>
+                  </div>
+
 
 
                   <!-- <div class="app-check-your-answers__contents">
