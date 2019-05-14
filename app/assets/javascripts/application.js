@@ -44,6 +44,19 @@ $(document).ready(function () {
                     $('#tl-upload-count').text(Math.ceil(this.Counter));
                 }
             });
+        $('.tl-upload-bar-progress-error').animate({
+            width: '80%',
+        }, 15000, 'linear');
+
+        $({ Counter: 0 }).animate({
+            Counter: $('#tl-upload-count-error').text()
+        }, {
+                duration: 15000,
+                easing: 'linear',
+                step: function () {
+                    $('#tl-upload-count-error').text(Math.ceil(this.Counter));
+                }
+            });
         $("#tl-upload-stage2").removeClass("tl-hidden").delay(20000).queue(function (next) {
             $("#tl-upload-stage2").addClass("tl-hidden");
             $("#tl-upload-stage3").removeClass("tl-hidden");
