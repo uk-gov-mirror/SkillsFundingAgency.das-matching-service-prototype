@@ -21,78 +21,8 @@ Opportunity basket
             <input type="hidden" value="2" name="addopportunity" />
             <button class="govuk-button" style="background-color: #dee0e2; color: black;">Add another opportunity</button>
 
-
-
-{% if data['addopportunity'] == "2" %}
-            <table class="govuk-table">
-                <thead>
-                  <tr class="govuk-table__row" style="">
-                      <th class="govuk-table__header" scope="row"></th>
-                      <th class="govuk-table__header" scope="row">Workplace</th>
-                      <th class="govuk-table__header" scope="row">Job role</th>
-                      <th class="govuk-table__header" scope="row">Opportunities</th>
-                      <th class="govuk-table__header" scope="row">Providers selected</th>
-                      <td class="govuk-table__cell"></td>
-                      <td class="govuk-table__cell"></td>
-                  </tr>
-                </thead>
-                <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                          <div class="govuk-checkboxes">
-                              <div class="govuk-checkboxes__item">
-                                  <input class="govuk-checkboxes__input" id="opp1" name="waste" type="checkbox" value="opp1">
-                                  <label class="govuk-label govuk-checkboxes__label" for="opp1">
-                                      <span class="govuk-visually-hidden" ">Select this opportunity</span>
-                                  </label>
-                              </div>
-                          </div>
-                      </td>
-                      <td class="govuk-table__cell">Coventry CV4 8JB</td>
-
-                      <td class="govuk-table__cell">Farmer</td>
-                      <td class="govuk-table__cell">6</td>
-                      <td class="govuk-table__cell">2</td>
-                      <td class="govuk-table__cell">
-                          <a class="govuk-link tl-float-right" href="check-answers">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
-                      </td>
-
-                      <td class="govuk-table__cell">
-                          <a class="govuk-link tl-float-right" href="#">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
-                      </td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">
-                          <div class="govuk-checkboxes">
-                              <div class="govuk-checkboxes__item">
-                                  <input class="govuk-checkboxes__input" id="opp3" name="waste" type="checkbox" value="opp3">
-                                  <label class="govuk-label govuk-checkboxes__label" for="opp3">
-                                      <span class="govuk-visually-hidden" ">Select this opportunity</span>
-                                  </label>
-                              </div>
-                          </div>
-                      </td>
-                      <td class="govuk-table__cell">Birmingham {% if data['postcode'] == "" %}B12 3BB{% else %}{{ data['postcode'] }}{% endif %}</td>
-
-                      <td class="govuk-table__cell">
-                          {% if data['roleInfo'] == "" %}Farmer{% else %}{{ data['roleInfo'] }}{% endif %}
-                      </td>
-                      <td class="govuk-table__cell">{% if data['placementNumber'] == "" %}At least 1{% else %}{{ data['placementNumber'] }}{% endif %}</td>
-                      <td class="govuk-table__cell">1</td>
-                      <td class="govuk-table__cell">
-                          <a class="govuk-link tl-float-right" href="check-answers">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
-                      </td>
-
-                      <td class="govuk-table__cell">
-                          <a class="govuk-link tl-float-right" href="#">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
-                      </td>
-                  </tr>
-                </tbody>
-            </table>
-{% else %}
 {% if data['placementtype'] == "gap" %}
             <div class="govuk-tabs" data-module="tabs">
-
                 <ul class="govuk-tabs__list">
                   <li class="govuk-tabs__list-item">
                     <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#opportunities">
@@ -109,7 +39,7 @@ Opportunity basket
                   <table class="govuk-table">
                       <thead>
                         <tr class="govuk-table__row" style="">
-                            <th class="govuk-table__header" scope="row"></th>
+                            <th class="govuk-table__header" scope="row">Select to refer</th>
                             <th class="govuk-table__header" scope="row">Workplace</th>
                             <th class="govuk-table__header" scope="row">Job role</th>
                             <th class="govuk-table__header" scope="row">Opportunities</th>
@@ -179,7 +109,7 @@ Opportunity basket
                         <tr class="govuk-table__row" style="">
                             <th class="govuk-table__header" scope="row">Workplace</th>
                             <th class="govuk-table__header" scope="row">Opportunities</th>
-                            <th class="govuk-table__header" scope="row">Providers selected</th>
+                            <th class="govuk-table__header" scope="row">Provision gap type</th>
                             <!-- <td class="govuk-table__cell"></td>
                             <td class="govuk-table__cell"></td> -->
                         </tr>
@@ -201,6 +131,73 @@ Opportunity basket
                 </section>
 
             </div>
+{% else %}
+{% if data['addopportunity'] == "2" %}
+            <table class="govuk-table">
+                <thead>
+                  <tr class="govuk-table__row" style="">
+                      <th class="govuk-table__header" scope="row"></th>
+                      <th class="govuk-table__header" scope="row">Workplace</th>
+                      <th class="govuk-table__header" scope="row">Job role</th>
+                      <th class="govuk-table__header" scope="row">Opportunities</th>
+                      <th class="govuk-table__header" scope="row">Providers selected</th>
+                      <td class="govuk-table__cell"></td>
+                      <td class="govuk-table__cell"></td>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                          <div class="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="opp1" name="waste" type="checkbox" value="opp1">
+                                  <label class="govuk-label govuk-checkboxes__label" for="opp1">
+                                      <span class="govuk-visually-hidden" ">Select this opportunity</span>
+                                  </label>
+                              </div>
+                          </div>
+                      </td>
+                      <td class="govuk-table__cell">Coventry CV4 8JB</td>
+
+                      <td class="govuk-table__cell">Farmer</td>
+                      <td class="govuk-table__cell">6</td>
+                      <td class="govuk-table__cell">2</td>
+                      <td class="govuk-table__cell">
+                          <a class="govuk-link tl-float-right" href="check-answers">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
+                      </td>
+
+                      <td class="govuk-table__cell">
+                          <a class="govuk-link tl-float-right" href="#">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
+                      </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                          <div class="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="opp3" name="waste" type="checkbox" value="opp3">
+                                  <label class="govuk-label govuk-checkboxes__label" for="opp3">
+                                      <span class="govuk-visually-hidden" ">Select this opportunity</span>
+                                  </label>
+                              </div>
+                          </div>
+                      </td>
+                      <td class="govuk-table__cell">Birmingham {% if data['postcode'] == "" %}B12 3BB{% else %}{{ data['postcode'] }}{% endif %}</td>
+
+                      <td class="govuk-table__cell">
+                          {% if data['roleInfo'] == "" %}Farmer{% else %}{{ data['roleInfo'] }}{% endif %}
+                      </td>
+                      <td class="govuk-table__cell">{% if data['placementNumber'] == "" %}At least 1{% else %}{{ data['placementNumber'] }}{% endif %}</td>
+                      <td class="govuk-table__cell">1</td>
+                      <td class="govuk-table__cell">
+                          <a class="govuk-link tl-float-right" href="check-answers">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
+                      </td>
+
+                      <td class="govuk-table__cell">
+                          <a class="govuk-link tl-float-right" href="#">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
+                      </td>
+                  </tr>
+                </tbody>
+            </table>
 {% else %}
             <table class="govuk-table">
                 <thead>
@@ -237,9 +234,9 @@ Opportunity basket
 
 
             {% if data['addopportunity'] == "2" %}
-            <a href="#" class="govuk-link">Download selected opportunities as spreadsheet (CSV, XMb)</a>
+            <p class="govuk-body"><a href="#" class="govuk-link">Download selected opportunities as spreadsheet (CSV, XMb)</a></p>
             {% else %}
-            <a href="#" class="govuk-link">Download opportunity as spreadsheet (CSV, XMb)</a>
+            <p class="govuk-body"><a href="#" class="govuk-link">Download opportunity as spreadsheet (CSV, XMb)</a></p>
             {% endif %}
 
         </div>
