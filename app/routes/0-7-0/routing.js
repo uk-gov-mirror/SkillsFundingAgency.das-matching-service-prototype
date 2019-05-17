@@ -102,6 +102,27 @@ module.exports = function(router, _myData) {
         }
     });
 
+    // opportunity-basket50
+    router.get('/' + version + '/opportunity-basket50', function (req, res) {
+        res.render(version + '/opportunity-basket50', {
+            'addopportunity': req.session.addopportunity,
+            'businessName': req.session.businessName,
+            'postcode': req.session.postcode,
+            'placementtype': req.session.placementtype
+          })
+    });
+
+    router.post('/' + version + '/opportunity-basket50', function (req, res) {
+        req.session.basketcontinue = req.body.basketcontinue,
+        req.session.addopportunity = req.body.addopportunity
+
+        if (req.session.basketcontinue == "refer") {
+            res.redirect(301, 'edit-employer');
+        } else {
+            res.redirect(301, 'search');
+        }
+    });
+
     // // location
     // router.get('/' + version + '/location', function (req, res) {
     //     res.render(version + '/location', {
@@ -609,6 +630,8 @@ module.exports = function(router, _myData) {
     router.post('/' + version + '/placement-gap', function (req, res) {
         if (req.session.addopportunity == "2") {
             res.redirect(301, 'opportunity-basket');
+        } else if (req.session.addopportunity == "50") {
+            res.redirect(301, 'opportunity-basket50');
         } else {
             req.session.placementtype = req.body.placementtype
             res.redirect(301, 'employer-name');

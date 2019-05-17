@@ -15,11 +15,11 @@
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
           <div class="govuk-form-group">
-              {% if data['addopportunity'] != '2' %}
-              <h1 class="govuk-heading-l">Find local providers</h1>
-              {% else %}
+              {% if (data['addopportunity'] == "2") or (data['addopportunity'] == "50") %}
               <span class="govuk-caption-m">New opportunity</span>
               <!-- <span class="govuk-caption-l">{{ data['businessName'] }}</span> -->
+              <h1 class="govuk-heading-l">Find local providers</h1>
+              {% else %}
               <h1 class="govuk-heading-l">Find local providers</h1>
               {% endif %}
 
