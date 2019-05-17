@@ -6,7 +6,7 @@
 
 {% block beforeContent %}
   {% include "includes/phase_banner.html" %}
-  {% include "includes/start_again.html" %}
+  {% include "includes/save_return.html" %}
   <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
@@ -16,13 +16,12 @@
     <div class="govuk-grid-column-two-thirds">
 
         <h1 class="govuk-heading-l">Check {% if data['businessName'] == "" %}
-            West Ham United Football Club Limited
-            {% else %}
-            {% if data['businessName'] == null %}
-            West Ham United Football Club Limited
-            {% else %}
-            {{ data['businessName'] }}
-            {% endif %}{% endif %}'s details</h1>
+          West Ham United Football Club Limited{% else %}
+          {% if data['businessName'] == null %}
+          West Ham United Football Club Limited
+          {% else %}
+          {{ data['businessName'] }}
+          {% endif %}{% endif %}'s details</h1>
 
       <form class="form" method="post">
 

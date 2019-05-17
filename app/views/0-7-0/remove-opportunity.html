@@ -14,22 +14,39 @@ Remove opportunity
 
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-l">Are you sure you want to remove this opportunity?</h1>
+          <h1 class="govuk-heading-l">Do you want to remove the opportunity created in health and science at CV4 8JB?</h1>
 
-          <p class="govuk-body">This cannot be undone.
+          <dl class="govuk-summary-list govuk-!-margin-bottom-5">
+              <div class="govuk-summary-list__row govuk-!-margin-bottom-3">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-bold">
+                      Job role
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                      {% if (data['roleInfo'] == "") or (data['roleInfo'] == null) %}Physiotherapy assistant{% else %}{{ data['roleInfo'] }}{% endif %}
+                  </dd>
+              </div>
+              <div class="govuk-summary-list__row govuk-!-margin-bottom-3">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-bold">
+                      Number of placements
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                      {% if (data['placementNumber'] == "") or (data['placementNumber'] == null) %}1{% else %}{{ data['placementNumber'] }}{% endif %}
+                  </dd>
+              </div>
+          </dl>
 
             <div class="govuk-form-group">
                 <div class="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="where-do-you-live-1" name="where-do-you-live" type="radio" value="england">
-                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
-                      Yes - remove this opportunity
+                    <input class="govuk-radios__input" id="delete-opp-yes" name="delete-opp" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="delete-opp-yes">
+                      Yes
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
-                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                      No - return to opportunity basket
+                    <input class="govuk-radios__input" id="delete-opp-no" name="delete-opp" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="delete-opp-no">
+                      No
                     </label>
                   </div>
                 </div>

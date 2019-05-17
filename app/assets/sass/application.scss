@@ -113,6 +113,26 @@ $govuk-global-styles: true;
     width: 0%;
 }
 
+.table-clickable tbody tr:hover {
+  background-color: #F8F8F8;
+  cursor: pointer;
+}
 
+$selected-colour: #F8F8F8;
 
+.table-clickable tbody tr.checked {
+  background-color: #F8F8F8;
+}
 
+.table-clickable tbody tr.checked:hover {
+  background-color: darken(#F8F8F8, 5%);
+}
+
+.table-clickable {
+
+  .multiple-choice--hod {
+  padding: 0.9em 0 0.9em 1.05263em;
+  margin: 0;
+
+  }
+}

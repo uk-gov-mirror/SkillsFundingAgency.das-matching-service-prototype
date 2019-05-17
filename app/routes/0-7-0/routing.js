@@ -97,8 +97,6 @@ module.exports = function(router, _myData) {
 
         if (req.session.basketcontinue == "refer") {
             res.redirect(301, 'edit-employer');
-        } else if (req.session.basketcontinue == "gaponly") {
-            res.redirect(301, 'provision-report');
         } else {
             res.redirect(301, 'search');
         }

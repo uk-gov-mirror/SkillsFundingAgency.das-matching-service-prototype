@@ -20,8 +20,13 @@ Opportunity basket
 
             <input type="hidden" value="2" name="addopportunity" />
             <button class="govuk-button" style="background-color: #dee0e2; color: black;">Add another opportunity</button>
+</form>
 
+<form class="form" method="post">
+
+<!-- BOTH TABS -->
 {% if data['placementtype'] == "gap" %}
+
             <div class="govuk-tabs" data-module="tabs">
                 <ul class="govuk-tabs__list">
                   <li class="govuk-tabs__list-item">
@@ -35,15 +40,28 @@ Opportunity basket
                     </a>
                   </li>
                 </ul>
+<!-- OPPORTUNITIES -->
                 <section class="govuk-tabs__panel" id="opportunities">
-                  <table class="govuk-table">
+
+                  <div class="form-group">
+                    <div class="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="selectAllTrigger" name="select-opportunities" type="checkbox" value="selectAllTrigger">
+                          <label class="govuk-label govuk-checkboxes__label" for="selectAllTrigger">
+                              Select all opportunities
+                          </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <table class="govuk-table govuk-!-margin-bottom-5">
                       <thead>
                         <tr class="govuk-table__row" style="">
-                            <th class="govuk-table__header" scope="row">Select to refer</th>
+                            <th class="govuk-table__header" scope="row"></th>
                             <th class="govuk-table__header" scope="row">Workplace</th>
                             <th class="govuk-table__header" scope="row">Job role</th>
                             <th class="govuk-table__header" scope="row">Opportunities</th>
-                            <th class="govuk-table__header" scope="row">Providers selected</th>
+                            <th class="govuk-table__header" scope="row">Providers</th>
                             <td class="govuk-table__cell"></td>
                             <td class="govuk-table__cell"></td>
                         </tr>
@@ -61,16 +79,15 @@ Opportunity basket
                                 </div>
                             </td>
                             <td class="govuk-table__cell">Coventry CV4 8JB</td>
-
-                            <td class="govuk-table__cell">Farmer</td>
-                            <td class="govuk-table__cell">6</td>
+                            <td class="govuk-table__cell">{% if (data['roleInfo'] == "") or (data['roleInfo'] == null) %}Physiotherapy assistant{% else %}{{ data['roleInfo'] }}{% endif %}</td>
+                            <td class="govuk-table__cell">{% if (data['placementNumber'] == "") or (data['placementNumber'] == null) %}2{% else %}{{ data['placementNumber'] }}{% endif %}</td>
                             <td class="govuk-table__cell">2</td>
                             <td class="govuk-table__cell">
                                 <a class="govuk-link tl-float-right" href="check-answers">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
                             </td>
 
                             <td class="govuk-table__cell">
-                                <a class="govuk-link tl-float-right" href="#">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
+                                <a class="govuk-link tl-float-right" href="remove-opportunity">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -84,32 +101,32 @@ Opportunity basket
                                     </div>
                                 </div>
                             </td>
-                            <td class="govuk-table__cell">Birmingham {% if data['postcode'] == "" %}B12 3BB{% else %}{{ data['postcode'] }}{% endif %}</td>
-
-                            <td class="govuk-table__cell">
-                                {% if data['roleInfo'] == "" %}Farmer{% else %}{{ data['roleInfo'] }}{% endif %}
-                            </td>
-                            <td class="govuk-table__cell">{% if data['placementNumber'] == "" %}At least 1{% else %}{{ data['placementNumber'] }}{% endif %}</td>
+                            <td class="govuk-table__cell">Birmingham B12 3BB</td>
+                            <td class="govuk-table__cell">{% if (data['roleInfo'] == "") or (data['roleInfo'] == null) %}Admin{% else %}{{ data['roleInfo'] }}{% endif %}</td>
+                            <td class="govuk-table__cell">{% if (data['placementNumber'] == "") or (data['placementNumber'] == null) %}1{% else %}{{ data['placementNumber'] }}{% endif %}</td>
                             <td class="govuk-table__cell">1</td>
                             <td class="govuk-table__cell">
                                 <a class="govuk-link tl-float-right" href="check-answers">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
                             </td>
-
                             <td class="govuk-table__cell">
-                                <a class="govuk-link tl-float-right" href="#">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
+                                <a class="govuk-link tl-float-right" href="remove-opportunity">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
                             </td>
                         </tr>
                       </tbody>
                   </table>
-                </section>
 
+                    <input type="hidden" value="refer" name="basketcontinue" />
+                    <button class="govuk-button">Refer selected opportunities</button>
+
+                </section>
+<!-- PROVISION GAPS -->
                 <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="provision-gaps">
                   <table class="govuk-table">
                       <thead>
                         <tr class="govuk-table__row" style="">
                             <th class="govuk-table__header" scope="row">Workplace</th>
                             <th class="govuk-table__header" scope="row">Opportunities</th>
-                            <th class="govuk-table__header" scope="row">Provision gap type</th>
+                            <th class="govuk-table__header" scope="row">Provision gap reason</th>
                             <!-- <td class="govuk-table__cell"></td>
                             <td class="govuk-table__cell"></td> -->
                         </tr>
@@ -131,7 +148,10 @@ Opportunity basket
                 </section>
 
             </div>
+
 {% else %}
+
+<!-- TWO OPPORTUNITIES -->
 {% if data['addopportunity'] == "2" %}
             <table class="govuk-table">
                 <thead>
@@ -140,7 +160,7 @@ Opportunity basket
                       <th class="govuk-table__header" scope="row">Workplace</th>
                       <th class="govuk-table__header" scope="row">Job role</th>
                       <th class="govuk-table__header" scope="row">Opportunities</th>
-                      <th class="govuk-table__header" scope="row">Providers selected</th>
+                      <th class="govuk-table__header" scope="row">Providers</th>
                       <td class="govuk-table__cell"></td>
                       <td class="govuk-table__cell"></td>
                   </tr>
@@ -159,15 +179,14 @@ Opportunity basket
                       </td>
                       <td class="govuk-table__cell">Coventry CV4 8JB</td>
 
-                      <td class="govuk-table__cell">Farmer</td>
-                      <td class="govuk-table__cell">6</td>
+                      <td class="govuk-table__cell">{% if data['roleInfo'] == "" %}Physiotherapy assistant{% else %}{{ data['roleInfo'] }}{% endif %}</td>
+                      <td class="govuk-table__cell">{% if data['placementNumber'] == "" %}2{% else %}{{ data['placementNumber'] }}{% endif %}</td>
                       <td class="govuk-table__cell">2</td>
                       <td class="govuk-table__cell">
                           <a class="govuk-link tl-float-right" href="check-answers">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
                       </td>
-
                       <td class="govuk-table__cell">
-                          <a class="govuk-link tl-float-right" href="#">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
+                          <a class="govuk-link tl-float-right" href="remove-opportunity">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
                       </td>
                   </tr>
                   <tr class="govuk-table__row">
@@ -182,30 +201,29 @@ Opportunity basket
                           </div>
                       </td>
                       <td class="govuk-table__cell">Birmingham {% if data['postcode'] == "" %}B12 3BB{% else %}{{ data['postcode'] }}{% endif %}</td>
-
-                      <td class="govuk-table__cell">
-                          {% if data['roleInfo'] == "" %}Farmer{% else %}{{ data['roleInfo'] }}{% endif %}
-                      </td>
-                      <td class="govuk-table__cell">{% if data['placementNumber'] == "" %}At least 1{% else %}{{ data['placementNumber'] }}{% endif %}</td>
+                      <td class="govuk-table__cell">{% if data['roleInfo'] == "" %}Admin{% else %}{{ data['roleInfo'] }}{% endif %}</td>
+                      <td class="govuk-table__cell">{% if data['placementNumber'] == "" %}1{% else %}{{ data['placementNumber'] }}{% endif %}</td>
                       <td class="govuk-table__cell">1</td>
                       <td class="govuk-table__cell">
                           <a class="govuk-link tl-float-right" href="check-answers">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
                       </td>
 
                       <td class="govuk-table__cell">
-                          <a class="govuk-link tl-float-right" href="#">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
+                          <a class="govuk-link tl-float-right" href="remove-opportunity">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
                       </td>
                   </tr>
                 </tbody>
             </table>
 {% else %}
+
+<!-- ONE OPPORTUNITY -->
             <table class="govuk-table">
                 <thead>
                   <tr class="govuk-table__row" style="">
                       <th class="govuk-table__header" scope="row">Workplace</th>
                       <th class="govuk-table__header" scope="row">Job role</th>
                       <th class="govuk-table__header" scope="row">Opportunities</th>
-                      <th class="govuk-table__header" scope="row">Providers selected</th>
+                      <th class="govuk-table__header" scope="row">Providers</th>
                       <td class="govuk-table__cell"></td>
                       <td class="govuk-table__cell"></td>
                   </tr>
@@ -215,15 +233,15 @@ Opportunity basket
 
                       <td class="govuk-table__cell">Coventry CV4 8JB</td>
 
-                      <td class="govuk-table__cell">Farmer</td>
-                      <td class="govuk-table__cell">6</td>
+                      <td class="govuk-table__cell">Physiotherapy assistant</td>
+                      <td class="govuk-table__cell">2</td>
                       <td class="govuk-table__cell">2</td>
                       <td class="govuk-table__cell">
                           <a class="govuk-link tl-float-right" href="check-answers">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
                       </td>
 
                       <td class="govuk-table__cell">
-                          <a class="govuk-link tl-float-right" href="#">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
+                          <a class="govuk-link tl-float-right" href="remove-opportunity">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
                       </td>
                   </tr>
 
@@ -241,39 +259,25 @@ Opportunity basket
 
         </div>
     </div>
-</form>
 
-<form class="form" method="post">
-    <p class="govuk-body">
-        {% if data['addopportunity'] == "2" %}
-        <input type="hidden" value="refer" name="basketcontinue" />
-        <button class="govuk-button" style="margin-right: 5px">Refer selected opportunities</button>
-        {% else %}
-        <input type="hidden" value="refer" name="basketcontinue" />
-        <button class="govuk-button" style="margin-right: 5px">Refer opportunity</button>
-        {% endif %}
-    </p>
+            <p class="govuk-body">
+                {% if data['placementtype'] == "gap" %}
+                {% else %}
+
+                {% if data['addopportunity'] == "2" %}
+                <input type="hidden" value="refer" name="basketcontinue" />
+                <button class="govuk-button">Refer selected opportunities</button>
+                {% else %}
+                <input type="hidden" value="refer" name="basketcontinue" />
+                <button class="govuk-button">Refer opportunity</button>
+                {% endif %}
+                {% endif %}
+            </p>
 </form>
 
 
 {% endblock %}
 
-
 {% block pageScripts %}
-<script>
-    // $(document).ready(function()){
-
-    if (
-        'addEventListener' in document &&
-        document.querySelectorAll
-    ) {
-        document.addEventListener('DOMContentLoaded', function () {
-            var accordions = document.querySelectorAll('.accordion')
-            for (var i = accordions.length - 1; i >= 0; i--) {
-                new Accordion(accordions[i])
-            };
-        })
-    }
-// });
-</script>
+  <script src="/public/javascripts/select-all.js"></script>
 {% endblock %}
