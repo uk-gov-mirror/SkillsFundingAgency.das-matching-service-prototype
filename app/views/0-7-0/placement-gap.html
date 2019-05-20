@@ -71,7 +71,11 @@
               </div>
               <input type="hidden" value="gap" name="placementtype" />
 
-              <button class="govuk-button">Continue</button>
+              {% if data['businessName'] == null %}
+                      <button class="govuk-button">Confirm and continue</button>
+              {% else %}
+                      <button class="govuk-button">Report gap and continue</button>
+              {% endif %}
 
           </form>
 
