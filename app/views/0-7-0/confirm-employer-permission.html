@@ -15,14 +15,11 @@
 
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-          <!-- <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span> -->
 
-          <h1 class="govuk-heading-l">
-              Before we send referral emails to {% if data['addopportunity'] == "2" %}{{ data['addopportunity'] }} providers{% else %}1 provider{% endif %}
-          </h1>
-          <h2 class="govuk-heading-s">
-              Confirm we can share {% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}'s details
-          </h2>
+          <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span>
+          <h1 class="govuk-heading-l">Before we send referral emails to {% if data['addopportunity'] == "2" %}{{ data['addopportunity'] }} providers{% else %}1 provider{% endif %}</h1>
+
+            <h2 class="govuk-heading-s">Confirm we can share the employer's details</h2>
 
               <div class="form-group">
                   <div class="govuk-checkboxes">

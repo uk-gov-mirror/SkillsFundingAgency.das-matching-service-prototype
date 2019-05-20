@@ -15,8 +15,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">Check {% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}
-          West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}'s details</h1>
+      <span class="govuk-caption-l">{{ data['businessName'] }}</span>
+      <h1 class="govuk-heading-l">Check contact details</h1>
 
       <form class="form" method="post">
 

@@ -14,6 +14,8 @@ Remove opportunity
 
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+
+          <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span>
           <h1 class="govuk-heading-l">Do you want to remove the opportunity created in health and science at CV4 8JB?</h1>
 
           <dl class="govuk-summary-list govuk-!-margin-bottom-5">
