@@ -14,18 +14,17 @@
 
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-          {% if data['businessName'] != null %}
-          <span class="govuk-caption-l">{{ data['businessName'] }}</span>
-          <!-- <span class="govuk-caption-l">{{ data['businessName'] }}</span> -->
-          <h1 class="govuk-heading-l">Does the employer know how many placements they want at this location?</h1>
-          {% else %}
-          <h1 class="govuk-heading-l">Does the employer know how many placements they want at this location?</h1>
-          {% endif %}
-
 
           <form class="form" method="post">
 
-              <p class="govuk-body">This information helps us understand where there are not enough providers for industry placements.</p>
+            {% if data['businessName'] != null %}
+            <span class="govuk-caption-l">{{ data['businessName'] }}</span>
+            <h1 class="govuk-heading-l">Placement information</h1>
+            {% else %}
+            <h1 class="govuk-heading-l">Placement information</h1>
+            {% endif %}
+
+            <p class="govuk-body">This information helps us understand where there are not enough providers for industry placements.</p>
 
               <!-- <div class="govuk-form-group">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -42,9 +41,44 @@
     </div> -->
 
 
+            {% if data['gapType'] == "noSuitable" %}
+            <div class="govuk-form-group">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                      <h2 class="govuk-fieldset__heading">
+                          What was the main reason that none of the available providers were suitable?
+                      </h2>
+                  </legend>
 
-              <div class="form-group">
-                  <p class="govuk-hint">This can be an estimate</p>
+                  <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="gap-reason-1" name="gap-reason" type="radio" value="yes">
+                          <label class="govuk-label govuk-radios__label" for="gap-reason-1">
+                              There were no relevant courses
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="gap-reason-2" name="gap-reason" type="radio" value="no">
+                          <label class="govuk-label govuk-radios__label" for="gap-reason-2">
+                              The employer had a bad experience with them
+                          </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="gap-reason-3" name="gap-reason" type="radio" value="no">
+                          <label class="govuk-label govuk-radios__label" for="gap-reason-3">
+                              They were too far away
+                          </label>
+                      </div>
+                  </div>
+              </div>
+              {% else %}
+              {% endif %}
+
+              <div class="govuk-form-group">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h2 class="govuk-fieldset__heading">
+                            Does the employer know how many placements they want at this location?
+                        </h2>
+                    </legend>
 
                   <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                       <div class="govuk-radios__item">
@@ -69,8 +103,10 @@
                       </div>
                   </div>
               </div>
-              <input type="hidden" value="gap" name="placementtype" />
 
+
+
+              <input type="hidden" value="gap" name="placementtype" />
               {% if data['businessName'] == null %}
                       <button class="govuk-button">Confirm and continue</button>
               {% else %}
