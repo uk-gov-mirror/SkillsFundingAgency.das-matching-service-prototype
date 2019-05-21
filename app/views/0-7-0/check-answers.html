@@ -14,8 +14,8 @@
 
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-          {% if (data['addopportunity'] != '2') or (data['addopportunity'] == 'existing')%}
-          <!-- <span class="govuk-caption-l">{{ data['businessName'] }}</span> -->
+          {% if data['businessName'] != null %}
+          <span class="govuk-caption-l">{{ data['businessName'] }}</span>
           <h1 class="govuk-heading-l">Check answers</h1>
           {% else %}
           <span class="govuk-caption-m">New opportunity</span>
