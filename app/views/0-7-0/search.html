@@ -6,6 +6,7 @@
 
 {% block beforeContent %}
   {% include "includes/phase_banner.html" %}
+  {% include "includes/start_again.html" %}
   <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
@@ -18,9 +19,9 @@
               <!-- <span class="govuk-caption-m">New opportunity</span> -->
               {% if data['businessName'] != null %}
               <span class="govuk-caption-l">{{ data['businessName'] }}</span>
-              <h1 class="govuk-heading-l">Find local providers</h1>
+              <h1 class="govuk-heading-l">Set up placement opportunity</h1>
               {% else %}
-              <h1 class="govuk-heading-l">Find local providers</h1>
+              <h1 class="govuk-heading-l">Set up placement opportunity</h1>
               {% endif %}
 
               <h2 class="govuk-heading-m">What skill is the employer looking for?</h2>
@@ -47,7 +48,7 @@
                   </select>
               </div>
 
-              <h2 class="govuk-heading-m">Where is the placement?</h2>
+              <h2 class="govuk-heading-m">Where is the opportunity?</h2>
               <div class="govuk-form-group">
                   <label class="govuk-label" for="postcode">
                       Postcode of workplace
