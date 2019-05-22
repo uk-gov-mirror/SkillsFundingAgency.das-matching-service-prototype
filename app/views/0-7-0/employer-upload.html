@@ -6,7 +6,6 @@
 
 {% block beforeContent %}
   {% include "includes/phase_banner.html" %}
-  {% include "includes/start_again.html" %}
 <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
@@ -14,7 +13,7 @@
 <div id="tl-upload-stage1">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <h1 class="govuk-heading-xl">Data Import</h1>
+            <h1 class="govuk-heading-l">Update employer and qualification databases</h1>
         </div>
     </div>
     <div class="govuk-grid-row">
@@ -40,10 +39,10 @@
                     </label>
                     <select class="govuk-select" data-val="true" data-val-required="The SelectedImportType field is required." id="SelectedImportType" name="SelectedImportType">
                         <option value="Employer">Employer CRM data</option>
-                        <option value="Provider">Provider</option>
+                        <!-- <option value="Provider">Provider</option>
                         <option value="ProviderVenue">Provider venue</option>
-                        <option value="ProviderQualification">Provider qualification</option>
-                        <option value="QualificationRoutePathMapping">Route &amp; pathway mapping</option>
+                        <option value="ProviderQualification">Provider qualification</option> -->
+                        <option value="QualificationRoutePathMapping">Ofqual qualification list</option>
                     </select>
                 </div>
             </div>
