@@ -6,7 +6,7 @@ Opportunity basket
 
 {% block beforeContent %}
   {% include "includes/phase_banner.html" %}
-  {% include "includes/save_return.html" %}
+  {% include "includes/start_again.html" %}
 <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
@@ -16,7 +16,7 @@ Opportunity basket
         <div class="govuk-grid-column-full">
             <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span>
 
-            <h1 class="govuk-heading-l">All placement opportunities</h1>
+            <h1 class="govuk-heading-l">All opportunities</h1>
 
             <p class="govuk-body">
               <input type="hidden" value="2" name="addopportunity" />
@@ -33,12 +33,12 @@ Opportunity basket
                 <ul class="govuk-tabs__list">
                   <li class="govuk-tabs__list-item">
                     <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#opportunities">
-                      Opportunities
+                      With providers
                     </a>
                   </li>
                   <li class="govuk-tabs__list-item">
                     <a class="govuk-tabs__tab" href="#provision-gaps">
-                      Provision gaps
+                      With no providers
                     </a>
                   </li>
                 </ul>
@@ -50,7 +50,7 @@ Opportunity basket
                       <div class="govuk-checkboxes__item">
                         <input type="checkbox" class="govuk-checkboxes__input jsCheckboxAll" id="radio-all">
                         <label class="govuk-label govuk-checkboxes__label" for="radio-all">
-                          Select all opportunities
+                          Select all
                         </label>
                       </div>
                     </div>
@@ -62,7 +62,7 @@ Opportunity basket
                             <th class="govuk-table__header" scope="row"></th>
                             <th class="govuk-table__header" scope="row">Workplace</th>
                             <th class="govuk-table__header" scope="row">Job role</th>
-                            <th class="govuk-table__header" scope="row">Opportunities</th>
+                            <th class="govuk-table__header" scope="row">Students wanted</th>
                             <th class="govuk-table__header" scope="row">Providers</th>
                             <td class="govuk-table__cell"></td>
                             <td class="govuk-table__cell"></td>
@@ -120,7 +120,7 @@ Opportunity basket
                   </table>
 
                     <input type="hidden" value="refer" name="basketcontinue" />
-                    <button class="govuk-button">Refer selected opportunities</button>
+                    <button class="govuk-button">Continue with selected opportunities</button>
 
                 </section>
                 <!-- PROVISION GAPS -->
@@ -129,8 +129,8 @@ Opportunity basket
                       <thead>
                         <tr class="govuk-table__row" style="">
                             <th class="govuk-table__header" scope="row">Workplace</th>
-                            <th class="govuk-table__header" scope="row">Opportunities</th>
-                            <th class="govuk-table__header" scope="row">Provision gap reason</th>
+                            <th class="govuk-table__header" scope="row">Students wanted</th>
+                            <th class="govuk-table__header" scope="row">Reason no providers chosen</th>
                             <!-- <td class="govuk-table__cell"></td>
                             <td class="govuk-table__cell"></td> -->
                         </tr>
@@ -162,7 +162,7 @@ Opportunity basket
                 <div class="govuk-checkboxes__item">
                   <input type="checkbox" class="govuk-checkboxes__input jsCheckboxAll" id="radio-all">
                   <label class="govuk-label govuk-checkboxes__label" for="radio-all">
-                    Select all opportunities
+                    Select all
                   </label>
                 </div>
               </div>
@@ -174,7 +174,7 @@ Opportunity basket
                       <th class="govuk-table__header" scope="row"></th>
                       <th class="govuk-table__header" scope="row">Workplace</th>
                       <th class="govuk-table__header" scope="row">Job role</th>
-                      <th class="govuk-table__header" scope="row">Opportunities</th>
+                      <th class="govuk-table__header" scope="row">Students wanted</th>
                       <th class="govuk-table__header" scope="row">Providers</th>
                       <td class="govuk-table__cell"></td>
                       <td class="govuk-table__cell"></td>
@@ -238,7 +238,7 @@ Opportunity basket
                   <tr class="govuk-table__row" style="">
                       <th class="govuk-table__header" scope="row">Workplace</th>
                       <th class="govuk-table__header" scope="row">Job role</th>
-                      <th class="govuk-table__header" scope="row">Opportunities</th>
+                      <th class="govuk-table__header" scope="row">Students wanted</th>
                       <th class="govuk-table__header" scope="row">Providers</th>
                       <td class="govuk-table__cell"></td>
                       <td class="govuk-table__cell"></td>
@@ -267,11 +267,8 @@ Opportunity basket
 {% endif %}
 
 
-            {% if data['addopportunity'] == "2" %}
-            <p class="govuk-body"><a href="#" class="govuk-link">Download selected opportunities as spreadsheet (CSV, XMb)</a></p>
-            {% else %}
-            <p class="govuk-body"><a href="#" class="govuk-link">Download opportunity as spreadsheet (CSV, XMb)</a></p>
-            {% endif %}
+            <p class="govuk-body"><a href="#" class="govuk-link">Save all data as a spreadsheet</a></p>
+
 
         </div>
     </div>
@@ -282,10 +279,10 @@ Opportunity basket
 
                 {% if data['addopportunity'] == "2" %}
                 <input type="hidden" value="refer" name="basketcontinue" />
-                <button class="govuk-button">Refer selected opportunities</button>
+                <button class="govuk-button">Continue with selected opportunities</button>
                 {% else %}
                 <input type="hidden" value="refer" name="basketcontinue" />
-                <button class="govuk-button">Refer opportunity</button>
+                <button class="govuk-button">Continue with opportunity</button>
                 {% endif %}
                 {% endif %}
             </p>
