@@ -16,7 +16,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-l">{{ data['businessName'] }}</span>
-      <h1 class="govuk-heading-l">Check contact details</h1>
+      <h1 class="govuk-heading-l">Check contact details for industry placements</h1>
 
       <form class="form" method="post">
 
@@ -26,7 +26,7 @@
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="contact-name">
-            Contact name for placements
+            Contact name
           </label>
           <input class="govuk-input govuk-input--width-20" id="contact_name" name="contact_name" type="text" value="{% if data['contact_name'] == null %}IP: Micheal Gill{% else %}{{ data['contact_name'] }}{% endif %}">
         </div>
