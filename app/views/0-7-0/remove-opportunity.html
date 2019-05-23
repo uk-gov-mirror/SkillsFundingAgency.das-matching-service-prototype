@@ -16,9 +16,10 @@ Remove opportunity
       <div class="govuk-grid-column-two-thirds">
 
           <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span>
-          <h1 class="govuk-heading-l">Do you want to remove the opportunity created in health and science at CV4 8JB?</h1>
+          <h1 class="govuk-heading-l">Do you want to delete the opportunity for {{ data['placementNumber'] }} {{ data['roleInfo'] }}s at {{ data['postcode'] }}?</h1>
 
-          <dl class="govuk-summary-list govuk-!-margin-bottom-5">
+          <p class="govuk-body">This cannot be undone.</p>
+          <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-5">
               <div class="govuk-summary-list__row govuk-!-margin-bottom-3">
                   <dt class="govuk-summary-list__key govuk-!-font-weight-bold">
                       Job role
@@ -35,7 +36,7 @@ Remove opportunity
                       {% if (data['placementNumber'] == "") or (data['placementNumber'] == null) %}1{% else %}{{ data['placementNumber'] }}{% endif %}
                   </dd>
               </div>
-          </dl>
+          </dl> -->
 
             <div class="govuk-form-group">
                 <div class="govuk-radios">
