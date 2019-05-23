@@ -17,11 +17,12 @@
 
           <form class="form" method="post">
 
-            {% if data['businessName'] != null %}
+            {% if data['gapType'] == "noSuitable" %}
             <span class="govuk-caption-l">{{ data['businessName'] }}</span>
             <h1 class="govuk-heading-l">Placement information</h1>
             {% else %}
-            <h1 class="govuk-heading-l">Placement information</h1>
+            <span class="govuk-caption-l">{{ data['businessName'] }}</span>
+            <h1 class="govuk-heading-l">Does the employer know how many {{ data['route']}} opportunities they want to offer at this location?</h1>
             {% endif %}
 
             <!-- <p class="govuk-body">This information helps us understand where there are not enough providers for industry placements.</p> -->
@@ -85,11 +86,12 @@
               {% endif %}
 
               <div class="govuk-form-group">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                        <h2 class="govuk-fieldset__heading">
-                            Does the employer know how many {{ data['route']}} opportunities they want to offer at this location?
-                        </h2>
-                    </legend>
+
+                {% if data['gapType'] == "noSuitable" %}
+                <h2 class="govuk-heading-m">Does the employer know how many {{ data['route']}} opportunities they want to offer at this location?</h2>
+                {% else %}
+                {% endif %}
+
 
                   <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                       <div class="govuk-radios__item">
