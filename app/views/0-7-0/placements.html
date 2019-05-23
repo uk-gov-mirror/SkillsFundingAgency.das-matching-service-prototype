@@ -42,7 +42,7 @@
             <div class="govuk-form-group">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                     <h2 class="govuk-fieldset__heading">
-                        Does the employer know how many {{ data['route']}} opportunities they want to offer at this location?
+                      Does the employer know how many students they want for this job at {{ data['postcode']}}?
                     </h2>
                 </legend>
                 <p class="govuk-hint">This can be an estimate</p>
@@ -57,7 +57,7 @@
                     <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-student-number-conditional-1">
                         <div class="govuk-form-group">
                             <label class="govuk-label" for="placementNumber">
-                                Number of opportunities
+                                Number of students
                             </label>
                             <input class="govuk-input govuk-input--width-3" id="{{ data['placementNumber'] }}" name="placementNumber">
                         </div>

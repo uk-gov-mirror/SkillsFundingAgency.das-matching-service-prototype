@@ -19,11 +19,14 @@
       <form class="form" method="post">
 
         <div class="form-group">
+          <p class="govuk-body">The address below may not be the same as for the placement opportunity. For example, it may be a head office, but the placement is required in a regional office.</p>
+
           <h2 class="govuk-heading-m">{% if data['businessName'] == "" %}
               West Ham United Football Club Ltd
              {% else %}
               {{ data['businessName'] }}
              {% endif %}</h2>
+
             <p class="govuk-body">
                 1 High Street <br />
                 Coventry <br />
