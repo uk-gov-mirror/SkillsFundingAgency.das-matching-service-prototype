@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check answers
+  Check {{data['businessName']}}'s answers
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,17 +21,14 @@
           <h1 class="govuk-heading-l">Check answers</h1>
           {% endif %}
 
-
-
           <form class="form" method="post">
-
 
               <h3 class="govuk-heading-m">Placement information</h3>
               <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 40px">
 
                   <div class="app-check-your-answers__contents">
                       <dt class="app-check-your-answers__question">
-                          Type of placement
+                          Skill area
                       </dt>
                       <dd class="app-check-your-answers__answer">
                           {{ data['route'] }}
@@ -91,7 +88,7 @@
 
                   <div class="app-check-your-answers__contents">
                       <dt class="app-check-your-answers__question">
-                          Number of placements
+                          Number of opportunities
                       </dt>
                       <dd class="app-check-your-answers__answer">
                           {% if (placements == "no") %}
@@ -102,7 +99,7 @@
                       </dd>
                       <dd class="app-check-your-answers__change">
                           <a href="placements">
-                              Change<span class="govuk-visually-hidden"> the number of placements</span>
+                              Change<span class="govuk-visually-hidden"> the number of opportunities</span>
                           </a>
                       </dd>
                   </div>
@@ -126,42 +123,39 @@
                   </div> -->
 
 
+                      <!-- <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question">
+                    Extra requirements
+                  </dt>
+                  <dd class="app-check-your-answers__answer">
+                    {% if (extra == "no") %}
+                      No
+                    {% else %}
+                      {{ data['extraReq'] }}
+                    {% endif %}
+                  </dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="placements">
+                      Change<span class="govuk-visually-hidden"> extra requirements</span>
+                    </a>
+                  </dd>
+                </div> -->
 
-                  <!-- <div class="app-check-your-answers__contents">
-              <dt class="app-check-your-answers__question">
-                Extra requirements
-              </dt>
-              <dd class="app-check-your-answers__answer">
-                {% if (extra == "no") %}
-                  No
-                {% else %}
-                  {{ data['extraReq'] }}
-                {% endif %}
-              </dd>
-              <dd class="app-check-your-answers__change">
-                <a href="placements">
-                  Change<span class="govuk-visually-hidden"> extra requirements</span>
-                </a>
-              </dd>
-            </div> -->
               </dl>
 
-              <div class="form-group">
                   <h3 class="govuk-heading-m">Provider information</h3>
 
-                  <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Provider 1</p>
-                  <p>The WKCIC Group</p>
-                  <p>1.5 miles miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
-                  <br>
-                  <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom: 3px">Provider 2</p>
-                  <p>Lambeth College </p>
-                  <p>4.3 miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
-                  <br>
-                  <p><a href="provider-results">Change providers</a></p>
-              </div>
+                  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Provider 1</p>
+                  <p class="govuk-body govuk-!-margin-bottom-1">The WKCIC Group</p>
+                  <p class="govuk-body">1.5 miles miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+
+                  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Provider 2</p>
+                  <p class="govuk-body govuk-!-margin-bottom-1">Lambeth College </p>
+                  <p class="govuk-body">4.3 miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+
+                  <p class="govuk-body"><a class="govuk-link" href="provider-results">Change providers</a></p>
 
               <input type="hidden" value="nogap" name="placementtype" />
-
               <button class="govuk-button">Confirm and save opportunities</button>
 
           </form>
