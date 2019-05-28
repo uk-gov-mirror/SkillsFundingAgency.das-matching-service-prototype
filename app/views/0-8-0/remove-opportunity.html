@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Remove opportunity
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+          <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span>
+          <h1 class="govuk-heading-l">Do you want to delete the opportunity for {{ data['placementNumber'] }} {{ data['roleInfo'] }}s at {{ data['postcode'] }}?</h1>
+
+          <p class="govuk-body">This cannot be undone.</p>
+          <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-5">
+              <div class="govuk-summary-list__row govuk-!-margin-bottom-3">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-bold">
+                      Job role
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                      {% if (data['roleInfo'] == "") or (data['roleInfo'] == null) %}Physiotherapy assistant{% else %}{{ data['roleInfo'] }}{% endif %}
+                  </dd>
+              </div>
+              <div class="govuk-summary-list__row govuk-!-margin-bottom-3">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-bold">
+                      Number of placements
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                      {% if (data['placementNumber'] == "") or (data['placementNumber'] == null) %}1{% else %}{{ data['placementNumber'] }}{% endif %}
+                  </dd>
+              </div>
+          </dl> -->
+
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="delete-opp-yes" name="delete-opp" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="delete-opp-yes">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="delete-opp-no" name="delete-opp" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="delete-opp-no">
+                      No
+                    </label>
+                  </div>
+                </div>
+            </div>
+
+        <button class="govuk-button">Confirm and continue</button>
+        <!-- <p class="govuk-body"><a href="javascript:history.back()" class="govuk-link">Cancel and return to saved opportunities</a></p> -->
+
+      </div>
+  </div>
+
+</form>
+
+{% endblock %}

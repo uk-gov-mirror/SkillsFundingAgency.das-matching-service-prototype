@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Remove employer
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">Do you want to delete the opportunities created for {{ data['businessName'] }}?</h1>
+
+          <p class="govuk-body">This cannot be undone.
+
+            <p class="govuk-body">{{ data['businessName'] }} has created the following opportunities, which have not been sent to any providers:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>2 opportunities for business admins at TF2 DE6</li>
+              <li>2 opportunities for physio assistants at TF2 DE6</li>
+            </ul>
+
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="where-do-you-live-1" name="where-do-you-live" type="radio" value="england">
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+            </div>
+
+        <button class="govuk-button">Confirm and continue</button>
+        <!-- <p class="govuk-body"><a href="javascript:history.back()" class="govuk-link">Cancel and return to saved opportunities</a></p> -->
+
+      </div>
+  </div>
+
+</form>
+
+{% endblock %}

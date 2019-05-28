@@ -22,8 +22,7 @@ require('./routes/0-5-0/routing.js')(router, JSON.parse(JSON.stringify(_myData))
 require('./routes/0-5-5/routing.js')(router, JSON.parse(JSON.stringify(_myData)));
 require('./routes/0-6-0/routing.js')(router, JSON.parse(JSON.stringify(_myData)));
 require('./routes/0-7-0/routing.js')(router, JSON.parse(JSON.stringify(_myData)));
-
-
+require('./routes/0-8-0/routing.js')(router, JSON.parse(JSON.stringify(_myData)));
 
 
 module.exports = router

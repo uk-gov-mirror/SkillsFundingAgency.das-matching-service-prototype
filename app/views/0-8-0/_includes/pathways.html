@@ -1,0 +1,254 @@
+{% if route == "care services" or route == "education and childcare" or route == "hair and beauty" or route == "protective services" %}
+
+{% elseif route == "agriculture, environmental and animal care" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
+  <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="agriculture-1" name="agriculture" type="radio" value="Vsatisfied">
+          <label class="govuk-label govuk-radios__label" for="agriculture-1">
+            Animal care and management
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="agriculture-2" name="agriculture" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="agriculture-2">
+            Agriculture, land management and production
+          </label>
+        </div>
+      </div>
+  </div>
+{% elseif route == "business and administration" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
+  <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="business-1" name="business" type="radio" value="Vsatisfied">
+          <label class="govuk-label govuk-radios__label" for="business-1">
+            Management and administration
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="business-2" name="business" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="business-2">
+            Human resources (HR)
+          </label>
+        </div>
+      </div>
+  </div>
+{% elseif route == "catering and hospitality" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
+  <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="catering-1" name="catering" type="radio" value="Vsatisfied">
+          <label class="govuk-label govuk-radios__label" for="catering-1">
+            Hospitality
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="catering-2" name="catering" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="catering-2">
+            Catering
+          </label>
+        </div>
+      </div>
+  </div>
+{% elseif route == "construction" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
+  <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="catering-1" name="catering" type="radio" value="Vsatisfied">
+          <label class="govuk-label govuk-radios__label" for="catering-1">
+            Design, surveying and planning
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="catering-2" name="catering" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="catering-2">
+            Onsite construction
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="catering-3" name="catering" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="catering-3">
+            Building services engineering
+          </label>
+        </div>
+      </div>
+  </div>
+{% elseif route == "creative and design" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
+  <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="creative-1" name="creative" type="radio" value="Vsatisfied">
+          <label class="govuk-label govuk-radios__label" for="creative-1">
+            Craft and design
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="creative-2" name="creative" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="creative-2">
+            Media, broadcast and production
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="creative-3" name="creative" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="creative-3">
+            Cultural heritage and visitor attractions
+          </label>
+        </div>
+      </div>
+  </div>
+{% elseif route == "digital" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
+  <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="digital-1" name="digital" type="radio" value="Vsatisfied">
+          <label class="govuk-label govuk-radios__label" for="digital-1">
+            Digital support and services
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="digital-2" name="digital" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="digital-2">
+            Digital production design and development
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="digital-3" name="digital" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="digital-3">
+            Development and digital business services
+          </label>
+        </div>
+      </div>
+  </div>
+{% elseif route == "engineering and manufacturing" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
+  <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="engineering-1" name="engineering" type="radio" value="Vsatisfied">
+          <label class="govuk-label govuk-radios__label" for="engineering-1">
+            Engineering design, development and control
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="engineering-2" name="engineering" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="engineering-2">
+            Engineering, manufacturing and process
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="engineering-3" name="engineering" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="engineering-3">
+            Maintenance, installation and repair
+          </label>
+        </div>
+      </div>
+  </div>
+{% elseif route == "health and science" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
+  <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="health-1" name="health" type="radio" value="Vsatisfied">
+          <label class="govuk-label govuk-radios__label" for="health-1">
+            Health
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="health-2" name="health" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="health-2">
+            Healthcare science
+          </label>
+        </div>
+      </div>
+  </div>
+{% elseif route == "legal, financial and accounting" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
+  <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="legal-1" name="legal" type="radio" value="Vsatisfied">
+          <label class="govuk-label govuk-radios__label" for="legal-1">
+            Legal
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="legal-2" name="legal" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="legal-2">
+            Financial
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="legal-3" name="legal" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="legal-3">
+            Accountancy
+          </label>
+        </div>
+      </div>
+  </div>
+{% elseif route == "sales, marketing and procurement" %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
+  <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sales-1" name="sales" type="radio" value="Vsatisfied">
+          <label class="govuk-label govuk-radios__label" for="sales-1">
+            Customer service
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sales-2" name="sales" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="sales-2">
+            Marketing
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sales-3" name="sales" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="sales-3">
+            Procurement
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sales-4" name="sales" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="sales-4">
+            Retail
+          </label>
+        </div>
+      </div>
+    </div>
+{% else %}
+<h2 class="govuk-heading-m">What type of {{ data['route'] }} placement did {{ data['businessName'] }} want?</h2>
+  <p class="govuk-body">Choose the closest fit:</p>
+  <div class="govuk-form-group">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="transport-1" name="transport" type="radio" value="Vsatisfied">
+          <label class="govuk-label govuk-radios__label" for="transport-1">
+            Transport
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="transport-2" name="transport" type="radio" value="satisfied">
+          <label class="govuk-label govuk-radios__label" for="transport-2">
+            Logistics
+          </label>
+        </div>
+      </div>
+    </div>
+{% endif %}
