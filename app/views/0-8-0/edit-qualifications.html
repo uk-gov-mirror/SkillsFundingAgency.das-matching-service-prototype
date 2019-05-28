@@ -23,7 +23,7 @@ Edit qualifications
                         <div class="search-input">
                             <label for="search-main">
                                 <h1 class="govuk-heading-s">
-                                    Search by learning aim reference (LAR), qualification title or short title
+                                    Enter qualification title or short title
                                 </h1>
                             </label>
                             <input placeholder="" class="search-input" id="search-main" type="search" />
@@ -47,7 +47,7 @@ Edit qualifications
                     <th class="govuk-table__header" scope="col">Qualification title</th>
                     <th class="govuk-table__header" scope="col">Edit short title</th>
                     <th class="govuk-table__header" scope="col">Edit skill area</th>
-
+                    <th class="govuk-table__header" scope="col"></th>
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
@@ -56,8 +56,6 @@ Edit qualifications
                     <td class="govuk-table__cell">Level 3 Diploma in Mowing</td>
                     <td class="govuk-table__cell">
                         <div class="govuk-form-group govuk-!-margin-bottom-0">
-
-
                             <label class="govuk-label govuk-visually-hidden" for="shorttitle">
                                 <h2 class="govuk-heading-m">What is the short title for this qualification?</h2>
                             </label>
@@ -68,7 +66,6 @@ Edit qualifications
                               <option value="lawn maitenance">lawn manicuring</option>
                             </select>
                         </div>
-
                     </td>
                     <td class="govuk-table__cell">
                         <div class="app-c-option-select js-collapsible js-closed">
@@ -218,7 +215,11 @@ Edit qualifications
                         </div>
 
                     </td>
+                    <td class="govuk-table__cell">
+                      <button class="govuk-button govuk-!-margin-bottom-1">Save</button>
+                    </td>
                 </tr>
+
                 <tr class="govuk-table__row tl-table-row-vtop">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Level 3 Diploma in Mowing</td>
@@ -385,16 +386,16 @@ Edit qualifications
                         </div>
 
                     </td>
+                    <td class="govuk-table__cell">
+                      <button class="govuk-button govuk-!-margin-bottom-1">Save</button>
+                    </td>
                 </tr>
-
 
                 <tr class="govuk-table__row tl-table-row-vtop">
                     <td class="govuk-table__cell">10001234</td>
                     <td class="govuk-table__cell">Level 3 Diploma in Mowing</td>
                     <td class="govuk-table__cell">
                         <div class="govuk-form-group govuk-!-margin-bottom-0">
-
-
                             <label class="govuk-label govuk-visually-hidden" for="shorttitle">
                                 <h2 class="govuk-heading-m">What is the short title for this qualification?</h2>
                             </label>
@@ -404,7 +405,6 @@ Edit qualifications
                                 <option value="lawn mowerism">Lawn mowerism</option>
                             </select>
                         </div>
-
                     </td>
                     <td class="govuk-table__cell">
                         <div class="app-c-option-select js-collapsible js-closed">
@@ -553,6 +553,9 @@ Edit qualifications
                             </div>
                         </div>
 
+                    </td>
+                    <td class="govuk-table__cell">
+                      <button class="govuk-button govuk-!-margin-bottom-1">Save</button>
                     </td>
                 </tr>
 
@@ -722,6 +725,9 @@ Edit qualifications
                         </div>
 
                     </td>
+                    <td class="govuk-table__cell">
+                      <button class="govuk-button govuk-!-margin-bottom-1">Save</button>
+                    </td>
                 </tr>
 
                 <tr class="govuk-table__row tl-table-row-vtop">
@@ -729,8 +735,6 @@ Edit qualifications
                     <td class="govuk-table__cell">Level 3 Diploma in Mowing</td>
                     <td class="govuk-table__cell">
                         <div class="govuk-form-group govuk-!-margin-bottom-0">
-
-
                             <label class="govuk-label govuk-visually-hidden" for="shorttitle">
                                 <h2 class="govuk-heading-m">What is the short title for this qualification?</h2>
                             </label>
@@ -740,7 +744,6 @@ Edit qualifications
                                 <option value="lawn mowerism">Lawn mowerism</option>
                             </select>
                         </div>
-
                     </td>
                     <td class="govuk-table__cell">
                         <div class="app-c-option-select js-collapsible js-closed">
@@ -890,52 +893,56 @@ Edit qualifications
                         </div>
 
                     </td>
+                    <td class="govuk-table__cell">
+                      <button class="govuk-button govuk-!-margin-bottom-1">Save</button>
+                    </td>
                 </tr>
 
             </tbody>
         </table>
 
-        <button class="govuk-button">Save changes</button>
+
 
 
     </form>
-        {% endblock %}
-        {% block pageScripts %}
-        <script>
-            $(document).ready(function () {
-                // change labels
-                accessibleAutocomplete.enhanceSelectElement({
-                    defaultValue: '',
-                    selectElement: document.querySelector('#shorttitle'),
-                    minLength: 2,
-                })
-                accessibleAutocomplete.enhanceSelectElement({
-                    defaultValue: '',
-                    selectElement: document.querySelector('#shorttitle2'),
-                    minLength: 2,
-                })
-                accessibleAutocomplete.enhanceSelectElement({
-                    defaultValue: '',
-                    selectElement: document.querySelector('#shorttitle3'),
-                    minLength: 2,
-                })
-                accessibleAutocomplete.enhanceSelectElement({
-                    defaultValue: '',
-                    selectElement: document.querySelector('#shorttitle4'),
-                    minLength: 2,
-                })
-                accessibleAutocomplete.enhanceSelectElement({
-                    defaultValue: '',
-                    selectElement: document.querySelector('#shorttitle5'),
-                    minLength: 2,
-                })
+
+{% endblock %}
+{% block pageScripts %}
+<script>
+    $(document).ready(function () {
+        // change labels
+        accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: '',
+            selectElement: document.querySelector('#shorttitle'),
+            minLength: 2,
+        })
+        accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: '',
+            selectElement: document.querySelector('#shorttitle2'),
+            minLength: 2,
+        })
+        accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: '',
+            selectElement: document.querySelector('#shorttitle3'),
+            minLength: 2,
+        })
+        accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: '',
+            selectElement: document.querySelector('#shorttitle4'),
+            minLength: 2,
+        })
+        accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: '',
+            selectElement: document.querySelector('#shorttitle5'),
+            minLength: 2,
+        })
 
 
 
 
-                $(".js-container-head").click(function () {
-                    $(this).parent().toggleClass("js-closed");
-                });
-            });
-        </script>
-        {% endblock %}
+        $(".js-container-head").click(function () {
+            $(this).parent().toggleClass("js-closed");
+        });
+    });
+</script>
+{% endblock %}
