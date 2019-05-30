@@ -37,14 +37,14 @@
 
       <div class="govuk-grid-column-two-thirds">
           <p class="govuk-body">
-            <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">17 </span>results in
+            <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">9 </span>results in
             <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within
             <span class="govuk-body govuk-!-font-weight-bold">{% if data['radius'] == null %}10 miles {% else %}{{ data['radius']}} {% endif %}</span>of <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span>
           </p>
           <p><a href="placement-gap?gapType=noSuitable">No suitable providers? Let us know</a>.</p>
 
           <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-          {% include "./_includes/results_HealthAndScience_10miles.html" %}
+          {% include "./_includes/results_HealthAndScience_Enhanced.html" %}
 
           <!-- <p class="govuk-link"><a href="download-halt">Download results</a></p> -->
       </div>
