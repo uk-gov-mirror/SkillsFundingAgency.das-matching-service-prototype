@@ -8,8 +8,8 @@
     "\\app\\assets\\sass",
     "\\app\\assets\\sass\\components",
     "\\app\\assets\\sass\\patterns",
-    "\\app\\routes",
-    "\\app\\routes\\0-6-0"
+    "\\app\\views",
+    "\\app\\views\\0-7-0"
   ],
   "SelectedNode": "\\app\\assets\\sass\\application.scss",
   "PreviewInSolutionExplorer": false
