@@ -15,26 +15,38 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Confirm employer</h1>
       <form class="form" method="post">
 
-        <div class="form-group">
-          <p class="govuk-body">The address below may not be the same as for the placement opportunity. For example, it may be a head office, but the placement is required in a regional office.</p>
+        <span class="govuk-caption-l">{{ data['businessName'] }}</span>
+        <h1 class="govuk-heading-l">Confirm contact details for industry placements</h1>
 
-          <h2 class="govuk-heading-m">{% if data['businessName'] == "" %}
-              West Ham United Football Club Ltd
-             {% else %}
-              {{ data['businessName'] }}
-             {% endif %}</h2>
+        <form class="form" method="post">
 
-            <p class="govuk-body">
-                6A Vigo St <br />
-                Mayfair <br />
-                London<br />
-                W1S 3HF
-            </p>
           <p><a href="enter-employer-name">Find a different employer</a></p>
-        </div>
+
+          <div class="govuk-inset-text">
+            Make sure the employer confirms the most accurate and up-to-date contact name, email and telephone number for industry placements.
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="contact-name">
+              Contact name
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="contact_name" name="contact_name" type="text" value="{% if data['contact_name'] == null %}Micheal Gill{% else %}{{ data['contact_name'] }}{% endif %}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="contact_email">
+              Email
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="contact_email" name="contact_email" type="email" value="{% if data['contact_email'] == null %}notknown@notknown.com{% else %}{{ data['contact_email'] }}{% endif %}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="contact_phone">
+              Telephone number
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="contact_phone" name="contact_phone" type="tel" value="{% if data['contact_phone'] == null %}020 8586 8116 ext 2144{% else %}{{ data['contact_phone'] }}{% endif %}">
+          </div>
+
 
 {% if data['placementtype'] == "gap" %}
         <button class="govuk-button">Let us know and continue</button>
