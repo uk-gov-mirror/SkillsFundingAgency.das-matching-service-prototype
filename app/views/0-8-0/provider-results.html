@@ -6,7 +6,11 @@
 
 {% block beforeContent %}
   {% include "includes/phase_banner.html" %}
-  {% include "includes/start_again.html" %}
+  {% if data['addopportunity'] == "2" %}
+    {% include "includes/cancel_opp.html" %}
+  {% else %}
+    {% include "includes/start_again.html" %}
+  {% endif %}
   <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
