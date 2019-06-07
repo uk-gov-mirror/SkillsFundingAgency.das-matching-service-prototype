@@ -27,7 +27,7 @@ Opportunity basket
 <form class="form" method="post">
 
 <!-- BOTH TABS -->
-{% if data['placementtype'] == "gap" or data['addopportunity'] == "existing" %}
+{% if (data['placementtype'] == "gap") and (data['addopportunity'] == "2") %}
 
             <div class="govuk-tabs" data-module="tabs">
                 <ul class="govuk-tabs__list">
@@ -149,6 +149,28 @@ Opportunity basket
 
 {% else %}
 
+<!-- JUST GAP -->
+{% if data['placementtype'] == "gap" %}
+            <table class="govuk-table">
+                <thead>
+                  <tr class="govuk-table__row" style="">
+                      <th class="govuk-table__header" scope="row">Workplace</th>
+                      <th class="govuk-table__header" scope="row">Students wanted</th>
+                      <th class="govuk-table__header" scope="row">Reason no providers chosen</th>
+                      <!-- <td class="govuk-table__cell"></td>
+                      <td class="govuk-table__cell"></td> -->
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">London W1F 0TA</td>
+                    <td class="govuk-table__cell">1</td>
+                    <td class="govuk-table__cell">Students are not learning anything relevant</td>
+                  </tr>
+                </tbody>
+            </table>
+{% else %}
+
 <!-- TWO OPPORTUNITIES -->
 {% if data['addopportunity'] == "2" %}
             <div class="form-group">
@@ -259,9 +281,10 @@ Opportunity basket
             </table>
 {% endif %}
 {% endif %}
+{% endif %}
 
 
-            <p class="govuk-body"><a href="/public/files/WestHanoverHospitalsTrustOpportunities.xlsx" download class="govuk-link">Save all data as a spreadsheet</a></p>
+            <p class="govuk-body"><a href="/public/files/WestHanoverHospitalsTrustOpportunities.xlsx" download class="govuk-link">Download all data as a spreadsheet</a></p>
 
 
         </div>
