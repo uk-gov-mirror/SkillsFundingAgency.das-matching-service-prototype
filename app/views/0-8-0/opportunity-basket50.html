@@ -543,6 +543,7 @@ Opportunity basket
                       <thead>
                         <tr class="govuk-table__row" style="">
                             <th class="govuk-table__header" scope="row">Workplace</th>
+                            <th class="govuk-table__header" scope="row">Job role</th>
                             <th class="govuk-table__header" scope="row">Student number</th>
                             <th class="govuk-table__header" scope="row">Reason no providers chosen</th>
                             <!-- <td class="govuk-table__cell"></td>
@@ -553,18 +554,21 @@ Opportunity basket
 
                         <tr class="govuk-table__row">
                           <td class="govuk-table__cell">London W1F 0TA</td>
+                          <td class="govuk-table__cell">{% if (data['roleInfogap'] == "") or (data['roleInfogap'] == null) %}None given{% else %}{{ data['roleInfogap'] }}{% endif %}</td>
                           <td class="govuk-table__cell">1</td>
                           <td class="govuk-table__cell">Students are not learning anything relevant</td>
                         </tr>
 
                         <tr class="govuk-table__row">
                           <td class="govuk-table__cell">Dudley DY2 0AL</td>
+                          <td class="govuk-table__cell">{% if (data['roleInfogap'] == "") or (data['roleInfogap'] == null) %}None given{% else %}{{ data['roleInfogap'] }}{% endif %}</td>
                           <td class="govuk-table__cell">2</td>
                           <td class="govuk-table__cell">Employer had a bad experience with them</td>
                         </tr>
 
                         <tr class="govuk-table__row">
                           <td class="govuk-table__cell">Dudley DY2 0AL</td>
+                          <td class="govuk-table__cell">{% if (data['roleInfogap'] == "") or (data['roleInfogap'] == null) %}None given{% else %}{{ data['roleInfogap'] }}{% endif %}</td>
                           <td class="govuk-table__cell">1</td>
                           <td class="govuk-table__cell">None available</td>
                         </tr>

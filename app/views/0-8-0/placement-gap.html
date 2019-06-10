@@ -21,30 +21,10 @@
 
           <form class="form" method="post">
 
-            {% if data['gapType'] == "noSuitable" %}
             <span class="govuk-caption-l">{{ data['businessName'] }}</span>
             <h1 class="govuk-heading-l">Placement information</h1>
-            {% else %}
-            <span class="govuk-caption-l">{{ data['businessName'] }}</span>
-            <h1 class="govuk-heading-l">Does the employer know how many {{ data['route']}} opportunities they want to offer at this location?</h1>
-            {% endif %}
 
             <!-- <p class="govuk-body">This information helps us understand where there are not enough providers for industry placements.</p> -->
-
-              <!-- <div class="govuk-form-group">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h2 class="govuk-fieldset__heading">
-            What specific job would the placement student do?
-          </h2>
-        </legend>
-        <div class="govuk-form-group">
-          <label class="govuk-hint" for="one-half">
-            For example, admin assistant, care worker, bricklayer
-          </label>
-          <input class="govuk-input govuk-!-width-one-half" id="roleInfo" name="roleInfo" type="text">
-        </div>
-    </div> -->
-
 
             {% if data['gapType'] == "noSuitable" %}
               <div class="govuk-form-group">
@@ -61,7 +41,7 @@
                     <div class="govuk-checkboxes__item">
                       <input class="govuk-checkboxes__input" id="gap-reason-1" name="gap-reason" type="checkbox" value="1">
                       <label class="govuk-label govuk-checkboxes__label" for="gap-reason-1">
-                        Students are not learning anything relevant
+                        Providers do not have suitable students
                       </label>
                     </div>
                     <div class="govuk-checkboxes__item">
@@ -76,12 +56,6 @@
                         Providers were too far away
                       </label>
                     </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="gap-reason-4" name="gap-reason" type="checkbox" value="4">
-                      <label class="govuk-label govuk-checkboxes__label" for="gap-reason-4">
-                        Something else
-                      </label>
-                    </div>
                   </div>
                 </fieldset>
               </div>
@@ -90,13 +64,21 @@
               {% endif %}
 
               <div class="govuk-form-group">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                      What specific job would the placement student do? (optional)
+                    </h2>
+                  </legend>
+                  <div class="govuk-form-group">
+                    <label class="govuk-hint" for="roleInfogap">
+                      For example, admin assistant, care worker, bricklayer
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-half" id="roleInfo" name="roleInfogap" type="text">
+                  </div>
+              </div>
 
-                {% if data['gapType'] == "noSuitable" %}
+              <div class="govuk-form-group">
                 <h2 class="govuk-heading-m">Does the employer know how many {{ data['route']}} opportunities they want to offer at this location?</h2>
-                {% else %}
-                {% endif %}
-
-
                   <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                       <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="placements-conditional-1" name="placements" type="radio" value="yes" data-aria-controls="conditional-student-number-conditional-1">
