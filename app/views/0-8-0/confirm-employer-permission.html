@@ -17,13 +17,9 @@
       <div class="govuk-grid-column-two-thirds">
 
           <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span>
-          {% if data['returnjourney'] == "true" %}
           <h1 class="govuk-heading-l">Before we send emails</h1>
-          {% else %}
-          <h1 class="govuk-heading-l">Confirm that we can share the employer’s contact details</h1>
-          {% endif %}
 
-          {% if data['returnjourney'] == "true" %}
+
           <h2 class="govuk-heading-m">Check details for industry placements</h2>
 
           <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-0">Contact name</p>
@@ -40,8 +36,6 @@
 
           <h2 class="govuk-heading-m">Confirm we can share the employer’s details</h2>
 
-          {% else %}
-          {% endif %}
           <p class="govuk-hint">Tick to confirm</p>
 
             <div class="form-group">
@@ -49,7 +43,7 @@
                     <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="declare" name="declare" type="checkbox">
                         <label class="govuk-label govuk-checkboxes__label" for="declare">
-                            {{ data['contact_name'] }} has confirmed that we can share their details with 12 providers, and that these providers can contact them about industry placements.
+                            {{ data['contact_name'] }} has confirmed that we can share their details with providers, and that these providers can contact them about industry placements.
                         </label>
                     </div>
                 </div>
