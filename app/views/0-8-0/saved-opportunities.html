@@ -34,12 +34,17 @@
               <td class="govuk-table__cell" style="text-align: right"><a href="#">Edit</a></td>
               <td class="govuk-table__cell" style="text-align: right"><a href="remove-employer">Delete</a></td>
             </tr>
+
+            {% if data['removeEmployer'] == "true" %}
+            {% else %}
             <tr class="govuk-table__row">
               <th class="govuk-table__header" scope="row">West Hanover Hospitals NHS Trust</th>
               <td class="govuk-table__cell">14:05 on 12 May 2019</td>
               <td class="govuk-table__cell" style="text-align: right"><a href="opportunity-basket50">Edit</a></td>
               <td class="govuk-table__cell" style="text-align: right"><a href="remove-employer">Delete</a></td>
             </tr>
+            {% endif %}
+
             <tr class="govuk-table__row">
               <th class="govuk-table__header" scope="row">BMW</th>
               <td class="govuk-table__cell">12:40 on 01 February 2019</td>

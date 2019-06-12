@@ -14,10 +14,10 @@ Remove employer
 
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-l">Do you want to delete X opportunities created for {{ data['businessName'] }}?</h1>
+          <h1 class="govuk-heading-l">Confirm you want to delete 29 opportunities created for West Hanover Hospitals NHS Trust?</h1>
 
-          <p class="govuk-body">This cannot be undone.
-            <div class="govuk-form-group">
+          <p class="govuk-body">This cannot be undone.</p>
+            <!-- <div class="govuk-form-group">
                 <div class="govuk-radios">
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="where-do-you-live-1" name="where-do-you-live" type="radio" value="england">
@@ -32,10 +32,10 @@ Remove employer
                     </label>
                   </div>
                 </div>
-            </div>
+            </div> -->
 
-        <button class="govuk-button">Confirm and continue</button>
-        <!-- <p class="govuk-body"><a href="javascript:history.back()" class="govuk-link">Cancel and return to saved opportunities</a></p> -->
+        <a href="saved-opportunities?removeEmployer=true" class="govuk-button govuk-button--warning">Confirm and continue</a>
+        <p class="govuk-body"><a href="javascript:history.back()" class="govuk-link">Cancel and go back</a></p>
 
       </div>
   </div>
