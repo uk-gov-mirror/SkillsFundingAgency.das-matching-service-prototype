@@ -78,7 +78,9 @@
               </div>
 
               <div class="govuk-form-group">
-                <h2 class="govuk-heading-m">Does the employer know how many {{ data['route']}} opportunities they want to offer at this location?</h2>
+                <h2 class="govuk-heading-m">Does the employer know how many students they want for this job at {{ data['postcode']}}?</h2>
+                <p class="govuk-hint">This can be an estimate</p>
+
                   <div class="govuk-radios govuk-radios--conditional" data-module="radios">
                       <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="placements-conditional-1" name="placements" type="radio" value="yes" data-aria-controls="conditional-student-number-conditional-1">
@@ -89,7 +91,7 @@
                       <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-student-number-conditional-1">
                           <div class="govuk-form-group">
                               <label class="govuk-label" for="placementNumber">
-                                  Number of opportunities
+                                  Number of students
                               </label>
                               <input class="govuk-input govuk-input--width-3" id="{{ data['placementNumber'] }}" name="placementNumber">
                           </div>
