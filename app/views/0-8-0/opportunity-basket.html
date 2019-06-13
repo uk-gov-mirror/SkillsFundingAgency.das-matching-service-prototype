@@ -173,7 +173,6 @@ Opportunity basket
                   </tr>
                 </tbody>
             </table>
-            <p class="govuk-body"><a href="/public/files/WestHanoverHospitalsTrustOpportunities.xlsx" download class="govuk-link">Download all data as a spreadsheet</a></p>
 
             <a href="start" class="govuk-button">Tell us and finish</a>
 
@@ -292,21 +291,15 @@ Opportunity basket
 {% endif %}
 {% endif %}
 
-            {% if (data['placementtype'] == "gap") and (data['addopportunity'] == "2") %}
-            <p class="govuk-body"><a href="/public/files/WestHanoverHospitalsTrustOpportunities.xlsx" download class="govuk-link">Download all data as a spreadsheet</a></p>
-            {% else %}
-            {% if data['placementtype'] == "gap" %}
-            {% else %}
-            <p class="govuk-body"><a href="/public/files/WestHanoverHospitalsTrustOpportunities.xlsx" download class="govuk-link">Download all data as a spreadsheet</a></p>
-            {% endif %}
-            {% endif %}
+
+
 
 
 
         </div>
     </div>
 
-            <p class="govuk-body">
+            <p>
                 {% if data['placementtype'] == "gap" %}
                 {% else %}
                 {% if data['addopportunity'] == "2" %}
@@ -318,6 +311,8 @@ Opportunity basket
                 {% endif %}
                 {% endif %}
             </p>
+            <p class="govuk-body"><a href="/public/files/WestHanoverHospitalsTrustOpportunities.xlsx" download class="govuk-link">Download all data as a spreadsheet</a></p>
+
 </form>
 
 
