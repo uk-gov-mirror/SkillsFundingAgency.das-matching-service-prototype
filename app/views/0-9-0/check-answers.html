@@ -1,0 +1,170 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check {{data['businessName']}}'s answers
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  {% if data['addopportunity'] == "2" %}
+    {% include "includes/cancel_opp.html" %}
+  {% else %}
+    {% include "includes/start_again.html" %}
+  {% endif %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          {% if data['businessName'] != null %}
+          <span class="govuk-caption-l">{{ data['businessName'] }}</span>
+          <h1 class="govuk-heading-l">Check answers</h1>
+          {% else %}
+          <h1 class="govuk-heading-l">Check answers</h1>
+          {% endif %}
+
+          <form class="form" method="post">
+
+              <h3 class="govuk-heading-m">Placement information</h3>
+              <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 40px">
+
+                  <div class="app-check-your-answers__contents">
+                      <dt class="app-check-your-answers__question">
+                          Skill area
+                      </dt>
+                      <dd class="app-check-your-answers__answer">
+                          {{ data['route'] }}
+                      </dd>
+                      <dd class="app-check-your-answers__change">
+                          <a href="search">
+                              Change<span class="govuk-visually-hidden"> the type of placement</span>
+                          </a>
+                      </dd>
+                  </div>
+
+                  <div class="app-check-your-answers__contents">
+                      <dt class="app-check-your-answers__question">
+                          Postcode of workplace
+                      </dt>
+                      <dd class="app-check-your-answers__answer" style="text-transform: uppercase">
+                          {{ data['postcode'] }}
+                      </dd>
+                      <dd class="app-check-your-answers__change">
+                          <a href="search">
+                              Change<span class="govuk-visually-hidden"> the postcode of the workplace</span>
+                          </a>
+                      </dd>
+                  </div>
+
+                  <!-- <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Searched for providers within
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                {% if data['radius'] == null %}
+                    10 miles
+                   {% else %}
+                    {{ data['radius'] }}
+                   {% endif %}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="provider-results">
+                  Change<span class="govuk-visually-hidden"> distance</span>
+                </a>
+              </dd>
+            </div> -->
+
+                  <div class="app-check-your-answers__contents">
+                      <dt class="app-check-your-answers__question">
+                          Job role
+                      </dt>
+                      <dd class="app-check-your-answers__answer">
+                          {% if (data['roleInfo'] == "") or (data['roleInfo'] == null) %}none given{% else %}{{ data['roleInfo'] }}{% endif %}
+                      </dd>
+                      <dd class="app-check-your-answers__change">
+                          <a href="placements">
+                              Change<span class="govuk-visually-hidden"> the job role</span>
+                          </a>
+                      </dd>
+                  </div>
+
+                  <div class="app-check-your-answers__contents">
+                      <dt class="app-check-your-answers__question">
+                          Students wanted
+                      </dt>
+                      <dd class="app-check-your-answers__answer">
+                          {% if (placements == "no") %}
+                          at least 1
+                          {% else %}
+                          {{ data['placementNumber'] }}
+                          {% endif %}
+                      </dd>
+                      <dd class="app-check-your-answers__change">
+                          <a href="placements">
+                              Change<span class="govuk-visually-hidden"> the number of opportunities</span>
+                          </a>
+                      </dd>
+                  </div>
+
+                  <!-- <div class="app-check-your-answers__contents">
+                      <dt class="app-check-your-answers__question">
+                          Placement start date
+                      </dt>
+                      <dd class="app-check-your-answers__answer">
+                          {% if data['startdate'] == "thisyear" %}
+                          This academic year (before September 2019)
+                          {% else %}
+                          Next academic year (after September 2019)
+                          {% endif %}
+                      </dd>
+                      <dd class="app-check-your-answers__change">
+                          <a href="placements">
+                              Change<span class="govuk-visually-hidden"> the placement start date</span>
+                          </a>
+                      </dd>
+                  </div> -->
+
+
+                      <!-- <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question">
+                    Extra requirements
+                  </dt>
+                  <dd class="app-check-your-answers__answer">
+                    {% if (extra == "no") %}
+                      No
+                    {% else %}
+                      {{ data['extraReq'] }}
+                    {% endif %}
+                  </dd>
+                  <dd class="app-check-your-answers__change">
+                    <a href="placements">
+                      Change<span class="govuk-visually-hidden"> extra requirements</span>
+                    </a>
+                  </dd>
+                </div> -->
+
+              </dl>
+
+                  <h3 class="govuk-heading-m">Provider information</h3>
+
+                  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Provider 1</p>
+                  <p class="govuk-body govuk-!-margin-bottom-1">Westminster Kingsway College (part of Capital City College Group)</p>
+                  <p class="govuk-body">1.5 miles miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+
+                  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Provider 2</p>
+                  <p class="govuk-body govuk-!-margin-bottom-1">Lambeth College </p>
+                  <p class="govuk-body">4.3 miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+
+                  <p class="govuk-body"><a class="govuk-link" href="provider-results">Change providers</a></p>
+
+              <input type="hidden" value="nogap" name="placementtype" />
+              <button class="govuk-button">Confirm and save opportunity</button>
+
+          </form>
+
+      </div>
+  </div>
+
+{% endblock %}

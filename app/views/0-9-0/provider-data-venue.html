@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+DE4 1DE
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-m">DT Learning</span>
+              <h1 class="govuk-heading-l">DE4 1DE</h1>
+
+              <p class="govuk-body govuk-link"><a href="provider-data-venue-sure">Remove venue</a></p>
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                    <h3 class="govuk-fieldset__heading">
+                      Does DT Learning want our help finding placements for students at this venue?
+                    </h3>
+                  </legend>
+                  <div class="govuk-radios govuk-radios--inline">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="venue-referrals-1" name="venue-referrals" type="radio" value="yes" checked>
+                      <label class="govuk-label govuk-radios__label" for="provider-referrals-1">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="venue-referrals-2" name="venue-referrals" type="radio" value="no">
+                      <label class="govuk-label govuk-radios__label" for="venue-referrals-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-heading-s" for="venueName">
+                How should DE4 1DE show in search results?
+                </label>
+                <input class="govuk-input govuk-!-width-one-half" id="venueName" name="venueName" type="text" value="DE4 1DE">
+              </div>
+
+              <a href="#" class="govuk-button" style="margin-bottom: 0; background-color: #dee0e2; color: black">Save section</a>
+        </div>
+
+        <div class="govuk-grid-column-full">
+
+              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+              <div class="govuk-form-group">
+                  <h2 class="govuk-heading-m">Qualifications</h2>
+
+                  <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th class="govuk-table__header" scope="col">Learning aim reference</th>
+                        <th class="govuk-table__header" scope="col">Qualification title</th>
+                        <th class="govuk-table__header" scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">10001234</td>
+                        <td class="govuk-table__cell">NVQ Level 2 in Lawn Mowering</td>
+                        <td class="govuk-table__cell">
+                          <a href="#" class="govuk-link">Remove qualification</a>
+                        </td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">10001234</td>
+                        <td class="govuk-table__cell">NVQ Level 2 in Lawn Mowering</td>
+                        <td class="govuk-table__cell">
+                          <a href="#" class="govuk-link">Remove qualification</a>
+                        </td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">10001234</td>
+                        <td class="govuk-table__cell">NVQ Level 2 in Lawn Mowering</td>
+                        <td class="govuk-table__cell">
+                          <a href="#" class="govuk-link">Remove qualification</a>
+                        </td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">10001234</td>
+                        <td class="govuk-table__cell">NVQ Level 3 in Ride on Lawn Mower Skills</td>
+                        <td class="govuk-table__cell">
+                          <a href="#" class="govuk-link">Remove qualification</a>
+                        </td>
+
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <p class="govuk-body govuk-link"><a href="provider-data-addqual">Add a qualification</a></p>
+                </div>
+
+              <button class="govuk-button" style="margin-bottom: 0; background-color: #dee0e2; color: black">Save and return to provider overview</button>
+        </div>
+    </div>
+
+
+
+</form>
+
+{% endblock %}
