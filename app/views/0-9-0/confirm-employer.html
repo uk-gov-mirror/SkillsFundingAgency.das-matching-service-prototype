@@ -22,8 +22,11 @@
 
         <form class="form" method="post">
 
+          {% if data['addopportunity'] == "2" %}
+          {% else %}
           <p><a href="enter-employer-name">Find a different employer</a></p>
-
+          {% endif %}
+          
           <div class="govuk-inset-text">
             Make sure the employer confirms the most accurate and up-to-date contact name, email and telephone number for industry placements.
           </div>
