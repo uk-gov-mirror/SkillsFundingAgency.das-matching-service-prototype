@@ -147,9 +147,42 @@
 
               </dl>
 
-                  <h3 class="govuk-heading-m">Provider information</h3>
 
-                  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Provider 1</p>
+
+              <h3 class="govuk-heading-m">Provider information</h3>
+
+              <dl class="app-check-your-answers app-check-your-answers--long">
+                <div class="app-check-your-answers__contents">
+                    <dt class="app-check-your-answers__question">
+                        Provider 1<br>
+                        <span class="govuk-body">Westminster Kingsway College (part of Capital City College Group)</span>
+                    </dt>
+                    <dd class="app-check-your-answers__answer">
+                        1.5 miles miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span>
+                    </dd>
+                    <dd class="app-check-your-answers__change">
+                        <a href="placements">
+                            Remove<span class="govuk-visually-hidden"> Westminster Kingsway College (part of Capital City College Group)</span>
+                        </a>
+                    </dd>
+                </div>
+                <div class="app-check-your-answers__contents">
+                    <dt class="app-check-your-answers__question">
+                        Provider 2<br>
+                        <span class="govuk-body">Lambeth College</span>
+                    </dt>
+                    <dd class="app-check-your-answers__answer">
+                        4.3 miles miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span>
+                    </dd>
+                    <dd class="app-check-your-answers__change">
+                        <a href="placements">
+                            Remove<span class="govuk-visually-hidden"> Lambeth College</span>
+                        </a>
+                    </dd>
+                </div>
+              </dl>
+
+                  <!-- <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Provider 1</p>
                   <p class="govuk-body govuk-!-margin-bottom-1">Westminster Kingsway College (part of Capital City College Group)</p>
                   <p class="govuk-body">1.5 miles miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
 
@@ -157,7 +190,7 @@
                   <p class="govuk-body govuk-!-margin-bottom-1">Lambeth College </p>
                   <p class="govuk-body">4.3 miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
 
-                  <p class="govuk-body"><a class="govuk-link" href="provider-results">Change providers</a></p>
+                  <p class="govuk-body"><a class="govuk-link" href="provider-results">Change providers</a></p> -->
 
               <input type="hidden" value="nogap" name="placementtype" />
               <button class="govuk-button">Confirm and save opportunity</button>
