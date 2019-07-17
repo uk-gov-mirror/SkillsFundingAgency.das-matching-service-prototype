@@ -396,6 +396,27 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/confirm-employer-permission', function (req, res) {
+        res.redirect(301, 'final-contacts-check');
+    });
+
+
+    // final-contacts-check
+    router.get('/' + version + '/final-contacts-check', function (req, res) {
+        res.render(version + '/final-contacts-check', {
+          'addopportunity': req.session.addopportunity,
+          'placements': req.session.placements,
+          'placementNumber': req.session.placementNumber,
+          'postcode': req.session.postcode,
+          'businessName': req.session.businessName,
+          'roleInfo': req.session.rollInfo,
+          'extra': req.session.extra,
+          'extraReq': req.session.extraReq,
+          'route': req.session.route,
+          'provider': req.session.provider,
+        })
+    });
+
+    router.post('/' + version + '/final-contacts-check', function (req, res) {
         res.redirect(301, 'emails-sent');
     });
 

@@ -16,7 +16,7 @@
 
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
-          Emails sent
+          {% if data['permission'] == "yes" %}Emails sent{% else %}Email sent to the employer{% endif %}
         </h1>
         <!-- <div class="govuk-panel__body">
           Your reference number
@@ -29,15 +29,17 @@
           <!-- <div class="form-group">
       <p>We have also sent the employer a confirmation email.</p>
     </div> -->
-          <p>We have also sent a confirmation email to the employer.</p>
-          <div class="govuk-inset-text">
-              Remember to <a href="crm" target="_blank">update the employer’s CRM record (opens in a new window or tab)</a> with any new information.
-          </div>
+    {% if data['permission'] == "yes" %}
 
-          <div class="form-group">
-              <h2 class="govuk-heading-m">What happens next</h2>
-              <p>We expect the providers will contact {{ data['contact_name'] }} within 2 to 3 working days. The providers will work with {{ data['businessName'] }} to arrange the terms and details of each placement.</p>
-          </div>
+    <p>We have also sent a confirmation email to the employer.</p>
+    <div class="govuk-inset-text">
+        Remember to <a href="crm" target="_blank">update the employer’s CRM record (opens in a new window or tab)</a> with any new information.
+    </div>
+
+    <div class="form-group">
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p>We expect the providers will contact {{ data['contact_name'] }} within 2 to 3 working days. The providers will work with {{ data['businessName'] }} to arrange the terms and details of each placement.</p>
+    </div>
 
           <!-- <div class="form-group">
       <h3 class="govuk-heading-m">Employer feedback</h3>
@@ -53,6 +55,20 @@
             </div>
         </div>
     </div> -->
+
+    {% else %}
+
+    <p>Michael Gill has been sent an email summarising the opportunities you have created for them and the details of the providers for them to contact.</p>
+    <div class="govuk-inset-text">
+        Remember to <a href="crm" target="_blank">update the employer’s CRM record (opens in a new window or tab)</a> with any new information.
+    </div>
+
+    <div class="form-group">
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p>We expect {{ data['businessName'] }} to contact the selected providers within X working days. They will work with the providers to arrange the terms and details of each placement.</p>
+    </div>
+    {% endif %}
+
           <input type="hidden" value="complete" name="addopportunity" />
 
           <button class="govuk-button">Finish</button>

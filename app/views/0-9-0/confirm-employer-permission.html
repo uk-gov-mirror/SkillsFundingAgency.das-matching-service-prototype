@@ -17,10 +17,10 @@
       <div class="govuk-grid-column-two-thirds">
 
           <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span>
-          <h1 class="govuk-heading-l">Before we send emails</h1>
+          <!-- <h1 class="govuk-heading-l">Before we send emails</h1> -->
 
 
-          <h2 class="govuk-heading-m">Check details for industry placements</h2>
+          <!-- <h2 class="govuk-heading-m">Check details for industry placements</h2>
 
           <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-0">Contact name</p>
           <p class="govuk-body govuk-!-margin-bottom-3">{{ data['contact_name'] }}</p>
@@ -31,10 +31,10 @@
           <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-0">Telephone number</p>
           <p class="govuk-body govuk-!-margin-bottom-3">{{ data['contact_phone'] }}</p>
 
-          <p class="govuk-body"><a class="govuk-link" href="confirm-employer">Change contact details</a></p>
+          <p class="govuk-body"><a class="govuk-link" href="confirm-employer">Change contact details</a></p> -->
 
 
-          <h2 class="govuk-heading-m">Confirm we can share the employer’s details</h2>
+          <!-- <h2 class="govuk-heading-m">Confirm we can share the employer’s details</h2>
 
           <p class="govuk-hint">Tick to confirm</p>
 
@@ -49,7 +49,32 @@
                 </div>
             </div>
 
-            <button class="govuk-button">Confirm and send opportunities</button>
+            <button class="govuk-button">Confirm and send opportunities</button> -->
+
+            <h1 class="govuk-heading-l">Does the employer agree to share their details with the selected providers?</h1>
+
+            <p class="govuk-body">We will not send any emails to providers for them and they will be expected to contact providers within X working days.</p>
+
+            <div class="govuk-inset-text">
+              Only select no if the employer wants to initiate the conversation with providers.
+            </div>
+
+            <div class="govuk-form-group">
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="permission-1" name="permission" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="permission-1">
+                      Yes
+                    </label> </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="permission-2" name="permission" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="permission-2">
+                      No
+                    </label> </div>
+                </div>
+            </div>
+
+            <button class="govuk-button">Confirm and continue</button>
 
           </form>
 
