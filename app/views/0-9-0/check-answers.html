@@ -152,6 +152,7 @@
               <h3 class="govuk-heading-m">Selected providers</h3>
 
               <dl class="app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-5">
+
                 <div class="app-check-your-answers__contents">
                     <dt class="app-check-your-answers__question">
                       Westminster Kingsway College (part of Capital City College Group)
@@ -159,12 +160,18 @@
                     <dd class="app-check-your-answers__answer">
                         1.5 miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span>
                     </dd>
+                    {% if data['removeprovider2'] == "true" %}
+                    {% else %}
                     <dd class="app-check-your-answers__change">
-                        <a href="placements">
+                        <a href="#">
                             Remove<span class="govuk-visually-hidden"> Westminster Kingsway College (part of Capital City College Group)</span>
                         </a>
                     </dd>
+                    {% endif %}
                 </div>
+
+                {% if data['removeprovider2'] == "true" %}
+                {% else %}
                 <div class="app-check-your-answers__contents">
                     <dt class="app-check-your-answers__question">
                       Lambeth College
@@ -173,11 +180,12 @@
                         4.3 miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span>
                     </dd>
                     <dd class="app-check-your-answers__change">
-                        <a href="placements">
+                        <a href="check-answers?removeprovider2=true">
                             Remove<span class="govuk-visually-hidden"> Lambeth College</span>
                         </a>
                     </dd>
                 </div>
+                {% endif %}
               </dl>
 
                   <!-- <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Provider 1</p>
