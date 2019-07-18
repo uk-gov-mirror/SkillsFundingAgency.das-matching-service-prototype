@@ -16,7 +16,7 @@
 
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
-          {% if data['permission'] == "yes" %}Emails sent{% else %}Email sent to the employer{% endif %}
+          {% if data['permission'] == "yes" %}Emails sent{% else %}Email sent{% endif %}
         </h1>
         <!-- <div class="govuk-panel__body">
           Your reference number
@@ -58,14 +58,20 @@
 
     {% else %}
 
-    <p>Michael Gill has been sent an email summarising the opportunities you have created for them and the details of the providers for them to contact.</p>
+    <p class="govuk-body">We have sent {{ data['contact_name'] }} an email with:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>a summary of the opportunities we’ve created for {{ data['businessName'] }}</li>
+      <li>contact details for the providers they should speak to</li>
+    </ul>
+
     <div class="govuk-inset-text">
-        Remember to <a href="crm" target="_blank">update the employer’s CRM record (opens in a new window or tab)</a> with any new information.
+        Remember to <a href="crm" target="_blank">update the employer’s CRM record (opens in a new window or tab)</a> with a summary of the conversation you’ve just had with the employer.
     </div>
 
     <div class="form-group">
         <h2 class="govuk-heading-m">What happens next</h2>
-        <p>We expect {{ data['businessName'] }} to contact the selected providers within X working days. They will work with the providers to arrange the terms and details of each placement.</p>
+        <p>{{ data['contact_name'] }} must contact the providers in the email within 10 working days. You should follow up with them after that to check on progress.</p>
     </div>
     {% endif %}
 

@@ -461,6 +461,8 @@ module.exports = function(router, _myData) {
     // emails-sent
     router.get('/' + version + '/emails-sent', function (req, res) {
         res.render(version + '/emails-sent', {
+          'businessName': req.session.businessName,
+          'contact_name': req.session.contact_name
           })
     });
 
