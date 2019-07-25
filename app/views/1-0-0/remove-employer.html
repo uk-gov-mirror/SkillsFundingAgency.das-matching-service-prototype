@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Remove employer
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">Confirm you want to delete 29 opportunities created for West Hanover Hospitals NHS Trust?</h1>
+
+          <p class="govuk-body">This cannot be undone.</p>
+            <!-- <div class="govuk-form-group">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="where-do-you-live-1" name="where-do-you-live" type="radio" value="england">
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+            </div> -->
+
+        <a href="saved-opportunities?removeEmployer=true" class="govuk-button govuk-button--warning">Confirm and continue</a>
+        <p class="govuk-body"><a href="javascript:history.back()" class="govuk-link">Cancel and go back</a></p>
+
+      </div>
+  </div>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Emails sent
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          {% if data['permission'] == "yes" %}Emails sent{% else %}Email sent{% endif %}
+        </h1>
+        <!-- <div class="govuk-panel__body">
+          Your reference number
+          <br><strong>HDJ2123F</strong>
+        </div> -->
+      </div>
+      <br>
+
+      <form class="form" method="post">
+          <!-- <div class="form-group">
+      <p>We have also sent the employer a confirmation email.</p>
+    </div> -->
+    {% if data['permission'] == "yes" %}
+
+    <p>We have also sent a confirmation email to the employer.</p>
+    <div class="govuk-inset-text">
+        Remember to <a href="crm" target="_blank">update the employer’s CRM record (opens in a new window or tab)</a> with any new information.
+    </div>
+
+    <div class="form-group">
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p>We expect the providers will contact {{ data['contact_name'] }} within 2 to 3 working days. The providers will work with {{ data['businessName'] }} to arrange the terms and details of each placement.</p>
+    </div>
+
+          <!-- <div class="form-group">
+      <h3 class="govuk-heading-m">Employer feedback</h3>
+        <p>We will send the employer another email in 2 weeks’ time so that they can give feedback on their conversation with the provider. This helps us improve the service.</p>
+        <!-- <div class="govuk-form-group">
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                  The employer has agreed to give feedback (optional)
+                </label>
+              </div>
+            </div>
+        </div>
+    </div> -->
+
+    {% else %}
+
+    <p class="govuk-body">We have sent {{ data['contact_name'] }} an email with:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>a summary of the opportunities we’ve created for {{ data['businessName'] }}</li>
+      <li>contact details for the providers they should speak to</li>
+    </ul>
+
+    <div class="govuk-inset-text">
+        Remember to <a href="crm" target="_blank">update the employer’s CRM record (opens in a new window or tab)</a> with a summary of the conversation you’ve just had with the employer.
+    </div>
+
+    <div class="form-group">
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p>{{ data['contact_name'] }} must contact the providers in the email within 10 working days. You should follow up with them after that to check on progress.</p>
+    </div>
+    {% endif %}
+
+          <input type="hidden" value="complete" name="addopportunity" />
+
+          <button class="govuk-button">Finish</button>
+
+          <!-- <p><a href="give-feedback">Give us feedback</a></p> -->
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
