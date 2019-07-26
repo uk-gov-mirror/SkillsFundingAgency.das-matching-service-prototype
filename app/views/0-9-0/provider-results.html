@@ -35,10 +35,6 @@
     {% if route == "health and science" %}
 
     <div class="govuk-grid-row">
-      <!-- <div class="govuk-grid-column-one-third">
-         {% include "./_includes/filter.html" %}
-      </div> -->
-
       <div class="govuk-grid-column-two-thirds">
           <p class="govuk-body">
             <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">9 </span>results in
@@ -49,49 +45,49 @@
 
           <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
           {% include "./_includes/results_HealthAndScience_Enhanced.html" %}
-
-          <!-- <p class="govuk-link"><a href="download-halt">Download results</a></p> -->
       </div>
 
         <button class="govuk-button" name="resultsAction" value="continue">Continue with selected providers</button>
 
+      {% elseif route == "digital" %}
+
+      <!-- 0 results, but there are results in other routes -->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class= "form-group">
+            <p class="govuk-body">
+              <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">0 </span>results in
+              <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within
+              <span class="govuk-body govuk-!-font-weight-bold">{% if data['radius'] == null %}10 miles {% else %}{{ data['radius']}} {% endif %} </span>of
+              <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+
+            <h2 class="govuk-heading-m">If you change the skill area</h2>
+            <p class="govuk-body">Within 25 miles of <span style="text-transform: uppercase">{{ data['postcode'] }}</span>, there are:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>9 results for health and science</li>
+            </ul>
+            <p><a href="placement-gap?gapType=noneAvailable">Let us know that there are no suitable providers</a>.</p>
+          </div>
+        </div>
+      </div>
+
       {% else %}
-          {% if data['radius'] == "5 miles" %}
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-              <div class= "form-group">
-                <p class="govuk-body">
-                  <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">0 </span>results <span class="govuk-body govuk-!-font-weight-bold">{{ data['keyword']}} </span>in
-                  <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within
-                  <span class="govuk-body govuk-!-font-weight-bold">{% if data['radius'] == null %}10 miles {% else %}{{ data['radius']}} {% endif %} </span>of
-                  <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
-                <p class="govuk-body">You can:</p>
-                <ul class="govuk-list govuk-list--bullet">
-                  <li>increase the distance from the employer’s postcode</li>
-                  <li>try a different skill area</li>
-                </ul>
-              </div>
-            </div>
+
+      <!-- 0 results, NO results in other routes -->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class= "form-group">
+            <p class="govuk-body">
+              <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">0 </span>results <span class="govuk-body govuk-!-font-weight-bold">{{ data['keyword']}} </span>in
+              <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within
+              <span class="govuk-body govuk-!-font-weight-bold">{% if data['radius'] == null %}10 miles {% else %}{{ data['radius']}} {% endif %} </span>of
+              <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+
+              <p><a href="placement-gap?gapType=noneAvailable">Let us know that there are no suitable providers</a>.</p>
+
           </div>
-          {% else %}
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-              <div class= "form-group">
-                <p class="govuk-body">
-                  <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">0 </span>results <span class="govuk-body govuk-!-font-weight-bold">{{ data['keyword']}} </span>in
-                  <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within
-                  <span class="govuk-body govuk-!-font-weight-bold">{% if data['radius'] == null %}10 miles {% else %}{{ data['radius']}} {% endif %} </span>of
-                  <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
-                <p class="govuk-body">You can:</p>
-                <ul class="govuk-list govuk-list--bullet">
-                  <li>increase the distance from the employer’s postcode</li>
-                  <li>try a different skill area</li>
-                </ul>
-                <p>If neither of these work, <a href="placement-gap?gapType=noneAvailable">let us know there are no suitable providers</a>.</p>
-              </div>
-            </div>
-          </div>
-          {% endif %}
+        </div>
+      </div>
       {% endif %}
 
       </div>
