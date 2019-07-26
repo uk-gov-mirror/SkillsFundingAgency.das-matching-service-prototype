@@ -39,7 +39,7 @@
           <p class="govuk-body">
             <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">9 </span>results in
             <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within
-            <span class="govuk-body govuk-!-font-weight-bold">{% if data['radius'] == null %}10 miles {% else %}{{ data['radius']}} {% endif %}</span>of <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span>
+            <span class="govuk-body govuk-!-font-weight-bold">{% if data['radius'] == null %}25 miles {% else %}{{ data['radius']}} {% endif %}</span>of <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span>
           </p>
           <p><a href="placement-gap?gapType=noSuitable">No suitable providers? Let us know</a>.</p>
 
@@ -51,14 +51,14 @@
 
       {% elseif route == "digital" %}
 
-      <!-- 0 results, but there are results in other routes -->
+      <!-- 0 results in Digital, but there are results in other routes -->
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <div class= "form-group">
             <p class="govuk-body">
               <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">0 </span>results in
               <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within
-              <span class="govuk-body govuk-!-font-weight-bold">{% if data['radius'] == null %}10 miles {% else %}{{ data['radius']}} {% endif %} </span>of
+              <span class="govuk-body govuk-!-font-weight-bold">{% if data['radius'] == null %}25 miles {% else %}{{ data['radius']}} {% endif %} </span>of
               <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
 
             <h2 class="govuk-heading-m">If you change the skill area</h2>
@@ -80,7 +80,7 @@
             <p class="govuk-body">
               <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">0 </span>results <span class="govuk-body govuk-!-font-weight-bold">{{ data['keyword']}} </span>in
               <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within
-              <span class="govuk-body govuk-!-font-weight-bold">{% if data['radius'] == null %}10 miles {% else %}{{ data['radius']}} {% endif %} </span>of
+              <span class="govuk-body govuk-!-font-weight-bold">{% if data['radius'] == null %}25 miles {% else %}{{ data['radius']}} {% endif %} </span>of
               <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
 
               <p><a href="placement-gap?gapType=noneAvailable">Let us know that there are no suitable providers</a>.</p>
