@@ -153,9 +153,32 @@
 
               <dl class="app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-5">
 
+            {% if data['addopportunity'] == "2" %}
+
+              <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question">
+                    Westminster Kingsway College (NW1 3HB)
+                  </dt>
+                  <dd class="app-check-your-answers__answer">
+                      1.5 miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span>
+                  </dd>
+                  {% if data['removeprovider2'] == "true" %}
+                  {% else %}
+                  <!-- <dd class="app-check-your-answers__change">
+                      <a href="#">
+                          Remove<span class="govuk-visually-hidden"> Westminster Kingsway College (NW1 3HB)</span>
+                      </a>
+                  </dd> -->
+                  {% endif %}
+              </div>
+
+
+            {% else %}
+
+
                 <div class="app-check-your-answers__contents">
                     <dt class="app-check-your-answers__question">
-                      Westminster Kingsway College (part of Capital City College Group)
+                      Westminster Kingsway College (NW1 3HB)
                     </dt>
                     <dd class="app-check-your-answers__answer">
                         1.5 miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span>
@@ -164,7 +187,24 @@
                     {% else %}
                     <dd class="app-check-your-answers__change">
                         <a href="#">
-                            Remove<span class="govuk-visually-hidden"> Westminster Kingsway College (part of Capital City College Group)</span>
+                            Remove<span class="govuk-visually-hidden"> Westminster Kingsway College (NW1 3HB)</span>
+                        </a>
+                    </dd>
+                    {% endif %}
+                </div>
+
+                <div class="app-check-your-answers__contents">
+                    <dt class="app-check-your-answers__question">
+                      Westminster Kingsway College (NW1 4EA)
+                    </dt>
+                    <dd class="app-check-your-answers__answer">
+                        1.8 miles from <span style="text-transform: uppercase">{{ data['postcode'] }}</span>
+                    </dd>
+                    {% if data['removeprovider2'] == "true" %}
+                    {% else %}
+                    <dd class="app-check-your-answers__change">
+                        <a href="#">
+                            Remove<span class="govuk-visually-hidden"> Westminster Kingsway College (NW1 4EA)</span>
                         </a>
                     </dd>
                     {% endif %}
@@ -186,7 +226,11 @@
                     </dd>
                 </div>
                 {% endif %}
+
+              {% endif %}
               </dl>
+
+
 
                   <!-- <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Provider 1</p>
                   <p class="govuk-body govuk-!-margin-bottom-1">Westminster Kingsway College (part of Capital City College Group)</p>

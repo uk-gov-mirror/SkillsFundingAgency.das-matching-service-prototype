@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Enter employer name 
+  Enter employer name
 {% endblock %}
 
 {% block beforeContent %}
@@ -36,6 +36,23 @@
                 {% endfor %}
             </select>
         </div>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I cannot find the employer
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">Make sure they have:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>a saved record in the employer CRM record </li>
+              <li>an AUPA status</li>
+            </ul>
+            <p class="govuk-body">If you have just added a new employer to the CRM, it will take 1 to 2 minutes before you can find it on this page.</p>
+
+          </div>
+        </details>
 
 
         <!-- <p style="margin-bottom: 20px"><a href="add-employer-gap"> I cannot find the employer</a></p> -->
