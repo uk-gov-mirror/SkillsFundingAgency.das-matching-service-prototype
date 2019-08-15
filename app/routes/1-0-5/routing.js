@@ -35,7 +35,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/start', function (req, res){
-      res.redirect(301, './search?resetSession=true');
+      res.redirect(301, './skill-area?resetSession=true');
     });
 
     // remove-employer
@@ -205,15 +205,32 @@ module.exports = function(router, _myData) {
     router.get('/' + version + '/search', function (req, res) {
         res.render(version + '/search', {
             'addopportunity': req.session.addopportunity,
-            'businessName': req.session.businessName
+            'businessName': req.session.businessName,
+            'route': req.session.route
           })
     });
 
     router.post('/' + version + '/search', function (req, res){
       req.session.postcode = req.body.postcode,
-      req.session.radius = req.body.radius,
-      req.session.route = req.body.route,
-      res.redirect(301, './provider-results');
+      req.session.radius = req.body.radius
+
+
+      if (req.session.route == "everything") {
+          res.redirect(301, 'provider-results-geog-area');
+      } else {
+          res.redirect(301, 'provider-results');
+      }
+    });
+
+    router.post('/' + version + '/opportunity-basket50', function (req, res) {
+        req.session.basketcontinue = req.body.basketcontinue,
+        req.session.addopportunity = req.body.addopportunity
+
+        if (req.session.basketcontinue == "refer") {
+            res.redirect(301, 'confirm-employer-permission');
+        } else {
+            res.redirect(301, 'skill-area');
+        }
     });
 
 

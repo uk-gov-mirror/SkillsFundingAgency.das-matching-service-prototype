@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Provider results
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back to set up an opportunity</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          {% if data['businessName'] != null %}
+          <span class="govuk-caption-l">{{ data['businessName'] }}</span>
+          <h1 class="govuk-heading-l">Providers near {{ data['postcode'] }}</h1>
+          {% else %}
+          <h1 class="govuk-heading-l">Providers near {{ data['postcode'] }}</h1>
+          {% endif %}
+        </div>
+    </div>
+
+    <!-- results -->
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        {% include "./_includes/route_filter.html" %}
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body">
+          <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">9 </span>results within
+          <span class="govuk-body govuk-!-font-weight-bold">1 hour </span>of <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span>
+        </p>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        {% include "./_includes/results_ShowMeEverything.html" %}
+
+        <p><a href="placement-gap?gapType=noSuitable">No suitable providers? Let us know</a>.</p>
+    </div>
+
+    </div>
+</form>
+
+
+{% endblock %}
