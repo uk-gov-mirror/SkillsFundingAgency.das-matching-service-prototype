@@ -1,0 +1,423 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Find a provider
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+<a id="back" class="govuk-back-link" href="start">Return to start page</a>
+{% endblock %}
+
+{% block content %}
+
+
+<form class="form" method="post" id="provider-search-form">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">Find a provider</h1>
+
+            <div class="govuk-grid-row">
+
+            <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <div class="search-header">
+                    <div class="searchfield">
+                        <div class="search-input">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="provider-find">
+                                Enter the provider's UKPRN
+                            </label>
+                            <span class="govuk-hint" id="provider-find-hint">
+                              For example, 10001234
+                            </span>
+                            <input class="search-input" id="provider_find_UKPRN" name="provider_find_UKPRN" value="{{ data['provider_find_UKPRN'] }}" type="search"/>
+                        </div>
+                        <div class="search-submit">
+                          <button class="govuk-button" id="provider-find-submit">Find</button>
+                        </div>
+                    </div>
+                </div>
+
+                {% if data['provider_find_UKPRN'] != null %}
+                <a href="#" class="govuk-link">Show all providers</a>
+                {% else %}
+                {% endif %}
+            </div>
+
+
+        </div>
+      </div>
+    </div>
+
+{% if data['provider_find_UKPRN'] == '10001111' %}
+
+    <div id="provider-search-no-results-add">
+        <p class="govuk-body">This provider is not yet in our service:</p>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">UKPRN</p>
+          <p class="govuk-body">10001111</p>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">Provider name</p>
+          <p class="govuk-body govuk-!-margin-bottom-6">Acme College</p>
+
+        <a href="provider-data-providerview?UKPRN=10001111" class="govuk-button">Add this provider</a>
+    </div>
+
+{% elseif data['provider_find_UKPRN'] == '10001234' or data['provider_find_UKPRN'] == null %}
+
+    <div id="provider-search-results">
+
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row tl-table-row">
+                    <th class="govuk-table__header" scope="col">UKPRN</th>
+                    <th class="govuk-table__header" scope="col">Provider name</th>
+                    <th class="govuk-table__header" scope="col">CDF provider</th>
+                    <th class="govuk-table__header" scope="col"></th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">DT Learning</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="provider-data-providerview?UKPRN=10001234" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College</td>
+                    <td class="govuk-table__cell">
+                        Yes
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Acme College 84</td>
+                    <td class="govuk-table__cell">
+                        No
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">10001234</td>
+                    <td class="govuk-table__cell">Luke College</td>
+                    <td class="govuk-table__cell">
+                        No
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <button type="submit" class="govuk-button govuk-button--warning">Send email to all CDF providers</button>
+    </div>
+
+{% else %}
+      <div id="provider-search-no-results">
+            <p class="govuk-body">There is no active provider for <span class="govuk-!-font-weight-bold"> {{ data['provider_find_UKPRN'] }}</span> as their UKPRN.</p>
+            <p class="govuk-body">Please try again.</p>
+      </div>
+
+{% endif %}
+
+
+</form>
+{% endblock %}
+{% block pageScripts %}
+{% endblock %}

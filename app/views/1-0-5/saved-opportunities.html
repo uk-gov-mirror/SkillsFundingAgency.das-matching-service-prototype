@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm and send provision gap
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="start">Finish and return to start</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">Saved opportunities</h1>
+
+      <form class="form" method="post">
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">Employer name</th>
+              <th class="govuk-table__header" scope="col">Last updated</th>
+              <th class="govuk-table__header" scope="col"></th>
+              <th class="govuk-table__header" scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="row">Marriot</th>
+              <td class="govuk-table__cell">11:21 on 21 May 2019</td>
+              <td class="govuk-table__cell" style="text-align: right"><a href="#">Edit</a></td>
+              <td class="govuk-table__cell" style="text-align: right"><a href="remove-employer">Delete</a></td>
+            </tr>
+
+            {% if data['removeEmployer'] == "true" %}
+            {% else %}
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="row">West Hanover Hospitals NHS Trust</th>
+              <td class="govuk-table__cell">14:05 on 12 May 2019</td>
+              <td class="govuk-table__cell" style="text-align: right"><a href="opportunity-basket">Edit</a></td>
+              <td class="govuk-table__cell" style="text-align: right"><a href="remove-employer">Delete</a></td>
+            </tr>
+            {% endif %}
+
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="row">BMW</th>
+              <td class="govuk-table__cell">12:40 on 01 February 2019</td>
+              <td class="govuk-table__cell" style="text-align: right"><a href="#">Edit</a></td>
+              <td class="govuk-table__cell" style="text-align: right"><a href="remove-employer">Delete</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Remove opportunity
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+          <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span>
+          <h1 class="govuk-heading-l">Confirm you want to delete this opportunity</h1>
+
+          <dl class="app-check-your-answers app-check-your-answers--long" style="margin-bottom: 40px">
+              <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question">
+                      Postcode of workplace
+                  </dt>
+                  <dd class="app-check-your-answers__answer" style="text-transform: uppercase">
+                      {{ data['postcode'] }}
+                  </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question">
+                      Job role
+                  </dt>
+                  <dd class="app-check-your-answers__answer">
+                      {{ data['roleInfo'] }}
+                  </dd>
+              </div>
+
+              <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question">
+                      Students wanted
+                  </dt>
+                  <dd class="app-check-your-answers__answer">
+                      {% if (placements == "no") or (data['placementNumber'] == "") %}
+                      at least 1
+                      {% else %}
+                      {{ data['placementNumber'] }}
+                      {% endif %}
+                  </dd>
+              </div>
+          </dl>
+
+          {% if data['addopportunity'] == null %}
+          <p class="govuk-body">This cannot be undone and will mean this employer has no more saved opportunities.</p>
+          {% else %}
+          <p class="govuk-body">This cannot be undone.</p>
+          {% endif %}
+
+            <!-- <div class="govuk-form-group">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="delete-opp-yes" name="delete-opp" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="delete-opp-yes">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="delete-opp-no" name="delete-opp" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="delete-opp-no">
+                      No
+                    </label>
+                  </div>
+                </div>
+            </div> -->
+
+        {% if data['addopportunity'] == null %}
+        <a href="start" class="govuk-button">Confirm and finish</a>
+        {% else %}
+        <button class="govuk-button">Confirm and continue</button>
+        {% endif %}
+
+        <p class="govuk-body"><a href="javascript:history.back()">Cancel and go back</a></p>
+
+
+
+      </div>
+  </div>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Only one provider
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  {% include "includes/start_again.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+        <h1 class="govuk-heading-l">You only selected one provider</h1>
+
+          <p class="govuk-body">You must notify a range of providers unless the employer has asked for a specific one.</p>
+
+          <p class="govuk-body"><a href="provider-results">Back to provider results</a></p>
+
+          <button class="govuk-button">Continue</button>
+
+      </form>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
