@@ -53,24 +53,30 @@
 
             <h1 class="govuk-heading-l">Is the employer happy for the selected providers to contact them?</h1>
 
-            <p class="govuk-body">If not, they must contact the providers themselves within 10 working days.</p>
-
             <div class="govuk-form-group">
-                <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="permission-1" name="permission" type="radio" value="yes">
-                    <label class="govuk-label govuk-radios__label" for="permission-1">
+                    <input class="govuk-radios__input" id="permission-yes" name="permission" type="radio" value="yes" aria-describedby="permission-yes-item-hint">
+                    <label class="govuk-label govuk-radios__label " for="permission-yes">
                       Yes
-                    </label> </div>
+                    </label>
+                    <span id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                      {{ data['contact_name'] }} agrees that the selected providers can get in touch within 2 to 3 working days to discuss the placement opportunity.
+                    </span>
+                  </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="permission-2" name="permission" type="radio" value="no">
-                    <label class="govuk-label govuk-radios__label" for="permission-2">
+                    <input class="govuk-radios__input" id="permission-no" name="permission" type="radio" value="no" aria-describedby="permission-no-item-hint">
+                    <label class="govuk-label govuk-radios__label " for="permission-no">
                       No
-                    </label> </div>
+                    </label>
+                    <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                      {{ data['contact_name'] }} must contact each provider within 5 working days to discuss the placement opportunity.
+                    </span>
+                  </div>
                 </div>
             </div>
 
-            <button class="govuk-button">Confirm and continue</button>
+            <button class="govuk-button">Confirm and complete referral</button>
 
           </form>
 

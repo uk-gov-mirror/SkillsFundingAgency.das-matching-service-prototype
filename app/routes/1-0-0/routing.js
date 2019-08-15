@@ -96,7 +96,7 @@ module.exports = function(router, _myData) {
         req.session.addopportunity = req.body.addopportunity
 
         if (req.session.basketcontinue == "refer") {
-            res.redirect(301, 'confirm-employer-permission');
+            res.redirect(301, 'final-contacts-check');
         } else {
             res.redirect(301, 'search');
         }
@@ -396,7 +396,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/confirm-employer-permission', function (req, res) {
-        res.redirect(301, 'final-contacts-check');
+        res.redirect(301, 'emails-sent');
     });
 
 
@@ -417,7 +417,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/final-contacts-check', function (req, res) {
-        res.redirect(301, 'emails-sent');
+        res.redirect(301, 'confirm-employer-permission');
     });
 
     // addanother
@@ -436,17 +436,17 @@ module.exports = function(router, _myData) {
       }
     });
 
-    // gdpr
-    router.get('/' + version + '/gdpr', function (req, res) {
-        res.render(version + '/gdpr', {
-          'businessName': req.session.businessName,
-          'contact_name': req.session.contact_name
-          })
-    });
-
-    router.post('/' + version + '/gdpr', function (req, res){
-      res.redirect(301, './emails-sent');
-    });
+    // // gdpr
+    // router.get('/' + version + '/gdpr', function (req, res) {
+    //     res.render(version + '/gdpr', {
+    //       'businessName': req.session.businessName,
+    //       'contact_name': req.session.contact_name
+    //       })
+    // });
+    //
+    // router.post('/' + version + '/gdpr', function (req, res){
+    //   res.redirect(301, './emails-sent');
+    // });
 
     // // check-providers
     // router.get('/' + version + '/check-providers', function (req, res) {

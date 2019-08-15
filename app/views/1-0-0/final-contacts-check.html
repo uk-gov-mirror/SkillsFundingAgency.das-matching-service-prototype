@@ -17,13 +17,7 @@
       <div class="govuk-grid-column-two-thirds">
 
           <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span>
-          {% if data['permission'] == "yes" %}
-          <h1 class="govuk-heading-l">Before we send emails</h1>
-          {% else %}
-          <h1 class="govuk-heading-l">Before we send an email to the employer</h1>
-          {% endif %}
-
-          <h2 class="govuk-heading-m">Check details for industry placements</h2>
+          <h1 class="govuk-heading-l">Check contact details for industry placements</h1>
 
           <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-0">Contact name</p>
           <p class="govuk-body govuk-!-margin-bottom-3">{{ data['contact_name'] }}</p>
@@ -36,11 +30,7 @@
 
           <p class="govuk-body"><a class="govuk-link" href="confirm-employer">Change contact details</a></p>
 
-          {% if data['permission'] == "yes" %}
-          <button class="govuk-button">Confirm and send opportunities</button>
-          {% else %}
-          <button class="govuk-button">Confirm and send email</button>
-          {% endif %}
+          <button class="govuk-button">Confirm and continue</button>
 
           </form>
 
