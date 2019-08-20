@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Placement requirements
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  {% if data['addopportunity'] == "2" %}
+    {% include "includes/cancel_opp.html" %}
+  {% else %}
+    {% include "includes/start_again.html" %}
+  {% endif %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+            {% if data['businessName'] != null %}
+            <span class="govuk-caption-l">{{ data['businessName'] }}</span>
+            <h1 class="govuk-heading-l">Placement information</h1>
+            {% else %}
+            <h1 class="govuk-heading-l">Placement information</h1>
+            {% endif %}
+            <p class="govuk-body">This information will go in an email to the selected providers.</p>
+
+            <div class="govuk-form-group">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                      What specific job will the placement student do? (optional)
+                    </h2>
+                </legend>
+                <div class="govuk-form-group">
+                    <label class="govuk-hint" for="one-half">
+                        For example, admin assistant, care worker, bricklayer
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-half" id="roleInfo" name="roleInfo" type="text">
+                </div>
+            </div>
+
+            <div class="govuk-form-group">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                      Does the employer know how many students they want for this job at {{ data['postcode']}}?
+                    </h2>
+                </legend>
+                <p class="govuk-hint">This can be an estimate</p>
+
+                <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="placements-conditional-1" name="placements" type="radio" value="yes" data-aria-controls="conditional-student-number-conditional-1">
+                        <label class="govuk-label govuk-radios__label" for="placements-conditional-1">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-student-number-conditional-1">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="placementNumber">
+                                Number of students
+                            </label>
+                            <input class="govuk-input govuk-input--width-3" id="{{ data['placementNumber'] }}" name="placementNumber">
+                        </div>
+
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="placements-conditional-2" name="placements" type="radio" value="no" data-aria-controls="conditional-student-number-conditional-2">
+                        <label class="govuk-label govuk-radios__label" for="placements-conditional-2">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="govuk-form-group">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                        When would the employer like the placement to start?
+                    </h2>
+                </legend>
+                <div class="govuk-radios" data-module="radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="start-date-1" name="startdate" type="radio" value="thisyear">
+                        <label class="govuk-label govuk-radios__label" for="start-date-1">
+                            This academic year (before September 2019)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="start-date-2" name="startdate" type="radio" value="nextyear">
+                        <label class="govuk-label govuk-radios__label" for="start-date-2">
+                            Next academic year (after September 2019)
+                        </label>
+                    </div>
+                </div>
+            </div> -->
+
+
+
+            <!-- <div class="govuk-form-group">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Is there anything else the educational provider needs to know about the placement opportunity?
+          </h2>
+        </legend>
+        <p class="govuk-hint">For example, student must have a driving licence, student must be available for block release, employer needs to interview the student</p>
+
+        <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="extra-conditional-1" name="extra" type="radio" value="yes" data-aria-controls="conditional-extra-conditional-1">
+              <label class="govuk-label govuk-radios__label" for="extra-conditional-1">
+                Yes
+              </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-extra-conditional-1">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="extra">
+                Enter requirements
+              </label>
+              <textarea class="govuk-textarea" id="extraReq" name="extraReq" rows="2" aria-describedby="extraReq-hint"></textarea>
+            </div>
+
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="extra-conditional-2" name="extra" type="radio" value="no" data-aria-controls="conditional-extra-conditional-2">
+              <label class="govuk-label govuk-radios__label" for="extra-conditional-2">
+                No
+              </label>
+          </div>
+        </div>
+    </div> -->
+
+            <button class="govuk-button">Continue</button>
+
+        </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,953 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Edit qualifications
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+<a id="back" class="govuk-back-link" href="javascript:history.back()">Return to start page</a>
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-l">Edit qualifications</h1>
+
+            <div class="govuk-form-group">
+                <div class="search-header">
+                    <div class="searchfield">
+                        <div class="search-input">
+                            <label for="search-main">
+                                <h1 class="govuk-heading-s">
+                                    Enter qualification title or short title
+                                </h1>
+                            </label>
+                            <input value="mowing" class="search-input" id="search-main" type="search" />
+                        </div>
+                        <div class="search-submit"><button type="submit" class="button">Search</button></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <form class="form" method="post">
+
+        <!-- <p class="govuk-body">Showing top 50 results. If you cannot find the qualification you need, refine your search.</p> -->
+
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row tl-table-row">
+                    <!-- <th class="govuk-table__header" scope="col">LAR</th> -->
+                    <th class="govuk-table__header" scope="col">Qualification title (learning aim reference)</th>
+                    <th class="govuk-table__header" scope="col">Edit short title</th>
+                    <th class="govuk-table__header" scope="col">Edit skill area</th>
+                    <th class="govuk-table__header" scope="col"></th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row tl-table-row-vtop">
+                    <!-- <td class="govuk-table__cell">10001234</td> -->
+                    <td class="govuk-table__cell">Level 3 Diploma in Mowing (10001234)</td>
+                    <td class="govuk-table__cell">
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+                            <label class="govuk-label govuk-visually-hidden" for="shorttitle">
+                                <h2 class="govuk-heading-m">Enter short title for this qualification</h2>
+                            </label>
+                            <select class="govuk-select" id="shorttitle" name="shorttitle">
+                              <option value="">Select a short title</option>
+                              <option value="mowing" selected>mowing</option>
+                              <option value="lawn mowerism">lawn mowerism</option>
+                              <option value="lawn maitenance">lawn manicuring</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                        <div class="app-c-option-select js-collapsible js-closed">
+                            <button class="js-container-head app-c-option-select__button" type="button" aria-expanded="true" aria-controls="list_of_sectors">
+                                <div class="app-c-option-select__label govuk-!-font-weight-bold govuk-!-margin-bottom-0" id="option-select-title-market-sector">
+                                    Skill areas
+                                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
+                                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
+                                </div>
+                            </button><div class="govuk-!-font-size-14 app-c-option-select__selected-counter js-selected-counter"></div>
+                            <div role="group" aria-labelledby="option-select-title-market-sector" class="app-c-option-select__container js-options-container" id="list_of_sectors" style="height: 227.333px;">
+                                <div class="app-c-option-select__container-inner js-auto-height-inner">
+                                    <div id="checkboxes-b06aa117" class="gem-c-checkboxes govuk-form-group" data-module="checkboxes">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-visually-hidden"> Skill areas </legend>
+                                            <ul class="govuk-checkboxes gem-c-checkboxes__list">
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option1" name="option1" type="checkbox" value="Agriculture, environmental and animal care">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option1">
+                                                        Agriculture, environmental and animal care
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option2" name="option2" type="checkbox" value="Business and administration">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option2">
+                                                        Business and administration
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option3" name="option3" type="checkbox" value="Care services">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option3">
+                                                        Care services
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option4" name="option4" type="checkbox" value="Catering and hospitality">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option4">
+                                                        Catering and hospitality
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option5" name="option5" type="checkbox" value="Construction">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option5">
+                                                        Construction
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option6" name="option6" type="checkbox" value="Creative and design">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option6">
+                                                        Creative and design
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option7" name="option7" type="checkbox" value="Digital">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option7">
+                                                        Digital
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option8" name="option8" type="checkbox" value="Education and childcare">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option8">
+                                                        Education and childcare
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option9" name="option9" type="checkbox" value="Engineering and manufacturing">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option9">
+                                                        Engineering and manufacturing
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option10" name="option10" type="checkbox" value="Hair and beauty">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option10">
+                                                        Hair and beauty
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option11" name="option11" type="checkbox" value="Health and science">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option11">
+                                                        Health and science
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option12" name="option12" type="checkbox" value="Legal, financial and accounting">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option12">
+                                                        Legal, financial and accounting
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option13" name="option13" type="checkbox" value="Protective services">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option13">
+                                                        Protective services
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option14" name="option14" type="checkbox" value="Sales, marketing and procurement">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option14">
+                                                        Sales, marketing and procurement
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option15" name="option15" type="checkbox" value="Transport and logistics">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option15">
+                                                        Transport and logistics
+                                                    </label>
+
+                                                </li>
+
+                                            </ul>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </td>
+                    <td class="govuk-table__cell">
+                      <button class="govuk-button govuk-!-margin-bottom-1">Save</button>
+                    </td>
+                </tr>
+
+                <tr class="govuk-table__row tl-table-row-vtop">
+                    <!-- <td class="govuk-table__cell">10001234</td> -->
+                    <td class="govuk-table__cell">Level 3 Diploma in Gardening (10032234)</td>
+                    <td class="govuk-table__cell">
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+
+
+                            <label class="govuk-label govuk-visually-hidden" for="shorttitle">
+                                <h2 class="govuk-heading-m">Enter short title for this qualification</h2>
+                            </label>
+                            <select class="govuk-select" id="shorttitle2" name="shorttitle">
+                                <option value="">Select a short title</option>
+                                <option value="mowing" selected>mowing</option>
+                                <option value="lawn mowering">Lawn mowering</option>
+                                <option value="lawn mowerism">Lawn mowerism</option>
+                            </select>
+                        </div>
+
+                    </td>
+                    <td class="govuk-table__cell">
+                        <div class="app-c-option-select js-collapsible js-closed">
+                            <button class="js-container-head app-c-option-select__button" type="button" aria-expanded="true" aria-controls="list_of_sectors">
+                                <div class="app-c-option-select__label govuk-!-font-weight-bold govuk-!-margin-bottom-0" id="option-select-title-market-sector">
+                                    Skill areas
+                                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
+                                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
+                                </div>
+                            </button><div class="govuk-!-font-size-14 app-c-option-select__selected-counter js-selected-counter"></div>
+                            <div role="group" aria-labelledby="option-select-title-market-sector" class="app-c-option-select__container js-options-container" id="list_of_sectors" style="height: 227.333px;">
+                                <div class="app-c-option-select__container-inner js-auto-height-inner">
+                                    <div id="checkboxes-b06aa117" class="gem-c-checkboxes govuk-form-group" data-module="checkboxes">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-visually-hidden"> Skill areas </legend>
+                                            <ul class="govuk-checkboxes gem-c-checkboxes__list">
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option1" name="option1" type="checkbox" value="Agriculture, environmental and animal care">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option1">
+                                                        Agriculture, environmental and animal care
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option2" name="option2" type="checkbox" value="Business and administration">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option2">
+                                                        Business and administration
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option3" name="option3" type="checkbox" value="Care services">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option3">
+                                                        Care services
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option4" name="option4" type="checkbox" value="Catering and hospitality">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option4">
+                                                        Catering and hospitality
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option5" name="option5" type="checkbox" value="Construction">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option5">
+                                                        Construction
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option6" name="option6" type="checkbox" value="Creative and design">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option6">
+                                                        Creative and design
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option7" name="option7" type="checkbox" value="Digital">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option7">
+                                                        Digital
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option8" name="option8" type="checkbox" value="Education and childcare">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option8">
+                                                        Education and childcare
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option9" name="option9" type="checkbox" value="Engineering and manufacturing">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option9">
+                                                        Engineering and manufacturing
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option10" name="option10" type="checkbox" value="Hair and beauty">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option10">
+                                                        Hair and beauty
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option11" name="option11" type="checkbox" value="Health and science">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option11">
+                                                        Health and science
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option12" name="option12" type="checkbox" value="Legal, financial and accounting">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option12">
+                                                        Legal, financial and accounting
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option13" name="option13" type="checkbox" value="Protective services">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option13">
+                                                        Protective services
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option14" name="option14" type="checkbox" value="Sales, marketing and procurement">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option14">
+                                                        Sales, marketing and procurement
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option15" name="option15" type="checkbox" value="Transport and logistics">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option15">
+                                                        Transport and logistics
+                                                    </label>
+
+                                                </li>
+
+                                            </ul>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </td>
+                    <td class="govuk-table__cell">
+                      <button class="govuk-button govuk-!-margin-bottom-1">Save</button>
+                    </td>
+                </tr>
+
+                <tr class="govuk-table__row tl-table-row-vtop">
+                    <!-- <td class="govuk-table__cell">10001234</td> -->
+                    <td class="govuk-table__cell">Level 3 Diploma in Grass Maintenance (10035231)</td>
+                    <td class="govuk-table__cell">
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+                            <label class="govuk-label govuk-visually-hidden" for="shorttitle">
+                                <h2 class="govuk-heading-m">Enter short title for this qualification</h2>
+                            </label>
+                            <select class="govuk-select" id="shorttitle3" name="shorttitle">
+                                <option value="">Select a short title</option>
+                                <option value="mowing" selected>mowing</option>
+                                <option value="lawn mowering">Lawn mowering</option>
+                                <option value="lawn mowerism">Lawn mowerism</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                        <div class="app-c-option-select js-collapsible js-closed">
+                            <button class="js-container-head app-c-option-select__button" type="button" aria-expanded="true" aria-controls="list_of_sectors">
+                                <div class="app-c-option-select__label govuk-!-font-weight-bold govuk-!-margin-bottom-0" id="option-select-title-market-sector">
+                                    Skill areas
+                                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
+                                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
+                                </div>
+                            </button><div class="govuk-!-font-size-14 app-c-option-select__selected-counter js-selected-counter"></div>
+                            <div role="group" aria-labelledby="option-select-title-market-sector" class="app-c-option-select__container js-options-container" id="list_of_sectors" style="height: 227.333px;">
+                                <div class="app-c-option-select__container-inner js-auto-height-inner">
+                                    <div id="checkboxes-b06aa117" class="gem-c-checkboxes govuk-form-group" data-module="checkboxes">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-visually-hidden"> Skill areas </legend>
+                                            <ul class="govuk-checkboxes gem-c-checkboxes__list">
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option1" name="option1" type="checkbox" value="Agriculture, environmental and animal care">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option1">
+                                                        Agriculture, environmental and animal care
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option2" name="option2" type="checkbox" value="Business and administration">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option2">
+                                                        Business and administration
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option3" name="option3" type="checkbox" value="Care services">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option3">
+                                                        Care services
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option4" name="option4" type="checkbox" value="Catering and hospitality">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option4">
+                                                        Catering and hospitality
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option5" name="option5" type="checkbox" value="Construction">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option5">
+                                                        Construction
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option6" name="option6" type="checkbox" value="Creative and design">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option6">
+                                                        Creative and design
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option7" name="option7" type="checkbox" value="Digital">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option7">
+                                                        Digital
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option8" name="option8" type="checkbox" value="Education and childcare">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option8">
+                                                        Education and childcare
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option9" name="option9" type="checkbox" value="Engineering and manufacturing">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option9">
+                                                        Engineering and manufacturing
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option10" name="option10" type="checkbox" value="Hair and beauty">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option10">
+                                                        Hair and beauty
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option11" name="option11" type="checkbox" value="Health and science">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option11">
+                                                        Health and science
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option12" name="option12" type="checkbox" value="Legal, financial and accounting">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option12">
+                                                        Legal, financial and accounting
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option13" name="option13" type="checkbox" value="Protective services">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option13">
+                                                        Protective services
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option14" name="option14" type="checkbox" value="Sales, marketing and procurement">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option14">
+                                                        Sales, marketing and procurement
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option15" name="option15" type="checkbox" value="Transport and logistics">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option15">
+                                                        Transport and logistics
+                                                    </label>
+
+                                                </li>
+
+                                            </ul>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </td>
+                    <td class="govuk-table__cell">
+                      <button class="govuk-button govuk-!-margin-bottom-1">Save</button>
+                    </td>
+                </tr>
+
+                <tr class="govuk-table__row tl-table-row-vtop">
+                    <!-- <td class="govuk-table__cell">10001234</td> -->
+                    <td class="govuk-table__cell">Level 3 Diploma in Ride on Mower skills (10016311)</td>
+                    <td class="govuk-table__cell">
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+
+
+                            <label class="govuk-label govuk-visually-hidden" for="shorttitle">
+                                <h2 class="govuk-heading-m">Enter short title for this qualification</h2>
+                            </label>
+                            <select class="govuk-select" id="shorttitle4" name="shorttitle">
+                                <option value="">Select a short title</option>
+                                <option value="mowing" selected>mowing</option>
+                                <option value="lawn mowering">Lawn mowering</option>
+                                <option value="lawn mowerism">Lawn mowerism</option>
+                            </select>
+                        </div>
+
+                    </td>
+                    <td class="govuk-table__cell">
+                        <div class="app-c-option-select js-collapsible js-closed">
+                            <button class="js-container-head app-c-option-select__button" type="button" aria-expanded="true" aria-controls="list_of_sectors">
+                                <div class="app-c-option-select__label govuk-!-font-weight-bold govuk-!-margin-bottom-0" id="option-select-title-market-sector">
+                                    Skill areas
+                                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
+                                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
+                                </div>
+                            </button><div class="govuk-!-font-size-14 app-c-option-select__selected-counter js-selected-counter"></div>
+                            <div role="group" aria-labelledby="option-select-title-market-sector" class="app-c-option-select__container js-options-container" id="list_of_sectors" style="height: 227.333px;">
+                                <div class="app-c-option-select__container-inner js-auto-height-inner">
+                                    <div id="checkboxes-b06aa117" class="gem-c-checkboxes govuk-form-group" data-module="checkboxes">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-visually-hidden"> Skill areas </legend>
+                                            <ul class="govuk-checkboxes gem-c-checkboxes__list">
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option1" name="option1" type="checkbox" value="Agriculture, environmental and animal care">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option1">
+                                                        Agriculture, environmental and animal care
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option2" name="option2" type="checkbox" value="Business and administration">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option2">
+                                                        Business and administration
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option3" name="option3" type="checkbox" value="Care services">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option3">
+                                                        Care services
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option4" name="option4" type="checkbox" value="Catering and hospitality">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option4">
+                                                        Catering and hospitality
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option5" name="option5" type="checkbox" value="Construction">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option5">
+                                                        Construction
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option6" name="option6" type="checkbox" value="Creative and design">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option6">
+                                                        Creative and design
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option7" name="option7" type="checkbox" value="Digital">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option7">
+                                                        Digital
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option8" name="option8" type="checkbox" value="Education and childcare">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option8">
+                                                        Education and childcare
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option9" name="option9" type="checkbox" value="Engineering and manufacturing">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option9">
+                                                        Engineering and manufacturing
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option10" name="option10" type="checkbox" value="Hair and beauty">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option10">
+                                                        Hair and beauty
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option11" name="option11" type="checkbox" value="Health and science">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option11">
+                                                        Health and science
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option12" name="option12" type="checkbox" value="Legal, financial and accounting">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option12">
+                                                        Legal, financial and accounting
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option13" name="option13" type="checkbox" value="Protective services">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option13">
+                                                        Protective services
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option14" name="option14" type="checkbox" value="Sales, marketing and procurement">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option14">
+                                                        Sales, marketing and procurement
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option15" name="option15" type="checkbox" value="Transport and logistics">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option15">
+                                                        Transport and logistics
+                                                    </label>
+
+                                                </li>
+
+                                            </ul>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </td>
+                    <td class="govuk-table__cell">
+                      <button class="govuk-button govuk-!-margin-bottom-1">Save</button>
+                    </td>
+                </tr>
+
+                <tr class="govuk-table__row tl-table-row-vtop">
+                    <!-- <td class="govuk-table__cell">10001234</td> -->
+                    <td class="govuk-table__cell">Pearson Level 3 Diploma in Mowing (10012200)</td>
+                    <td class="govuk-table__cell">
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+                            <label class="govuk-label govuk-visually-hidden" for="shorttitle">
+                                <h2 class="govuk-heading-m">Enter short title for this qualification</h2>
+                            </label>
+                            <select class="govuk-select" id="shorttitle5" name="shorttitle">
+                                <option value="">Select a short title</option>
+                                <option value="mowing" selected>mowing</option>
+                                <option value="lawn mowering">Lawn mowering</option>
+                                <option value="lawn mowerism">Lawn mowerism</option>
+                            </select>
+                        </div>
+                    </td>
+                    <td class="govuk-table__cell">
+                        <div class="app-c-option-select js-collapsible js-closed">
+                            <button class="js-container-head app-c-option-select__button" type="button" aria-expanded="true" aria-controls="list_of_sectors">
+                                <div class="app-c-option-select__label govuk-!-font-weight-bold govuk-!-margin-bottom-0" id="option-select-title-market-sector">
+                                    Skill areas
+                                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--up"><path d="m798.16 609.84l-256-256c-16.683-16.683-43.691-16.683-60.331 0l-256 256c-16.683 16.683-16.683 43.691 0 60.331s43.691 16.683 60.331 0l225.84-225.84 225.84 225.84c16.683 16.683 43.691 16.683 60.331 0s16.683-43.691 0-60.331z"></path></svg>
+                                    <svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="app-c-option-select__icon app-c-option-select__icon--down"><path d="m225.84 414.16l256 256c16.683 16.683 43.691 16.683 60.331 0l256-256c16.683-16.683 16.683-43.691 0-60.331s-43.691-16.683-60.331 0l-225.84 225.84-225.84-225.84c-16.683-16.683-43.691-16.683-60.331 0s-16.683 43.691 0 60.331z"></path></svg>
+                                </div>
+                            </button><div class="govuk-!-font-size-14 app-c-option-select__selected-counter js-selected-counter"></div>
+                            <div role="group" aria-labelledby="option-select-title-market-sector" class="app-c-option-select__container js-options-container" id="list_of_sectors" style="height: 227.333px;">
+                                <div class="app-c-option-select__container-inner js-auto-height-inner">
+                                    <div id="checkboxes-b06aa117" class="gem-c-checkboxes govuk-form-group" data-module="checkboxes">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-visually-hidden"> Skill areas </legend>
+                                            <ul class="govuk-checkboxes gem-c-checkboxes__list">
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option1" name="option1" type="checkbox" value="Agriculture, environmental and animal care">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option1">
+                                                        Agriculture, environmental and animal care
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option2" name="option2" type="checkbox" value="Business and administration">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option2">
+                                                        Business and administration
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option3" name="option3" type="checkbox" value="Care services">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option3">
+                                                        Care services
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option4" name="option4" type="checkbox" value="Catering and hospitality">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option4">
+                                                        Catering and hospitality
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option5" name="option5" type="checkbox" value="Construction">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option5">
+                                                        Construction
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option6" name="option6" type="checkbox" value="Creative and design">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option6">
+                                                        Creative and design
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option7" name="option7" type="checkbox" value="Digital">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option7">
+                                                        Digital
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option8" name="option8" type="checkbox" value="Education and childcare">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option8">
+                                                        Education and childcare
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option9" name="option9" type="checkbox" value="Engineering and manufacturing">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option9">
+                                                        Engineering and manufacturing
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option10" name="option10" type="checkbox" value="Hair and beauty">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option10">
+                                                        Hair and beauty
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option11" name="option11" type="checkbox" value="Health and science">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option11">
+                                                        Health and science
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option12" name="option12" type="checkbox" value="Legal, financial and accounting">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option12">
+                                                        Legal, financial and accounting
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option13" name="option13" type="checkbox" value="Protective services">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option13">
+                                                        Protective services
+                                                    </label>
+
+                                                </li>
+
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option14" name="option14" type="checkbox" value="Sales, marketing and procurement">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option14">
+                                                        Sales, marketing and procurement
+                                                    </label>
+
+                                                </li>
+
+                                                <li class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="option15" name="option15" type="checkbox" value="Transport and logistics">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="option15">
+                                                        Transport and logistics
+                                                    </label>
+
+                                                </li>
+
+                                            </ul>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </td>
+                    <td class="govuk-table__cell">
+                      <button class="govuk-button govuk-!-margin-bottom-1">Save</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+
+
+    </form>
+
+{% endblock %}
+{% block pageScripts %}
+<script>
+    $(document).ready(function () {
+        // change labels
+        accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: '',
+            selectElement: document.querySelector('#shorttitle'),
+            minLength: 2,
+        })
+        accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: '',
+            selectElement: document.querySelector('#shorttitle2'),
+            minLength: 2,
+        })
+        accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: '',
+            selectElement: document.querySelector('#shorttitle3'),
+            minLength: 2,
+        })
+        accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: '',
+            selectElement: document.querySelector('#shorttitle4'),
+            minLength: 2,
+        })
+        accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: '',
+            selectElement: document.querySelector('#shorttitle5'),
+            minLength: 2,
+        })
+
+
+
+
+        $(".js-container-head").click(function () {
+            $(this).parent().toggleClass("js-closed");
+        });
+    });
+</script>
+{% endblock %}
