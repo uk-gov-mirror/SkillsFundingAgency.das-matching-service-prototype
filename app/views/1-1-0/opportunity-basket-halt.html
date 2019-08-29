@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Some of the chosen providers have changed
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+<a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span>
+            <h1 class="govuk-heading-l">Some of the chosen providers have changed</h1>
+
+
+            <p class="govuk-body">Since you created {% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}'s opportunities, providers at these locations can no longer do industry placements:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Westminster Kingsway College (NW1 3HB)</li>
+            </ul>
+            <p class="govuk-body"><a href="opportunity-basket-return">Change chosen providers</a></p>
+
+            <button class="govuk-button">Continue without these providers</button>
+
+
+
+
+        </div>
+    </div>
+
+</form>
+
+{% endblock %}

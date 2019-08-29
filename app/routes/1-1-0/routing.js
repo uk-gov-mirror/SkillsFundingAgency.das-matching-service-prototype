@@ -55,7 +55,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/remove-opportunity', function (req, res){
-      res.redirect(301, './opportunity-basket');
+        res.redirect(301, './opportunity-basket?addopportunity=1');
     });
 
 
@@ -94,6 +94,42 @@ module.exports = function(router, _myData) {
     router.post('/' + version + '/opportunity-basket', function (req, res) {
         req.session.basketcontinue = req.body.basketcontinue,
         req.session.addopportunity = req.body.addopportunity
+
+        if (req.session.basketcontinue == "refer") {
+            res.redirect(301, 'final-contacts-check')
+        } else if (req.session.basketcontinue == "halt") {
+            res.redirect(301, 'opportunity-basket-halt');
+        } else {
+            res.redirect(301, 'search');
+        }
+    });
+
+    // opportunity-basket-halt
+    router.get('/' + version + '/opportunity-basket-halt', function (req, res) {
+        res.render(version + '/opportunity-basket-halt', {
+            'businessName': req.session.businessName,
+        })
+    });
+
+    router.post('/' + version + '/opportunity-basket-halt', function (req, res) {
+        req.session.basketcontinue = req.body.basketcontinue,
+            req.session.addopportunity = req.body.addopportunity
+        res.redirect(301, 'final-contacts-check');
+    });
+
+    // opportunity-basket-return
+    router.get('/' + version + '/opportunity-basket-return', function (req, res) {
+        res.render(version + '/opportunity-basket-return', {
+            'addopportunity': req.session.addopportunity,
+            'businessName': req.session.businessName,
+            'postcode': req.session.postcode,
+            'placementtype': req.session.placementtype
+        })
+    });
+
+    router.post('/' + version + '/opportunity-basket-return', function (req, res) {
+        req.session.basketcontinue = req.body.basketcontinue,
+            req.session.addopportunity = req.body.addopportunity
 
         if (req.session.basketcontinue == "refer") {
             res.redirect(301, 'final-contacts-check');

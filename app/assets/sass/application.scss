@@ -136,3 +136,12 @@ $selected-colour: #F8F8F8;
 
   }
 }
+
+
+.tl-row-red {
+    background-color: #ffe5e5;
+
+    &:hover {
+        background-color: darken(#ffe5e5, 1.5%) !important;
+    }
+}
