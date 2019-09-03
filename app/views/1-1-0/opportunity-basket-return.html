@@ -53,7 +53,7 @@ Opportunity basket
         </thead>
         <tbody class="govuk-table__body">
 
-            <tr class="govuk-table__row tl-row-red">
+            <tr class="govuk-table__row">
                 <td class="govuk-table__cell multiple-choice--hod">
                     <div class="govuk-checkboxes__item">
                         <input type="checkbox" class="govuk-checkboxes__input jsCheckbox" id="radio-1">
@@ -67,7 +67,7 @@ Opportunity basket
                     {% if (data['roleInfo'] == "") or (data['roleInfo'] == null) %}Physio{% else %}{{ data['roleInfo'] }}{% endif %}
                 </td>
                 <td class="govuk-table__cell">{% if data['placementNumber'] == "" %}2{% else %}{{ data['placementNumber'] }}{% endif %}</td>
-                <td class="govuk-table__cell" style="max-width: 450px"><strong>Westminster Kingsway College (NW1 3HB)</strong>, Westminster Kingsway College (NW1 4EA), Lambeth College</td>
+                <td class="govuk-table__cell" style="max-width: 450px">Westminster Kingsway College (NW1 3HB), Lambeth College</td>
                 <td class="govuk-table__cell">
                     <a class="govuk-link tl-float-right" href="check-answers?addopportunity=existing">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
                 </td>
@@ -76,7 +76,7 @@ Opportunity basket
                 </td>
             </tr>
 
-            <tr class="govuk-table__row">
+            <tr class="govuk-table__row tl-row-red">
                 <td class="govuk-table__cell multiple-choice--hod">
                     <div class="govuk-checkboxes__item">
                         <input type="checkbox" class="govuk-checkboxes__input jsCheckbox" id="radio-1">
@@ -90,7 +90,7 @@ Opportunity basket
                     {% if (data['roleInfo'] == "") or (data['roleInfo'] == null) %}Physio{% else %}{{ data['roleInfo'] }}{% endif %}
                 </td>
                 <td class="govuk-table__cell">{% if data['placementNumber'] == "" %}2{% else %}{{ data['placementNumber'] }}{% endif %}</td>
-                <td class="govuk-table__cell" style="max-width: 450px">Westminster Kingsway College (NW1 4EA)</td>
+                <td class="govuk-table__cell" style="max-width: 450px"></td>
                 <td class="govuk-table__cell">
                     <a class="govuk-link tl-float-right" href="check-answers?addopportunity=existing">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
                 </td>
@@ -105,16 +105,10 @@ Opportunity basket
 
 
     <p>
-        {% if data['placementtype'] == "gap" %}
-        {% else %}
-        {% if data['addopportunity'] == "2" %}
+
         <input type="hidden" value="refer" name="basketcontinue" />
         <button class="govuk-button">Continue with selected opportunities</button>
-        {% else %}
-        <input type="hidden" value="refer" name="basketcontinue" />
-        <button class="govuk-button">Continue with opportunity</button>
-        {% endif %}
-        {% endif %}
+
     </p>
     <p class="govuk-body"><a href="/public/files/WestHanoverHospitalsTrust_opportunities_11July2019.xlsx" download class="govuk-link">Download all data as a spreadsheet</a></p>
 

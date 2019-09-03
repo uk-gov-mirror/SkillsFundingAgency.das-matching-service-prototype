@@ -96,9 +96,7 @@ module.exports = function(router, _myData) {
         req.session.addopportunity = req.body.addopportunity
 
         if (req.session.basketcontinue == "refer") {
-            res.redirect(301, 'final-contacts-check')
-        } else if (req.session.basketcontinue == "halt") {
-            res.redirect(301, 'opportunity-basket-halt');
+            res.redirect(301, 'confirm-employer-permission');
         } else {
             res.redirect(301, 'search');
         }
@@ -114,7 +112,7 @@ module.exports = function(router, _myData) {
     router.post('/' + version + '/opportunity-basket-halt', function (req, res) {
         req.session.basketcontinue = req.body.basketcontinue,
             req.session.addopportunity = req.body.addopportunity
-        res.redirect(301, 'final-contacts-check');
+        res.redirect(301, 'opportunity-basket-return');
     });
 
     // opportunity-basket-return
