@@ -74,10 +74,12 @@ module.exports = function(router, _myData) {
       req.session.roleInfo = req.body.roleInfo,
       req.session.extra = req.body.extra,
       req.session.extraReq = req.body.extraReq
-        if (req.session.addopportunity != "2") {
-            res.redirect(301, 'enter-employer-name');
-        } else {
+        if (req.session.addopportunity == "2") {
             res.redirect(301, 'check-answers');
+        } else if (req.session.addopportunity == "existing") {
+            res.redirect(301, 'check-answers-return');
+        } else {
+            res.redirect(301, 'enter-employer-name');
         }
     });
 
