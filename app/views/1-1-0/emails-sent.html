@@ -16,53 +16,18 @@
 
       <div class="govuk-panel govuk-panel--confirmation">
         <h1 class="govuk-panel__title">
-          {% if data['permission'] == "yes" %}Emails sent{% else %}Email sent{% endif %}
+          Emails sent
         </h1>
       </div>
       <br>
 
       <form class="form" method="post">
-          <!-- <div class="form-group">
-      <p>We have also sent the employer a confirmation email.</p>
-    </div> -->
-    {% if data['permission'] == "yes" %}
+
 
     <p>We have sent {{ data['contact_name'] }}’s details to the selected providers. We expect the providers will contact them within 2 to 3 working days to discuss the placement opportunity.</p>
     <div class="govuk-inset-text">
         Remember to <a href="crm" target="_blank">update the employer’s CRM record (opens in a new window or tab)</a> with any new information.
     </div>
-
-    <!-- <div class="form-group">
-        <h2 class="govuk-heading-m">What happens next</h2>
-    </div> -->
-
-          <!-- <div class="form-group">
-      <h3 class="govuk-heading-m">Employer feedback</h3>
-        <p>We will send the employer another email in 2 weeks’ time so that they can give feedback on their conversation with the provider. This helps us improve the service.</p>
-        <!-- <div class="govuk-form-group">
-            <div class="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
-                <label class="govuk-label govuk-checkboxes__label" for="waste-1">
-                  The employer has agreed to give feedback (optional)
-                </label>
-              </div>
-            </div>
-        </div>
-    </div> -->
-
-    {% else %}
-
-    <p class="govuk-body">We have sent {{ data['contact_name'] }} contact details for the selected providers. They must contact each provider within 5 working days to discuss the placement opportunity.</p>
-
-    <div class="govuk-inset-text">
-        Remember to <a href="crm" target="_blank">update the employer’s CRM record (opens in a new window or tab)</a> with a summary of the conversation you’ve just had with the employer.
-    </div>
-
-    <!-- <div class="form-group">
-        <h2 class="govuk-heading-m">What happens next</h2>
-    </div> -->
-    {% endif %}
 
           <input type="hidden" value="complete" name="addopportunity" />
 

@@ -132,7 +132,7 @@ module.exports = function(router, _myData) {
             req.session.addopportunity = req.body.addopportunity
 
         if (req.session.basketcontinue == "refer") {
-            res.redirect(301, 'final-contacts-check');
+            res.redirect(301, 'confirm-employer-permission');
         } else {
             res.redirect(301, 'search');
         }

@@ -17,10 +17,10 @@
       <div class="govuk-grid-column-two-thirds">
 
           <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span>
-          <!-- <h1 class="govuk-heading-l">Before we send emails</h1> -->
+          <h1 class="govuk-heading-l">Before we send emails</h1>
 
 
-          <!-- <h2 class="govuk-heading-m">Check details for industry placements</h2>
+          <h2 class="govuk-heading-m">Check details for industry placements</h2>
 
           <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-0">Contact name</p>
           <p class="govuk-body govuk-!-margin-bottom-3">{{ data['contact_name'] }}</p>
@@ -31,10 +31,10 @@
           <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-0">Telephone number</p>
           <p class="govuk-body govuk-!-margin-bottom-3">{{ data['contact_phone'] }}</p>
 
-          <p class="govuk-body"><a class="govuk-link" href="confirm-employer">Change contact details</a></p> -->
+          <p class="govuk-body"><a class="govuk-link" href="confirm-employer">Change contact details</a></p>
 
 
-          <!-- <h2 class="govuk-heading-m">Confirm we can share the employer’s details</h2>
+          <h2 class="govuk-heading-m">Confirm we can share the employer’s details</h2>
 
           <p class="govuk-hint">Tick to confirm</p>
 
@@ -49,34 +49,7 @@
                 </div>
             </div>
 
-            <button class="govuk-button">Confirm and send opportunities</button> -->
-
-            <h1 class="govuk-heading-l">Is the employer happy for the selected providers to contact them?</h1>
-
-            <div class="govuk-form-group">
-                <div class="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="permission-yes" name="permission" type="radio" value="yes" aria-describedby="permission-yes-item-hint">
-                    <label class="govuk-label govuk-radios__label " for="permission-yes">
-                      Yes
-                    </label>
-                    <span id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-                      {{ data['contact_name'] }} agrees that the selected providers can get in touch within 2 to 3 working days to discuss the placement opportunity.
-                    </span>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="permission-no" name="permission" type="radio" value="no" aria-describedby="permission-no-item-hint">
-                    <label class="govuk-label govuk-radios__label " for="permission-no">
-                      No
-                    </label>
-                    <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
-                      {{ data['businessName'] }} must contact each provider within 5 working days to discuss the placement opportunity.
-                    </span>
-                  </div>
-                </div>
-            </div>
-
-            <button class="govuk-button">Confirm and complete referral</button>
+            <button class="govuk-button">Confirm and send opportunities</button>
 
           </form>
 
