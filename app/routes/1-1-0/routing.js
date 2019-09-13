@@ -341,6 +341,32 @@ module.exports = function(router, _myData) {
       }
     });
 
+    // provider-results-return
+    router.get('/' + version + '/provider-results-return', function (req, res) {
+        res.render(version + '/provider-results-return', {
+          'radius':req.session.radius,
+          'postcode':req.session.postcode,
+          'route':req.session.route,
+          'keyword':req.session.keyword,
+          'addopportunity': req.session.addopportunity
+          })
+    });
+
+    router.post('/' + version + '/provider-results-return', function (req, res){
+      req.session.route = req.body.route,
+      req.session.radius = req.body.radius
+      if (req.body.resultsAction == "filter" && req.body.keyword != "") {
+        res.redirect(301, './provider-results-filter');
+      } else if (req.body.resultsAction == "filter" && req.body.keyword == "") {
+          res.redirect(301, 'provider-results-return');
+      } else if (req.body.resultsAction== "searchAgain") {
+        res.redirect(301, './provider-results-return');
+       } else {
+        res.redirect(301, './placements');
+      }
+    });
+
+
     // provider-results-filter
     router.get('/' + version + '/provider-results-filter', function (req, res) {
         res.render(version + '/provider-results-filter', {
