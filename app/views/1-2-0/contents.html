@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Contents</h1>
+
+          <div class="govuk-form-group">
+            <p class="govuk-body"><a href="setup">Setup page</a></p>
+
+            <h2 class="govuk-heading-m">Standard user</h2>
+            <ul class="govuk-list">
+              <li><a href="login-help">Login help page</a></li>
+              <li><a href="signin">IdAMs</a></li>
+              <li><a href="start">Start page</a></li>
+              <li><a href="search">Route / location</a></li>
+              <li><a href="provider-results">Provider results</a></li>
+              <li><a href="placements">Placement info</a></li>
+              <li><a href="employer-name">Enter employer name</a></li>
+              <li><a href="edit-employer">Edit employer details</a></li>
+              <li><a href="check-answers">Check employers answers</a></li>
+              <li><a href="emails-sent">Emails sent</a></li>
+              <li><a href="placement-gap">Placement info (provision gap)</a></li>
+              <li><a href="employer-name">Employer name (provision gap)</a></li>
+              <li><a href="add-edit-employer">Add/Edit employer details (provision gap)</a></li>
+              <li><a href="confirm-gap">Check answers (provision gap)</a></li>
+              <li><a href="provision-report">Report sent (provision gap)</a></li>
+            </ul>
+          </div>
+
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m">Additional admin user screens</h2>
+            <ul class="govuk-list">
+              <li><a href="provider-data-search">Provider data - Search</a></li>
+              <li><a href="provider-data-providerview">Provider data - Provider overview</a></li>
+              <li><a href="provider-data-venue">Provider data - Provider venue</a></li>
+              <li><a href="provider-data-addqual">Provider data - Add a qualification</a></li>
+              <li><a href="provider-data-addvenue">Provider data - Add a venue</a></li>
+              <li><a href="provider-data-sure">Provider data - Are you sure? halt page</a></li>
+            </ul>
+          </div>
+
+          <div class="govuk-form-group">
+            <h2 class="govuk-heading-m">Error pages</h2>
+            <ul class="govuk-list">
+              <li><a href="failed-login">Don't have permission</a></li>
+              <li><a href="page-not-found">Page not found</a></li>
+            </ul>
+          </div>
+      </div>
+
+</div>
+
+{% endblock %}

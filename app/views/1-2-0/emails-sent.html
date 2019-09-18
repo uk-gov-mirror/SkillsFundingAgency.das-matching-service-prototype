@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Emails sent
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Emails sent
+        </h1>
+      </div>
+      <br>
+
+      <form class="form" method="post">
+
+
+    <p>We have sent {{ data['contact_name'] }}’s details to the selected providers. We expect the providers will contact them within 2 to 3 working days to discuss the placement opportunity.</p>
+    <div class="govuk-inset-text">
+        Remember to <a href="crm" target="_blank">update the employer’s CRM record (opens in a new window or tab)</a> with any new information.
+    </div>
+
+          <input type="hidden" value="complete" name="addopportunity" />
+
+          <button class="govuk-button">Finish</button>
+
+          <!-- <p><a href="give-feedback">Give us feedback</a></p> -->
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

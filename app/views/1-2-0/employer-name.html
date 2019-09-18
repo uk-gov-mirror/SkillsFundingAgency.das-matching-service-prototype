@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Employer name
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  {% include "includes/start_again.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Who is the employer?</h1>
+
+      <form class="form" method="post">
+
+
+        <div class="govuk-form-group">
+          <!-- <label class="govuk-label govuk-!-width-two-thirds" for="two-thirds">
+            Start typing their business name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="{{ data['businessName'] }}" name="businessName" type="text"> -->
+
+            <label class="govuk-label" for="businessName" id="businessNameLabel" >
+              Employer name
+            </label>
+            <select class="govuk-select" id="businessName" name="businessName">
+              <option value="">Select an employer</option>
+              {% for employer in myData.employers.employers %}
+              <option value="{{ employer.name }}">{{ employer.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                I cannot find the employer
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">Make sure they have a saved record in the employer CRM record with:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>an AUPA status</li>
+                <li>company type set to ‘employer’ or ‘employer provider’</li>
+              </ul>
+              <p class="govuk-body">If you have just added a new employer to the CRM, it will take 1 to 2 minutes to show on this page.</p>
+
+            </div>
+          </details>
+
+
+        <!-- <p style="margin-bottom: 20px"><a href="add-employer-gap"> I cannot find the employer</a></p> -->
+        <button class="govuk-button">Continue</button>
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+{% block pageScripts %}
+  <script>
+  $(document).ready(function(){
+    // change labels
+    $("#businessNameLabel").text("Start typing their business name")
+    accessibleAutocomplete.enhanceSelectElement({
+      defaultValue: '',
+      selectElement: document.querySelector('#businessName'),
+        minLength: 2,
+    })
+  });
+  </script>
+{% endblock %}

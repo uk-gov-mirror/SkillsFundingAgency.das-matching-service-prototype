@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Provider results
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  {% if data['addopportunity'] == "2" %}
+    {% include "includes/cancel_opp.html" %}
+  {% else %}
+    {% include "includes/start_again.html" %}
+  {% endif %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          {% if data['businessName'] != null %}
+          <span class="govuk-caption-l">{{ data['businessName'] }}</span>
+          <h1 class="govuk-heading-l">Select providers for this opportunity</h1>
+          {% else %}
+          <h1 class="govuk-heading-l">Select providers for this opportunity</h1>
+          {% endif %}
+        </div>
+    </div>
+
+    {% include "./_includes/searchbox-results.html" %}
+
+    <!-- results -->
+
+    {% if route == "health and science" %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <p class="govuk-body">
+            <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">8 </span>results in
+            <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within
+            1 hour of <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span>
+          </p>
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+          {% include "./_includes/results_HealthAndScience_Return.html" %}
+
+          <p class="govuk-body"><a class="govuk-link" href="placement-gap?gapType=noSuitable">No suitable providers? Let us know</a>.</p>
+
+      </div>
+
+        <button class="govuk-button" name="resultsAction" value="continue">Continue with selected providers</button>
+
+      {% elseif route == "digital" %}
+
+      <!-- 0 results in Digital, but there are results in other routes -->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class= "form-group">
+            <p class="govuk-body">
+              <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">0 </span>results in
+              <span class="govuk-body govuk-!-font-weight-bold">{{ data['route']}} </span>within
+              1 hour of
+              <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            <h2 class="govuk-heading-s">If you change the skill area</h2>
+            <p class="govuk-body">Within 1 hour of <span style="text-transform: uppercase">{{ data['postcode'] }}</span>, there are:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>9 results for health and science</li>
+            </ul>
+            <p><a href="placement-gap?gapType=noneAvailable">Let us know that there are no suitable providers</a>.</p>
+          </div>
+        </div>
+      </div>
+
+      {% else %}
+
+      <!-- 0 results, NO results in other routes -->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class= "form-group">
+            <p class="govuk-body">
+              <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">0 </span>results in
+              <span class="govuk-body govuk-!-font-weight-bold">any skill area </span>within
+              1 hour of
+              <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">{{ data['postcode'] }}</span></p>
+
+              <p><a href="placement-gap?gapType=noneAvailable">Let us know that there are no suitable providers</a>.</p>
+
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      </div>
+    </div>
+
+</form>
+
+
+{% endblock %}

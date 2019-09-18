@@ -1,0 +1,66 @@
+<div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="tl-pane filter-field-text">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-form-group" style="margin-bottom: 15px">
+            <label class="govuk-label govuk-!-font-weight-bold" for="route">
+              Skill area
+            </label>
+            <select class="govuk-select govuk-!-width-full" id="route" name="route">
+              <option {% if route == 'agriculture, environmental and animal care' %}selected{% endif %} value="agriculture, environmental and animal care">Agriculture, environmental and animal care</option>
+              <option {% if route == 'business and administration' %}selected{% endif %} value="business and administration">Business and administration</option>
+              <!-- <option {% if route == 'care services' %}selected{% endif %} value="care services">Care services</option> -->
+              <option {% if route == 'catering and hospitality' %}selected{% endif %} value="catering and hospitality">Catering and hospitality</option>
+              <option {% if route == 'construction' %}selected{% endif %} value="construction">Construction</option>
+              <option {% if route == 'creative and design' %}selected{% endif %} value="creative and design">Creative and design</option>
+              <option {% if route == 'digital' %}selected{% endif %} value="digital">Digital</option>
+              <option {% if route == 'education and childcare' %}selected{% endif %} value="education and childcare">Education and childcare</option>
+              <option {% if route == 'engineering and manufacturing' %}selected{% endif %} value="engineering and manufacturing">Engineering and manufacturing</option>
+              <option {% if route == 'hair and beauty' %}selected{% endif %} value="hair and beauty">Hair and beauty</option>
+              <option {% if route == 'health and science' %}selected{% endif %} value="health and science">Health and science</option>
+              <option {% if route == 'legal, financial and accounting' %}selected{% endif %} value="legal, financial and accounting">Legal, financial and accounting</option>
+              <!-- <option {% if route == 'protective services' %}selected{% endif %} value="protective services">Protective services</option>
+              <option {% if route == 'sales, marketing and procurement' %}selected{% endif %} value="sales, marketing and procurement">Sales, marketing and procurement</option>
+              <option {% if route == 'transport and logistics' %}selected{% endif %} value="transport and logistics">Transport and logistics</option>-->
+            </select>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+            <div class="govuk-form-group" style="margin-bottom: 15px">
+              <label class="govuk-label govuk-!-font-weight-bold" for="postcode">
+                Employer postcode
+              </label>
+              <input class="govuk-input govuk-input--width-5" id="postcode" name="postcode" value="{{ data['postcode'] }}" type="text">
+            </div>
+        </div>
+
+          <!-- <div class="govuk-grid-column-one-quarter">
+            <div class="govuk-form-group" style="margin-bottom: 15px">
+              <label class="govuk-label govuk-!-font-weight-bold" for="radius">
+                Providers within
+              </label>
+              <select class="govuk-select govuk-!-width-two-thirds" id="radius" name="radius">
+                <option {% if radius == '5 miles' %}selected{% endif %} value="5 miles">5 miles</option>
+                <option {% if radius == '10 miles' %}selected{% endif %} value="10 miles">10 miles</option>
+                <option {% if radius == '15 miles' %}selected{% endif %} value="15 miles">15 miles</option>
+                <option {% if radius == '20 miles' %}selected{% endif %} value="20 miles">20 miles</option>
+                <option {% if (radius == '25 miles') or (radius == null) %}selected{% endif %} value="25 miles">25 miles</option>
+              </select>
+            </div>
+          </div> -->
+
+
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <button class="govuk-button" style="background-color: #005ea5; margin-bottom: 5px" name="resultsAction" value="searchAgain">Search again</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
