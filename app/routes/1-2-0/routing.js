@@ -400,6 +400,29 @@ module.exports = function(router, _myData) {
 
     });
 
+    // provider-results-geog-area
+    router.get('/' + version + '/provider-results-geog-area', function (req, res) {
+        res.render(version + '/provider-results-geog-area', {
+          'postcode':req.session.postcode
+          })
+    });
+
+    router.post('/' + version + '/provider-results-geog-area', function (req, res){
+        res.redirect(301, './start');
+    });
+
+    // provider-results-geog-area-healthFilter
+    router.get('/' + version + '/provider-results-geog-area-healthFilter', function (req, res) {
+        res.render(version + '/provider-results-geog-area-healthFilter', {
+          'postcode':req.session.postcode
+          })
+    });
+
+    router.post('/' + version + '/provider-results-geog-area-healthFilter', function (req, res){
+        res.redirect(301, './start');
+    });
+
+
     // download-halt
     router.get('/' + version + '/download-halt', function (req, res) {
         res.render(version + '/download-halt', {

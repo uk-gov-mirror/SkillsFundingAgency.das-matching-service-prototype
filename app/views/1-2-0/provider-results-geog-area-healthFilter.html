@@ -1,4 +1,4 @@
-{% extends "layout_provision.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   Provider results
@@ -27,25 +27,27 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
-        {% include "./_includes/route_filter.html" %}
+        {% include "./_includes/route_filter_selected.html" %}
       </div>
 
       <div class="govuk-grid-column-two-thirds">
         <p class="govuk-body">
-          <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">9 </span>results
-        </p>
+          <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">4 </span>results containing <span class="govuk-body govuk-!-font-weight-bold">digital </span>and <span class="govuk-body govuk-!-font-weight-bold">health and science</span>
 
+        </p>
         <p class="govuk-body"><a href="#">Download as a spreadsheet</a></p>
 
+
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-        {% include "./_includes/results_ShowMeEverything.html" %}
+        {% include "./_includes/results_ShowMeEverything_health.html" %}
 
         <p class="govuk-body"><a href="placement-gap?gapType=noSuitable">No suitable providers? Let us know</a>.</p>
 
         <button class="govuk-button" data-module="govuk-button">
           Finish
         </button>
-    </div>
+
+        </div>
 
     </div>
 
