@@ -16,9 +16,9 @@
         <div class="govuk-grid-column-two-thirds">
           {% if data['businessName'] != null %}
           <span class="govuk-caption-l">{{ data['businessName'] }}</span>
-          <h1 class="govuk-heading-l">Providers within 1 hour's travel of <span style="text-transform: uppercase">{{ data['postcode'] }}</span></h1>
+          <h1 class="govuk-heading-l">Providers within 1 hour of <span style="text-transform: uppercase">{{ data['postcode'] }}</span></h1>
           {% else %}
-          <h1 class="govuk-heading-l">Providers within 1 hour's travel of <span style="text-transform: uppercase">{{ data['postcode'] }}</span></h1>
+          <h1 class="govuk-heading-l">Providers within 1 hour of <span style="text-transform: uppercase">{{ data['postcode'] }}</span></h1>
           {% endif %}
         </div>
     </div>
