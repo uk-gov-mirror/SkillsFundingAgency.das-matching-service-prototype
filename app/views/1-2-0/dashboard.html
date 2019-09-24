@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">Match employers with providers for industry placements</h1>
+
+      <form class="form" method="post">
+
+        <div class="govuk-grid-row nhsuk-promo-group">
+          <div class="govuk-grid-column-one-third nhsuk-promo-group__item">
+            <div class="nhsuk-promo">
+              <a class="nhsuk-promo__link-wrapper" href="#">
+                <div class="nhsuk-promo__content">
+                  <h2 class="nhsuk-promo__heading">Start an opportunity</h2>
+                  <p class="govuk-body">Create opportunities and send referrals to providers for employers.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-third nhsuk-promo-group__item">
+            <div class="nhsuk-promo">
+              <a class="nhsuk-promo__link-wrapper" href="#">
+                <div class="nhsuk-promo__content">
+                  <h2 class="nhsuk-promo__heading">View saved opportunities</h2>
+                  <p class="govuk-body">Continue with open opportunities for employers.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="govuk-grid-column-one-third nhsuk-promo-group__item">
+            <div class="nhsuk-promo">
+              <a class="nhsuk-promo__link-wrapper" href="#">
+                <div class="nhsuk-promo__content">
+                  <h2 class="nhsuk-promo__heading">Search an area</h2>
+                  <p class="govuk-body">Broadly search for providers near a location.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {% if data['user_type'] == 'admin' %}
+        <h2 class="govuk-heading-m">Service administration</h2>
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-one-third">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a class="govuk-link" href="provider-data-find">Manage provider data</a>
+            </h3>
+            <p class="govuk-body">Add or edit provider contact, venue and course data.</p>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a class="govuk-link" href="edit-qualifications">Edit qualifications</a>
+            </h3>
+            <p class="govuk-body">Change Gatsby mapping or course short titles.</p>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a class="govuk-link" href="employer-upload">Manually upload data</a>
+            </h3>
+            <p class="govuk-body">Upload employer or provider data by .csv.</p>
+          </div>
+
+        </div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+              <a class="govuk-link" href="#">Take service offline</a>
+            </h3>
+            <p class="govuk-body">Set the service as ‘under maintenance’. </p>
+          </div>
+        </div>
+
+        {% else %}
+        {% endif %}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
