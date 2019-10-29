@@ -14,19 +14,36 @@ Opportunity basket
 <form class="form" method="post">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-            <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span>
 
+          <div class="tl-alert" role="alert" tabindex="-1">
+            <h2 class="govuk-heading-m">
+              Something has changed
+            </h2>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                  <p class="govuk-body">We have removed these venues because they no longer offer placement students:</p>
+                  <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-1">
+                    <li>
+                      Westminster Kingsway College (NW1 4EA)
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+
+            <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span>
             <h1 class="govuk-heading-l">All opportunities</h1>
 
             <p class="govuk-body">
                 <input type="hidden" value="2" name="addopportunity" />
                 <button class="govuk-button" style="background-color: #dee0e2; color: black;">Add another opportunity</button>
             </p>
+        </div>
 </form>
 
 <form class="form" method="post">
 
-
+<div class="govuk-grid-column-full">
     <!-- TWO OPPORTUNITIES -->
     <div class="form-group">
         <div class="govuk-checkboxes govuk-!-padding-left-4">
@@ -53,7 +70,7 @@ Opportunity basket
         </thead>
         <tbody class="govuk-table__body">
 
-            <tr class="govuk-table__row">
+            <tr class="govuk-table__row tl-row-red">
                 <td class="govuk-table__cell multiple-choice--hod">
                     <div class="govuk-checkboxes__item">
                         <input type="checkbox" class="govuk-checkboxes__input jsCheckbox" id="radio-1">
@@ -66,8 +83,54 @@ Opportunity basket
                 <td class="govuk-table__cell">
                     {% if (data['roleInfo'] == "") or (data['roleInfo'] == null) %}Physio{% else %}{{ data['roleInfo'] }}{% endif %}
                 </td>
-                <td class="govuk-table__cell">{% if data['placementNumber'] == "" %}2{% else %}{{ data['placementNumber'] }}{% endif %}</td>
+                <td class="govuk-table__cell">2</td>
                 <td class="govuk-table__cell" style="max-width: 450px">Westminster Kingsway College (NW1 3HB), Lambeth College</td>
+                <td class="govuk-table__cell">
+                    <a class="govuk-link tl-float-right" href="check-answers?addopportunity=existing">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
+                </td>
+                <td class="govuk-table__cell">
+                    <a class="govuk-link tl-float-right" href="remove-opportunity">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
+                </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell multiple-choice--hod">
+                    <div class="govuk-checkboxes__item">
+                        <input type="checkbox" class="govuk-checkboxes__input jsCheckbox" id="radio-1">
+                        <label class="govuk-label govuk-checkboxes__label" for="radio-1">
+                            &nbsp;
+                        </label>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">London E15 1AZ</td>
+                <td class="govuk-table__cell">
+                    IT support
+                </td>
+                <td class="govuk-table__cell">1</td>
+                <td class="govuk-table__cell" style="max-width: 450px">Newham Training and Education Centre</td>
+                <td class="govuk-table__cell">
+                    <a class="govuk-link tl-float-right" href="check-answers?addopportunity=existing">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
+                </td>
+                <td class="govuk-table__cell">
+                    <a class="govuk-link tl-float-right" href="remove-opportunity">Delete<span class="govuk-visually-hidden"> the type of placement</span></a>
+                </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell multiple-choice--hod">
+                    <div class="govuk-checkboxes__item">
+                        <input type="checkbox" class="govuk-checkboxes__input jsCheckbox" id="radio-1">
+                        <label class="govuk-label govuk-checkboxes__label" for="radio-1">
+                            &nbsp;
+                        </label>
+                    </div>
+                </td>
+                <td class="govuk-table__cell">London E15 1AZ</td>
+                <td class="govuk-table__cell">
+                    Admin assistant
+                </td>
+                <td class="govuk-table__cell">1</td>
+                <td class="govuk-table__cell" style="max-width: 450px">Newham Training and Education Centre, Newham Sixth Form College</td>
                 <td class="govuk-table__cell">
                     <a class="govuk-link tl-float-right" href="check-answers?addopportunity=existing">Edit<span class="govuk-visually-hidden"> the type of placement</span></a>
                 </td>
@@ -89,7 +152,7 @@ Opportunity basket
                 <td class="govuk-table__cell">
                     {% if (data['roleInfo'] == "") or (data['roleInfo'] == null) %}Physio{% else %}{{ data['roleInfo'] }}{% endif %}
                 </td>
-                <td class="govuk-table__cell">{% if data['placementNumber'] == "" %}2{% else %}{{ data['placementNumber'] }}{% endif %}</td>
+                <td class="govuk-table__cell">2</td>
                 <td class="govuk-table__cell" style="max-width: 450px"><a class="govuk-link" href="provider-results-return">Add providers<span class="govuk-visually-hidden"> the type of placement</span></a></td>
                 <td class="govuk-table__cell">
                 </td>
@@ -110,7 +173,7 @@ Opportunity basket
 
     </p>
     <p class="govuk-body"><a href="/public/files/WestHanoverHospitalsTrust_opportunities_11July2019.xlsx" download class="govuk-link">Download all data as a spreadsheet</a></p>
-
+</div>
 </form>
 
 
