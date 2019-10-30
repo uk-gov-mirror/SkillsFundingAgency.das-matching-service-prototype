@@ -16,28 +16,24 @@ Opportunity basket
         <div class="govuk-grid-column-full">
 
           <div class="tl-alert" role="alert" tabindex="-1">
-            <h2 class="govuk-heading-m">
+            <h2 class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">
               Something has changed
             </h2>
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds">
-                  <p class="govuk-body">We have removed these venues because they no longer offer placement students:</p>
-                  <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-1">
-                    <li>
-                      Westminster Kingsway College (NW1 4EA)
-                    </li>
-                  </ul>
-                </div>
-            </div>
+            <p class="govuk-body govuk-!-margin-bottom-1">We have removed these venues because they no longer offer placement students:</p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-1">
+              <li>
+                Westminster Kingsway College (NW1 4EA)
+              </li>
+            </ul>
           </div>
 
-            <span class="govuk-caption-l">{% if data['businessName'] == "" %}West Ham United Football Club Limited{% else %}{% if data['businessName'] == null %}West Ham United Football Club Limited{% else %}{{ data['businessName'] }}{% endif %}{% endif %}</span>
-            <h1 class="govuk-heading-l">All opportunities</h1>
+          <span class="govuk-caption-l">West Hanover Hospitals NHS Trust</span>
+          <h1 class="govuk-heading-l">All opportunities</h1>
 
-            <p class="govuk-body">
-                <input type="hidden" value="2" name="addopportunity" />
-                <button class="govuk-button" style="background-color: #dee0e2; color: black;">Add another opportunity</button>
-            </p>
+          <p class="govuk-body">
+              <input type="hidden" value="2" name="addopportunity" />
+              <button class="govuk-button" style="background-color: #dee0e2; color: black;">Add another opportunity</button>
+          </p>
         </div>
 </form>
 
