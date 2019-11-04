@@ -1,4 +1,4 @@
-{% extends "layout_new.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   Start
@@ -6,6 +6,7 @@
 
 {% block beforeContent %}
   {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="dashboard">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -31,7 +32,7 @@
 
 
         <div class="govuk-form-group">
-            <p class="govuk-body"><a class="govuk-link" href="saved-opportunities">View saved opportunities</a></p>
+            <!-- <p class="govuk-body"><a class="govuk-link" href="saved-opportunities">View saved opportunities</a></p> -->
 
             <button class="govuk-button govuk-button--start">Start a new opportunity</button>
 

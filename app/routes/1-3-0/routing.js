@@ -408,7 +408,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/provider-results-geog-area', function (req, res){
-        res.redirect(301, './start');
+        res.redirect(301, './dashboard');
     });
 
     // provider-results-geog-area-healthFilter
@@ -419,7 +419,7 @@ module.exports = function(router, _myData) {
     });
 
     router.post('/' + version + '/provider-results-geog-area-healthFilter', function (req, res){
-        res.redirect(301, './start');
+        res.redirect(301, './dashboard');
     });
 
 
