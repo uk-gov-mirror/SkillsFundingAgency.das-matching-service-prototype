@@ -1,0 +1,30 @@
+{% extends "layout_new.html" %}
+
+{% block pageTitle %}
+Remove DE4 1DE
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">Are you sure you want to remove DE4 1DE?</h1>
+            <p class="govuk-body">The venue will no longer show in search results.</p>
+            <p class="govuk-body">This action cannot be undone.</p>
+
+          <button class="govuk-button">Remove venue</button>
+
+          <p class="govuk-body"><a href="provider-data-venue" class="govuk-link">Cancel and return to venue overview</a></p>
+
+      </div>
+  </div>
+
+</form>
+
+{% endblock %}

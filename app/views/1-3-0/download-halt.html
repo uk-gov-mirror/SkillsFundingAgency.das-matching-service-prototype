@@ -1,0 +1,44 @@
+{% extends "layout_new.html" %}
+
+{% block pageTitle %}
+  Download results
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Download provider results</h1>
+
+      <form class="form" method="post">
+
+        <div class="govuk-form-group">
+          <p class="govuk-body">You can keep this file for your records or share it with the employer.</p>
+          <p class="govuk-body"><a href="download-halt">Download results (PDF, up to XKb)</a></p>
+
+          <h2 class="govuk-heading-m">If the employer is not ready to create a placement</h2>
+          <p class="govuk-body">They can use these results to help make their decision.</p>
+          <div class="govuk-inset-text">
+            As soon as the employer wants to create a placement, you must come back and record it in this system.
+          </div>
+
+          <p class="govuk-body"><a href="download-halt">Finish and return to start</a></p>
+
+        </div>
+
+        <button class="govuk-button">Continue to add placement information</button>
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "layout_new.html" %}
+
+{% block pageTitle %}
+  Add employer gap
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+  {% include "includes/start_again.html" %}
+  <a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Employer details</h1>
+
+      <form class="form" method="post">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-name">
+            Business name
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="business-name" name="business-name" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-name">
+            Contact name for placements
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="contact-name" name="contact-name" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-number">
+            Contact phone number
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="contact-number" name="contact-number" type="tel">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-name">
+            Contact email
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email">
+        </div>
+
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

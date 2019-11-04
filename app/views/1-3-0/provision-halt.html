@@ -1,0 +1,60 @@
+{% extends "layout_new.html" %}
+
+{% block pageTitle %}
+  Download results
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+<a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Some of the providers you have chosen are no longer available</h1>
+
+      <form class="form" method="post">
+
+        <div class="govuk-form-group">
+
+          <p class="govuk-body">This could be because the provider has told us; the relevant course is now full, they want to sort their own placements or they are no longer a CDF provider.</p>
+
+          <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row govuk-!-margin-bottom-3">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-bold">
+                      Provider name 1
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                      Appears in..
+                      Edit links? (mini CYA) to select different providers
+                      Land back on this screen after each edit
+                  </dd>
+              </div>
+              <div class="govuk-summary-list__row govuk-!-margin-bottom-3">
+                  <dt class="govuk-summary-list__key govuk-!-font-weight-bold">
+                      Provider name 2
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                      Appears in..
+                      Edit links? (mini CYA) to select different providers
+                      Land back on this screen after each edit
+                  </dd>
+              </div>
+          </dl>
+
+        </div>
+
+        <button class="govuk-button">Continue without these providers</button>
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "layout_new.html" %}
+
+{% block pageTitle %}
+  Page not found
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+        <h1 class="govuk-heading-l">Page not found</h1>
+
+          <p class="govuk-body">If you typed the web address, check it is correct.</p>
+          <p class="govuk-body">If you pasted the web address, check you copied the entire address.</p>
+
+          <p class="govuk-body">If the web address is correct and you still need help, email <a href="#">support.industryplacementmatching@education.gov.uk</a>.</p>
+
+          <button class="govuk-button">Finish</button>
+
+      </form>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

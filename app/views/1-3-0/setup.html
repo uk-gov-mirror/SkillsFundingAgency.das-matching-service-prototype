@@ -1,0 +1,58 @@
+{% extends "layout_complexbasket.html" %}
+
+{% block pageTitle %}
+Setup page
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Prototype setup page</h1>
+
+        <h2 class="govuk-heading-m">Select user type</h2>
+
+        <div class="govuk-form-group">
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="user_type_standard" name="user_type" type="radio" value="standard">
+                <label class="govuk-label govuk-radios__label" for="user_type_standard">
+                  Standard
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="user_type_admin" name="user_type" type="radio" value="admin">
+                <label class="govuk-label govuk-radios__label" for="user_type_admin">
+                  Admin
+                </label>
+              </div>
+            </div>
+        </div>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Provider data admin screen scenarios
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Find an existing provider</h3>
+            <p class="govuk-body">On /provider-data-find enter <span class="govuk-!-font-weight-bold">10001234</span> and click <span class="govuk-!-font-weight-bold">Edit</span> on the first table row</p>
+
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Add a new provider</h3>
+            <p class="govuk-body">On /provider-data-find enter <span class="govuk-!-font-weight-bold">10001111</span> and click <span class="govuk-!-font-weight-bold">Add this provider</span> button</p>
+
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Invalid UKPRN (not on UKRLP)</h3>
+            <p class="govuk-body">On /provider-data-find enter <span class="govuk-!-font-weight-bold">any other number</span></p>
+          </div>
+        </details>
+
+        <button class="govuk-button">Continue</button>
+      </div>
+  </div>
+
+</form>
+
+{% endblock %}

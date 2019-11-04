@@ -1,0 +1,39 @@
+{% extends "layout_new.html" %}
+
+{% block pageTitle %}
+Before you continue
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase_banner.html" %}
+<a id="back" class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<form class="form" method="post">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <span class="govuk-caption-l">West Hanover Hospitals NHS Trust</span>
+            <h1 class="govuk-heading-l">Before you continue</h1>
+
+            <p class="govuk-body">Since you last worked on this employer’s account, there have been changes.</p>
+
+            <p class="govuk-body">The following venues no longer offer placement students, so we have removed them from our system:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Westminster Kingsway College (NW1 4EA)</li>
+            </ul>
+
+            <p class="govuk-body">Any opportunities affected by this action will be highlighted in red. Check these opportunities, and add new providers if necessary.</p>
+
+            <p class="govuk-body"></p>
+
+            <button class="govuk-button">Continue to this employer’s opportunities</button>
+
+        </div>
+    </div>
+
+</form>
+
+{% endblock %}
