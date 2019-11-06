@@ -554,7 +554,7 @@ module.exports = function(router, _myData) {
 
     router.post('/' + version + '/emails-sent', function (req, res) {
         req.session.addopportunity = req.body.addopportunity,
-      res.redirect(301, './start');
+      res.redirect(301, './dashboard');
     });
 
     // check-CRM
