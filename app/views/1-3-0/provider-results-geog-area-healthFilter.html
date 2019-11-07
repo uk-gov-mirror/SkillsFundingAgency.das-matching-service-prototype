@@ -16,9 +16,9 @@
         <div class="govuk-grid-column-two-thirds">
           {% if data['businessName'] != null %}
           <span class="govuk-caption-l">{{ data['businessName'] }}</span>
-          <h1 class="govuk-heading-l">Providers within 1 hour of <span style="text-transform: uppercase">{{ data['postcode'] }}</span></h1>
+          <h1 class="govuk-heading-l">Providers within 30 miles of <span style="text-transform: uppercase">{{ data['postcode'] }}</span></h1>
           {% else %}
-          <h1 class="govuk-heading-l">Providers within 1 hour of <span style="text-transform: uppercase">{{ data['postcode'] }}</span></h1>
+          <h1 class="govuk-heading-l">Providers within 30 miles of <span style="text-transform: uppercase">{{ data['postcode'] }}</span></h1>
           {% endif %}
         </div>
     </div>
@@ -32,7 +32,7 @@
 
       <div class="govuk-grid-column-two-thirds">
         <p class="govuk-body">
-          <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">4 </span>results containing <span class="govuk-body govuk-!-font-weight-bold">digital </span>and <span class="govuk-body govuk-!-font-weight-bold">health and science</span>
+          <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">4 </span>results for <span class="govuk-body govuk-!-font-weight-bold">digital </span>and <span class="govuk-body govuk-!-font-weight-bold">health and science</span>
 
         </p>
         <p class="govuk-body"><a href="#">Download as a spreadsheet</a></p>
@@ -41,7 +41,7 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
         {% include "./_includes/results_ShowMeEverything_health.html" %}
 
-        <p class="govuk-body"><a href="placement-gap?gapType=noSuitable">No suitable providers? Let us know</a>.</p>
+        <!-- <p class="govuk-body"><a href="placement-gap?gapType=noSuitable">No suitable providers? Let us know</a>.</p> -->
 
         <button class="govuk-button" data-module="govuk-button">
           Finish
